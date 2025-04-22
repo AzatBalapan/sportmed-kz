@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Roboto', 'sans-serif'],
+				serif: ['PT Serif', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +66,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors for our governmental sports medical center
+				'gov-blue': '#2055B5',
+				'gov-light-blue': '#E9F0FC',
+				'gov-dark-blue': '#103778',
+				'gov-accent': '#4285F4',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
