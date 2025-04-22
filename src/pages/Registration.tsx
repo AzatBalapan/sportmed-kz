@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import RegistrationForm from '@/components/RegistrationForm';
+import { Toaster } from '@/components/ui/toaster';
 
 const Registration: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Registration: React.FC = () => {
         </div>
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };
