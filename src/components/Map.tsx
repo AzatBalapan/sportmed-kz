@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const ASTANA_COORDS = [71.429865, 51.128236]; // Kuishi Dina 36a general coords; can be adjusted more precisely
+const ASTANA_COORDS: [number, number] = [71.429865, 51.128236]; // Kuishi Dina 36a general coords; can be adjusted more precisely
 
 const Map: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement>(null);

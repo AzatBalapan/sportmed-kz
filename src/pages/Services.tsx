@@ -89,15 +89,17 @@ const blocks = {
 };
 
 const Services: React.FC = () => {
-  const { t } = useLanguage();
-  const lang = t("language") as "ru" | "kz";
+  const { language } = useLanguage();
+  const lang = language as "ru" | "kz";
 
   return (
     <>
       <Header />
       <section className="py-16 bg-gov-light-blue min-h-screen section-padding animate-fade-in">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-serif font-bold text-gov-dark-blue mb-8 text-center">{t('services.title')}</h1>
+          <h1 className="text-4xl font-serif font-bold text-gov-dark-blue mb-8 text-center">
+            {language === 'ru' ? 'Наши услуги' : 'Біздің қызметтеріміз'}
+          </h1>
           <p className="mb-10 text-lg text-gray-700 text-center max-w-2xl mx-auto">{blocks[lang].subtitle}</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
@@ -127,7 +129,7 @@ const Services: React.FC = () => {
               </div>
               <div className="flex items-center text-white">
                 <span className="mr-2">📞</span>
-                <span>{t('contact.phone.value')}</span>
+                <span>{language === 'ru' ? '+7 (777) 123-4567' : '+7 (777) 123-4567'}</span>
               </div>
             </div>
           </div>

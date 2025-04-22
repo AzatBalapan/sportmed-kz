@@ -96,8 +96,8 @@ const aboutContent = {
 };
 
 const AboutFull: React.FC = () => {
-  const { t } = useLanguage();
-  const lang = t("language") as "ru" | "kz";
+  const { language } = useLanguage();
+  const lang = language as "ru" | "kz";
 
   return (
     <>
@@ -105,7 +105,7 @@ const AboutFull: React.FC = () => {
       <section className="py-16 bg-gov-light-blue min-h-screen section-padding animate-fade-in">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-serif font-bold text-gov-dark-blue mb-10 text-center">
-            {t('about.full.title')}
+            {language === 'ru' ? 'О нашем центре' : 'Біздің орталық туралы'}
           </h1>
           {/* History Section */}
           <div className="max-w-3xl mx-auto mb-12">
