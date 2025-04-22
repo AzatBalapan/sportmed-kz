@@ -1,18 +1,19 @@
 
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { Link } from 'react-router-dom';
 
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
-  
+
   return (
     <section id="about" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
-            <img 
-              src="https://images.unsplash.com/photo-1581595219315-a187dd41d9e9?auto=format&fit=crop&q=80&w=2070" 
-              alt="Sport Medical Center" 
+            <img
+              src="https://images.unsplash.com/photo-1581595219315-a187dd41d9e9?auto=format&fit=crop&q=80&w=2070"
+              alt="Sport Medical Center"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
               style={{ maxHeight: '500px' }}
             />
@@ -38,6 +39,12 @@ export const AboutSection: React.FC = () => {
                 </li>
               ))}
             </ul>
+            <Link
+              to="/about"
+              className="inline-block mt-8 text-gov-blue font-semibold underline hover:text-gov-dark-blue"
+            >
+              {t('about.more')}
+            </Link>
           </div>
         </div>
       </div>

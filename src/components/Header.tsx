@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 export const Header: React.FC = () => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -22,10 +23,10 @@ export const Header: React.FC = () => {
             <Link to="/" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.home')}
             </Link>
-            <Link to="/#about" className="text-gray-700 hover:text-gov-blue font-medium">
+            <Link to="/about" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.about')}
             </Link>
-            <Link to="/#services" className="text-gray-700 hover:text-gov-blue font-medium">
+            <Link to="/services" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.services')}
             </Link>
             <Link to="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium">
@@ -48,7 +49,7 @@ export const Header: React.FC = () => {
           </div>
 
           {/* Mobile Navigation Toggle */}
-          <button 
+          <button
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -62,29 +63,29 @@ export const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <nav className="flex flex-col space-y-4">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="text-gray-700 hover:text-gov-blue font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.home')}
               </Link>
-              <Link 
-                to="/#about" 
+              <Link
+                to="/about"
                 className="text-gray-700 hover:text-gov-blue font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.about')}
               </Link>
-              <Link 
-                to="/#services" 
+              <Link
+                to="/services"
                 className="text-gray-700 hover:text-gov-blue font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.services')}
               </Link>
-              <Link 
-                to="/#contacts" 
+              <Link
+                to="/#contacts"
                 className="text-gray-700 hover:text-gov-blue font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >

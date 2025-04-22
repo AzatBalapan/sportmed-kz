@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
-  
+
   return (
     <footer className="bg-gov-dark-blue text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
@@ -20,23 +20,13 @@ export const Footer: React.FC = () => {
             <h3 className="text-xl font-serif mb-4">{t('nav.services')}</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <Link to="/#" className="hover:text-white transition-colors">
-                  {t('promo.modern')}
+                <Link to="/services" className="hover:text-white transition-colors">
+                  {t('nav.services')}
                 </Link>
               </li>
               <li>
-                <Link to="/#" className="hover:text-white transition-colors">
-                  {t('promo.professional')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/#" className="hover:text-white transition-colors">
-                  {t('promo.individual')}
-                </Link>
-              </li>
-              <li>
-                <Link to="/#" className="hover:text-white transition-colors">
-                  {t('promo.complex')}
+                <Link to="/about" className="hover:text-white transition-colors">
+                  {t('nav.about')}
                 </Link>
               </li>
             </ul>
@@ -50,11 +40,11 @@ export const Footer: React.FC = () => {
               </li>
               <li className="flex items-start">
                 <span className="mr-2">📞</span>
-                <span>+7 (777) 123-4567</span>
+                <span>{t('contact.phone.value')}</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">✉️</span>
-                <span>info@sportmed.kz</span>
+                <span>{t('contact.email.value')}</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">🕒</span>
