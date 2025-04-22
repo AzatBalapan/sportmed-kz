@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-// @ts-ignore
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -8,12 +7,12 @@ const ASTANA_COORDS = [71.429865, 51.128236]; // Kuishi Dina 36a general coords;
 
 const Map: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<any>(null);
+  const map = useRef<mapboxgl.Map | null>(null);
   const [token, setToken] = useState<string>(() => localStorage.getItem('mapbox_token') ?? '');
 
   useEffect(() => {
     if (!token || !mapContainer.current) return;
-    // @ts-ignore
+    
     mapboxgl.accessToken = token;
 
     map.current = new mapboxgl.Map({
@@ -40,7 +39,7 @@ const Map: React.FC = () => {
       .addTo(map.current);
 
     return () => {
-      map.current && map.current.remove();
+      map.current?.remove();
     };
   }, [token]);
 
