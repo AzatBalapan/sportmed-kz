@@ -5,6 +5,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import Map from './Map';
+
+const address = 'Kuishi Dina 36a, Астана';
 
 export const ContactSection: React.FC = () => {
   const { t } = useLanguage();
@@ -28,7 +31,7 @@ export const ContactSection: React.FC = () => {
                   <div className="mr-4 text-gov-blue text-xl">📍</div>
                   <div>
                     <h4 className="font-medium text-lg">{t('contact.address')}</h4>
-                    <p className="text-gray-600">{t('contact.address.value')}</p>
+                    <p className="text-gray-600">{address}</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -55,12 +58,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div className="mt-8">
-                <div className="w-full h-64 bg-gray-300 rounded-lg">
-                  {/* Map will be integrated here */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-500">
-                    {t('contact.address.value')}
-                  </div>
-                </div>
+                <Map />
               </div>
             </div>
           </div>

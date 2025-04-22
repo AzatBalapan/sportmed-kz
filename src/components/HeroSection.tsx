@@ -2,10 +2,24 @@
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 export const HeroSection: React.FC = () => {
   const { t } = useLanguage();
-  
+  const navigate = useNavigate();
+
+  const handleServices = () => {
+    navigate('/services');
+  };
+
+  const handleContact = () => {
+    // Scroll to contacts section within the same page
+    const contactSection = document.getElementById('contacts');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative bg-gov-light-blue overflow-hidden">
       <div 
@@ -25,10 +39,15 @@ export const HeroSection: React.FC = () => {
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-gov-blue hover:bg-gov-dark-blue">
+            <Button size="lg" className="bg-gov-blue hover:bg-gov-dark-blue" onClick={handleServices}>
               {t('hero.button')}
             </Button>
-            <Button size="lg" variant="outline" className="border-gov-blue text-gov-blue hover:bg-gov-light-blue">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-gov-blue text-gov-blue hover:bg-gov-light-blue"
+              onClick={handleContact}
+            >
               {t('nav.contacts')}
             </Button>
           </div>
