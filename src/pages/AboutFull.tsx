@@ -4,55 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Users, Award, Book } from 'lucide-react';
-
-const team = [
-  {
-    icon: <Users className="text-gov-accent w-8 h-8 mb-2"/>,
-    name: {
-      ru: "Др. Айтжанова Айдана",
-      kz: "Др. Айтжанова Айдана"
-    },
-    position: {
-      ru: "Главный врач",
-      kz: "Бас дәрігер"
-    },
-    desc: {
-      ru: "Более 20 лет опыта в спортивной медицине и реабилитации. Руководитель центра.",
-      kz: "20 жылдан астам спорттық медицина және оңалту тәжірибесі бар. Орталық басшысы."
-    }
-  },
-  {
-    icon: <Award className="text-gov-accent w-8 h-8 mb-2"/>,
-    name: {
-      ru: "Кулсеитова Назира",
-      kz: "Күлсейітова Назира"
-    },
-    position: {
-      ru: "Врач-реабилитолог",
-      kz: "Реабилитолог дәрігер"
-    },
-    desc: {
-      ru: "Специалист по восстановлению спортсменов после травм и операций.",
-      kz: "Жарақат пен операциядан кейін спортшыларды оңалту саласының маманы."
-    }
-  },
-  {
-    icon: <Book className="text-gov-accent w-8 h-8 mb-2"/>,
-    name: {
-      ru: "Сулейменов Арман",
-      kz: "Сүлейменов Арман"
-    },
-    position: {
-      ru: "Спортивный физиотерапевт",
-      kz: "Спорт физиотерапевті"
-    },
-    desc: {
-      ru: "Разрабатывает индивидуальные реабилитационные программы для спортсменов.",
-      kz: "Спортшыларға арналған жеке оңалту бағдарламаларын жасайды."
-    }
-  },
-];
 
 const aboutContent = {
   ru: {
@@ -82,7 +33,6 @@ const aboutContent = {
     mission: `Обеспечение полного цикла медицинского сопровождения спортсменов — от диагностики и профилактики до восстановления, в соответствии с лучшими мировыми практиками. Мы создаём условия для безопасного и эффективного достижения спортивных результатов.
 
 Мы обеспечиваем всё лучшее — для здоровья, безопасности и спортивного будущего наших спортсменов.`,
-    teamTitle: "Наша команда",
     decorBlock: [
       '• Индивидуальный подход к каждому пациенту',
       '• Только современные и безопасные методы лечения',
@@ -116,7 +66,6 @@ const aboutContent = {
     mission: `Спортшыларды диагностикадан бастап алдын-алу мен қалпына келтіруге дейін әлемдегі үздік тәжірибелерге сәйкес медициналық сүйемелдеудің толық циклін қамтамасыз ету. Біз спорттық нәтижелерге қауіпсіз және тиімді жетуге жағдай жасаймыз.
 
 Біз спортшыларымыздың денсаулығы, қауіпсіздігі және спорттық болашағы үшін барлық үздік жағдайларды қамтамасыз етеміз.`,
-    teamTitle: "Біздің команда",
     decorBlock: [
       '• Әр пациентке жеке көзқарас',
       '• Тек заманауи әрі қауіпсіз емдеу әдістері',
@@ -182,23 +131,6 @@ const AboutFull: React.FC = () => {
               ))}
             </ul>
           </div>
-          
-          {/* Team Section */}
-          <div>
-            <h2 className="text-2xl font-serif font-bold mb-8 text-gov-blue">{aboutContent[lang].teamTitle}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {team.map((member, idx) => (
-                <Card key={idx} className="glass card-gradient text-center animate-fade-in">
-                  <CardContent className="flex flex-col items-center p-6">
-                    {member.icon}
-                    <div className="text-lg font-bold">{member.name[lang]}</div>
-                    <div className="text-gray-600 mb-2">{member.position[lang]}</div>
-                    <div className="text-gray-500 text-sm">{member.desc[lang]}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
       <Footer />
@@ -207,3 +139,4 @@ const AboutFull: React.FC = () => {
 };
 
 export default AboutFull;
+
