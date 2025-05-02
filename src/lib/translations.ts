@@ -1,4 +1,3 @@
-
 export const translations = {
   'language': {
     ru: 'ru',
@@ -36,8 +35,8 @@ export const translations = {
 
   // Hero Section
   'hero.title': {
-    ru: 'Спортивный медицинский центр Казахстана',
-    kz: 'Қазақстан спорт медицина орталығы'
+    ru: 'ГККП "СПОРТИВНЫЙ МЕДИЦИНСКИЙ ЦЕНТР ГОРОДА АСТАНЫ" АКИМАТА ГОРОДА АСТАНЫ',
+    kz: 'АСТАНА ҚАЛАСЫ ӘКІМДІГІНІҢ "АСТАНА ҚАЛАСЫНЫҢ СПОРТТЫҚ МЕДИЦИНА ОРТАЛЫҒЫ" МКҚК'
   },
   'hero.subtitle': {
     ru: 'Профессиональная медицинская помощь спортсменам',
@@ -168,8 +167,8 @@ export const translations = {
 
   // Contact Section
   'contact.title': {
-    ru: 'Связаться с нами',
-    kz: 'Бізбен байланысу'
+    ru: 'Вопросы и отзывы',
+    kz: 'Сұрақтар мен пікірлер'
   },
   'contact.address': {
     ru: 'Адрес',
@@ -184,8 +183,8 @@ export const translations = {
     kz: 'Телефон'
   },
   'contact.phone.value': {
-    ru: '+7 (777) 123-4567',
-    kz: '+7 (777) 123-4567'
+    ru: '+7 (706) 606-3636',
+    kz: '+7 (706) 606-3636'
   },
   'contact.email': {
     ru: 'Электронная почта',
@@ -200,8 +199,8 @@ export const translations = {
     kz: 'Жұмыс уақыты'
   },
   'contact.hours.value': {
-    ru: 'Пн-Пт: 9:00 - 18:00',
-    kz: 'Дс-Жм: 9:00 - 18:00'
+    ru: 'Пн-Пт: 8:30 - 18:00',
+    kz: 'Дс-Жм: 8:30 - 18:00'
   },
 
   // Registration Form

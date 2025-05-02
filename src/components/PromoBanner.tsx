@@ -2,21 +2,14 @@
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
+import { Award, Microscope, Brain, Handshake } from 'lucide-react';
 
 export const PromoBanner: React.FC = () => {
   const { t } = useLanguage();
   
   const services = [
     { 
-      icon: '🏥', 
-      title: t('promo.modern'),
-      description: {
-        ru: 'Новейшее медицинское оборудование для диагностики и лечения',
-        kz: 'Диагностика және емдеу үшін ең заманауи медициналық жабдықтар'
-      }
-    },
-    { 
-      icon: '👨‍⚕️', 
+      icon: <Award className="w-12 h-12 text-gov-blue" />, 
       title: t('promo.professional'),
       description: {
         ru: 'Команда опытных врачей спортивной медицины',
@@ -24,7 +17,15 @@ export const PromoBanner: React.FC = () => {
       }
     },
     { 
-      icon: '🔍', 
+      icon: <Microscope className="w-12 h-12 text-gov-blue" />, 
+      title: t('promo.modern'),
+      description: {
+        ru: 'Новейшее медицинское оборудование для диагностики и лечения',
+        kz: 'Диагностика және емдеу үшін ең заманауи медициналық жабдықтар'
+      }
+    },
+    { 
+      icon: <Brain className="w-12 h-12 text-gov-blue" />, 
       title: t('promo.individual'),
       description: {
         ru: 'Персонализированные программы лечения для каждого спортсмена',
@@ -32,7 +33,7 @@ export const PromoBanner: React.FC = () => {
       }
     },
     { 
-      icon: '📊', 
+      icon: <Handshake className="w-12 h-12 text-gov-blue" />, 
       title: t('promo.complex'),
       description: {
         ru: 'Полный спектр медицинских услуг для спортсменов',
@@ -52,9 +53,9 @@ export const PromoBanner: React.FC = () => {
           {services.map((service, index) => (
             <Card key={index} className="bg-white hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-medium mb-3 text-gov-dark-blue">{service.title}</h3>
-                <p className="text-gray-600">{service.description[t('language') as 'ru' | 'kz'] || service.description.ru}</p>
+                <div className="mb-4 flex justify-center">{service.icon}</div>
+                <h3 className="text-xl font-medium mb-3 text-center text-gov-dark-blue">{service.title}</h3>
+                <p className="text-gray-600 text-center">{service.description[t('language') as 'ru' | 'kz'] || service.description.ru}</p>
               </CardContent>
             </Card>
           ))}

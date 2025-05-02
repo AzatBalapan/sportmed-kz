@@ -8,10 +8,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import AppCaptcha from './AppCaptcha';
 import { useToast } from '@/hooks/use-toast';
+import { toast } from '@/components/ui/sonner';
 
 export const RegistrationForm: React.FC = () => {
   const { t } = useLanguage();
-  const { toast } = useToast();
+  const { toast: uiToast } = useToast();
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,7 +32,7 @@ export const RegistrationForm: React.FC = () => {
     e.preventDefault();
     
     if (!isCaptchaVerified) {
-      toast({
+      uiToast({
         title: t('language') === 'ru' ? 'Ошибка' : 'Қате',
         description: t('language') === 'ru' 
           ? 'Пожалуйста, пройдите проверку CAPTCHA' 
@@ -42,7 +43,7 @@ export const RegistrationForm: React.FC = () => {
     }
     
     if (formData.password !== formData.confirmPassword) {
-      toast({
+      uiToast({
         title: t('language') === 'ru' ? 'Ошибка' : 'Қате',
         description: t('language') === 'ru' 
           ? 'Пароли не совпадают' 
@@ -56,14 +57,38 @@ export const RegistrationForm: React.FC = () => {
     
     // Simulate API call
     setTimeout(() => {
-      // Show success message
-      toast({
-        title: t('language') === 'ru' ? 'Успешно!' : 'Сәтті!',
+      // Show backend notification
+      toast(
+        t('language') === 'ru' 
+          ? 'Функционал требует подключения к базе данных' 
+          : 'Функционалдық дерекқорға қосылуды талап етеді',
+        {
+          description: t('language') === 'ru' 
+            ? 'В данный момент регистрация работает в демонстрационном режиме. Для полноценной работы необходима интеграция с бэкендом.' 
+            : 'Қазіргі уақытта тіркеу көрсетілім режимінде жұмыс істейді. Толық жұмыс істеу үшін бэкендпен интеграция қажет.',
+          duration: 8000,
+        }
+      );
+      
+      // Also show success message
+      uiToast({
+        title: t('language') === 'ru' ? 'Демо-режим' : 'Демо режимі',
         description: t('language') === 'ru' 
-          ? 'На вашу почту отправлено письмо с подтверждением.' 
-          : 'Сіздің поштаңызға растау хаты жіберілді.',
+          ? 'В демонстрационном режиме письмо с подтверждением не отправляется.' 
+          : 'Демонстрациялық режимде растау хаты жіберілмейді.',
       });
+      
       setIsLoading(false);
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        password: '',
+        confirmPassword: '',
+      });
+      setIsCaptchaVerified(false);
     }, 1500);
   };
   
@@ -148,6 +173,12 @@ export const RegistrationForm: React.FC = () => {
               t('register.button')
             }
           </Button>
+          
+          <div className="text-xs text-amber-600 mt-2 text-center">
+            {t('language') === 'ru' 
+              ? 'Примечание: Это демо-версия формы регистрации. Для работы с реальными данными требуется настройка backend-системы.' 
+              : 'Ескерту: Бұл тіркеу формасының демо нұсқасы. Нақты деректермен жұмыс істеу үшін backend жүйесін орнату қажет.'}
+          </div>
         </form>
         
         <div className="mt-6 text-center">
