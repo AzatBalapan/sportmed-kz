@@ -55,6 +55,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, tr
       }
     }
 
+    // Make sure we return a string
     return typeof current === 'string' ? current : path;
   };
 
@@ -69,7 +70,10 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, tr
         return key;
       }
     }
-    return translations[key][language] || key;
+    
+    // Ensure we return a string here
+    const translation = translations[key][language];
+    return typeof translation === 'string' ? translation : key;
   };
 
   return (
