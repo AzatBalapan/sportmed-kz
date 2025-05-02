@@ -6,7 +6,7 @@ const SocialLinks: React.FC = () => {
   return (
     <div className="fixed right-4 bottom-4 flex flex-col gap-2 z-50">
       <a 
-        href="https://wa.me/+77777777777" 
+        href="https://wa.me/+77066063636" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300"
