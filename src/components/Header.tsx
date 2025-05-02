@@ -6,7 +6,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
 
 export const Header: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
               {t('nav.team')}
             </Link>
             <Link to="/compliance" className="text-gray-700 hover:text-gov-blue font-medium">
-              {t('language') === 'ru' ? 'Комплаенс служба' : 'Комплаенс қызметі'}
+              {language === 'ru' ? 'Комплаенс служба' : 'Комплаенс қызметі'}
             </Link>
             <Link to="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.contacts')}
@@ -102,7 +102,7 @@ export const Header: React.FC = () => {
                 className="text-gray-700 hover:text-gov-blue font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('language') === 'ru' ? 'Комплаенс служба' : 'Комплаенс қызметі'}
+                {language === 'ru' ? 'Комплаенс служба' : 'Комплаенс қызметі'}
               </Link>
               <Link
                 to="/#contacts"
