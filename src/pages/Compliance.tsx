@@ -66,7 +66,7 @@ const Compliance: React.FC = () => {
           <p className="text-gray-600">{t('compliance.description')}</p>
         </div>
         
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {documents.map((doc) => (
             <Card key={doc.id} className="transition-all hover:shadow-lg">
               <CardHeader>
@@ -81,9 +81,9 @@ const Compliance: React.FC = () => {
                 <a
                   href={doc.path}
                   download={doc.fileName}
-                  className="w-auto"
+                  className="w-full"
                 >
-                  <Button>
+                  <Button className="w-full flex items-center justify-center">
                     <Download className="mr-2 h-4 w-4" /> 
                     {t('compliance.download')}
                   </Button>
