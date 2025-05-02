@@ -3,10 +3,6 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 
 type Language = 'ru' | 'kz';
 
-// Define a recursive type for nested translations without circular reference
-type TranslationValue = string | { [key: string]: TranslationValue };
-type TranslationsType = Record<string, Record<string, TranslationValue>>;
-
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
@@ -17,7 +13,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 interface LanguageProviderProps {
   children: ReactNode;
-  translations: TranslationsType;
+  translations: Record<string, Record<string, string>>;
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, translations }) => {
@@ -40,22 +36,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, tr
     localStorage.setItem('language', newLanguage);
   };
 
-  // Translation function - updated to handle nested keys
+  // Translation function
   const t = (key: string): string => {
-    const keys = key.split('.');
-    let value: any = translations[language];
-    
-    for (const k of keys) {
-      if (value === undefined) return key;
-      value = value[k];
+    if (!translations[key]) {
+      console.warn(`Translation key "${key}" not found.`);
+      return key;
     }
-    
-    if (typeof value === 'string') {
-      return value;
-    }
-    
-    console.warn(`Translation key "${key}" not found or not a string.`);
-    return key;
+    return translations[key][language] || key;
   };
 
   return (
