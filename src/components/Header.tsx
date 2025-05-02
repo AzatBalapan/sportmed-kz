@@ -10,21 +10,6 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const handleContactClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    
-    // If on homepage, scroll to contacts section
-    if (location.pathname === '/') {
-      const contactsSection = document.getElementById('contacts');
-      if (contactsSection) {
-        contactsSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // If on other pages, navigate to home and then scroll to contacts
-      window.location.href = '/#contacts';
-    }
-  };
-
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
@@ -50,13 +35,9 @@ export const Header: React.FC = () => {
             <Link to="/compliance" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.compliance')}
             </Link>
-            <a 
-              href="/#contacts" 
-              onClick={handleContactClick}
-              className="text-gray-700 hover:text-gov-blue font-medium cursor-pointer"
-            >
+            <Link to="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.contacts')}
-            </a>
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -123,16 +104,13 @@ export const Header: React.FC = () => {
               >
                 {t('nav.compliance')}
               </Link>
-              <a
-                href="/#contacts"
-                onClick={(e) => {
-                  handleContactClick(e);
-                  setIsMenuOpen(false);
-                }}
-                className="text-gray-700 hover:text-gov-blue font-medium cursor-pointer"
+              <Link
+                to="/#contacts"
+                className="text-gray-700 hover:text-gov-blue font-medium"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.contacts')}
-              </a>
+              </Link>
               <div className="flex items-center justify-between pt-4">
                 <LanguageSwitcher />
                 <div className="flex space-x-2">

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -5,17 +6,15 @@ import TeamList from '@/components/TeamList';
 import TeamDetails from '@/components/TeamDetails';
 import { useLanguage } from '@/context/LanguageContext';
 import { Toaster } from '@/components/ui/toaster';
-import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 
 const Team: React.FC = () => {
   const { t } = useLanguage();
   const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
+      <main className="flex-grow">
         <div className="container mx-auto px-4 py-12">
           {!selectedDoctor ? (
             <>
@@ -29,10 +28,8 @@ const Team: React.FC = () => {
         </div>
       </main>
       <Footer />
-      <ScrollToTop />
-      <SocialLinks />
       <Toaster />
-    </>
+    </div>
   );
 };
 
