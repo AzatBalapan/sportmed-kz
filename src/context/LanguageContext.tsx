@@ -3,6 +3,11 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 
 type Language = 'ru' | 'kz';
 
+// Define a type for our nested translations structure
+type TranslationsObject = {
+  [key: string]: TranslationsObject | string;
+}
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
@@ -13,7 +18,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 interface LanguageProviderProps {
   children: ReactNode;
-  translations: Record<string, Record<string, string>>;
+  translations: Record<string, Record<string, TranslationsObject | string>>;
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, translations }) => {
@@ -36,11 +41,33 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, tr
     localStorage.setItem('language', newLanguage);
   };
 
-  // Translation function
+  // Helper function to get a nested translation using a dot notation key
+  const getNestedTranslation = (obj: any, path: string): string => {
+    const keys = path.split('.');
+    let current = obj;
+
+    for (const key of keys) {
+      if (current && typeof current === 'object' && key in current) {
+        current = current[key];
+      } else {
+        console.warn(`Translation key "${path}" not found.`);
+        return path;
+      }
+    }
+
+    return typeof current === 'string' ? current : path;
+  };
+
+  // Translation function that supports dot notation
   const t = (key: string): string => {
     if (!translations[key]) {
-      console.warn(`Translation key "${key}" not found.`);
-      return key;
+      try {
+        // Handle nested keys with dot notation
+        return getNestedTranslation(translations, key);
+      } catch (error) {
+        console.warn(`Translation key "${key}" not found.`);
+        return key;
+      }
     }
     return translations[key][language] || key;
   };

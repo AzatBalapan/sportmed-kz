@@ -32,6 +32,9 @@ export const Header: React.FC = () => {
             <Link to="/team" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.team')}
             </Link>
+            <Link to="/compliance" className="text-gray-700 hover:text-gov-blue font-medium">
+              {t('nav.compliance')}
+            </Link>
             <Link to="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.contacts')}
             </Link>
@@ -93,6 +96,13 @@ export const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.team')}
+              </Link>
+              <Link
+                to="/compliance"
+                className="text-gray-700 hover:text-gov-blue font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.compliance')}
               </Link>
               <Link
                 to="/#contacts"
