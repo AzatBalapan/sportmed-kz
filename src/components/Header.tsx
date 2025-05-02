@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
@@ -9,8 +9,9 @@ export const Header: React.FC = () => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
-  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     
     if (location.pathname === '/') {
@@ -21,7 +22,12 @@ export const Header: React.FC = () => {
       }
     } else {
       // If on another page, navigate to homepage and then scroll
-      window.location.href = '/#contacts';
+      navigate('/#contacts');
+    }
+    
+    // Close mobile menu if open
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
     }
   };
 
@@ -50,7 +56,11 @@ export const Header: React.FC = () => {
             <Link to="/compliance" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.compliance')}
             </Link>
-            <a href="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium" onClick={scrollToContact}>
+            <a 
+              href="/#contacts" 
+              className="text-gray-700 hover:text-gov-blue font-medium" 
+              onClick={handleContactClick}
+            >
               {t('nav.contacts')}
             </a>
           </nav>
@@ -122,10 +132,7 @@ export const Header: React.FC = () => {
               <a
                 href="/#contacts"
                 className="text-gray-700 hover:text-gov-blue font-medium"
-                onClick={(e) => {
-                  setIsMenuOpen(false);
-                  scrollToContact(e);
-                }}
+                onClick={handleContactClick}
               >
                 {t('nav.contacts')}
               </a>
