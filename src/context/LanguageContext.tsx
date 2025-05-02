@@ -3,8 +3,8 @@ import React, { createContext, useState, useContext, useEffect, ReactNode } from
 
 type Language = 'ru' | 'kz';
 
-// Define a recursive type for nested translations
-type TranslationValue = string | Record<string, TranslationValue>;
+// Define a recursive type for nested translations without circular reference
+type TranslationValue = string | { [key: string]: TranslationValue };
 type TranslationsType = Record<string, Record<string, TranslationValue>>;
 
 interface LanguageContextType {
