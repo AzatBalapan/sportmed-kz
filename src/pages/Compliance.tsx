@@ -6,6 +6,8 @@ import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
+import ScrollToTop from '@/components/ScrollToTop';
+import SocialLinks from '@/components/SocialLinks';
 
 const Compliance: React.FC = () => {
   const { t } = useLanguage();
@@ -92,6 +94,8 @@ const Compliance: React.FC = () => {
         </div>
       </main>
       <Footer />
+      <ScrollToTop />
+      <SocialLinks />
     </>
   );
 };
