@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/fbdf7e64-0e5a-414f-86ad-f1b05b9580c4.png" alt="Logo" className="h-10" />
+            <img src="/lovable-uploads/output-onlinejpgtools.png" alt="Logo" className="h-10" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -31,6 +31,9 @@ export const Header: React.FC = () => {
             </Link>
             <Link to="/team" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.team')}
+            </Link>
+            <Link to="/compliance" className="text-gray-700 hover:text-gov-blue font-medium">
+              {t('language') === 'ru' ? 'Комплаенс служба' : 'Комплаенс қызметі'}
             </Link>
             <Link to="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.contacts')}
@@ -93,6 +96,13 @@ export const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.team')}
+              </Link>
+              <Link
+                to="/compliance"
+                className="text-gray-700 hover:text-gov-blue font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('language') === 'ru' ? 'Комплаенс служба' : 'Комплаенс қызметі'}
               </Link>
               <Link
                 to="/#contacts"

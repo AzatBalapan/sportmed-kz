@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,47 +9,75 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
-import { toast } from '@/components/ui/sonner';
 
 export const LoginForm: React.FC = () => {
   const { t } = useLanguage();
-  const { toast: uiToast } = useToast();
+  const { toast } = useToast();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError('');
 
-    // Simulate API call delay
-    setTimeout(() => {
-      // Show backend notification
-      toast(
-        t('language') === 'ru' 
-          ? 'Функционал требует подключения к базе данных' 
-          : 'Функционалдық дерекқорға қосылуды талап етеді',
-        {
-          description: t('language') === 'ru' 
-            ? 'В данный момент вход работает в демонстрационном режиме. Для полноценной работы необходима интеграция с бэкендом.' 
-            : 'Қазіргі уақытта кіру көрсетілім режимінде жұмыс істейді. Толық жұмыс істеу үшін бэкендпен интеграция қажет.',
-          duration: 8000,
-        }
-      );
+    try {
+      // Get users from localStorage
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
       
-      uiToast({
-        title: t('language') === 'ru' ? 'Демо-режим' : 'Демо режимі',
-        description: t('language') === 'ru' ? 'Система входа работает в демонстрационном режиме.' : 'Жүйеге кіру көрсетілім режимінде жұмыс істейді.',
+      // Find user with matching email
+      const user = users.find((u: any) => u.email === email);
+      
+      if (!user) {
+        setError(t('language') === 'ru' 
+          ? 'Пользователь с таким email не найден' 
+          : 'Мұндай электрондық поштамен пайдаланушы табылмады');
+        setIsLoading(false);
+        return;
+      }
+      
+      // Check password
+      if (user.password !== password) {
+        setError(t('language') === 'ru' 
+          ? 'Неверный пароль' 
+          : 'Қате құпия сөз');
+        setIsLoading(false);
+        return;
+      }
+      
+      // Login successful
+      
+      // Save auth state
+      localStorage.setItem('currentUser', JSON.stringify({
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        rememberMe
+      }));
+      
+      toast({
+        title: t('language') === 'ru' ? 'Успешный вход' : 'Сәтті кіру',
+        description: t('language') === 'ru' 
+          ? `Добро пожаловать, ${user.name}!` 
+          : `Қош келдіңіз, ${user.name}!`,
       });
       
+      // Redirect to home page
+      setTimeout(() => {
+        navigate('/');
+      }, 1500);
+    } catch (error) {
+      console.error('Login error:', error);
+      setError(t('language') === 'ru' 
+          ? 'Произошла ошибка при входе. Пожалуйста, попробуйте снова.' 
+          : 'Кіру кезінде қате орын алды. Қайталап көріңіз.');
+    } finally {
       setIsLoading(false);
-      
-      // Reset form
-      setEmail('');
-      setPassword('');
-      setRememberMe(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -57,6 +86,12 @@ export const LoginForm: React.FC = () => {
         <CardTitle className="text-2xl text-center">{t('login.title')}</CardTitle>
       </CardHeader>
       <CardContent>
+        {error && (
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-md text-sm">
+            {error}
+          </div>
+        )}
+        
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">{t('login.email')}</Label>
@@ -117,8 +152,8 @@ export const LoginForm: React.FC = () => {
           
           <div className="text-xs text-amber-600 mt-2 text-center">
             {t('language') === 'ru' 
-              ? 'Примечание: Это демо-версия формы входа. Для работы с реальными данными требуется настройка backend-системы.' 
-              : 'Ескерту: Бұл кіру формасының демо нұсқасы. Нақты деректермен жұмыс істеу үшін backend жүйесін орнату қажет.'}
+              ? 'Примечание: Для демонстрации используется локальное хранилище браузера.' 
+              : 'Ескерту: Көрсету үшін браузердің жергілікті қоймасы пайдаланылады.'}
           </div>
         </form>
         
