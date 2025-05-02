@@ -1,3 +1,4 @@
+
 export const translations = {
   ru: {
     nav: {
@@ -38,6 +39,7 @@ export const translations = {
     about: {
       title: 'О нас',
       description: 'Информация о нашем медицинском центре',
+      more: 'Узнать больше'
     },
     teamPage: {
       title: 'Наша команда',
@@ -55,15 +57,28 @@ export const translations = {
       individual: 'Индивидуальный подход',
       complex: 'Комплексный подход',
     },
-    contacts: {
+    hero: {
+      title: 'Спортивный медицинский центр города Астаны',
+      subtitle: 'Качественная медицинская помощь для спортсменов любого уровня',
+      button: 'Наши услуги'
+    },
+    contact: {
       title: 'Контакты',
       address: 'Адрес',
       phone: 'Телефон',
       email: 'Электронная почта',
       workingHours: 'Время работы',
+      hours: 'Время работы',
+      'address.value': 'ул. Куйши Дина, 36А, Астана',
+      'phone.value': '+7 (7172) 27-85-95',
+      'email.value': 'info@sportmedcenter.kz',
+      'hours.value': 'Пн-Пт: 9:00-18:00, Сб: 9:00-13:00'
     },
     footer: {
       copyright: 'Все права защищены',
+      rights: '© 2024 СпортМед. Все права защищены.',
+      policy: 'Политика конфиденциальности',
+      terms: 'Условия использования'
     },
     
     // Add the compliance section
@@ -112,6 +127,7 @@ export const translations = {
     about: {
       title: 'Біз туралы',
       description: 'Біздің медициналық орталық туралы ақпарат',
+      more: 'Толығырақ'
     },
     teamPage: {
       title: 'Біздің команда',
@@ -129,15 +145,28 @@ export const translations = {
       individual: 'Жеке тәсіл',
       complex: 'Кешенді тәсіл',
     },
-    contacts: {
+    hero: {
+      title: 'Астана қаласының спорттық медициналық орталығы',
+      subtitle: 'Кез келген деңгейдегі спортшыларға сапалы медициналық көмек',
+      button: 'Біздің қызметтер'
+    },
+    contact: {
       title: 'Байланыстар',
       address: 'Мекен-жайы',
       phone: 'Телефон',
       email: 'Электрондық пошта',
       workingHours: 'Жұмыс уақыты',
+      hours: 'Жұмыс уақыты',
+      'address.value': 'Күйші Діна көшесі, 36А, Астана',
+      'phone.value': '+7 (7172) 27-85-95',
+      'email.value': 'info@sportmedcenter.kz',
+      'hours.value': 'Дс-Жм: 9:00-18:00, Сб: 9:00-13:00'
     },
     footer: {
       copyright: 'Барлық құқықтар қорғалған',
+      rights: '© 2024 СпортМед. Барлық құқықтар қорғалған.',
+      policy: 'Құпиялылық саясаты',
+      terms: 'Қолдану шарттары'
     },
     
     // Add the compliance section
