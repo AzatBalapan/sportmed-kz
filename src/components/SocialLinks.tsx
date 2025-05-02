@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Instagram, WhatsApp } from 'lucide-react';
+import { Instagram, MessageCircle } from 'lucide-react';
 
 const SocialLinks: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const SocialLinks: React.FC = () => {
         className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full shadow-lg transition-all"
         aria-label="WhatsApp"
       >
-        <WhatsApp className="h-5 w-5" />
+        <MessageCircle className="h-5 w-5" />
       </a>
     </div>
   );
