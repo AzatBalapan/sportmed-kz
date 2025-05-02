@@ -10,6 +10,21 @@ export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    if (location.pathname === '/') {
+      // If on homepage, scroll to contacts section
+      const contactSection = document.getElementById('contacts');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If on another page, navigate to homepage and then scroll
+      window.location.href = '/#contacts';
+    }
+  };
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
@@ -35,9 +50,9 @@ export const Header: React.FC = () => {
             <Link to="/compliance" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.compliance')}
             </Link>
-            <Link to="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium">
+            <a href="/#contacts" className="text-gray-700 hover:text-gov-blue font-medium" onClick={scrollToContact}>
               {t('nav.contacts')}
-            </Link>
+            </a>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -104,13 +119,16 @@ export const Header: React.FC = () => {
               >
                 {t('nav.compliance')}
               </Link>
-              <Link
-                to="/#contacts"
+              <a
+                href="/#contacts"
                 className="text-gray-700 hover:text-gov-blue font-medium"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  setIsMenuOpen(false);
+                  scrollToContact(e);
+                }}
               >
                 {t('nav.contacts')}
-              </Link>
+              </a>
               <div className="flex items-center justify-between pt-4">
                 <LanguageSwitcher />
                 <div className="flex space-x-2">
