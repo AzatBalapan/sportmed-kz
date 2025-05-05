@@ -56,6 +56,9 @@ export const Header: React.FC = () => {
             <Link to="/compliance" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.compliance')}
             </Link>
+            <Link to="/presidential-address" className="text-gray-700 hover:text-gov-blue font-medium">
+              {t('nav.presidential')}
+            </Link>
             <a 
               href="/#contacts" 
               className="text-gray-700 hover:text-gov-blue font-medium" 
@@ -128,6 +131,13 @@ export const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.compliance')}
+              </Link>
+              <Link
+                to="/presidential-address"
+                className="text-gray-700 hover:text-gov-blue font-medium"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('nav.presidential')}
               </Link>
               <a
                 href="/#contacts"
