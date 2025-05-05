@@ -24,14 +24,6 @@ export const LanguageSwitcher: React.FC = () => {
       >
         ҚАЗ
       </Button>
-      <Button 
-        variant={language === 'en' ? 'default' : 'outline'} 
-        size="sm"
-        onClick={() => setLanguage('en')}
-        className="font-medium"
-      >
-        ENG
-      </Button>
     </div>
   );
 };
