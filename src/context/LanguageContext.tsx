@@ -1,7 +1,7 @@
 
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 
-type Language = 'ru' | 'kz' | 'en';
+type Language = 'ru' | 'kz';
 
 // Define a type for our nested translations structure
 type TranslationsObject = {
@@ -27,7 +27,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, tr
   useEffect(() => {
     // Try to get language from localStorage
     const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'ru' || savedLanguage === 'kz' || savedLanguage === 'en')) {
+    if (savedLanguage && (savedLanguage === 'ru' || savedLanguage === 'kz')) {
       setLanguage(savedLanguage);
     } else {
       // Default to Russian
