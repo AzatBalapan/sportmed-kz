@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import Map from './Map';
 
-const address = 'Kuishi Dina 36a, Астана';
+const address = 'Куйши Дина 36А, Астана';
 
 export const ContactSection: React.FC = () => {
   const { t } = useLanguage();
