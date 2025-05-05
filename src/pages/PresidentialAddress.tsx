@@ -14,7 +14,7 @@ const PresidentialAddress: React.FC = () => {
 
   useEffect(() => {
     // Fetch Russian text
-    fetch('/lovable-uploads/poslanie1.txt')
+    fetch('/lovable-uploads/poslanie.txt')
       .then(response => response.text())
       .then(text => {
         setAddressText(text);
