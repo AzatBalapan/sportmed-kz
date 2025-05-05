@@ -17,13 +17,13 @@ const PresidentialAddress: React.FC = () => {
       <Header />
       <ScrollToTop />
       
-      <main className="flex-grow">
-        <div className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold mb-8 text-center">
+      <main className="flex-grow bg-slate-50">
+        <div className="container mx-auto px-4 py-8 max-w-4xl">
+          <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gov-dark-blue">
             {t('presidential.title')}
           </h1>
           
-          <div className="flex flex-col items-center mb-8">
+          <div className="flex flex-col items-center mb-10">
             <img 
               src="/lovable-uploads/president.jpg" 
               alt={t('presidential.image_alt')} 
@@ -34,14 +34,14 @@ const PresidentialAddress: React.FC = () => {
             </p>
           </div>
 
-          <div className="prose max-w-none">
+          <div className="prose max-w-none bg-white p-6 md:p-10 rounded-lg shadow-sm">
             {language === 'ru' ? (
-              <div>
-                <h2 className="text-2xl font-semibold mb-4 text-center">ЭКОНОМИЧЕСКИЙ КУРС СПРАВЕДЛИВОГО КАЗАХСТАНА</h2>
+              <div className="space-y-6 leading-relaxed">
+                <h2 className="text-2xl font-semibold mb-6 text-center text-gov-dark-blue">ЭКОНОМИЧЕСКИЙ КУРС СПРАВЕДЛИВОГО КАЗАХСТАНА</h2>
                 
-                <p className="mb-4">Уважаемые соотечественники!</p>
+                <p className="mb-4 text-lg">Уважаемые соотечественники!</p>
                 
-                <p className="mb-4">Дорогие казахстанцы!</p>
+                <p className="mb-4 text-lg">Дорогие казахстанцы!</p>
                 
                 <p className="mb-4">В этом году мы отмечаем важную историческую дату – 1 марта исполняется 30 лет Ассамблее народа Казахстана.</p>
                 
@@ -104,12 +104,12 @@ const PresidentialAddress: React.FC = () => {
                 <p className="mb-4">В ближайшие годы основными приоритетами экономической политики должны стать рост конкурентоспособности производства и кратное повышение производительности труда.</p>
               </div>
             ) : (
-              <div>
-                <h2 className="text-2xl font-semibold mb-4 text-center">ӘДІЛЕТТІ ҚАЗАҚСТАННЫҢ ЭКОНОМИКАЛЫҚ БАҒДАРЫ</h2>
+              <div className="space-y-6 leading-relaxed">
+                <h2 className="text-2xl font-semibold mb-6 text-center text-gov-dark-blue">ӘДІЛЕТТІ ҚАЗАҚСТАННЫҢ ЭКОНОМИКАЛЫҚ БАҒДАРЫ</h2>
                 
-                <p className="mb-4">Құрметті отандастар!</p>
+                <p className="mb-4 text-lg">Құрметті отандастар!</p>
                 
-                <p className="mb-4">Қадірлі қазақстандықтар!</p>
+                <p className="mb-4 text-lg">Қадірлі қазақстандықтар!</p>
                 
                 <p className="mb-4">Биыл маңызды тарихи датаны атап өтеміз – 1 наурызда Қазақстан халқы Ассамблеясына 30 жыл толады.</p>
                 
