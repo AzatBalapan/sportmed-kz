@@ -1,7 +1,7 @@
 
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 
-type Language = 'ru' | 'kz';
+type Language = 'ru' | 'kz' | 'en';
 
 // Define a type for our nested translations structure
 type TranslationsObject = {
@@ -23,17 +23,20 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, translations }) => {
   const [language, setLanguage] = useState<Language>('ru');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     // Try to get language from localStorage
     const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'ru' || savedLanguage === 'kz')) {
+    if (savedLanguage && (savedLanguage === 'ru' || savedLanguage === 'kz' || savedLanguage === 'en')) {
       setLanguage(savedLanguage);
     } else {
       // Default to Russian
       setLanguage('ru');
       localStorage.setItem('language', 'ru');
     }
+    // Set mounted to true after initial language is set
+    setMounted(true);
   }, []);
 
   const changeLanguage = (newLanguage: Language) => {
@@ -75,6 +78,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, tr
     const translation = translations[key][language];
     return typeof translation === 'string' ? translation : key;
   };
+
+  // Prevent rendering until after client-side hydration
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t }}>
