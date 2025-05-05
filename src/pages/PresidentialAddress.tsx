@@ -25,7 +25,7 @@ const PresidentialAddress: React.FC = () => {
     
     // For now, using the same text for Kazakh as a placeholder
     // In a real implementation, you would fetch a different file
-    fetch('/lovable-uploads/poslanie.txt')
+    fetch('/lovable-uploads/poslaniye_kaz.txt')
       .then(response => response.text())
       .then(text => {
         setAddressTextKz(text);
