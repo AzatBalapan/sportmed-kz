@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import { doctors } from '@/data/doctors';
 
-// Services data structure with both languages
+// Complete service data structure with both languages
 const serviceData = {
   ru: {
     title: "Наши услуги",
