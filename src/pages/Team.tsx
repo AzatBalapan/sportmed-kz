@@ -1,15 +1,25 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TeamList from '@/components/TeamList';
 import TeamDetails from '@/components/TeamDetails';
 import { useLanguage } from '@/context/LanguageContext';
 import { Toaster } from '@/components/ui/toaster';
+import { useLocation } from 'react-router-dom';
 
 const Team: React.FC = () => {
   const { t } = useLanguage();
   const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
+  const location = useLocation();
+  
+  // Check if we have a selectedDoctorId in the location state (coming from Services page)
+  useEffect(() => {
+    const state = location.state as { selectedDoctorId?: string } | undefined;
+    if (state && state.selectedDoctorId) {
+      setSelectedDoctor(state.selectedDoctorId);
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen flex flex-col">
