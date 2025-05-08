@@ -26,6 +26,36 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
     );
   }
 
+  // Department translations
+  const getDepartmentName = () => {
+    if (!doctor.department) return "";
+    
+    const departmentMap: {[key: string]: {ru: string, kz: string}} = {
+      "management": {
+        ru: "Управленческий персонал",
+        kz: "Басқару қызметкерлері"
+      },
+      "sports-medicine": {
+        ru: "Отделение спортивной медицины и медико-биологического обеспечения",
+        kz: "Спорт медицинасы және медициналық-биологиялық қамтамасыз ету бөлімі"
+      },
+      "specialists": {
+        ru: "Отделение специалистов по профилю",
+        kz: "Мамандандырылған дәрігерлер бөлімі"
+      },
+      "diagnostics": {
+        ru: "Отделении функциональной диагностики",
+        kz: "Функционалды диагностика бөлімі"
+      },
+      "physiotherapy": {
+        ru: "Отделение физиотерапии, лечебной физкультуры и массажа",
+        kz: "Физиотерапия, емдік дене шынықтыру және массаж бөлімі"
+      }
+    };
+    
+    return departmentMap[doctor.department]?.[language] || "";
+  };
+
   return (
     <div className="max-w-4xl mx-auto">
       <Button onClick={onBack} variant="ghost" className="mb-6">
@@ -52,10 +82,19 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
           <h1 className="text-3xl font-serif font-bold mb-2">{doctor.name[language]}</h1>
           <p className="text-xl text-gov-blue mb-4">{doctor.position[language]}</p>
           
-          <div className="mb-6">
-            <h2 className="text-lg font-medium mb-2">{t('team.experience')}</h2>
-            <p className="text-gray-700">{doctor.experience[language]}</p>
-          </div>
+          {getDepartmentName() && (
+            <div className="mb-6">
+              <h2 className="text-lg font-medium mb-2">{language === 'ru' ? 'Отдел' : 'Бөлім'}</h2>
+              <p className="text-gray-700">{getDepartmentName()}</p>
+            </div>
+          )}
+          
+          {doctor.experience && doctor.experience[language] && (
+            <div className="mb-6">
+              <h2 className="text-lg font-medium mb-2">{t('team.experience')}</h2>
+              <p className="text-gray-700">{doctor.experience[language]}</p>
+            </div>
+          )}
           
           {doctor.education && doctor.education[language] && (
             <div className="mb-6">
