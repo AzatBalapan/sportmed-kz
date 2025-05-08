@@ -1,15 +1,11 @@
-
-import React, { useMemo } from 'react';
+import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
-import { doctors } from '@/data/doctors';
 
-// Complete service data structure with both languages
+// Services data structure with both languages
 const serviceData = {
   ru: {
     title: "Наши услуги",
@@ -17,14 +13,6 @@ const serviceData = {
     sections: [
       {
         title: "Отделение спортивной медицины и медико-биологического обеспечения",
-        specialists: [
-          "Жиенгазина А.Н. заведующая отделом",
-          "Кайратбек Айгерим",
-          "Адильбаев Бауыржан Клышбекович",
-          "Кожахметова Жанна Ербулатовна",
-          "Айдарбеков Арыс Айдарбекұлы",
-          "Болтаев Олжас Талгатович"
-        ],
         services: [
           {
             title: "Углубленный медицинский осмотр",
@@ -105,18 +93,6 @@ const serviceData = {
       },
       {
         title: "Отделение специалистов по профилю",
-        specialists: [
-          "Абдыхадиров Данияр Нурланович заведующая отделом",
-          "Нұрғалиева Зере Тілеубекқызы врач УЗИ",
-          "Нығметолланова Сәния Миржанқызы эндокринолог",
-          "Макенқызы Ақерке офтальмолог",
-          "Тойгулова Динара Баймухановна стоматолог",
-          "Ахметова Гульнара Умурзаковна оториноларинголог",
-          "Ерболатова Гульжаухар Мирамбековна кардиолог",
-          "Нартбаев Есмұрат Кажымуханович хирург – травматолог",
-          "Хамитов Ержан Рахимович невролог",
-          "Утешева Сауле Шакеновна гинеколог"
-        ],
         services: [
           {
             title: "Консультация невропатолог",
@@ -150,10 +126,9 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Адрес:",
-      address: "Куйши Дина 36А, Астана",
+      address: "Kuishi Dina 36А, Астана",
       phone: "+7 (706) 606-3636"
-    },
-    viewMore: "Подробнее"
+    }
   },
   kz: {
     title: "Біздің қызметтеріміз",
@@ -161,14 +136,6 @@ const serviceData = {
     sections: [
       {
         title: "Спорттық медицина және медициналық-биологиялық қамтамасыз ету бөлімі",
-        specialists: [
-          "Жиенгазина А.Н. бөлім меңгерушісі",
-          "Қайратбек Айгерім",
-          "Әділбаев Бауыржан Клышбекұлы",
-          "Қожахметова Жанна Ерболатқызы",
-          "Айдарбеков Арыс Айдарбекұлы",
-          "Болтаев Олжас Талгатұлы"
-        ],
         services: [
           {
             title: "Тереңдетілген медициналық тексеру",
@@ -249,18 +216,6 @@ const serviceData = {
       },
       {
         title: "Бейіндік мамандар бөлімі",
-        specialists: [
-          "Абдыхадиров Данияр Нұрланұлы бөлім меңгерушісі",
-          "Нұрғалиева Зере Тілеубекқызы УДЗ дәрігері",
-          "Нығметолланова Сәния Миржанқызы эндокринолог",
-          "Мәкенқызы Ақерке офтальмолог",
-          "Тойгулова Динара Баймухановна стоматолог",
-          "Ахметова Гүлнара Умурзақовна оториноларинголог",
-          "Ерболатова Гүлжаухар Мирамбекқызы кардиолог",
-          "Нартбаев Есмұрат Қажымұханұлы хирург – травматолог",
-          "Хамитов Ержан Рахимович невролог",
-          "Өтешева Сәуле Шакенқызы гинеколог"
-        ],
         services: [
           {
             title: "Невропатолог кеңесі",
@@ -268,7 +223,7 @@ const serviceData = {
           },
           {
             title: "Хирург-травматолог кеңесі",
-            description: `Жергілікті инфильтрациялық новокаиндық блокада. Барлық сынық түрлерінде гипс қолдану. Байлаумен гипс таңғышын босату. Гипс таңғышын ауыстыру. Гипс таңғышын шешу. Буын маңындағы қапшықты тесу/инъекция (1 буын), дәрілермен блокада. Аяқ-қолдардың асқынбаған шығуларын жабық түзету. Аяқ-қолдардың асқынбаған сынықтарының жабық репозициясы. Буынды тесу, гематроз`
+            description: `Жергілікті инфильтрациялық новокаиндық блокада. Барлық сынық түрлерінде гипс қолдану. Байлаумен гипс таңғышын босату. Гипс таңғышын ауыстыру. Гипс таңғышын шешу. Буын маңындағы қапшықты тесу/инъекция (1 буын), дәрілермен блокада. Аяқ-қолдардың асқынбаған шығуларын жабық түзету. Аяқ-қолдардың асқынбаған сынықтарының жабық репозициясы. Буынды тесу, гематро��`
           },
           {
             title: "Офтальмолог кеңесі",
@@ -294,60 +249,16 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Мекенжай:",
-      address: "Куйши Дина 36А, Астана",
+      address: "Kuishi Dina 36А, Астана",
       phone: "+7 (706) 606-3636"
-    },
-    viewMore: "Толығырақ"
+    }
   }
-};
-
-// Helper function to match specialists with team members
-const findDoctorIdByName = (name: string, doctors: any[]) => {
-  // Extract the first name and last name from the specialist string
-  const nameParts = name.split(' ');
-  if (nameParts.length < 2) return null;
-  
-  const lastName = nameParts[0].toLowerCase();
-  const firstName = nameParts[1].toLowerCase();
-  
-  // Find a matching doctor in the doctors array
-  return doctors.find(doctor => {
-    const ruName = doctor.name.ru.toLowerCase();
-    const kzName = doctor.name.kz.toLowerCase();
-    
-    return (ruName.includes(lastName) && ruName.includes(firstName)) || 
-           (kzName.includes(lastName) && kzName.includes(firstName));
-  })?.id || null;
 };
 
 const Services: React.FC = () => {
   const { language } = useLanguage();
-  const navigate = useNavigate();
   const lang = language as "ru" | "kz";
   const data = serviceData[lang];
-  
-  // Prepare the mapping of specialist names to doctor IDs
-  const specialistToDoctorMap = useMemo(() => {
-    const map = new Map<string, string | null>();
-    
-    // Process all specialists from all sections
-    for (const section of Object.values(serviceData.ru.sections)) {
-      if (section.specialists) {
-        section.specialists.forEach(specialist => {
-          const doctorId = findDoctorIdByName(specialist, doctors);
-          map.set(specialist, doctorId);
-        });
-      }
-    }
-    
-    return map;
-  }, []);
-  
-  const handleViewMore = (doctorId: string | null) => {
-    if (doctorId) {
-      navigate('/team', { state: { selectedDoctorId: doctorId } });
-    }
-  };
 
   return (
     <>
@@ -366,41 +277,6 @@ const Services: React.FC = () => {
                 {section.title}
               </h2>
               
-              {/* Specialists List */}
-              {section.specialists && section.specialists.length > 0 && (
-                <div className="mb-6 bg-white/80 rounded-lg p-5 shadow">
-                  <h3 className="text-xl font-medium mb-4 text-gov-dark-blue">
-                    {lang === 'ru' ? 'Специалисты:' : 'Мамандар:'}
-                  </h3>
-                  <div className="space-y-3">
-                    {section.specialists.map((specialist, idx) => {
-                      const doctorId = specialistToDoctorMap.get(
-                        lang === 'ru' 
-                          ? serviceData.ru.sections[sectionIndex].specialists?.[idx] || ''
-                          : serviceData.ru.sections[sectionIndex].specialists?.[idx] || ''
-                      );
-                      
-                      return (
-                        <div key={idx} className="flex flex-wrap items-center justify-between gap-2 py-2 px-3 bg-gray-50 rounded">
-                          <span>{specialist}</span>
-                          {doctorId && (
-                            <Button 
-                              variant="outline" 
-                              size="sm"
-                              className="text-gov-blue border-gov-blue hover:bg-gov-blue hover:text-white"
-                              onClick={() => handleViewMore(doctorId)}
-                            >
-                              {data.viewMore}
-                            </Button>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-              
-              {/* Services List */}
               <div className="space-y-8">
                 {section.services.map((service, serviceIndex) => (
                   <Card key={serviceIndex} className="bg-white/90 shadow hover:shadow-md transition-shadow">
