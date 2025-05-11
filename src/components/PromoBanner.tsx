@@ -67,12 +67,15 @@ export const PromoBanner: React.FC = () => {
               {t('language') === 'ru' ? 'Видео о нашем центре' : 'Біздің орталық туралы бейне'}
             </h3>
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-              <div className="w-full h-0 pt-[56.25%] bg-gray-800 relative flex items-center justify-center">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-opacity-70">
-                    {t('language') === 'ru' ? 'Здесь будет видео о центре' : 'Мұнда орталық туралы бейне болады'}
-                  </div>
-                </div>
+              <div className="w-full h-0 pt-[56.25%] bg-gray-800 relative">
+                <iframe
+                  className="absolute inset-0 w-full h-full"
+                  src="https://www.youtube.com/embed/BSDf-6yM_P4"
+                  title="Sportmed Video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
