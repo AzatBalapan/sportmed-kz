@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { useMobile } from '@/hooks/use-mobile';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +15,7 @@ import {
 
 export const Header: React.FC = () => {
   const { t } = useLanguage();
-  const { isMobile } = useMobile();
+  const isMobile = useIsMobile();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);

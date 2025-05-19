@@ -41,9 +41,9 @@ export const translations = {
     en: 'Team'
   },
   'nav.compliance': {
-    ru: 'Комплаенс',
-    kz: 'Комплаенс',
-    en: 'Compliance'
+    ru: 'Комплаенс служба',
+    kz: 'Комплаенс қызметі',
+    en: 'Compliance Service'
   },
   'nav.presidentialAddress': {
     ru: 'Послание президента',
@@ -69,11 +69,6 @@ export const translations = {
     ru: 'Регистрация',
     kz: 'Тіркелу',
     en: 'Register'
-  },
-  'nav.compliance': {
-    ru: 'Комплаенс служба',
-    kz: 'Комплаенс қызметі',
-    en: 'Compliance Service'
   },
   'nav.presidential': {
     ru: 'Послание Президента',
