@@ -5,14 +5,21 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Eye } from 'lucide-react';
+import { Eye } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import SocialLinks from '@/components/SocialLinks';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose, DialogDescription } from '@/components/ui/dialog';
 
+interface Document {
+  id: number;
+  title: string;
+  fileName: string; // Add this property to the type
+  path: string;
+}
+
 const Compliance: React.FC = () => {
   const { t, language } = useLanguage();
-  const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string; id: number } | null>(null);
+  const [selectedDocument, setSelectedDocument] = useState<Document | null>(null);
   const [documentContent, setDocumentContent] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -28,7 +35,7 @@ const Compliance: React.FC = () => {
     }
   }, [selectedDocument]);
 
-  const documents = [
+  const documents: Document[] = [
     {
       id: 1,
       title: 'Антикоррупционная политика',
