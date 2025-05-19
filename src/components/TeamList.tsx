@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -23,19 +22,14 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
   const { language } = useLanguage();
   const navigate = useNavigate();
 
-  // Define departments
+  // Define departments - remove unwanted departments and reorganize
   const departments: Department[] = [
     { id: 'management', nameRu: 'Управленческий персонал', nameKz: 'Басқару қызметкерлері', order: 1 },
-    { id: 'accounting', nameRu: 'Отдел учета и планирования', nameKz: 'Есеп және жоспарлау бөлімі', order: 2 },
-    { id: 'legal', nameRu: 'Правовой и кадровый отдел', nameKz: 'Құқық және кадр бөлімі', order: 3 },
-    { id: 'administrative', nameRu: 'Административно-хозяйственный отдел', nameKz: 'Әкімшілік-шаруашылық бөлім', order: 4 },
-    { id: 'methodical', nameRu: 'Организационно-методический отдел', nameKz: 'Ұйымдастыру-әдістемелік бөлім', order: 5 },
-    { id: 'nursing', nameRu: 'Главная медицинская сестра', nameKz: 'Бас мейірбике', order: 6 },
-    { id: 'sports-medicine', nameRu: 'Отделение спортивной медицины и медико-биологического обеспечения', nameKz: 'Спорт медицинасы және медициналық-биологиялық қамтамасыз ету бөлімі', order: 7 },
-    { id: 'specialists', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 8 },
-    { id: 'diagnostics', nameRu: 'Отделении функциональной диагностики', nameKz: 'Функционалды диагностика бөлімі', order: 9 },
-    { id: 'physiotherapy', nameRu: 'Отделение физиотерапии, лечебной физкультуры и массажа', nameKz: 'Физиотерапия, емдік дене шынықтыру және массаж бөлімі', order: 10 },
-    { id: 'mid-medical', nameRu: 'Средний медперсонал', nameKz: 'Орта медицина қызметкерлері', order: 11 },
+    { id: 'sports-medicine', nameRu: 'Отделение спортивной медицины и медико-биологического обеспечения', nameKz: 'Спорт медицинасы және медициналық-биологиялық қамтамасыз ету бөлімі', order: 2 },
+    { id: 'specialists', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 3 },
+    { id: 'diagnostics', nameRu: 'Отделении функциональной диагностики', nameKz: 'Функционалды диагностика бөлімі', order: 4 },
+    { id: 'physiotherapy', nameRu: 'Отделение физиотерапии, лечебной физкультуры и массажа', nameKz: 'Физиотерапия, емдік дене шынықтыру және массаж бөлімі', order: 5 },
+    { id: 'medical-staff', nameRu: 'Медицинский персонал', nameKz: 'Медициналық қызметкерлер', order: 6 },
   ];
 
   // Group doctors by department
@@ -46,54 +40,74 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     doctorsByDepartment[dept.id] = [];
   });
 
-  // Add doctors to their departments
+  // Staff data with department assignments and positions for ordering
+  const additionalStaff = [
+    // Management - remove Абдыхадиров Данияр Нурланович
+    { id: "nurmatov", name: { ru: "Нурматов Азамат Басимбекович", kz: "Нурматов Азамат Басимбекович" }, position: { ru: "Руководитель", kz: "Басшы" }, department: "management", order: 1 },
+    { id: "tuyebayev", name: { ru: "Туйебаев Ашим Еркинович", kz: "Туйебаев Ашим Еркинович" }, position: { ru: "Заместитель руководителя по административно-экономической части", kz: "Әкімшілік-экономикалық бөлімі жөніндегі басшының орынбасары" }, department: "management", order: 2 },
+    { id: "tazhiyeva", name: { ru: "Тажиева Айжан Альпикызы", kz: "Тажиева Айжан Альпикызы" }, position: { ru: "Комплаенс-офицер", kz: "Комплаенс-офицер" }, department: "management", order: 3 },
+    
+    // Specialists - update here with Абдыхадиров Данияр Нурланович first
+    { id: "abduhadirov", name: { ru: "Абдыхадиров Данияр Нурланович", kz: "Абдыхадиров Данияр Нурланович" }, position: { ru: "Заместитель руководителя по медицинской части", kz: "Медицина бөлімі жөніндегі басшының орынбасары" }, department: "specialists", order: 1 },
+    { id: "nurgalieva", name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" }, position: { ru: "Врач УЗИ", kz: "УДЗ дәрігері" }, department: "diagnostics", order: 1 },
+    { id: "nygmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Эндокринолог", kz: "Эндокринолог" }, department: "specialists", order: 3 },
+    { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "specialists", order: 4 },
+    { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "specialists", order: 5 },
+    { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гульнара Умурзаковна" }, position: { ru: "Оториноларинголог", kz: "Оториноларинголог" }, department: "specialists", order: 6 },
+    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "specialists", order: 7 },
+    { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "specialists", order: 8 },
+    { id: "khamitov", name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимович" }, position: { ru: "Невролог", kz: "Невролог" }, department: "specialists", order: 9 },
+    { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 10 },
+    
+    // Sports medicine department
+    { id: "zhiengazina", name: { ru: "Жиенгазина А.Н.", kz: "Жиенгазина А.Н." }, position: { ru: "Заведующая отделом", kz: "Заведующая отделом" }, department: "sports-medicine", order: 1 },
+    { id: "kairatbek", name: { ru: "Кайратбек Айгерим", kz: "Кайратбек Айгерим" }, position: { ru: "Врач", kz: "Дәрігер" }, department: "physiotherapy", order: 3 },
+    { id: "adilbaev", name: { ru: "Адильбаев Бауыржан Клышбекович", kz: "Адильбаев Бауыржан Клышбекович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sports-medicine", order: 2 },
+    { id: "kozhakhmetova", name: { ru: "Кожахмето��а Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "sports-medicine", order: 4 },
+    { id: "aidarbekkov", name: { ru: "Айдарбеков Арыс Айдарбекұлы", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач", kz: "Дәрігер" }, department: "physiotherapy", order: 2 },
+    { id: "boltaev", name: { ru: "Болтаев Олжас Талгатович", kz: "Болтаев Олжас Талгатович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sports-medicine", order: 3 },
+    
+    // Combine nursing and mid-level staff into medical staff department
+    { id: "nigmetova", name: { ru: "Нигметова Асемгуль Алтаевна", kz: "Нигметова Асемгуль Алтаевна" }, position: { ru: "Главная медсестра", kz: "Бас мейірбике" }, department: "medical-staff", order: 1 },
+    { id: "tynyshtykova", name: { ru: "Тыныштықова Ләззат Елубайқызы", kz: "Тыныштықова Ләззат Елубайқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 2 },
+    { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 3 },
+    { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 4 },
+    { id: "tolegenova", name: { ru: "Толегенова Булбул Тлеубаевна", kz: "Толегенова Булбул Тлеубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 5 },
+    { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "medical-staff", order: 6 },
+  ];
+
+  // Add all existing doctors to their departments
   doctors.forEach(doctor => {
-    if (doctor.department) {
-      if (doctorsByDepartment[doctor.department]) {
-        doctorsByDepartment[doctor.department].push(doctor);
-      } else {
-        // Default to specialists if no valid department
-        doctorsByDepartment['specialists'].push(doctor);
+    // Find if the doctor is in our updated staff list
+    const staffMember = additionalStaff.find(staff => staff.id === doctor.id);
+    
+    if (staffMember) {
+      // Use the department from our updated mapping
+      const departmentId = staffMember.department;
+      if (doctorsByDepartment[departmentId]) {
+        doctorsByDepartment[departmentId].push({
+          ...doctor,
+          department: departmentId,
+          order: staffMember.order
+        });
       }
     } else {
-      // For backwards compatibility with existing data
-      doctorsByDepartment['specialists'].push(doctor);
+      // If not found in our mapping, keep it in the original department if available
+      if (doctor.department && doctorsByDepartment[doctor.department]) {
+        doctorsByDepartment[doctor.department].push({
+          ...doctor,
+          order: 999 // Default order for unmapped doctors
+        });
+      } else {
+        // Default to specialists if no valid department
+        doctorsByDepartment['specialists'].push({
+          ...doctor,
+          department: 'specialists',
+          order: 999
+        });
+      }
     }
   });
-
-  // Add people from the provided template who aren't in the doctors array
-  const additionalStaff = [
-    // Management
-    { id: "nurmatov", name: { ru: "Нурматов Азамат Басимбекович", kz: "Нурматов Азамат Басимбекович" }, position: { ru: "Руководитель", kz: "Басшы" }, department: "management" },
-    { id: "abduhadirov", name: { ru: "Абдыхадиров Данияр Нурланович", kz: "Абдыхадиров Данияр Нурланович" }, position: { ru: "Заместитель руководителя по медицинской части", kz: "Медицина бөлімі жөніндегі басшының орынбасары" }, department: "management" },
-    { id: "tuyebayev", name: { ru: "Туйебаев Ашим Еркинович", kz: "Туйебаев Ашим Еркинович" }, position: { ru: "Заместитель руководителя по административно-экономической части", kz: "Әкімшілік-экономикалық бөлімі жөніндегі басшының орынбасары" }, department: "management" },
-    { id: "tazhiyeva", name: { ru: "Тажиева Айжан Альпикызы", kz: "Тажиева Айжан Альпикызы" }, position: { ru: "Комплаенс-офицер", kz: "Комплаенс-офицер" }, department: "management" },
-    
-    // Accounting
-    { id: "bekmukhambet", name: { ru: "Бекмухамбет Салтанат", kz: "Бекмухамбет Салтанат" }, position: { ru: "Главный бухгалтер", kz: "Бас бухгалтер" }, department: "accounting" },
-    { id: "alibayev", name: { ru: "Алибаев Миргалим Серикович", kz: "Алибаев Миргалим Серикович" }, position: { ru: "Экономист", kz: "Экономист" }, department: "accounting" },
-    { id: "zhumukova", name: { ru: "Жумукова Жибек Бериковна", kz: "Жумукова Жибек Бериковна" }, position: { ru: "Бухгалтер", kz: "Бухгалтер" }, department: "accounting" },
-    
-    // Legal
-    { id: "alpysbekov", name: { ru: "Алпысбеков Бауыржан Кайыржанович", kz: "Алпысбеков Бауыржан Кайыржанович" }, position: { ru: "Менеджер по государственным закупкам", kz: "Мемлекеттік сатып алу жөніндегі менеджер" }, department: "legal" },
-    { id: "soltanbek", name: { ru: "Солтанбек Айгерім Нұрмағамбетқызы", kz: "Солтанбек Айгерім Нұрмағамбетқызы" }, position: { ru: "Делопроизводитель", kz: "Іс-қағаздар жүргізуші" }, department: "legal" },
-    
-    // Administrative
-    { id: "sarbasov", name: { ru: "Сарбасов Самат Амирович", kz: "Сарбасов Самат Амирович" }, position: { ru: "Администратор", kz: "Әкімші" }, department: "administrative" },
-    { id: "balapan", name: { ru: "Балапан Азат Берікжанұлы", kz: "Балапан Азат Берікжанұлы" }, position: { ru: "Специалист по ІТ", kz: "ІТ маман" }, department: "administrative" },
-    { id: "riskeldina", name: { ru: "Рыскельдина Таңшолпан Айманатқызы", kz: "Рыскельдина Таңшолпан Айманатқызы" }, position: { ru: "Секретарь-референт", kz: "Хатшы-референт" }, department: "administrative" },
-    { id: "ortbayeva", name: { ru: "Ортбаева Лаура Серикказыкызы", kz: "Ортбаева Лаура Серикказыкызы" }, position: { ru: "Санитар", kz: "Санитар" }, department: "administrative" },
-    
-    // Chief nurse
-    { id: "nigmetova", name: { ru: "Нигметова Асемгуль Алтаевна", kz: "Нигметова Асемгуль Алтаевна" }, position: { ru: "Главная медсестра", kz: "Бас мейірбике" }, department: "nursing" },
-    
-    // Middle medical personnel
-    { id: "tynyshtykova", name: { ru: "Тыныштықова Ләззат Елубайқызы", kz: "Тыныштықова Ләззат Елубайқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "mid-medical" },
-    { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "mid-medical" },
-    { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "mid-medical" },
-    { id: "tolegenova", name: { ru: "Толегенова Булбул Тлеубаевна", kz: "Толегенова Булбул Тлеубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "mid-medical" },
-    { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "mid-medical" },
-  ];
 
   // Add staff who are not already in the doctors array
   additionalStaff.forEach(staff => {
@@ -104,6 +118,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
         name: staff.name,
         position: staff.position,
         department: staff.department,
+        order: staff.order,
         isNewStaff: true // Mark as new staff without detailed info
       });
     }
@@ -113,7 +128,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     <div className="space-y-16">
       {/* Display each department with its staff */}
       {departments
-        .filter(dept => doctorsByDepartment[dept.id].length > 0)
+        .filter(dept => doctorsByDepartment[dept.id] && doctorsByDepartment[dept.id].length > 0)
         .sort((a, b) => a.order - b.order)
         .map((department) => (
           <div key={department.id} className="mb-12">
@@ -121,7 +136,9 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
               {language === 'ru' ? department.nameRu : department.nameKz}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {doctorsByDepartment[department.id].map((doctor) => (
+              {doctorsByDepartment[department.id]
+                .sort((a, b) => (a.order || 999) - (b.order || 999))
+                .map((doctor) => (
                 <Card key={doctor.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <div className="relative h-48 bg-gray-200 flex items-center justify-center">
                     {doctor.image ? (

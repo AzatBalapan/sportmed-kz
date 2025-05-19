@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
@@ -9,27 +9,6 @@ export const Header: React.FC = () => {
   const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    
-    if (location.pathname === '/') {
-      // If on homepage, scroll to contacts section
-      const contactSection = document.getElementById('contacts');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // If on another page, navigate to homepage and then scroll
-      navigate('/#contacts');
-    }
-    
-    // Close mobile menu if open
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
-  };
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -59,13 +38,9 @@ export const Header: React.FC = () => {
             <Link to="/presidential-address" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.presidential')}
             </Link>
-            <a 
-              href="/#contacts" 
-              className="text-gray-700 hover:text-gov-blue font-medium" 
-              onClick={handleContactClick}
-            >
+            <Link to="/contacts" className="text-gray-700 hover:text-gov-blue font-medium">
               {t('nav.contacts')}
-            </a>
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -139,13 +114,13 @@ export const Header: React.FC = () => {
               >
                 {t('nav.presidential')}
               </Link>
-              <a
-                href="/#contacts"
+              <Link
+                to="/contacts"
                 className="text-gray-700 hover:text-gov-blue font-medium"
-                onClick={handleContactClick}
+                onClick={() => setIsMenuOpen(false)}
               >
                 {t('nav.contacts')}
-              </a>
+              </Link>
               <div className="flex items-center justify-between pt-4">
                 <LanguageSwitcher />
                 <div className="flex space-x-2">

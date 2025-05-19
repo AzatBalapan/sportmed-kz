@@ -28,7 +28,8 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
 
   // Department translations
   const getDepartmentName = () => {
-    if (!doctor.department) return "";
+    const departmentId = doctor.department;
+    if (!departmentId) return "";
     
     const departmentMap: {[key: string]: {ru: string, kz: string}} = {
       "management": {
@@ -50,10 +51,14 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
       "physiotherapy": {
         ru: "Отделение физиотерапии, лечебной физкультуры и массажа",
         kz: "Физиотерапия, емдік дене шынықтыру және массаж бөлімі"
+      },
+      "medical-staff": {
+        ru: "Медицинский персонал",
+        kz: "Медициналық қызметкерлер"
       }
     };
     
-    return departmentMap[doctor.department]?.[language] || "";
+    return departmentMap[departmentId]?.[language] || "";
   };
 
   return (

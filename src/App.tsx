@@ -16,6 +16,7 @@ import AboutFull from "./pages/AboutFull";
 import Team from "./pages/Team";
 import Compliance from "./pages/Compliance";
 import PresidentialAddress from "./pages/PresidentialAddress";
+import Contacts from "./pages/Contacts";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/team" element={<Team />} />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/presidential-address" element={<PresidentialAddress />} />
+            <Route path="/contacts" element={<Contacts />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
