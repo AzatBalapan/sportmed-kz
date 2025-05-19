@@ -17,6 +17,8 @@ import Team from "./pages/Team";
 import Compliance from "./pages/Compliance";
 import PresidentialAddress from "./pages/PresidentialAddress";
 import Contacts from "./pages/Contacts";
+import Director from "./pages/Director";
+import LegalActs from "./pages/LegalActs";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +40,8 @@ const App = () => (
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/presidential-address" element={<PresidentialAddress />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/director" element={<Director />} />
+            <Route path="/legal-acts" element={<LegalActs />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

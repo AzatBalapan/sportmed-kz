@@ -1,16 +1,18 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
+import { BookOpen, X } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import SocialLinks from '@/components/SocialLinks';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from '@/components/ui/dialog';
 
 const Compliance: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
 
   const documents = [
     {
@@ -78,20 +80,39 @@ const Compliance: React.FC = () => {
                 </CardDescription>
               </CardContent>
               <CardFooter className="flex justify-center">
-                <a
-                  href={doc.path}
-                  download={doc.fileName}
-                  className="w-full"
+                <Button 
+                  className="w-full flex items-center justify-center"
+                  onClick={() => setSelectedDocument({ title: doc.title, path: doc.path })}
                 >
-                  <Button className="w-full flex items-center justify-center">
-                    <Download className="mr-2 h-4 w-4" /> 
-                    {t('compliance.download')}
-                  </Button>
-                </a>
+                  <BookOpen className="mr-2 h-4 w-4" /> 
+                  {language === 'ru' ? 'Читать' : 'Оқу'}
+                </Button>
               </CardFooter>
             </Card>
           ))}
         </div>
+
+        {/* Document viewer dialog */}
+        <Dialog open={!!selectedDocument} onOpenChange={() => setSelectedDocument(null)}>
+          <DialogContent className="max-w-4xl h-[80vh]">
+            <DialogHeader>
+              <DialogTitle>{selectedDocument?.title}</DialogTitle>
+              <DialogClose className="absolute right-4 top-4">
+                <X className="h-4 w-4" />
+                <span className="sr-only">Close</span>
+              </DialogClose>
+            </DialogHeader>
+            <div className="flex-1 overflow-auto h-full">
+              {selectedDocument && (
+                <iframe 
+                  src={`https://docs.google.com/viewer?url=${encodeURIComponent(window.location.origin + selectedDocument.path)}&embedded=true`}
+                  className="w-full h-full"
+                  title={selectedDocument.title}
+                />
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
       </main>
       <Footer />
       <ScrollToTop />

@@ -4,7 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
 
 export const AboutSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="about" className="py-16 bg-white">
@@ -23,7 +23,9 @@ export const AboutSection: React.FC = () => {
               {t('about.title')}
             </h2>
             <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-              {t('about.description')}
+              {language === 'ru'
+                ? 'Спортивный медицинский центр Астаны — ведущее учреждение в области спортивной медицины. Наша миссия — обеспечивать высококачественную медицинскую поддержку для спортсменов всех уровней, используя новейшие технологии и методики лечения.'
+                : 'Астананың Спорт медициналық орталығы — спорт медицинасы саласындағы жетекші мекеме. Біздің миссиямыз — барлық деңгейдегі спортшыларға жаңа технологиялар мен емдеу әдістерін қолдана отырып, жоғары сапалы медициналық қолдау көрсету.'}
             </p>
             <ul className="space-y-4">
               {[

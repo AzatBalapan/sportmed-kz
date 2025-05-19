@@ -9,7 +9,7 @@ import SocialLinks from '@/components/SocialLinks';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Contacts: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <div className="min-h-screen flex flex-col">

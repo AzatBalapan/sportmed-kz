@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 
 export const Footer: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-gov-dark-blue text-white pt-12 pb-6">
@@ -13,7 +13,9 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-serif mb-4">СМЦ</h3>
             <p className="text-gray-300 mb-4">
-              {t('about.description')}
+              {language === 'ru'
+                ? 'Спортивный медицинский центр Астаны — ведущее учреждение в области спортивной медицины. Наша миссия — обеспечивать высококачественную медицинскую поддержку для спортсменов всех уровней, используя новейшие технологии и методики лечения.'
+                : 'Астананың Спорт медициналық орталығы — спорт медицинасы саласындағы жетекші мекеме. Біздің миссиямыз — барлық деңгейдегі спортшыларға жаңа технологиялар мен емдеу әдістерін қолдана отырып, жоғары сапалы медициналық қолдау көрсету.'}
             </p>
           </div>
           <div>
@@ -54,7 +56,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 pt-6 mt-6 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400 mb-4 md:mb-0">{t('footer.rights')}</p>
+          <p className="text-sm text-gray-400 mb-4 md:mb-0">
+            {language === 'ru'
+              ? '© 2023 Спортивный Медицинский Центр Астана. Все права защищены.'
+              : '© 2023 Астана Спорт Медициналық Oрталығы. Барлық құқықтар қорғалған.'}
+          </p>
           <div className="flex space-x-4">
             <Link to="/privacy" className="text-sm text-gray-400 hover:text-white">
               {t('footer.policy')}
