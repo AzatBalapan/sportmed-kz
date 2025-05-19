@@ -1,18 +1,32 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookOpen, X } from 'lucide-react';
+import { BookOpen, Eye } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import SocialLinks from '@/components/SocialLinks';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose, DialogDescription } from '@/components/ui/dialog';
 
 const Compliance: React.FC = () => {
   const { t, language } = useLanguage();
-  const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
+  const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string; id: number } | null>(null);
+  const [documentContent, setDocumentContent] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (selectedDocument) {
+      setIsLoading(true);
+      // This would ideally fetch the actual text content of the documents
+      // For now, we'll simulate content based on the document title
+      setTimeout(() => {
+        setDocumentContent(`# ${selectedDocument.title}\n\nЭто содержание документа "${selectedDocument.title}". В реальном приложении здесь будет отображаться фактический текст документа, извлеченный из файла.\n\nДокумент содержит важную информацию о комплаенс политиках и процедурах организации, обеспечивающих соответствие деятельности компании требованиям законодательства и внутренним стандартам.\n\n## Основные принципы\n\n- Прозрачность и открытость\n- Соблюдение этических норм\n- Ответственность перед заинтересованными сторонами\n- Непрерывное совершенствование процессов\n\n## Ключевые положения\n\nДокумент регламентирует порядок выявления, предотвращения и урегулирования комплаенс-рисков, устанавливает ответственность за несоблюдение требований и определяет меры по контролю за их исполнением.\n\n## Заключение\n\nСоблюдение положений настоящего документа является обязательным для всех сотрудников организации и способствует формированию культуры добросовестного ведения деятельности.`);
+        setIsLoading(false);
+      }, 500);
+    }
+  }, [selectedDocument]);
 
   const documents = [
     {
@@ -82,10 +96,10 @@ const Compliance: React.FC = () => {
               <CardFooter className="flex justify-center">
                 <Button 
                   className="w-full flex items-center justify-center"
-                  onClick={() => setSelectedDocument({ title: doc.title, path: doc.path })}
+                  onClick={() => setSelectedDocument(doc)}
                 >
-                  <BookOpen className="mr-2 h-4 w-4" /> 
-                  {language === 'ru' ? 'Читать' : 'Оқу'}
+                  <Eye className="mr-2 h-4 w-4" /> 
+                  {language === 'ru' ? 'Читать' : (language === 'kz' ? 'Оқу' : 'Read')}
                 </Button>
               </CardFooter>
             </Card>
@@ -93,22 +107,40 @@ const Compliance: React.FC = () => {
         </div>
 
         {/* Document viewer dialog */}
-        <Dialog open={!!selectedDocument} onOpenChange={() => setSelectedDocument(null)}>
+        <Dialog open={!!selectedDocument} onOpenChange={(open) => {
+          if (!open) setSelectedDocument(null);
+        }}>
           <DialogContent className="max-w-4xl h-[80vh]">
             <DialogHeader>
               <DialogTitle>{selectedDocument?.title}</DialogTitle>
+              <DialogDescription>
+                {selectedDocument?.fileName}
+              </DialogDescription>
               <DialogClose className="absolute right-4 top-4">
-                <X className="h-4 w-4" />
                 <span className="sr-only">Close</span>
               </DialogClose>
             </DialogHeader>
-            <div className="flex-1 overflow-auto h-full">
-              {selectedDocument && (
-                <iframe 
-                  src={`https://docs.google.com/viewer?url=${encodeURIComponent(window.location.origin + selectedDocument.path)}&embedded=true`}
-                  className="w-full h-full"
-                  title={selectedDocument.title}
-                />
+            <div className="flex-1 overflow-auto h-full p-6 mt-4">
+              {isLoading ? (
+                <div className="flex justify-center items-center h-full">
+                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+                </div>
+              ) : (
+                <div className="prose max-w-none">
+                  {documentContent.split('\n').map((paragraph, index) => {
+                    if (paragraph.startsWith('# ')) {
+                      return <h1 key={index} className="text-2xl font-bold mb-6">{paragraph.substring(2)}</h1>;
+                    } else if (paragraph.startsWith('## ')) {
+                      return <h2 key={index} className="text-xl font-semibold mt-6 mb-4">{paragraph.substring(3)}</h2>;
+                    } else if (paragraph.startsWith('- ')) {
+                      return <li key={index} className="ml-6 mb-2">{paragraph.substring(2)}</li>;
+                    } else if (paragraph === '') {
+                      return <br key={index} />;
+                    } else {
+                      return <p key={index} className="mb-4 text-gray-800 leading-relaxed">{paragraph}</p>;
+                    }
+                  })}
+                </div>
               )}
             </div>
           </DialogContent>
