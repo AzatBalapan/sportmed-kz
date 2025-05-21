@@ -235,6 +235,14 @@ export const translations = {
     ru: 'Вопросы и отзывы',
     kz: 'Сұрақтар мен пікірлер'
   },
+  'contact.information': {
+    ru: 'Контактная информация',
+    kz: 'Байланыс ақпараты'
+  },
+  'contact.form': {
+    ru: 'Форма обратной связи',
+    kz: 'Кері байланыс формасы'
+  },
   'contact.address': {
     ru: 'Адрес',
     kz: 'Мекенжай'
@@ -266,6 +274,14 @@ export const translations = {
   'contact.hours.value': {
     ru: 'Пн-Пт: 8:30 - 18:00',
     kz: 'Дс-Жм: 8:30 - 18:00'
+  },
+  'contact.message': {
+    ru: 'Сообщение',
+    kz: 'Хабарлама'
+  },
+  'contact.message.placeholder': {
+    ru: 'Введите ваше сообщение',
+    kz: 'Хабарламаңызды енгізіңіз'
   },
 
   // Registration Form
