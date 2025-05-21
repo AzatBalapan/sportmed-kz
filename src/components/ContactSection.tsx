@@ -15,15 +15,13 @@ export const ContactSection: React.FC = () => {
   return (
     <section id="contacts" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold text-center text-gray-900 mb-12">
-          {t('contact.title')}
-        </h2>
+        {/* Removed duplicate title here */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <div className="bg-gray-100 rounded-lg p-8 h-full">
               <h3 className="text-2xl font-serif font-bold mb-6">
-                {t('contact.title')}
+                {t('contact.information')}
               </h3>
 
               <div className="space-y-6">
@@ -67,7 +65,7 @@ export const ContactSection: React.FC = () => {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="text-2xl font-serif font-bold mb-6">
-                  {t('contact.title')}
+                  {t('contact.form')}
                 </h3>
                 <form className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -92,10 +90,10 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">
-                      {t('contact.title')}
+                      {t('contact.message')}
                     </label>
                     <Textarea
-                      placeholder={t('contact.title')}
+                      placeholder={t('contact.message.placeholder')}
                       rows={5}
                     />
                   </div>
