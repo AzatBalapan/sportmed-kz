@@ -21,11 +21,12 @@ const Director: React.FC = () => {
 
           <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
             <div className="md:w-1/3">
-              <div className="bg-gray-200 rounded-lg overflow-hidden h-64 md:h-96 flex items-center justify-center">
-                {/* Placeholder for director's photo */}
-                <div className="text-gray-400 text-lg">
-                  {language === 'ru' ? 'Фото будет загружено' : 'Фото жүктеледі'}
-                </div>
+              <div className="rounded-lg overflow-hidden h-auto">
+                <img 
+                  src="/lovable-uploads/81bf838b-f931-4d9a-92a3-34bbbc98046e.png" 
+                  alt="Нурматов Азамат Басимбекович" 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
 

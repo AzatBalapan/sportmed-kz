@@ -16,12 +16,6 @@ const Contacts: React.FC = () => {
       <Header />
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-serif font-bold text-center mb-3">{t('contact.title')}</h1>
-          <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            {language === 'ru' 
-              ? 'Свяжитесь с нами для получения дополнительной информации или записи на прием' 
-              : 'Қосымша ақпарат алу немесе жазылу үшін бізбен хабарласыңыз'}
-          </p>
           <ContactSection />
         </div>
       </main>
