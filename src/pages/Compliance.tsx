@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Header from '@/components/Header';
@@ -9,29 +8,47 @@ import { Eye } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
 import SocialLinks from '@/components/SocialLinks';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose, DialogDescription } from '@/components/ui/dialog';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import FaqDisplay from '@/components/FaqDisplay';
+import { parseFaqFromText, FaqItem } from '@/utils/faqParser';
 
 interface Document {
   id: number;
   title: string;
-  fileName: string; // Add this property to the type
+  fileName: string;
   path: string;
+  textFilePath?: string;
+  type?: 'text' | 'faq';
 }
 
 const Compliance: React.FC = () => {
   const { t, language } = useLanguage();
   const [selectedDocument, setSelectedDocument] = useState<Document | null>(null);
   const [documentContent, setDocumentContent] = useState<string>('');
+  const [faqItems, setFaqItems] = useState<FaqItem[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    if (selectedDocument) {
+    if (selectedDocument && selectedDocument.textFilePath) {
       setIsLoading(true);
-      // This would ideally fetch the actual text content of the documents
-      // For now, we'll simulate content based on the document title
-      setTimeout(() => {
-        setDocumentContent(`# ${selectedDocument.title}\n\nЭто содержание документа "${selectedDocument.title}". В реальном приложении здесь будет отображаться фактический текст документа, извлеченный из файла.\n\nДокумент содержит важную информацию о комплаенс политиках и процедурах организации, обеспечивающих соответствие деятельности компании требованиям законодательства и внутренним стандартам.\n\n## Основные принципы\n\n- Прозрачность и открытость\n- Соблюдение этических норм\n- Ответственность перед заинтересованными сторонами\n- Непрерывное совершенствование процессов\n\n## Ключевые положения\n\nДокумент регламентирует порядок выявления, предотвращения и урегулирования комплаенс-рисков, устанавливает ответственность за несоблюдение требований и определяет меры по контролю за их исполнением.\n\n## Заключение\n\nСоблюдение положений настоящего документа является обязательным для всех сотрудников организации и способствует формированию культуры добросовестного ведения деятельности.`);
-        setIsLoading(false);
-      }, 500);
+      // Fetch the text content from the file
+      fetch(selectedDocument.textFilePath)
+        .then(response => response.text())
+        .then(text => {
+          setDocumentContent(text);
+          
+          // If the document is a FAQ, parse the FAQ items
+          if (selectedDocument.type === 'faq') {
+            setFaqItems(parseFaqFromText(text));
+          }
+          
+          setIsLoading(false);
+        })
+        .catch(error => {
+          console.error('Error loading document:', error);
+          setDocumentContent('Error loading document content');
+          setIsLoading(false);
+        });
     }
   }, [selectedDocument]);
 
@@ -41,44 +58,83 @@ const Compliance: React.FC = () => {
       title: 'Антикоррупционная политика',
       fileName: 'Внутренняя Полтика по против корр ГККП СЦ рус.docx',
       path: '/lovable-uploads/Внутренняя Полтика по против корр ГККП СЦ рус.docx',
+      textFilePath: '/lovable-uploads/anticor_txt/internal_communal.txt',
+      type: 'text'
     },
     {
       id: 2,
       title: 'Кодекс этики',
-      fileName: 'Корп кодекс  рус.docx',
-      path: '/lovable-uploads/Корп кодекс  рус.docx',
+      fileName: 'Корп кодекс рус.docx',
+      path: '/lovable-uploads/Корп кодекс рус.docx',
+      textFilePath: '/lovable-uploads/anticor_txt/codex.txt',
+      type: 'text'
     },
     {
       id: 3,
       title: 'Политика по урегулированию конфликта интересов',
       fileName: 'Внутренняя Политика выявления и урегулирования конфликтов ГККП СМЦ рус.docx',
       path: '/lovable-uploads/Внутренняя Политика выявления и урегулирования конфликтов ГККП СМЦ рус.docx',
+      textFilePath: '/lovable-uploads/anticor_txt/internal_politics.txt',
+      type: 'text'
     },
     {
       id: 4,
       title: 'Антикоррупционный стандарт',
-      fileName: 'Антикоррупционный стандарт  рус.docx',
-      path: '/lovable-uploads/Антикоррупционный стандарт  рус.docx',
+      fileName: 'Антикоррупционный стандарт рус.docx',
+      path: '/lovable-uploads/Антикоррупционный стандарт рус.docx',
+      textFilePath: '/lovable-uploads/anticor_txt/anticor_politics.txt',
+      type: 'text'
     },
     {
       id: 5,
       title: 'Инструкция по противодействию коррупции',
       fileName: 'Инструкция по противодействию коррупции для работников ГККП СМЦ рус.docx',
       path: '/lovable-uploads/Инструкция по противодействию коррупции для работников ГККП СМЦ рус.docx',
+      textFilePath: '/lovable-uploads/anticor_txt/workers.txt',
+      type: 'text'
     },
     {
       id: 6,
       title: 'Положение о порядке информирования работников',
       fileName: 'Положение о порядке информирования работника о наруш рус.docx',
       path: '/lovable-uploads/Положение о порядке информирования работника о наруш рус.docx',
+      textFilePath: '/lovable-uploads/anticor_txt/info.txt',
+      type: 'text'
     },
     {
       id: 7,
       title: 'Часто задаваемые вопросы',
       fileName: 'часто задаваемые вопросы (Автосохраненный).docx',
       path: '/lovable-uploads/часто задаваемые вопросы (Автосохраненный).docx',
+      textFilePath: '/lovable-uploads/anticor_txt/questions.txt',
+      type: 'faq'
     },
   ];
+
+  const formatText = (text: string) => {
+    // Split the text into paragraphs
+    const paragraphs = text.split('\n').filter(p => p.trim() !== '');
+
+    return paragraphs.map((paragraph, index) => {
+      // Check if the paragraph is a heading (starts with number or has certain patterns)
+      if (/^\s*\d+\./.test(paragraph) || paragraph.trim().startsWith('I.') || paragraph.trim().startsWith('II.') || paragraph.trim().startsWith('III.') || paragraph.trim().startsWith('IV.') || paragraph.trim().startsWith('V.') || paragraph.trim().startsWith('VI.')) {
+        return <h2 key={index} className="text-xl font-semibold mt-6 mb-4">{paragraph.trim()}</h2>;
+      } 
+      // Check if the paragraph is a subheading or bullet point
+      else if (/^\s*•/.test(paragraph) || /^\s*-/.test(paragraph)) {
+        return <li key={index} className="ml-6 mb-2">{paragraph.replace(/^\s*[•-]\s*/, '').trim()}</li>;
+      }
+      // Otherwise treat as regular paragraph
+      else {
+        return <p key={index} className="mb-4 text-gray-800 leading-relaxed">{paragraph.trim()}</p>;
+      }
+    });
+  };
+
+  // Filter FAQ items by current language
+  const filteredFaqItems = faqItems.filter(item => 
+    language === 'ru' ? item.language === 'ru' : item.language === 'kz'
+  );
 
   return (
     <>
@@ -134,19 +190,21 @@ const Compliance: React.FC = () => {
                 </div>
               ) : (
                 <div className="prose max-w-none">
-                  {documentContent.split('\n').map((paragraph, index) => {
-                    if (paragraph.startsWith('# ')) {
-                      return <h1 key={index} className="text-2xl font-bold mb-6">{paragraph.substring(2)}</h1>;
-                    } else if (paragraph.startsWith('## ')) {
-                      return <h2 key={index} className="text-xl font-semibold mt-6 mb-4">{paragraph.substring(3)}</h2>;
-                    } else if (paragraph.startsWith('- ')) {
-                      return <li key={index} className="ml-6 mb-2">{paragraph.substring(2)}</li>;
-                    } else if (paragraph === '') {
-                      return <br key={index} />;
-                    } else {
-                      return <p key={index} className="mb-4 text-gray-800 leading-relaxed">{paragraph}</p>;
-                    }
-                  })}
+                  {selectedDocument?.type === 'faq' ? (
+                    <div className="space-y-4">
+                      {filteredFaqItems.length > 0 ? (
+                        <FaqDisplay faqItems={filteredFaqItems.map(item => ({
+                          id: item.id,
+                          question: item.question,
+                          answer: item.answer
+                        }))} />
+                      ) : (
+                        <p>No FAQ items available in the current language.</p>
+                      )}
+                    </div>
+                  ) : (
+                    formatText(documentContent)
+                  )}
                 </div>
               )}
             </div>
