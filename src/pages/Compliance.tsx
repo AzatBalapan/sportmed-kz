@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Header from '@/components/Header';
@@ -14,7 +15,10 @@ import { parseFaqFromText, FaqItem } from '@/utils/faqParser';
 
 interface Document {
   id: number;
-  title: string;
+  title: {
+    ru: string;
+    kz: string;
+  };
   fileName: string;
   path: string;
   textFilePath?: {
@@ -63,7 +67,10 @@ const Compliance: React.FC = () => {
   const documents: Document[] = [
     {
       id: 1,
-      title: 'Антикоррупционная политика',
+      title: {
+        ru: 'Антикоррупционная политика',
+        kz: 'Сыбайлас жемқорлыққа қарсы саясат'
+      },
       fileName: 'Внутренняя Полтика по против корр ГККП СЦ рус.docx',
       path: '/lovable-uploads/Внутренняя Полтика по против корр ГККП СЦ рус.docx',
       textFilePath: {
@@ -74,7 +81,10 @@ const Compliance: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Кодекс этики',
+      title: {
+        ru: 'Кодекс этики',
+        kz: 'Этика кодексі'
+      },
       fileName: 'Корп кодекс рус.docx',
       path: '/lovable-uploads/Корп кодекс рус.docx',
       textFilePath: {
@@ -85,7 +95,10 @@ const Compliance: React.FC = () => {
     },
     {
       id: 3,
-      title: 'Политика по урегулированию конфликта интересов',
+      title: {
+        ru: 'Политика по урегулированию конфликта интересов',
+        kz: 'Мүдделер қақтығысын реттеу саясаты'
+      },
       fileName: 'Внутренняя Политика выявления и урегулирования конфликтов ГККП СМЦ рус.docx',
       path: '/lovable-uploads/Внутренняя Политика выявления и урегулирования конфликтов ГККП СМЦ рус.docx',
       textFilePath: {
@@ -96,7 +109,10 @@ const Compliance: React.FC = () => {
     },
     {
       id: 4,
-      title: 'Антикоррупционный стандарт',
+      title: {
+        ru: 'Антикоррупционный стандарт',
+        kz: 'Сыбайлас жемқорлыққа қарсы стандарт'
+      },
       fileName: 'Антикоррупционный стандарт рус.docx',
       path: '/lovable-uploads/Антикоррупционный стандарт рус.docx',
       textFilePath: {
@@ -107,7 +123,10 @@ const Compliance: React.FC = () => {
     },
     {
       id: 5,
-      title: 'Инструкция по противодействию коррупции',
+      title: {
+        ru: 'Инструкция по противодействию коррупции',
+        kz: 'Сыбайлас жемқорлыққа қарсы іс-қимыл жөніндегі нұсқаулық'
+      },
       fileName: 'Инструкция по противодействию коррупции для работников ГККП СМЦ рус.docx',
       path: '/lovable-uploads/Инструкция по противодействию коррупции для работников ГККП СМЦ рус.docx',
       textFilePath: {
@@ -118,7 +137,10 @@ const Compliance: React.FC = () => {
     },
     {
       id: 6,
-      title: 'Положение о порядке информирования работников',
+      title: {
+        ru: 'Положение о порядке информирования работников',
+        kz: 'Жұмыскерлерді хабардар ету тәртібі туралы ереже'
+      },
       fileName: 'Положение о порядке информирования работника о наруш рус.docx',
       path: '/lovable-uploads/Положение о порядке информирования работника о наруш рус.docx',
       textFilePath: {
@@ -129,7 +151,10 @@ const Compliance: React.FC = () => {
     },
     {
       id: 7,
-      title: 'Часто задаваемые вопросы',
+      title: {
+        ru: 'Часто задаваемые вопросы',
+        kz: 'Жиі қойылатын сұрақтар'
+      },
       fileName: 'часто задаваемые вопросы (Автосохраненный).docx',
       path: '/lovable-uploads/часто задаваемые вопросы (Автосохраненный).docx',
       textFilePath: {
@@ -176,16 +201,16 @@ const Compliance: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {documents.map((doc) => (
-            <Card key={doc.id} className="transition-all hover:shadow-lg">
+            <Card key={doc.id} className="transition-all hover:shadow-lg flex flex-col">
               <CardHeader>
-                <CardTitle className="text-xl">{doc.title}</CardTitle>
+                <CardTitle className="text-xl">
+                  {language === 'kz' ? doc.title.kz : doc.title.ru}
+                </CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  {t('compliance.document')} ({doc.fileName})
-                </CardDescription>
+              <CardContent className="flex-grow">
+                {/* Description content removed */}
               </CardContent>
-              <CardFooter className="flex justify-center">
+              <CardFooter className="mt-auto">
                 <Button 
                   className="w-full flex items-center justify-center"
                   onClick={() => setSelectedDocument(doc)}
@@ -204,10 +229,11 @@ const Compliance: React.FC = () => {
         }}>
           <DialogContent className="max-w-4xl h-[80vh]">
             <DialogHeader>
-              <DialogTitle>{selectedDocument?.title}</DialogTitle>
-              <DialogDescription>
-                {selectedDocument?.fileName}
-              </DialogDescription>
+              <DialogTitle>
+                {selectedDocument && (language === 'kz' ? 
+                  selectedDocument.title.kz : 
+                  selectedDocument.title.ru)}
+              </DialogTitle>
               <DialogClose className="absolute right-4 top-4">
                 <span className="sr-only">Close</span>
               </DialogClose>
