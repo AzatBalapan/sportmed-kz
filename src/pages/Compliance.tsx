@@ -17,7 +17,10 @@ interface Document {
   title: string;
   fileName: string;
   path: string;
-  textFilePath?: string;
+  textFilePath?: {
+    ru: string;
+    kz: string;
+  };
   type?: 'text' | 'faq';
 }
 
@@ -31,8 +34,13 @@ const Compliance: React.FC = () => {
   useEffect(() => {
     if (selectedDocument && selectedDocument.textFilePath) {
       setIsLoading(true);
+      // Get the appropriate file path based on the selected language
+      const filePath = language === 'kz' 
+        ? selectedDocument.textFilePath.kz 
+        : selectedDocument.textFilePath.ru;
+      
       // Fetch the text content from the file
-      fetch(selectedDocument.textFilePath)
+      fetch(filePath)
         .then(response => response.text())
         .then(text => {
           setDocumentContent(text);
@@ -50,7 +58,7 @@ const Compliance: React.FC = () => {
           setIsLoading(false);
         });
     }
-  }, [selectedDocument]);
+  }, [selectedDocument, language]);
 
   const documents: Document[] = [
     {
@@ -58,7 +66,10 @@ const Compliance: React.FC = () => {
       title: 'Антикоррупционная политика',
       fileName: 'Внутренняя Полтика по против корр ГККП СЦ рус.docx',
       path: '/lovable-uploads/Внутренняя Полтика по против корр ГККП СЦ рус.docx',
-      textFilePath: '/lovable-uploads/anticor_txt/internal_communal.txt',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/internal_communal.txt',
+        kz: '/lovable-uploads/anticor_txt/internal_communal_kaz.txt'
+      },
       type: 'text'
     },
     {
@@ -66,7 +77,10 @@ const Compliance: React.FC = () => {
       title: 'Кодекс этики',
       fileName: 'Корп кодекс рус.docx',
       path: '/lovable-uploads/Корп кодекс рус.docx',
-      textFilePath: '/lovable-uploads/anticor_txt/codex.txt',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/codex.txt',
+        kz: '/lovable-uploads/anticor_txt/codex_kaz.txt'
+      },
       type: 'text'
     },
     {
@@ -74,7 +88,10 @@ const Compliance: React.FC = () => {
       title: 'Политика по урегулированию конфликта интересов',
       fileName: 'Внутренняя Политика выявления и урегулирования конфликтов ГККП СМЦ рус.docx',
       path: '/lovable-uploads/Внутренняя Политика выявления и урегулирования конфликтов ГККП СМЦ рус.docx',
-      textFilePath: '/lovable-uploads/anticor_txt/internal_politics.txt',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/internal_politics.txt',
+        kz: '/lovable-uploads/anticor_txt/internal_politics_kaz.txt'
+      },
       type: 'text'
     },
     {
@@ -82,7 +99,10 @@ const Compliance: React.FC = () => {
       title: 'Антикоррупционный стандарт',
       fileName: 'Антикоррупционный стандарт рус.docx',
       path: '/lovable-uploads/Антикоррупционный стандарт рус.docx',
-      textFilePath: '/lovable-uploads/anticor_txt/anticor_politics.txt',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/anticor_politics.txt',
+        kz: '/lovable-uploads/anticor_txt/anticor_politics_kaz.txt'
+      },
       type: 'text'
     },
     {
@@ -90,7 +110,10 @@ const Compliance: React.FC = () => {
       title: 'Инструкция по противодействию коррупции',
       fileName: 'Инструкция по противодействию коррупции для работников ГККП СМЦ рус.docx',
       path: '/lovable-uploads/Инструкция по противодействию коррупции для работников ГККП СМЦ рус.docx',
-      textFilePath: '/lovable-uploads/anticor_txt/workers.txt',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/workers.txt',
+        kz: '/lovable-uploads/anticor_txt/workers_kaz.txt'
+      },
       type: 'text'
     },
     {
@@ -98,7 +121,10 @@ const Compliance: React.FC = () => {
       title: 'Положение о порядке информирования работников',
       fileName: 'Положение о порядке информирования работника о наруш рус.docx',
       path: '/lovable-uploads/Положение о порядке информирования работника о наруш рус.docx',
-      textFilePath: '/lovable-uploads/anticor_txt/info.txt',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/info.txt',
+        kz: '/lovable-uploads/anticor_txt/info_kaz.txt'
+      },
       type: 'text'
     },
     {
@@ -106,7 +132,10 @@ const Compliance: React.FC = () => {
       title: 'Часто задаваемые вопросы',
       fileName: 'часто задаваемые вопросы (Автосохраненный).docx',
       path: '/lovable-uploads/часто задаваемые вопросы (Автосохраненный).docx',
-      textFilePath: '/lovable-uploads/anticor_txt/questions.txt',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/questions.txt',
+        kz: '/lovable-uploads/anticor_txt/questions.txt'
+      },
       type: 'faq'
     },
   ];
