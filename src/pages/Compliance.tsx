@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Header from '@/components/Header';
@@ -199,7 +198,7 @@ const Compliance: React.FC = () => {
           <p className="text-gray-600">{t('compliance.description')}</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {documents.map((doc) => (
             <Card key={doc.id} className="transition-all hover:shadow-lg flex flex-col">
               <CardHeader>
@@ -221,6 +220,78 @@ const Compliance: React.FC = () => {
               </CardFooter>
             </Card>
           ))}
+        </div>
+
+        {/* Compliance Officer Section */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            {language === 'ru' ? 'Комплаенс-офицер' : 'Комплаенс-офицер'}
+          </h2>
+          <div className="max-w-2xl mx-auto">
+            <Card className="overflow-hidden">
+              <div className="md:flex">
+                <div className="md:w-1/3">
+                  <img 
+                    src="/lovable-uploads/993e1c45-5ec2-4cd7-8e96-00efe19315bd.png" 
+                    alt="Тажиева Айжан Альпикызы" 
+                    className="w-full h-64 md:h-full object-cover"
+                  />
+                </div>
+                <div className="md:w-2/3 p-6">
+                  <h3 className="text-xl font-semibold mb-4">
+                    {language === 'ru' ? 'Тажиева Айжан Альпикызы' : 'Тажиева Айжан Альпикызы'}
+                  </h3>
+                  
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <span className="font-medium">
+                        {language === 'ru' ? 'Период занимаемой должности:' : 'Лауазым ұстау кезеңі:'}
+                      </span>
+                      <br />
+                      <span className="text-gray-600">
+                        {language === 'ru' ? 'с января 2025 года' : '2025 жылдың қаңтарынан бастап'}
+                      </span>
+                    </div>
+                    
+                    <div>
+                      <span className="font-medium">
+                        {language === 'ru' ? 'Образование:' : 'Білімі:'}
+                      </span>
+                      <br />
+                      <span className="text-gray-600">
+                        {language === 'ru' 
+                          ? 'Казахский гуманитарно-юридический университет' 
+                          : 'Қазақ гуманитарлық-заң университеті'
+                        }
+                      </span>
+                    </div>
+                    
+                    <div>
+                      <span className="font-medium">
+                        {language === 'ru' ? 'Профессиональный опыт:' : 'Кәсіби тәжірибе:'}
+                      </span>
+                      <br />
+                      <span className="text-gray-600">
+                        {language === 'ru' ? '20 лет' : '20 жыл'}
+                      </span>
+                    </div>
+                    
+                    <div>
+                      <span className="font-medium">
+                        {language === 'ru' ? 'Контактные данные:' : 'Байланыс деректері:'}
+                      </span>
+                      <br />
+                      <span className="text-gray-600">
+                        +7 778 778 88 93
+                        <br />
+                        smo.compliance@mail.ru
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
 
         {/* Document viewer dialog */}
