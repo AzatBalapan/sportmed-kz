@@ -109,6 +109,12 @@ export const Header: React.FC = () => {
                 {t('nav.compliance')}
               </Link>
               <Link 
+                to="/news" 
+                className="text-gray-700 hover:text-gov-blue transition-colors"
+              >
+                {t('nav.news')}
+              </Link>
+              <Link 
                 to="/presidential-address" 
                 className="text-gray-700 hover:text-gov-blue transition-colors"
               >
@@ -201,6 +207,12 @@ export const Header: React.FC = () => {
                 className="text-xl py-2 border-b border-gray-100"
               >
                 {t('nav.compliance')}
+              </Link>
+              <Link 
+                to="/news" 
+                className="text-xl py-2 border-b border-gray-100"
+              >
+                {t('nav.news')}
               </Link>
               <Link 
                 to="/presidential-address" 
