@@ -20,6 +20,7 @@ import Contacts from "./pages/Contacts";
 import Director from "./pages/Director";
 import LegalActs from "./pages/LegalActs";
 import News from "./pages/News";
+import NewsArticle from "./pages/NewsArticle";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/team" element={<Team />} />
             <Route path="/compliance" element={<Compliance />} />
             <Route path="/news" element={<News />} />
+            <Route path="/news/presidential-reserve" element={<NewsArticle />} />
             <Route path="/presidential-address" element={<PresidentialAddress />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/director" element={<Director />} />

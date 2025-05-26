@@ -1,5 +1,6 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
@@ -7,14 +8,13 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import ScrollToTop from '@/components/ScrollToTop';
 import SocialLinks from '@/components/SocialLinks';
-import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const News: React.FC = () => {
   const { t } = useLanguage();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
+  const handleLearnMore = () => {
+    navigate('/news/presidential-reserve');
   };
 
   return (
@@ -54,34 +54,12 @@ const News: React.FC = () => {
 
                   {/* Learn More Button */}
                   <Button 
-                    onClick={toggleExpanded}
+                    onClick={handleLearnMore}
                     variant="outline"
                     className="w-full border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors"
                   >
-                    {isExpanded ? 'Скрыть' : 'Узнать больше'}
-                    {isExpanded ? (
-                      <ChevronUp className="ml-2 h-4 w-4" />
-                    ) : (
-                      <ChevronDown className="ml-2 h-4 w-4" />
-                    )}
+                    {t('news.learnMore')}
                   </Button>
-                  
-                  {/* Expanded Content */}
-                  {isExpanded && (
-                    <div className="mt-6 pt-6 border-t border-gray-200 animate-fade-in">
-                      <div className="prose prose-lg max-w-none">
-                        <div className="whitespace-pre-line text-gray-700 leading-relaxed">
-                          {t('news.presidential.content')}
-                        </div>
-                      </div>
-                      
-                      <div className="mt-6 pt-4 border-t border-gray-200">
-                        <p className="text-sm text-gray-500">
-                          Дата публикации: 25 мая 2025 г.
-                        </p>
-                      </div>
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             </div>
