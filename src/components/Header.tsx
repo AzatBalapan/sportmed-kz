@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
@@ -54,14 +53,19 @@ export const Header: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 z-30 text-lg font-serif font-bold text-gov-blue">
+          <Link to="/" className="flex items-center space-x-2 z-30">
             <img src="/lovable-uploads/icon_for_web.png" width="32" height="32" alt="Logo" />
-            <span>{t('nav.home')}</span>
           </Link>
 
           {/* Desktop Navigation */}
           {!isMobile && (
             <nav className="flex items-center space-x-6">
+              <Link 
+                to="/" 
+                className="text-gov-blue font-serif font-bold hover:text-gov-blue transition-colors"
+              >
+                {t('nav.home')}
+              </Link>
               <Link 
                 to="/services" 
                 className="text-gray-700 hover:text-gov-blue transition-colors"
@@ -165,6 +169,12 @@ export const Header: React.FC = () => {
         >
           <div className="container mx-auto px-4 pt-24 pb-8">
             <nav className="flex flex-col space-y-4">
+              <Link 
+                to="/" 
+                className="text-xl py-2 border-b border-gray-100 text-gov-blue font-serif font-bold"
+              >
+                {t('nav.home')}
+              </Link>
               <Link 
                 to="/services" 
                 className="text-xl py-2 border-b border-gray-100"
