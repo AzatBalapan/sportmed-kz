@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 z-30 text-lg font-serif font-bold text-gov-blue">
             <img src="/lovable-uploads/icon_for_web.png" width="32" height="32" alt="Logo" />
-            <span>СМЦ</span>
+            <span>{t('nav.home')}</span>
           </Link>
 
           {/* Desktop Navigation */}

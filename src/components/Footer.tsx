@@ -11,7 +11,6 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-serif mb-4">СМЦ</h3>
             <p className="text-gray-300 mb-4">
               {language === 'ru'
                 ? 'Спортивный медицинский центр Астаны — ведущее учреждение в области спортивной медицины. Наша миссия — обеспечивать высококачественную медицинскую поддержку для спортсменов всех уровней, используя новейшие технологии и методики лечения.'
