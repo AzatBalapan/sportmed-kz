@@ -147,21 +147,7 @@ const Compliance: React.FC = () => {
         kz: '/lovable-uploads/anticor_txt/info_kaz.txt'
       },
       type: 'text'
-    },
-    {
-      id: 7,
-      title: {
-        ru: 'Часто задаваемые вопросы',
-        kz: 'Жиі қойылатын сұрақтар'
-      },
-      fileName: 'часто задаваемые вопросы (Автосохраненный).docx',
-      path: '/lovable-uploads/часто задаваемые вопросы (Автосохраненный).docx',
-      textFilePath: {
-        ru: '/lovable-uploads/anticor_txt/questions.txt',
-        kz: '/lovable-uploads/anticor_txt/questions.txt'
-      },
-      type: 'faq'
-    },
+    }
   ];
 
   const formatText = (text: string) => {
@@ -316,21 +302,7 @@ const Compliance: React.FC = () => {
                 </div>
               ) : (
                 <div className="prose max-w-none">
-                  {selectedDocument?.type === 'faq' ? (
-                    <div className="space-y-4">
-                      {filteredFaqItems.length > 0 ? (
-                        <FaqDisplay faqItems={filteredFaqItems.map(item => ({
-                          id: item.id,
-                          question: item.question,
-                          answer: item.answer
-                        }))} />
-                      ) : (
-                        <p>No FAQ items available in the current language.</p>
-                      )}
-                    </div>
-                  ) : (
-                    formatText(documentContent)
-                  )}
+                  {formatText(documentContent)}
                 </div>
               )}
             </div>

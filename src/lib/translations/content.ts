@@ -35,9 +35,9 @@ export const contentTranslations = {
     en: 'Astana Sports Medical Center is a leading institution in the field of sports medicine. Our mission is to provide high-quality medical support for athletes at all levels, using the latest technologies and treatment methods.'
   },
   'about.more': {
-    ru: 'Подробнее об истории и команде',
-    kz: 'Тарихы мен командасы туралы көбірек',
-    en: 'More about history and team'
+    ru: 'Цель Центра и Миссия Центра',
+    kz: 'Орталықтың мақсаты мен миссиясы',
+    en: 'Center Goals and Mission'
   },
 
   // About Full Page

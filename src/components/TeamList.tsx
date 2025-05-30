@@ -36,7 +36,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     doctorsByDepartment[dept.id] = [];
   });
 
-  // Define staff with proper hierarchy - Тажиева removed, Абдыхадиров moved to management
+  // Define staff with proper hierarchy - Тажиева removed, Абдыхадиров moved to management, Толегенова removed
   const staff = [
     // Management
     { id: "nurmatov", name: { ru: "Нурматов Азамат Басимбекович", kz: "Нурматов Азамат Басимбекович" }, position: { ru: "Руководитель", kz: "Басшы" }, department: "management", order: 1 },
@@ -61,12 +61,11 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "aidarbekkov", name: { ru: "Айдарбеков Арыс Айдарбекұлы", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач", kz: "Дәрігер" }, department: "medical-staff", order: 15 },
     { id: "boltaev", name: { ru: "Болтаев Олжас Талгатович", kz: "Болтаев Олжас Талгатович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "medical-staff", order: 16 },
     
-    // Nursing staff included in medical-staff
+    // Nursing staff included in medical-staff (Толегенова removed)
     { id: "tynyshtykova", name: { ru: "Тыныштықова Ләззат Елубайқызы", kz: "Тыныштықова Ләззат Елубайқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 17 },
     { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 18 },
     { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 19 },
-    { id: "tolegenova", name: { ru: "Толегенова Булбул Тлеубаевна", kz: "Толегенова Булбул Тлеубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 20 },
-    { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "medical-staff", order: 21 },
+    { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "medical-staff", order: 20 },
   ];
 
   // Add all existing doctors to their departments
