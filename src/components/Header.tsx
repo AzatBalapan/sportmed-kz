@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
@@ -23,6 +24,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setAboutDropdownOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -35,6 +37,31 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuOpen && headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [mobileMenuOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const handleAboutDropdownToggle = () => {
     setAboutDropdownOpen(!aboutDropdownOpen);
   };
@@ -43,32 +70,37 @@ export const Header: React.FC = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setAboutDropdownOpen(false);
+  };
+
   return (
     <header 
       ref={headerRef}
-      className={`sticky top-0 z-20 w-full transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 z-30">
-            <img src="/lovable-uploads/icon_for_web.png" width="32" height="32" alt="Logo" />
+          <Link to="/" className="flex items-center space-x-2 z-50" onClick={closeMobileMenu}>
+            <img src="/lovable-uploads/icon_for_web.png" width="28" height="28" className="sm:w-8 sm:h-8" alt="Logo" />
           </Link>
 
           {/* Desktop Navigation */}
           {!isMobile && (
-            <nav className="flex items-center space-x-6">
+            <nav className="flex items-center space-x-4 lg:space-x-6">
               <Link 
                 to="/" 
-                className="text-gov-blue font-serif font-bold hover:text-gov-blue transition-colors"
+                className="text-gov-blue font-serif font-bold hover:text-gov-blue transition-colors text-sm lg:text-base"
               >
                 {t('nav.home')}
               </Link>
               <Link 
                 to="/services" 
-                className="text-gray-700 hover:text-gov-blue transition-colors"
+                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
               >
                 {t('nav.services')}
               </Link>
@@ -76,9 +108,9 @@ export const Header: React.FC = () => {
               {/* About dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="flex items-center text-gray-700 hover:text-gov-blue transition-colors focus:outline-none">
+                  <button className="flex items-center text-gray-700 hover:text-gov-blue transition-colors focus:outline-none text-sm lg:text-base">
                     {t('nav.about')}
-                    <ChevronDown className="ml-1 h-4 w-4" />
+                    <ChevronDown className="ml-1 h-3 w-3 lg:h-4 lg:w-4" />
                   </button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
@@ -102,41 +134,41 @@ export const Header: React.FC = () => {
               
               <Link 
                 to="/team" 
-                className="text-gray-700 hover:text-gov-blue transition-colors"
+                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
               >
                 {t('nav.team')}
               </Link>
               <Link 
                 to="/news" 
-                className="text-gray-700 hover:text-gov-blue transition-colors"
+                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
               >
                 {t('nav.news')}
               </Link>
               <Link 
                 to="/presidential-address" 
-                className="text-gray-700 hover:text-gov-blue transition-colors"
+                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
               >
                 {t('nav.presidentialAddress')}
               </Link>
               <Link 
                 to="/compliance" 
-                className="text-gray-700 hover:text-gov-blue transition-colors"
+                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
               >
                 {t('nav.compliance')}
               </Link>
               <Link 
                 to="/contacts" 
-                className="text-gray-700 hover:text-gov-blue transition-colors"
+                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
               >
                 {t('nav.contacts')}
               </Link>
 
-              <div className="pl-4 border-l border-gray-300">
+              <div className="pl-3 lg:pl-4 border-l border-gray-300">
                 <LanguageSwitcher />
               </div>
 
               <Link to="/login">
-                <Button variant="outline" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white">
+                <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
                   {t('nav.login')}
                 </Button>
               </Link>
@@ -145,15 +177,16 @@ export const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           {isMobile && (
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 z-50">
               <LanguageSwitcher />
               <Button 
                 variant="ghost" 
-                size="icon"
+                size="sm"
                 onClick={toggleMobileMenu}
-                className="z-30"
+                className="p-2"
+                aria-label="Toggle menu"
               >
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
               </Button>
             </div>
           )}
@@ -163,84 +196,108 @@ export const Header: React.FC = () => {
       {/* Mobile Navigation Overlay */}
       {isMobile && (
         <div 
-          className={`fixed inset-0 bg-white z-20 transition-all duration-300 ${
-            mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          className={`fixed inset-0 bg-white z-40 transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
         >
-          <div className="container mx-auto px-4 pt-24 pb-8">
-            <nav className="flex flex-col space-y-4">
+          <div className="container mx-auto px-4 pt-16 pb-8 h-full overflow-y-auto">
+            <nav className="flex flex-col space-y-1">
               <Link 
                 to="/" 
-                className="text-xl py-2 border-b border-gray-100 text-gov-blue font-serif font-bold"
+                className="text-lg py-3 px-2 border-b border-gray-100 text-gov-blue font-serif font-bold active:bg-gray-50 rounded"
+                onClick={closeMobileMenu}
               >
                 {t('nav.home')}
               </Link>
               <Link 
                 to="/services" 
-                className="text-xl py-2 border-b border-gray-100"
+                className="text-lg py-3 px-2 border-b border-gray-100 active:bg-gray-50 rounded"
+                onClick={closeMobileMenu}
               >
                 {t('nav.services')}
               </Link>
               
-              <div className="flex flex-col">
+              <div className="flex flex-col border-b border-gray-100">
                 <button 
                   onClick={handleAboutDropdownToggle}
-                  className="flex items-center justify-between text-xl py-2 border-b border-gray-100"
+                  className="flex items-center justify-between text-lg py-3 px-2 active:bg-gray-50 rounded"
                 >
                   {t('nav.about')}
-                  <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
-                {aboutDropdownOpen && (
-                  <div className="ml-4 mt-2 space-y-2">
-                    <Link to="/director" className="block py-2">
+                <div className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                  aboutDropdownOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="ml-4 pb-2 space-y-1">
+                    <Link 
+                      to="/director" 
+                      className="block py-2 px-2 text-base text-gray-600 active:bg-gray-50 rounded"
+                      onClick={closeMobileMenu}
+                    >
                       {t('nav.director')}
                     </Link>
-                    <Link to="/about" className="block py-2">
+                    <Link 
+                      to="/about" 
+                      className="block py-2 px-2 text-base text-gray-600 active:bg-gray-50 rounded"
+                      onClick={closeMobileMenu}
+                    >
                       {t('nav.aboutCenter')}
                     </Link>
-                    <Link to="/legal-acts" className="block py-2">
+                    <Link 
+                      to="/legal-acts" 
+                      className="block py-2 px-2 text-base text-gray-600 active:bg-gray-50 rounded"
+                      onClick={closeMobileMenu}
+                    >
                       {t('nav.legalActs')}
                     </Link>
                   </div>
-                )}
+                </div>
               </div>
               
               <Link 
                 to="/team" 
-                className="text-xl py-2 border-b border-gray-100"
+                className="text-lg py-3 px-2 border-b border-gray-100 active:bg-gray-50 rounded"
+                onClick={closeMobileMenu}
               >
                 {t('nav.team')}
               </Link>
               <Link 
                 to="/news" 
-                className="text-xl py-2 border-b border-gray-100"
+                className="text-lg py-3 px-2 border-b border-gray-100 active:bg-gray-50 rounded"
+                onClick={closeMobileMenu}
               >
                 {t('nav.news')}
               </Link>
               <Link 
                 to="/presidential-address" 
-                className="text-xl py-2 border-b border-gray-100"
+                className="text-lg py-3 px-2 border-b border-gray-100 active:bg-gray-50 rounded"
+                onClick={closeMobileMenu}
               >
                 {t('nav.presidentialAddress')}
               </Link>
               <Link 
                 to="/compliance" 
-                className="text-xl py-2 border-b border-gray-100"
+                className="text-lg py-3 px-2 border-b border-gray-100 active:bg-gray-50 rounded"
+                onClick={closeMobileMenu}
               >
                 {t('nav.compliance')}
               </Link>
               <Link 
                 to="/contacts" 
-                className="text-xl py-2 border-b border-gray-100"
+                className="text-lg py-3 px-2 border-b border-gray-100 active:bg-gray-50 rounded"
+                onClick={closeMobileMenu}
               >
                 {t('nav.contacts')}
               </Link>
               <Link 
                 to="/login" 
-                className="text-xl py-2"
+                className="text-lg py-3 px-2 mt-4"
+                onClick={closeMobileMenu}
               >
-                {t('nav.login')}
+                <Button className="w-full bg-gov-blue hover:bg-gov-dark-blue">
+                  {t('nav.login')}
+                </Button>
               </Link>
             </nav>
           </div>
