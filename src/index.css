@@ -76,10 +76,22 @@
 
   body {
     @apply bg-background text-foreground;
+    /* Improve text rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent zoom on inputs on iOS */
+    touch-action: manipulation;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-bold;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
   }
 }
 
@@ -103,4 +115,11 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 300ms, transform 300ms;
+}
+
+/* Mobile viewport fix */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
 }

@@ -30,22 +30,26 @@ export const HeroSection: React.FC = () => {
         }}
       />
       
-      <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
+      <div className="container mx-auto px-4 py-12 sm:py-16 md:py-20 lg:py-28 relative z-10">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-gov-dark-blue mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-gov-dark-blue mb-4 sm:mb-6 leading-tight">
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 sm:mb-8">
             {t('hero.subtitle')}
           </p>
-          <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-gov-blue hover:bg-gov-dark-blue" onClick={handleServices}>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Button 
+              size="lg" 
+              className="bg-gov-blue hover:bg-gov-dark-blue w-full sm:w-auto" 
+              onClick={handleServices}
+            >
               {t('hero.button')}
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-gov-blue text-gov-blue hover:bg-gov-light-blue"
+              className="border-gov-blue text-gov-blue hover:bg-gov-light-blue w-full sm:w-auto"
               onClick={handleContact}
             >
               {t('nav.contacts')}
@@ -54,7 +58,7 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-8 sm:h-16 bg-gradient-to-t from-white to-transparent" />
     </div>
   );
 };

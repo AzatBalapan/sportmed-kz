@@ -7,7 +7,7 @@ const Map: React.FC = () => {
   const longitude = 71.489857;
   
   return (
-    <div className="w-full h-64 bg-gray-100 rounded-lg overflow-hidden relative">
+    <div className="w-full h-48 sm:h-56 md:h-64 bg-gray-100 rounded-lg overflow-hidden relative">
       <iframe
         title="Спортивный медицинский центр города Астаны"
         className="w-full h-full border-0"
@@ -16,7 +16,7 @@ const Map: React.FC = () => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-80 p-2 text-sm">
+      <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-80 p-1 sm:p-2 text-xs sm:text-sm">
         <strong>ГККП "Спортивный медицинский центр города Астаны"</strong><br/>
         ул. Куйши Дина, 36А, Астана
       </div>

@@ -69,71 +69,71 @@ export const ContactSection: React.FC = () => {
   );
 
   return (
-    <section id="contacts" className="py-16 bg-white">
+    <section id="contacts" className="py-8 sm:py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <Tabs defaultValue="contacts" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="contacts">
+          <TabsList className="grid w-full grid-cols-2 mb-6 sm:mb-8">
+            <TabsTrigger value="contacts" className="text-sm sm:text-base">
               {language === 'ru' ? 'Контакты' : 'Байланыстар'}
             </TabsTrigger>
-            <TabsTrigger value="faq">
+            <TabsTrigger value="faq" className="text-sm sm:text-base">
               {language === 'ru' ? 'Часто задаваемые вопросы' : 'Жиі қойылатын сұрақтар'}
             </TabsTrigger>
           </TabsList>
           
           <TabsContent value="contacts">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <div className="bg-gray-100 rounded-lg p-8 h-full">
-                  <h3 className="text-2xl font-serif font-bold mb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+              <div className="order-2 lg:order-1">
+                <div className="bg-gray-100 rounded-lg p-4 sm:p-6 md:p-8 h-full">
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6">
                     {t('contact.information')}
                   </h3>
 
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     <div className="flex items-start">
-                      <div className="mr-4 text-gov-blue text-xl">📍</div>
+                      <div className="mr-3 sm:mr-4 text-gov-blue text-lg sm:text-xl">📍</div>
                       <div>
-                        <h4 className="font-medium text-lg">{t('contact.address')}</h4>
-                        <p className="text-gray-600">{address}</p>
+                        <h4 className="font-medium text-base sm:text-lg">{t('contact.address')}</h4>
+                        <p className="text-sm sm:text-base text-gray-600">{address}</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="mr-4 text-gov-blue text-xl">📞</div>
+                      <div className="mr-3 sm:mr-4 text-gov-blue text-lg sm:text-xl">📞</div>
                       <div>
-                        <h4 className="font-medium text-lg">{t('contact.phone')}</h4>
-                        <p className="text-gray-600">{t('contact.phone.value')}</p>
+                        <h4 className="font-medium text-base sm:text-lg">{t('contact.phone')}</h4>
+                        <p className="text-sm sm:text-base text-gray-600">{t('contact.phone.value')}</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="mr-4 text-gov-blue text-xl">✉️</div>
+                      <div className="mr-3 sm:mr-4 text-gov-blue text-lg sm:text-xl">✉️</div>
                       <div>
-                        <h4 className="font-medium text-lg">{t('contact.email')}</h4>
-                        <p className="text-gray-600">info@csmed.kz</p>
+                        <h4 className="font-medium text-base sm:text-lg">{t('contact.email')}</h4>
+                        <p className="text-sm sm:text-base text-gray-600">info@csmed.kz</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="mr-4 text-gov-blue text-xl">🕒</div>
+                      <div className="mr-3 sm:mr-4 text-gov-blue text-lg sm:text-xl">🕒</div>
                       <div>
-                        <h4 className="font-medium text-lg">{t('contact.hours')}</h4>
-                        <p className="text-gray-600">{t('contact.hours.value')}</p>
+                        <h4 className="font-medium text-base sm:text-lg">{t('contact.hours')}</h4>
+                        <p className="text-sm sm:text-base text-gray-600">{t('contact.hours.value')}</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-8">
+                  <div className="mt-6 sm:mt-8">
                     <Map />
                   </div>
                 </div>
               </div>
 
-              <div>
+              <div className="order-1 lg:order-2">
                 <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="text-2xl font-serif font-bold mb-6">
+                  <CardContent className="p-4 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6">
                       {t('contact.form')}
                     </h3>
                     <form className="space-y-4" onSubmit={handleSubmit}>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <label className="text-sm font-medium">
                             {t('register.name')}
@@ -174,7 +174,7 @@ export const ContactSection: React.FC = () => {
           
           <TabsContent value="faq">
             <div className="max-w-4xl mx-auto">
-              <h3 className="text-2xl font-serif font-bold mb-6">
+              <h3 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6">
                 {language === 'ru' ? 'Часто задаваемые вопросы' : 'Жиі қойылатын сұрақтар'}
               </h3>
               {filteredFaqItems.length > 0 ? (
@@ -184,7 +184,7 @@ export const ContactSection: React.FC = () => {
                   answer: item.answer
                 }))} />
               ) : (
-                <p>{language === 'ru' ? 'FAQ недоступно на текущем языке.' : 'Ағымдағы тілде FAQ қол жетімді емес.'}</p>
+                <p className="text-sm sm:text-base">{language === 'ru' ? 'FAQ недоступно на текущем языке.' : 'Ағымдағы тілде FAQ қол жетімді емес.'}</p>
               )}
             </div>
           </TabsContent>
