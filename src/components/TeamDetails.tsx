@@ -70,12 +70,12 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
       
       <div className="flex flex-col md:flex-row gap-8">
         <div className="md:w-1/3">
-          <div className="bg-gray-200 rounded-lg overflow-hidden h-72 flex items-center justify-center">
+          <div className="bg-gray-100 rounded-lg overflow-hidden h-72 flex items-center justify-center">
             {doctor.image ? (
               <img 
                 src={doctor.image} 
                 alt={doctor.name[language]} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             ) : (
               <User size={96} className="text-gray-400" />
