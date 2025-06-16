@@ -74,9 +74,9 @@ const Director: React.FC = () => {
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                   <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
                     <img 
-                      src="/lovable-uploads/81bf838b-f931-4d9a-92a3-34bbbc98046e.png" 
+                      src="/team_photoes/Азамат.svg" 
                       alt="Нурматов Азамат Басимбекович" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover object-top"
                     />
                   </div>
                   <div className="p-6">

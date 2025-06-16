@@ -1,10 +1,11 @@
+
 export const doctors = [
   {
     id: "nurmatov",
     name: { ru: "Нурматов Азамат Басимбекович", kz: "Нурматов Азамат Басимбекович" },
     position: { ru: "Руководитель", kz: "Басшы" },
     department: "management",
-    image: "/team_photoes/3.png",
+    image: "/team_photoes/Азамат.svg",
     experience: {
       ru: "20 лет",
       kz: "20 жыл"
@@ -50,7 +51,7 @@ export const doctors = [
     name: { ru: "Абдыхадиров Данияр Нурланович", kz: "Абдыхадиров Данияр Нурланович" },
     position: { ru: "Заместитель руководителя по медицинской части", kz: "Медицина бөлімі жөніндегі басшының орынбасары" },
     department: "management",
-    image: "/team_photoes/7.png",
+    image: "/team_photoes/Данияр.svg",
     experience: {
       ru: "10 лет",
       kz: "10 жыл"
@@ -73,7 +74,7 @@ export const doctors = [
     name: { ru: "Жиенгазина А.Н.", kz: "Жиенгазина А.Н." },
     position: { ru: "Заведующая отделом", kz: "Бөлім меңгерушісі" },
     department: "medical-staff",
-    image: "/team_photoes/1.png",
+    image: "/team_photoes/Асия.svg",
     experience: {
       ru: "25 лет",
       kz: "25 жыл"
@@ -96,7 +97,7 @@ export const doctors = [
     name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" },
     position: { ru: "Врач УЗИ", kz: "УДЗ дәрігері" },
     department: "medical-staff",
-    image: "/team_photoes/6.png",
+    image: "/team_photoes/Зере.svg",
     experience: {
       ru: "12 лет",
       kz: "12 жыл"
@@ -119,7 +120,7 @@ export const doctors = [
     name: { ru: "Нигметова Асемгуль Алтаевна", kz: "Нигметова Асемгуль Алтаевна" },
     position: { ru: "Главная медсестра", kz: "Бас мейірбике" },
     department: "medical-staff",
-    image: "/team_photoes/18.png",
+    image: "/team_photoes/Асемгуль.svg",
     experience: {
       ru: "18 лет",
       kz: "18 жыл"
@@ -142,7 +143,7 @@ export const doctors = [
     name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" },
     position: { ru: "Эндокринолог", kz: "Эндокринолог" },
     department: "medical-staff",
-    image: "/team_photoes/17.png",
+    image: "/team_photoes/Сания.svg",
     experience: {
       ru: "8 лет",
       kz: "8 жыл"
@@ -165,7 +166,7 @@ export const doctors = [
     name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" },
     position: { ru: "Офтальмолог", kz: "Офтальмолог" },
     department: "medical-staff",
-    image: "/team_photoes/5.png",
+    image: "/team_photoes/Акерке.svg",
     experience: {
       ru: "5 лет",
       kz: "5 жыл"
@@ -188,7 +189,7 @@ export const doctors = [
     name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" },
     position: { ru: "Стоматолог", kz: "Стоматолог" },
     department: "medical-staff",
-    image: "/team_photoes/4.png",
+    image: "/team_photoes/Динара.svg",
     experience: {
       ru: "7 лет",
       kz: "7 жыл"
@@ -211,7 +212,7 @@ export const doctors = [
     name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гульнара Умурзаковна" },
     position: { ru: "Оториноларинголог", kz: "Оториноларинголог" },
     department: "medical-staff",
-    image: "/team_photoes/15.png",
+    image: "/team_photoes/Гульнар.svg",
     experience: {
       ru: "9 лет",
       kz: "9 жыл"
@@ -257,7 +258,7 @@ export const doctors = [
     name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" },
     position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" },
     department: "medical-staff",
-    image: "/team_photoes/16.png",
+    image: "/team_photoes/Есмурат.svg",
     experience: {
       ru: "11 лет",
       kz: "11 жыл"
@@ -280,7 +281,7 @@ export const doctors = [
     name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимович" },
     position: { ru: "Невролог", kz: "Невролог" },
     department: "medical-staff",
-    image: "/team_photoes/11.png",
+    image: "/team_photoes/Ержан.svg",
     experience: {
       ru: "13 лет",
       kz: "13 жыл"
@@ -303,7 +304,7 @@ export const doctors = [
     name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" },
     position: { ru: "Гинеколог", kz: "Гинеколог" },
     department: "medical-staff",
-    image: "/team_photoes/9.png",
+    image: "/team_photoes/Сауле Утешова.svg",
     experience: {
       ru: "14 лет",
       kz: "14 жыл"
@@ -326,7 +327,7 @@ export const doctors = [
     name: { ru: "Кайратбек Айгерим", kz: "Кайратбек Айгерим" },
     position: { ru: "Врач", kz: "Дәрігер" },
     department: "medical-staff",
-    image: "/team_photoes/8.png",
+    image: "/team_photoes/Айгерим.svg",
     experience: {
       ru: "3 года",
       kz: "3 жыл"
@@ -349,7 +350,7 @@ export const doctors = [
     name: { ru: "Адільбаев Бауыржан Клышбекович", kz: "Адільбаев Бауыржан Клышбекович" },
     position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" },
     department: "medical-staff",
-    image: "/team_photoes/10.png",
+    image: "/team_photoes/Бауыржан.svg",
     experience: {
       ru: "4 года",
       kz: "4 жыл"
@@ -372,7 +373,7 @@ export const doctors = [
     name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" },
     position: { ru: "Спортивный психолог", kz: "Спорт психологы" },
     department: "medical-staff",
-    image: "/team_photoes/12.png",
+    image: "/team_photoes/Жанна.svg",
     experience: {
       ru: "2 года",
       kz: "2 жыл"
@@ -395,7 +396,7 @@ export const doctors = [
     name: { ru: "Айдарбеков Арыс Айдарбекұлы", kz: "Айдарбеков Арыс Айдарбекұлы" },
     position: { ru: "Врач", kz: "Дәрігер" },
     department: "medical-staff",
-    image: "/team_photoes/14.png",
+    image: "/team_photoes/Арыс.svg",
     experience: {
       ru: "1 год",
       kz: "1 жыл"
@@ -441,7 +442,7 @@ export const doctors = [
     name: { ru: "Тыныштықова Ләззат Елубайқызы", kz: "Тыныштықова Ләззат Елубайқызы" },
     position: { ru: "Медицинская сестра", kz: "Мейірбике" },
     department: "medical-staff",
-    image: "/team_photoes/2.png",
+    image: "/team_photoes/Ляззат.svg",
     experience: {
       ru: "22 года",
       kz: "22 жыл"
@@ -487,7 +488,7 @@ export const doctors = [
     name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" },
     position: { ru: "Медицинская сестра", kz: "Мейірбике" },
     department: "medical-staff",
-    image: "/team_photoes/13.png",
+    image: "/team_photoes/Марзия.svg",
     experience: {
       ru: "10 лет",
       kz: "10 жыл"

@@ -123,7 +123,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
                       <img 
                         src={doctor.image} 
                         alt={doctor.name[language]} 
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover object-top"
                       />
                     ) : (
                       <User size={64} className="text-gray-400" />
