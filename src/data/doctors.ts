@@ -442,7 +442,7 @@ export const doctors = [
     name: { ru: "Тыныштықова Ләззат Елубайқызы", kz: "Тыныштықова Ләззат Елубайқызы" },
     position: { ru: "Медицинская сестра", kz: "Мейірбике" },
     department: "medical-staff",
-    image: "/team_photoes/Ләззат.svg",
+    image: "/team_photoes/Ляззат.svg",
     experience: {
       ru: "22 года",
       kz: "22 жыл"
