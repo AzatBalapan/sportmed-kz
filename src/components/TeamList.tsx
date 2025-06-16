@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -123,7 +122,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
                       <img 
                         src={doctor.image} 
                         alt={doctor.name[language]} 
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-contain"
                       />
                     ) : (
                       <User size={64} className="text-gray-400" />
