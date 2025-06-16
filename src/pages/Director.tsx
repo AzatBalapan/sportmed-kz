@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import ScrollToTop from '@/components/ScrollToTop';
 import SocialLinks from '@/components/SocialLinks';
+import { GraduationCap, Award, Briefcase, User } from 'lucide-react';
 
 const Director: React.FC = () => {
   const { language } = useLanguage();
@@ -60,32 +61,69 @@ const Director: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow bg-gray-50">
         <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-serif font-bold text-center mb-8">
+          <h1 className="text-4xl font-serif font-bold text-center mb-12">
             {language === 'ru' ? 'Руководитель центра' : 'Орталық басшысы'}
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-            <div className="md:w-1/3">
-              <div className="rounded-lg overflow-hidden h-auto">
-                <img 
-                  src="/lovable-uploads/81bf838b-f931-4d9a-92a3-34bbbc98046e.png" 
-                  alt="Нурматов Азамат Басимбекович" 
-                  className="w-full h-auto object-cover"
-                />
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Left Column - Photo and Basic Info */}
+              <div className="lg:col-span-1">
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                  <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/81bf838b-f931-4d9a-92a3-34bbbc98046e.png" 
+                      alt="Нурматов Азамат Басимбекович" 
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h2 className="text-2xl font-bold mb-2">Нурматов Азамат Басимбекович</h2>
+                    <p className="text-lg text-blue-600 mb-4">
+                      {language === 'ru' ? 'Руководитель' : 'Басшы'}
+                    </p>
+                    
+                    <div className="mb-4">
+                      <div className="flex items-center mb-2">
+                        <Briefcase className="w-4 h-4 mr-2 text-gray-500" />
+                        <span className="font-medium text-gray-700">{language === 'ru' ? 'Отдел' : 'Бөлім'}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm pl-6">{language === 'ru' ? 'Управленческий персонал' : 'Басқару қызметкерлері'}</p>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <div className="flex items-center mb-2">
+                        <Award className="w-4 h-4 mr-2 text-gray-500" />
+                        <span className="font-medium text-gray-700">{language === 'ru' ? 'Стаж' : 'Тәжірибе'}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm pl-6">{language === 'ru' ? 'Более 10 лет в области спортивной медицины' : '10 жылдан астам спорт медицинасы саласында'}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div className="md:w-2/3">
-              <h2 className="text-2xl font-serif font-bold mb-2">Нурматов Азамат Басимбекович</h2>
-              <p className="text-xl text-gov-blue mb-6">
-                {language === 'ru' ? 'Руководитель' : 'Басшы'}
-              </p>
-
-              <div className="prose max-w-none">
-                <div className="whitespace-pre-line text-gray-700 leading-relaxed">
-                  {biographyText[language]}
+              
+              {/* Right Column - Biography */}
+              <div className="lg:col-span-2">
+                <div className="bg-white rounded-xl shadow-lg p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-blue-100 p-2 rounded-lg mr-3">
+                      <User className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      {language === 'ru' ? 'Биография' : 'Өмірбаян'}
+                    </h3>
+                  </div>
+                  <div className="ml-12">
+                    <div className="bg-gray-50 rounded-lg p-6">
+                      <div className="prose max-w-none">
+                        <div className="whitespace-pre-line text-gray-700 leading-relaxed">
+                          {biographyText[language]}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
