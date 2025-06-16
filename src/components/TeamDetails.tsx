@@ -77,7 +77,7 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
                 <img 
                   src={doctor.image} 
                   alt={doctor.name[language]} 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-contain"
                 />
               ) : (
                 <User size={120} className="text-gray-400" />

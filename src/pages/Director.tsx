@@ -76,7 +76,7 @@ const Director: React.FC = () => {
                     <img 
                       src="/lovable-uploads/81bf838b-f931-4d9a-92a3-34bbbc98046e.png" 
                       alt="Нурматов Азамат Басимбекович" 
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="p-6">
