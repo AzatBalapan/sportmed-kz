@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -118,12 +117,12 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
                 .sort((a, b) => (a.order || 999) - (b.order || 999))
                 .map((doctor) => (
                 <Card key={doctor.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  <div className="relative h-48 bg-gray-100 flex items-center justify-center">
+                  <div className="relative h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
                     {doctor.image ? (
                       <img 
                         src={doctor.image} 
                         alt={doctor.name[language]} 
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover"
                       />
                     ) : (
                       <User size={64} className="text-gray-400" />
