@@ -258,7 +258,7 @@ export const doctors = [
     name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" },
     position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" },
     department: "medical-staff",
-    image: "/team_photoes/Есмурат.svg",
+    image: "/team_photoes/Есмұрат.svg",
     experience: {
       ru: "11 лет",
       kz: "11 жыл"
@@ -304,7 +304,7 @@ export const doctors = [
     name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" },
     position: { ru: "Гинеколог", kz: "Гинеколог" },
     department: "medical-staff",
-    image: "/team_photoes/Сауле Утешова.svg",
+    image: "/team_photoes/Сауле.svg",
     experience: {
       ru: "14 лет",
       kz: "14 жыл"
@@ -442,7 +442,7 @@ export const doctors = [
     name: { ru: "Тыныштықова Ләззат Елубайқызы", kz: "Тыныштықова Ләззат Елубайқызы" },
     position: { ru: "Медицинская сестра", kz: "Мейірбике" },
     department: "medical-staff",
-    image: "/team_photoes/Ляззат.svg",
+    image: "/team_photoes/Ләззат.svg",
     experience: {
       ru: "22 года",
       kz: "22 жыл"
