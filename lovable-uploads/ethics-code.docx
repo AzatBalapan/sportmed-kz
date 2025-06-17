@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Спортивный Медицинский Центр Казахстана</title>
+    <meta name="description" content="Официальный сайт Государственного Спортивного Медицинского Центра Казахстана" />
+    <meta name="author" content="Спортивный Медицинский Центр Казахстана" />
+
+    <meta property="og:title" content="Спортивный Медицинский Центр Казахстана" />
+    <meta property="og:description" content="Официальный сайт Государственного Спортивного Медицинского Центра Казахстана" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://azatbalapan.github.io/opengraph-image.png" />
+    <meta property="og:url" content="https://azatbalapan.github.io" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@csmed_kz" />
+    <meta name="twitter:image" content="https://azatbalapan.github.io/opengraph-image.png" />
+    
+    <link rel="canonical" href="https://azatbalapan.github.io" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx?t=1746172960183"></script>
+  </body>
+</html>
