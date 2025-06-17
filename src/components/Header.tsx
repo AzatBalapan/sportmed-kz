@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
@@ -193,15 +192,16 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
+      {/* Mobile Navigation Menu */}
       {isMobile && (
         <div 
-          className={`fixed top-14 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg z-40 border-t border-gray-200 transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? 'opacity-100 visible max-h-[calc(100vh-3.5rem)]' : 'opacity-0 invisible max-h-0'
-          } overflow-hidden`}
+          className={`fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+          style={{ top: '3.5rem' }}
         >
-          <div className="container mx-auto px-4 py-2 max-h-[calc(100vh-3.5rem)] overflow-y-auto">
-            <nav className="flex flex-col">
+          <div className="container mx-auto px-4 py-4 h-[calc(100vh-3.5rem)] overflow-y-auto">
+            <nav className="flex flex-col space-y-2">
               <Link 
                 to="/" 
                 className="text-base py-2 px-3 text-gov-blue font-serif font-bold hover:bg-gray-50 rounded transition-colors"
@@ -217,10 +217,11 @@ export const Header: React.FC = () => {
                 {t('nav.services')}
               </Link>
               
-              <div className="flex flex-col">
+              {/* Mobile About Dropdown */}
+              <div className="relative">
                 <button 
                   onClick={handleAboutDropdownToggle}
-                  className="flex items-center justify-between text-base py-2 px-3 hover:bg-gray-50 rounded transition-colors"
+                  className="w-full flex items-center justify-between text-base py-2 px-3 hover:bg-gray-50 rounded transition-colors"
                 >
                   {t('nav.about')}
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`} />
@@ -290,9 +291,9 @@ export const Header: React.FC = () => {
               >
                 {t('nav.contacts')}
               </Link>
-              <div className="mt-3 px-3 pb-2">
+              <div className="mt-4 px-3">
                 <Link to="/login" onClick={closeMobileMenu}>
-                  <Button className="w-full bg-gov-blue hover:bg-gov-dark-blue">
+                  <Button className="w-full bg-gov-blue hover:bg-gov-dark-blue text-white">
                     {t('nav.login')}
                   </Button>
                 </Link>
