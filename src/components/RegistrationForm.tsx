@@ -128,85 +128,69 @@ export const RegistrationForm: React.FC = () => {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">{t('register.name')}</Label>
+            <Label htmlFor="name">Имя</Label>
             <Input
               id="name"
+              type="text"
               name="name"
-              required
               value={formData.name}
               onChange={handleChange}
-              placeholder={t('language') === 'ru' ? 'Иван Иванов' : 'Асан Асанов'}
+              required
+              className="w-full"
             />
           </div>
-          
           <div className="space-y-2">
-            <Label htmlFor="email">{t('register.email')}</Label>
+            <Label htmlFor="email">Email</Label>
             <Input
               id="email"
-              name="email"
               type="email"
-              required
+              name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="example@email.com"
+              required
+              className="w-full"
             />
           </div>
-          
           <div className="space-y-2">
-            <Label htmlFor="phone">{t('register.phone')}</Label>
+            <Label htmlFor="phone">Телефон</Label>
             <Input
               id="phone"
+              type="tel"
               name="phone"
-              required
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+7 (___) ___-____"
+              required
+              className="w-full"
             />
           </div>
-          
           <div className="space-y-2">
-            <Label htmlFor="password">{t('register.password')}</Label>
+            <Label htmlFor="password">Пароль</Label>
             <Input
               id="password"
-              name="password"
               type="password"
-              required
+              name="password"
               value={formData.password}
               onChange={handleChange}
-              minLength={8}
+              required
+              className="w-full"
             />
           </div>
-          
           <div className="space-y-2">
-            <Label htmlFor="confirmPassword">{t('register.confirm')}</Label>
+            <Label htmlFor="confirmPassword">Подтвердите пароль</Label>
             <Input
               id="confirmPassword"
-              name="confirmPassword"
               type="password"
-              required
+              name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
+              required
+              className="w-full"
             />
           </div>
-          
-          <AppCaptcha onVerify={(verified) => setIsCaptchaVerified(verified)} />
-          
-          <Button 
-            type="submit" 
-            className="w-full bg-gov-blue hover:bg-gov-dark-blue"
-            disabled={isLoading}
-          >
-            {isLoading ? 
-              (t('language') === 'ru' ? 'Загрузка...' : 'Жүктелуде...') : 
-              t('register.button')
-            }
+          <AppCaptcha onVerify={setIsCaptchaVerified} />
+          <Button type="submit" className="w-full" disabled={isLoading || !isCaptchaVerified}>
+            {isLoading ? 'Регистрация...' : 'Зарегистрироваться'}
           </Button>
-          
-          <div className="text-xs text-amber-600 mt-2 text-center">
-            {t('language') === 'ru' 
-              ? 'Примечание: Это демо-версия формы регистрации. Для работы с реальными данными требуется настройка backend-системы.' 
-              : 'Ескерту: Бұл тіркеу формасының демо нұсқасы. Нақты деректермен жұмыс істеу үшін backend жүйесін орнату қажет.'}
-          </div>
         </form>
         
         <div className="mt-6 text-center">

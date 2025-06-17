@@ -97,12 +97,6 @@ export const LoginForm: React.FC = () => {
               (t('language') === 'ru' ? 'Загрузка...' : 'Жүктелуде...') : 
               t('login.button')}
           </Button>
-          
-          <div className="text-xs text-amber-600 mt-2 text-center">
-            {t('language') === 'ru' 
-              ? 'Примечание: Это демо-версия формы входа. Для работы с реальными данными требуется настройка backend-системы.' 
-              : 'Ескерту: Бұл кіру формасының демо нұсқасы. Нақты деректермен жұмыс істеу үшін backend жүйесін орнату қажет.'}
-          </div>
         </form>
         
         <div className="mt-6 text-center">
