@@ -1,18 +1,19 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
-import { toast } from '@/components/ui/sonner';
+import { useAuth } from '@/context/AuthContext';
 
 export const LoginForm: React.FC = () => {
   const { t } = useLanguage();
-  const { toast: uiToast } = useToast();
+  const { toast } = useToast();
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,33 +23,15 @@ export const LoginForm: React.FC = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate API call delay
-    setTimeout(() => {
-      // Show backend notification
-      toast(
-        t('language') === 'ru' 
-          ? 'Функционал требует подключения к базе данных' 
-          : 'Функционалдық дерекқорға қосылуды талап етеді',
-        {
-          description: t('language') === 'ru' 
-            ? 'В данный момент вход работает в демонстрационном режиме. Для полноценной работы необходима интеграция с бэкендом.' 
-            : 'Қазіргі уақытта кіру көрсетілім режимінде жұмыс істейді. Толық жұмыс істеу үшін бэкендпен интеграция қажет.',
-          duration: 8000,
-        }
-      );
-      
-      uiToast({
-        title: t('language') === 'ru' ? 'Демо-режим' : 'Демо режимі',
-        description: t('language') === 'ru' ? 'Система входа работает в демонстрационном режиме.' : 'Жүйеге кіру көрсетілім режимінде жұмыс істейді.',
-      });
-      
+    try {
+      await login(email, password);
+      navigate('/'); // Redirect to home page after successful login
+    } catch (error: any) {
+      // Error is already handled in the AuthContext
+      console.error('Login error:', error);
+    } finally {
       setIsLoading(false);
-      
-      // Reset form
-      setEmail('');
-      setPassword('');
-      setRememberMe(false);
-    }, 1500);
+    }
   };
 
   return (

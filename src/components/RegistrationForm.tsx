@@ -1,18 +1,19 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import AppCaptcha from './AppCaptcha';
 import { useToast } from '@/hooks/use-toast';
-import { toast } from '@/components/ui/sonner';
+import { useAuth } from '@/context/AuthContext';
 
 export const RegistrationForm: React.FC = () => {
   const { t } = useLanguage();
-  const { toast: uiToast } = useToast();
+  const { toast } = useToast();
+  const { register } = useAuth();
+  const navigate = useNavigate();
   const [isCaptchaVerified, setIsCaptchaVerified] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -27,12 +28,44 @@ export const RegistrationForm: React.FC = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+
+  const getErrorMessage = (error: any): string => {
+    console.log('Registration error:', error);
+    
+    // Firebase Auth error codes
+    switch (error.code) {
+      case 'auth/email-already-in-use':
+        return t('language') === 'ru' 
+          ? 'Этот email уже используется' 
+          : 'Бұл email қолданыста';
+      case 'auth/invalid-email':
+        return t('language') === 'ru' 
+          ? 'Неверный формат email' 
+          : 'Email пішімі қате';
+      case 'auth/operation-not-allowed':
+        return t('language') === 'ru' 
+          ? 'Регистрация по email отключена' 
+          : 'Email арқылы тіркеу өшірілген';
+      case 'auth/weak-password':
+        return t('language') === 'ru' 
+          ? 'Пароль слишком слабый' 
+          : 'Құпия сөз тым әлсіз';
+      case 'permission-denied':
+        return t('language') === 'ru' 
+          ? 'Ошибка доступа к базе данных' 
+          : 'Дерекқорға қол жеткізу қатесі';
+      default:
+        return error.message || (t('language') === 'ru' 
+          ? 'Произошла ошибка при регистрации' 
+          : 'Тіркелу кезінде қате орын алды');
+    }
+  };
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!isCaptchaVerified) {
-      uiToast({
+      toast({
         title: t('language') === 'ru' ? 'Ошибка' : 'Қате',
         description: t('language') === 'ru' 
           ? 'Пожалуйста, пройдите проверку CAPTCHA' 
@@ -43,7 +76,7 @@ export const RegistrationForm: React.FC = () => {
     }
     
     if (formData.password !== formData.confirmPassword) {
-      uiToast({
+      toast({
         title: t('language') === 'ru' ? 'Ошибка' : 'Қате',
         description: t('language') === 'ru' 
           ? 'Пароли не совпадают' 
@@ -52,44 +85,39 @@ export const RegistrationForm: React.FC = () => {
       });
       return;
     }
+
+    if (formData.password.length < 8) {
+      toast({
+        title: t('language') === 'ru' ? 'Ошибка' : 'Қате',
+        description: t('language') === 'ru' 
+          ? 'Пароль должен содержать минимум 8 символов' 
+          : 'Құпия сөз кемінде 8 таңбадан тұруы керек',
+        variant: 'destructive',
+      });
+      return;
+    }
     
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      // Show backend notification
-      toast(
-        t('language') === 'ru' 
-          ? 'Функционал требует подключения к базе данных' 
-          : 'Функционалдық дерекқорға қосылуды талап етеді',
-        {
-          description: t('language') === 'ru' 
-            ? 'В данный момент регистрация работает в демонстрационном режиме. Для полноценной работы необходима интеграция с бэкендом.' 
-            : 'Қазіргі уақытта тіркеу көрсетілім режимінде жұмыс істейді. Толық жұмыс істеу үшін бэкендпен интеграция қажет.',
-          duration: 8000,
-        }
-      );
-      
-      // Also show success message
-      uiToast({
-        title: t('language') === 'ru' ? 'Демо-режим' : 'Демо режимі',
-        description: t('language') === 'ru' 
-          ? 'В демонстрационном режиме письмо с подтверждением не отправляется.' 
-          : 'Демонстрациялық режимде растау хаты жіберілмейді.',
+    try {
+      console.log('Starting registration process...');
+      await register(formData.email, formData.password, {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
       });
-      
+      console.log('Registration successful, redirecting...');
+      navigate('/'); // Redirect to home page after successful registration
+    } catch (error: any) {
+      console.error('Registration error details:', error);
+      toast({
+        title: t('language') === 'ru' ? 'Ошибка регистрации' : 'Тіркелу қатесі',
+        description: getErrorMessage(error),
+        variant: 'destructive',
+      });
+    } finally {
       setIsLoading(false);
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        password: '',
-        confirmPassword: '',
-      });
-      setIsCaptchaVerified(false);
-    }, 1500);
+    }
   };
   
   return (
