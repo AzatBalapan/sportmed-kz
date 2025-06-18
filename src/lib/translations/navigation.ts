@@ -1,4 +1,3 @@
-
 export const navigationTranslations = {
   // Header
   'nav.home': {
@@ -75,5 +74,15 @@ export const navigationTranslations = {
     ru: 'Послание Президента',
     kz: 'Президент Жолдауы',
     en: 'Presidential Address'
+  },
+  'nav.profile': {
+    ru: 'Профиль',
+    kz: 'Профиль',
+    en: 'Profile'
+  },
+  'nav.changePassword': {
+    ru: 'Изменить пароль',
+    kz: 'Құпия сөзді өзгерту',
+    en: 'Change Password'
   }
 };

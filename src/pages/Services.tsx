@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -127,7 +126,7 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Адрес:",
-      address: "Kuishi Dina 36А, Астана",
+      address: "Куйши Дина 36А, Астана",
       phone: "+7 (706) 606-3636"
     }
   },
@@ -250,7 +249,7 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Мекенжай:",
-      address: "Kuishi Dina 36А, Астана",
+      address: "Куйши Дина 36А, Астана",
       phone: "+7 (706) 606-3636"
     }
   }

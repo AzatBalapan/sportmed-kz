@@ -1,19 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { useAuth } from '@/context/AuthContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, User, LogOut, Key } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
+  DropdownMenuSeparator
 } from '@/components/ui/dropdown-menu';
 
 export const Header: React.FC = () => {
   const { t } = useLanguage();
+  const { user, logout } = useAuth();
   const isMobile = useIsMobile();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -166,11 +169,41 @@ export const Header: React.FC = () => {
                 <LanguageSwitcher />
               </div>
 
-              <Link to="/login">
-                <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
-                  {t('nav.login')}
-                </Button>
-              </Link>
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
+                      <User className="w-4 h-4 mr-2" />
+                      {t('nav.profile')}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem>
+                      <Link to="/profile" className="flex items-center w-full">
+                        <User className="w-4 h-4 mr-2" />
+                        {t('nav.profile')}
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                      <Link to="/change-password" className="flex items-center w-full">
+                        <Key className="w-4 h-4 mr-2" />
+                        {t('nav.changePassword')}
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={() => logout()}>
+                      <LogOut className="w-4 h-4 mr-2" />
+                      {t('nav.logout')}
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link to="/login">
+                  <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
+                    {t('nav.login')}
+                  </Button>
+                </Link>
+              )}
             </nav>
           )}
 
@@ -292,11 +325,36 @@ export const Header: React.FC = () => {
                 {t('nav.contacts')}
               </Link>
               <div className="mt-4 px-3">
-                <Link to="/login" onClick={closeMobileMenu}>
-                  <Button className="w-full bg-gov-blue hover:bg-gov-dark-blue text-white">
-                    {t('nav.login')}
-                  </Button>
-                </Link>
+                {user ? (
+                  <div className="space-y-2">
+                    <Link to="/profile" onClick={closeMobileMenu}>
+                      <Button className="w-full bg-gov-blue hover:bg-gov-dark-blue text-white">
+                        {t('nav.profile')}
+                      </Button>
+                    </Link>
+                    <Link to="/change-password" onClick={closeMobileMenu}>
+                      <Button variant="outline" className="w-full border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white">
+                        {t('nav.changePassword')}
+                      </Button>
+                    </Link>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+                      onClick={() => {
+                        logout();
+                        closeMobileMenu();
+                      }}
+                    >
+                      {t('nav.logout')}
+                    </Button>
+                  </div>
+                ) : (
+                  <Link to="/login" onClick={closeMobileMenu}>
+                    <Button className="w-full bg-gov-blue hover:bg-gov-dark-blue text-white">
+                      {t('nav.login')}
+                    </Button>
+                  </Link>
+                )}
               </div>
             </nav>
           </div>
