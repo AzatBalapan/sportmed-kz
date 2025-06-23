@@ -4,6 +4,18 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem
+} from '@/components/ui/dropdown-menu';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent
+} from '@/components/ui/accordion';
 
 // Services data structure with both languages
 const serviceData = {
@@ -278,23 +290,58 @@ const Services: React.FC = () => {
               </h2>
               
               <div className="space-y-8">
-                {section.services.map((service, serviceIndex) => (
-                  <Card key={serviceIndex} className="bg-white/90 shadow hover:shadow-md transition-shadow">
-                    <CardContent className="p-6">
-                      <div className="flex items-start">
-                        <Check className="text-gov-blue flex-shrink-0 mt-1 mr-3 w-5 h-5" />
-                        <div>
-                          <h3 className="text-lg font-medium text-gov-dark-blue">{service.title}</h3>
-                          {service.description && (
-                            <div className="mt-2 text-gray-600 whitespace-pre-line">
-                              {service.description}
+                <Accordion type="single" collapsible className="w-full">
+                  {section.services.map((service, serviceIndex) => {
+                    // Detect if the description contains multiple options (lines starting with •, -, or similar)
+                    const hasOptions = service.description && /(^|\n)[•\-]/.test(service.description);
+                    let options = [];
+                    if (hasOptions) {
+                      options = service.description
+                        .split(/\n|\r/)
+                        .filter(line => line.trim().match(/^[•\-]/))
+                        .map(line => line.replace(/^[•\-]\s*/, ''));
+                    }
+                    if (hasOptions) {
+                      return (
+                        <Card key={serviceIndex} className="bg-white/90 shadow hover:shadow-md transition-shadow">
+                          <AccordionItem value={service.title + sectionIndex}>
+                            <AccordionTrigger className="text-lg font-medium text-gov-dark-blue px-6 py-4">
+                              <div className="flex items-center">
+                                <Check className="text-gov-blue flex-shrink-0 mr-3 w-5 h-5" />
+                                {service.title}
+                              </div>
+                            </AccordionTrigger>
+                            <AccordionContent>
+                              <ul className="list-disc pl-8 text-gray-600">
+                                {options.map((option, idx) => (
+                                  <li key={idx}>{option}</li>
+                                ))}
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Card>
+                      );
+                    } else {
+                      return (
+                        <Card key={serviceIndex} className="bg-white/90 shadow hover:shadow-md transition-shadow">
+                          <CardContent className="p-6">
+                            <div className="flex items-start">
+                              <Check className="text-gov-blue flex-shrink-0 mt-1 mr-3 w-5 h-5" />
+                              <div>
+                                <h3 className="text-lg font-medium text-gov-dark-blue">{service.title}</h3>
+                                {service.description && (
+                                  <div className="mt-2 text-gray-600 whitespace-pre-line">
+                                    {service.description}
+                                  </div>
+                                )}
+                              </div>
                             </div>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                          </CardContent>
+                        </Card>
+                      );
+                    }
+                  })}
+                </Accordion>
               </div>
             </div>
           ))}
