@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -130,7 +129,7 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
                 </div>
               )}
               
-              {doctor.specialization && doctor.specialization[language] && (
+              {'specialization' in doctor && doctor.specialization && doctor.specialization[language] && (
                 <div>
                   <div className="flex items-center mb-4">
                     <div className="bg-green-100 p-2 rounded-lg mr-3">
@@ -157,6 +156,22 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
                   <div className="ml-12">
                     <div className="bg-gray-50 rounded-lg p-4">
                       <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: doctor.certificates[language].replace(/\n/g, '<br/>') }} />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {/* Work experience section */}
+              {'work' in doctor && doctor.work && doctor.work[language] && (
+                <div>
+                  <div className="flex items-center mb-4">
+                    <div className="bg-gray-200 p-2 rounded-lg mr-3">
+                      <Briefcase className="w-5 h-5 text-gray-700" />
+                    </div>
+                    <h2 className="text-xl font-semibold text-gray-800">{language === 'ru' ? 'Опыт работы' : 'Жұмыс тәжірибесі'}</h2>
+                  </div>
+                  <div className="ml-12">
+                    <div className="bg-gray-50 rounded-lg p-4">
+                      <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: doctor.work[language].replace(/\n/g, '<br/>') }} />
                     </div>
                   </div>
                 </div>

@@ -28,7 +28,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: 'sportmed', nameRu: 'Отделение споривной медицины и медико-биологического отделения', nameKz: 'Спорттық медицина және медико-биологиялық бөлім', order: 2 },
     { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 3 },
     { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 4 },
-    { id: 'other', nameRu: 'Прочие специалисты', nameKz: 'Басқа мамандар', order: 5 },
+    { id: 'other', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 5 },
   ];
 
   // Group doctors by department
