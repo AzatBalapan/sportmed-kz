@@ -19,6 +19,17 @@ export const HeroSection: React.FC = () => {
     }
   };
 
+  React.useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'video';
+    link.href = `${import.meta.env.BASE_URL}compressed.mp4`;
+    document.head.appendChild(link);
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
     <div className="relative bg-gov-light-blue overflow-hidden">
       {/* Background video */}
@@ -29,6 +40,7 @@ export const HeroSection: React.FC = () => {
         loop
         muted
         playsInline
+        poster="/lovable-uploads/banner_test.jpg"
       />
       {/* Overlay for subtle effect (optional) */}
       {/* <div className="absolute inset-0 bg-black opacity-10 z-0" /> */}

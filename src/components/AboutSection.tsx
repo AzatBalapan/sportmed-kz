@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -16,6 +15,8 @@ export const AboutSection: React.FC = () => {
               alt="Sport Medical Center"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
               style={{ maxHeight: '500px' }}
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
           <div className="md:w-1/2">
