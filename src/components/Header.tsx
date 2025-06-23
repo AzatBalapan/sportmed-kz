@@ -184,12 +184,6 @@ export const Header: React.FC = () => {
                         {t('nav.profile')}
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link to="/change-password" className="flex items-center w-full">
-                        <Key className="w-4 h-4 mr-2" />
-                        {t('nav.changePassword')}
-                      </Link>
-                    </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={() => logout()}>
                       <LogOut className="w-4 h-4 mr-2" />
@@ -330,11 +324,6 @@ export const Header: React.FC = () => {
                     <Link to="/profile" onClick={closeMobileMenu}>
                       <Button className="w-full bg-gov-blue hover:bg-gov-dark-blue text-white">
                         {t('nav.profile')}
-                      </Button>
-                    </Link>
-                    <Link to="/change-password" onClick={closeMobileMenu}>
-                      <Button variant="outline" className="w-full border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white">
-                        {t('nav.changePassword')}
                       </Button>
                     </Link>
                     <Button 

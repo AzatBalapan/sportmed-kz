@@ -22,7 +22,7 @@ import LegalActs from "./pages/LegalActs";
 import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import BerikAsylov from "./pages/BerikAsylov";
-import ChangePassword from "./pages/ChangePassword";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
@@ -50,7 +50,7 @@ const App = () => (
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/director" element={<Director />} />
               <Route path="/legal-acts" element={<LegalActs />} />
-              <Route path="/change-password" element={<ChangePassword />} />
+              <Route path="/profile" element={<Profile />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
