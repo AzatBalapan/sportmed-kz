@@ -25,7 +25,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
   // Define departments - only management and medical staff
   const departments: Department[] = [
     { id: 'management', nameRu: 'Управленческий персонал', nameKz: 'Басқару қызметкерлері', order: 1 },
-    { id: 'sportmed', nameRu: 'Отделение споривной медицины и медико-биологического отделения', nameKz: 'Спорттық медицина және медико-биологиялық бөлім', order: 2 },
+    { id: 'sportmed', nameRu: 'Отделение спортивной медицины и медико-биологического обеспечения', nameKz: 'Спорттық медицина және медико-биологиялық қамтамасыз ету бөлімі', order: 2 },
     { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 3 },
     { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 4 },
     { id: 'other', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 5 },
