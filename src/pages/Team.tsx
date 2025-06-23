@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TeamList from '@/components/TeamList';
@@ -10,26 +9,22 @@ import { Toaster } from '@/components/ui/toaster';
 
 const Team: React.FC = () => {
   const { t } = useLanguage();
-  const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const params = useParams();
+  const [selectedDoctor, setSelectedDoctor] = useState<string | null>(params.doctorId || null);
 
   // Handle doctor ID from URL parameters if coming from services page
   useEffect(() => {
-    const searchParams = new URLSearchParams(location.search);
-    const doctorId = searchParams.get('doctorId');
-    
-    if (doctorId) {
-      setSelectedDoctor(doctorId);
-      // Clear the URL parameter
-      navigate('/team', { replace: true });
+    if (params.doctorId) {
+      setSelectedDoctor(params.doctorId);
+    } else {
+      setSelectedDoctor(null);
     }
-  }, [location.search, navigate]);
+  }, [params.doctorId]);
 
   const handleSelectDoctor = (doctorId: string) => {
-    setSelectedDoctor(doctorId);
-    // Optionally, update URL to allow direct linking to doctor's profile
-    // navigate(`/team?doctorId=${doctorId}`);
+    navigate(`/team/${doctorId}`);
   };
 
   return (
@@ -44,7 +39,7 @@ const Team: React.FC = () => {
               <TeamList onSelectDoctor={handleSelectDoctor} />
             </>
           ) : (
-            <TeamDetails doctorId={selectedDoctor} onBack={() => setSelectedDoctor(null)} />
+            <TeamDetails doctorId={selectedDoctor} onBack={() => navigate('/team')} />
           )}
         </div>
       </main>
