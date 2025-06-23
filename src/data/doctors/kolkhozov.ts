@@ -5,8 +5,8 @@ export const kolkhozov = {
     kz: "Колхозов Айдар Оразбекович"
   },
   position: {
-    ru: `Фельдшер выездной бригады скорой медицинской помощи\nИнструктор по медицинскому оборудованию WEINMANN\nИнструктор BLS, ACLS, PHTLS, PALS\nФельдшер по техническому обслуживанию медоборудования`,
-    kz: `Фельдшер выездной бригады скорой медицинской помощи\nИнструктор по медицинскому оборудованию WEINMANN\nИнструктор BLS, ACLS, PHTLS, PALS\nФельдшер по техническому обслуживанию медоборудования`
+    ru: "Фельдшер",
+    kz: "Фельдшер"
   },
   department: "medical-staff",
   image: "/team_photoes/placeholder.svg", // Placeholder, update if photo is added

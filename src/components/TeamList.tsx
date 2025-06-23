@@ -25,7 +25,10 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
   // Define departments - only management and medical staff
   const departments: Department[] = [
     { id: 'management', nameRu: 'Управленческий персонал', nameKz: 'Басқару қызметкерлері', order: 1 },
-    { id: 'medical-staff', nameRu: 'Медицинский персонал', nameKz: 'Медициналық қызметкерлер', order: 2 },
+    { id: 'sportmed', nameRu: 'Отделение споривной медицины и медико-биологического отделения', nameKz: 'Спорттық медицина және медико-биологиялық бөлім', order: 2 },
+    { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 3 },
+    { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 4 },
+    { id: 'other', nameRu: 'Прочие специалисты', nameKz: 'Басқа мамандар', order: 5 },
   ];
 
   // Group doctors by department
@@ -43,31 +46,35 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "tuyebayev", name: { ru: "Туйебаев Ашим Еркинович", kz: "Туйебаев Ашим Еркинович" }, position: { ru: "Заместитель руководителя по административно-экономической части", kz: "Әкімшілік-экономикалық бөлімі жөніндегі басшының орынбасары" }, department: "management", order: 2 },
     { id: "abdykhadirov", name: { ru: "Абдыхадиров Данияр Нурланович", kz: "Абдыхадиров Данияр Нұрланұлы" }, position: { ru: "Заведующий отделением по профилю", kz: "Бөлім меңгерушісі" }, department: "management", order: 3 },
     
-    // Medical Staff - with Жиенгазина А.Н. as first
-    { id: "zhiengazina", name: { ru: "Жиенгазина А.Н.", kz: "Жиенгазина А.Н." }, position: { ru: "Заведующая отделом", kz: "Бөлім меңгерушісі" }, department: "medical-staff", order: 1 },
-    { id: "nurgalieva", name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" }, position: { ru: "Врач УЗИ", kz: "УДЗ дәрігері" }, department: "medical-staff", order: 2 },
-    { id: "nigmetova", name: { ru: "Нигметова Асемгуль Алтаевна", kz: "Нигметова Асемгуль Алтаевна" }, position: { ru: "Главная медсестра", kz: "Бас мейірбике" }, department: "medical-staff", order: 3 },
-    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "medical-staff", order: 4 },
-    { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "medical-staff", order: 5 },
-    { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "medical-staff", order: 6 },
-    { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" }, position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты оториноларинголог дәрігері" }, department: "medical-staff", order: 7 },
-    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "medical-staff", order: 8 },
-    { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "medical-staff", order: 9 },
-    { id: "khamitov", name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимұлы" }, position: { ru: "Врач-невролог", kz: "Невролог дәрігері" }, department: "medical-staff", order: 10 },
-    { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "medical-staff", order: 11 },
-    { id: "kairatbek", name: { ru: "Кайратбек Айгерим", kz: "Кайратбек Айгерим" }, position: { ru: "Врач", kz: "Дәрігер" }, department: "medical-staff", order: 12 },
-    { id: "adilbaev", name: { ru: "Адільбаев Бауыржан Клышбекович", kz: "Адільбаев Бауыржан Клышбекович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "medical-staff", order: 13 },
-    { id: "kozhakhmetova", name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "medical-staff", order: 14 },
-    { id: "aidarbekov", name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" }, department: "medical-staff", order: 15 },
-    { id: "boltaev", name: { ru: "Болтаев Олжас", kz: "Болтаев Олжас" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "medical-staff", order: 16 },
-    
-    // Nursing staff included in medical-staff (Толегенова removed)
-    { id: "tynyshtykova", name: { ru: "Тыныштықова Ләззат Елубайқызы", kz: "Тыныштықова Ләззат Елубайқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 17 },
-    { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 18 },
-    { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 19 },
-    { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "medical-staff", order: 20 },
-    { id: "anes", name: { ru: "Анес Назерке Мендуллаевна", kz: "Анес Назерке Мендуллаевна" }, position: { ru: "Медицинская сестра / Сестринское дело", kz: "Медбике / Сестрин ісі" }, department: "medical-staff", order: 21 },
-    { id: "kolkhozov", name: { ru: "Колхозов Айдар Оразбекович", kz: "Колхозов Айдар Оразбекович" }, position: { ru: "Фельдшер выездной бригады скорой медицинской помощи", kz: "Жедел жәрдем бригадасының фельдшері" }, department: "medical-staff", order: 22 },
+    // Отделение споривной медицины и медико-биологического отделения
+    { id: "zhiengazina", name: { ru: "Жиенгазина Асия Нуржановна", kz: "Жиенгазина Асия Нуржановна" }, position: { ru: "Заведующая отделом", kz: "Бөлім меңгерушісі" }, department: "sportmed", order: 1 },
+    { id: "boltaev", name: { ru: "Болтаев Олжас Талгатович", kz: "Болтаев Олжас Талгатович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 2 },
+    { id: "adilbaev", name: { ru: "Адильбаев Бауыржан Клышбекович", kz: "Адильбаев Бауыржан Клышбекович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 3 },
+    { id: "aidarbekov", name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" }, department: "sportmed", order: 4 },
+
+    // Средний медицинский персонал
+    { id: "tynyshtykova", name: { ru: "Тыныштықова Ляззат Елубаевна", kz: "Тыныштықова Ляззат Елубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 1 },
+    { id: "anes", name: { ru: "Анес Назерке Мендуллаевна", kz: "Анес Назерке Мендуллаевна" }, position: { ru: "Медицинская сестра / Сестринское дело", kz: "Медбике / Сестрин ісі" }, department: "nursing", order: 2 },
+    { id: "kolkhozov", name: { ru: "Колхозов Айдар Оразбекович", kz: "Колхозов Айдар Оразбекович" }, position: { ru: "Фельдшер выездной бригады скорой медицинской помощи", kz: "Жедел жәрдем бригадасының фельдшері" }, department: "nursing", order: 3 },
+
+    // Спортивный психолог
+    { id: "kozhakhmetova", name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "psychologist", order: 1 },
+
+    // Прочие специалисты
+    { id: "nurgalieva", name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" }, position: { ru: "Врач УЗИ", kz: "УДЗ дәрігері" }, department: "other", order: 1 },
+    { id: "nigmetova", name: { ru: "Нигметова Асемгуль Алтаевна", kz: "Нигметова Асемгуль Алтаевна" }, position: { ru: "Главная медсестра", kz: "Бас мейірбике" }, department: "other", order: 2 },
+    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "other", order: 3 },
+    { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "other", order: 4 },
+    { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "other", order: 5 },
+    { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" }, position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты оториноларинголог дәрігері" }, department: "other", order: 6 },
+    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "other", order: 7 },
+    { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "other", order: 8 },
+    { id: "khamitov", name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимұлы" }, position: { ru: "Врач-невролог", kz: "Невролог дәрігері" }, department: "other", order: 9 },
+    { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "other", order: 10 },
+    { id: "kairatbek", name: { ru: "Кайратбек Айгерим", kz: "Кайратбек Айгерим" }, position: { ru: "Врач", kz: "Дәрігер" }, department: "other", order: 11 },
+    { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "other", order: 12 },
+    { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "other", order: 13 },
+    { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "other", order: 14 },
   ];
 
   // Add all existing doctors to their departments
