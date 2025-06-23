@@ -66,6 +66,8 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 18 },
     { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "medical-staff", order: 19 },
     { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "medical-staff", order: 20 },
+    { id: "anes", name: { ru: "Анес Назерке Мендуллаевна", kz: "Анес Назерке Мендуллаевна" }, position: { ru: "Медицинская сестра / Сестринское дело", kz: "Медбике / Сестрин ісі" }, department: "medical-staff", order: 21 },
+    { id: "kolkhozov", name: { ru: "Колхозов Айдар Оразбекович", kz: "Колхозов Айдар Оразбекович" }, position: { ru: "Фельдшер выездной бригады скорой медицинской помощи", kz: "Жедел жәрдем бригадасының фельдшері" }, department: "medical-staff", order: 22 },
   ];
 
   // Add all existing doctors to their departments
