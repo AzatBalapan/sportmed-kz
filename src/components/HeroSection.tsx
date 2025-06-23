@@ -24,7 +24,7 @@ export const HeroSection: React.FC = () => {
       {/* Background video */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-20"
-        src="/background_vid.mp4"
+        src={`${import.meta.env.BASE_URL}compressed.mp4`}
         autoPlay
         loop
         muted
