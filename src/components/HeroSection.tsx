@@ -85,8 +85,8 @@ export const HeroSection: React.FC = () => {
               <p className="font-sans tracking-wide text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gov-dark-blue mt-4 mb-2 sm:mb-3 text-center">
                 {t('hero.subtitle')}
               </p>
-              {/* Fixed buttons at the bottom of the left image area */}
-              <div className="absolute left-0 right-0 bottom-4 flex flex-row items-center justify-center gap-6 px-4 z-20">
+              {/* Responsive: static on mobile, absolute at bottom on md+ */}
+              <div className="static md:absolute md:left-0 md:right-0 md:bottom-4 flex flex-row items-center justify-center gap-4 md:gap-6 px-4 z-20 w-full mt-4 md:mt-0">
                 <Button 
                   size="lg" 
                   className="bg-gov-blue hover:bg-gov-dark-blue w-full max-w-[180px]" 

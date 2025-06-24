@@ -5,7 +5,6 @@ import { useAuth } from '@/context/AuthContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, User, LogOut, Key } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   DropdownMenu,
   DropdownMenuContent,
@@ -17,11 +16,10 @@ import {
 export const Header: React.FC = () => {
   const { t } = useLanguage();
   const { user, logout } = useAuth();
-  const isMobile = useIsMobile();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -92,141 +90,129 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          {!isMobile && (
-            <nav className="flex items-center space-x-4 lg:space-x-6">
-              <Link 
-                to="/" 
-                className="text-gov-blue font-serif font-bold hover:text-gov-blue transition-colors text-sm lg:text-base"
-              >
-                {t('nav.home')}
-              </Link>
-              <Link 
-                to="/services" 
-                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
-              >
-                {t('nav.services')}
-              </Link>
-              
-              {/* About dropdown */}
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+            <Link 
+              to="/" 
+              className="text-gov-blue font-serif font-bold hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.home')}
+            </Link>
+            <Link 
+              to="/services" 
+              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.services')}
+            </Link>
+            
+            {/* About dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="flex items-center text-gray-700 hover:text-gov-blue transition-colors focus:outline-none text-sm lg:text-base">
+                  {t('nav.about')}
+                  <ChevronDown className="ml-1 h-3 w-3 lg:h-4 lg:w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuItem>
+                  <Link to="/director" className="w-full">
+                    {t('nav.director')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/about" className="w-full">
+                    {t('nav.aboutCenter')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/legal-acts" className="w-full">
+                    {t('nav.legalActs')}
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            <Link 
+              to="/team" 
+              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.team')}
+            </Link>
+            <Link 
+              to="/news" 
+              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.news')}
+            </Link>
+            <Link 
+              to="/presidential-address" 
+              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.presidentialAddress')}
+            </Link>
+            <Link 
+              to="/compliance" 
+              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.compliance')}
+            </Link>
+            <Link 
+              to="/contacts" 
+              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.contacts')}
+            </Link>
+
+            <div className="pl-3 lg:pl-4 border-l border-gray-300">
+              <LanguageSwitcher />
+            </div>
+
+            {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="flex items-center text-gray-700 hover:text-gov-blue transition-colors focus:outline-none text-sm lg:text-base">
-                    {t('nav.about')}
-                    <ChevronDown className="ml-1 h-3 w-3 lg:h-4 lg:w-4" />
-                  </button>
+                  <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
+                    <User className="w-4 h-4 mr-2" />
+                    {t('nav.profile')}
+                  </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
+                <DropdownMenuContent align="end">
                   <DropdownMenuItem>
-                    <Link to="/director" className="w-full">
-                      {t('nav.director')}
+                    <Link to="/profile" className="flex items-center w-full">
+                      <User className="w-4 h-4 mr-2" />
+                      {t('nav.profile')}
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Link to="/about" className="w-full">
-                      {t('nav.aboutCenter')}
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Link to="/legal-acts" className="w-full">
-                      {t('nav.legalActs')}
-                    </Link>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={() => logout()}>
+                    <LogOut className="w-4 h-4 mr-2" />
+                    {t('nav.logout')}
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-              
-              <Link 
-                to="/team" 
-                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
-              >
-                {t('nav.team')}
+            ) : (
+              <Link to="/login">
+                <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
+                  {t('nav.login')}
+                </Button>
               </Link>
-              <Link 
-                to="/news" 
-                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
-              >
-                {t('nav.news')}
-              </Link>
-              <Link 
-                to="/presidential-address" 
-                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
-              >
-                {t('nav.presidentialAddress')}
-              </Link>
-              <Link 
-                to="/compliance" 
-                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
-              >
-                {t('nav.compliance')}
-              </Link>
-              <Link 
-                to="/contacts" 
-                className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
-              >
-                {t('nav.contacts')}
-              </Link>
+            )}
+          </nav>
 
-              <div className="pl-3 lg:pl-4 border-l border-gray-300">
-                <LanguageSwitcher />
-              </div>
-
-              {user ? (
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
-                      <User className="w-4 h-4 mr-2" />
-                      {t('nav.profile')}
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem>
-                      <Link to="/profile" className="flex items-center w-full">
-                        <User className="w-4 h-4 mr-2" />
-                        {t('nav.profile')}
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => logout()}>
-                      <LogOut className="w-4 h-4 mr-2" />
-                      {t('nav.logout')}
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Link to="/login">
-                  <Button variant="outline" size="sm" className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-xs lg:text-sm">
-                    {t('nav.login')}
-                  </Button>
-                </Link>
-              )}
-            </nav>
-          )}
-
-          {/* Mobile Menu Button */}
-          {isMobile && (
-            <div className="flex items-center space-x-3 z-50">
-              <LanguageSwitcher />
-              <Button 
-                variant="ghost" 
-                size="sm"
-                onClick={toggleMobileMenu}
-                className="p-2"
-                aria-label="Toggle menu"
-              >
-                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-              </Button>
-            </div>
-          )}
+          {/* Mobile Navigation (hamburger) */}
+          <div className="flex md:hidden items-center z-50">
+            <button
+              className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-gov-blue"
+              onClick={toggleMobileMenu}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      {isMobile && (
-        <div 
-          className={`fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transition-all duration-300 ease-in-out ${
-            mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
-          style={{ top: '3.5rem' }}
-        >
+      {/* Mobile Menu Drawer */}
+      {mobileMenuOpen && (
+        <nav className="fixed inset-0 bg-white/95 z-40 flex flex-col items-center justify-start pt-24 px-6 space-y-6 overflow-y-auto transition-all duration-300 md:hidden">
           <div className="container mx-auto px-4 py-4 h-[calc(100vh-3.5rem)] overflow-y-auto">
             <nav className="flex flex-col space-y-2">
               <Link 
@@ -347,7 +333,7 @@ export const Header: React.FC = () => {
               </div>
             </nav>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );
