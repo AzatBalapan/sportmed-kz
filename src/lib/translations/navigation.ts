@@ -84,5 +84,10 @@ export const navigationTranslations = {
     ru: 'Изменить пароль',
     kz: 'Құпия сөзді өзгерту',
     en: 'Change Password'
-  }
+  },
+  'nav.management': {
+    ru: 'Управление',
+    kz: 'Басқару',
+    en: 'Management',
+  },
 };

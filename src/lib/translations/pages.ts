@@ -1,4 +1,3 @@
-
 export const pagesTranslations = {
   // News Page
   'news.title': {
@@ -108,5 +107,12 @@ export const pagesTranslations = {
     ru: 'Президент Республики Казахстан Касым-Жомарт Токаев',
     kz: 'Қазақстан Республикасының Президенті Қасым-Жомарт Тоқаев',
     en: 'President of the Republic of Kazakhstan Kassym-Jomart Tokayev'
-  }
+  },
+
+  // Management Page
+  'management.title': {
+    ru: 'Управленческий персонал центра',
+    kz: 'Орталықтың басқару құрамы',
+    en: 'Management staff of the center',
+  },
 };

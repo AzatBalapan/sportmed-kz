@@ -119,6 +119,11 @@ export const Header: React.FC = () => {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
+                  <Link to="/management" className="w-full">
+                    {t('nav.management')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
                   <Link to="/about" className="w-full">
                     {t('nav.aboutCenter')}
                   </Link>
@@ -250,6 +255,13 @@ export const Header: React.FC = () => {
                       onClick={closeMobileMenu}
                     >
                       {t('nav.director')}
+                    </Link>
+                    <Link 
+                      to="/management" 
+                      className="block py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors"
+                      onClick={closeMobileMenu}
+                    >
+                      {t('nav.management')}
                     </Link>
                     <Link 
                       to="/about" 

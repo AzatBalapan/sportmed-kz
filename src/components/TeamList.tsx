@@ -22,13 +22,12 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
   const { language } = useLanguage();
   const navigate = useNavigate();
 
-  // Define departments - only management and medical staff
+  // Define departments - only medical and other staff, remove management
   const departments: Department[] = [
-    { id: 'management', nameRu: 'Управленческий персонал', nameKz: 'Басқару қызметкерлері', order: 1 },
-    { id: 'sportmed', nameRu: 'Отделение спортивной медицины и медико-биологического обеспечения', nameKz: 'Спорттық медицина және медико-биологиялық қамтамасыз ету бөлімі', order: 2 },
-    { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 3 },
-    { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 4 },
-    { id: 'other', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 5 },
+    { id: 'sportmed', nameRu: 'Отделение спортивной медицины и медико-биологического обеспечения', nameKz: 'Спорттық медицина және медико-биологиялық қамтамасыз ету бөлімі', order: 1 },
+    { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 2 },
+    { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 3 },
+    { id: 'other', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 4 },
   ];
 
   // Group doctors by department
@@ -39,13 +38,8 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     doctorsByDepartment[dept.id] = [];
   });
 
-  // Define staff with proper hierarchy - Тажиева removed, Абдыхадиров moved to management, Толегенова removed
+  // Define staff with proper hierarchy - only non-management staff
   const staff = [
-    // Management
-    { id: "nurmatov", name: { ru: "Нурматов Азамат Басимбекович", kz: "Нурматов Азамат Басимбекович" }, position: { ru: "Руководитель", kz: "Басшы" }, department: "management", order: 1 },
-    { id: "tuyebayev", name: { ru: "Туйебаев Ашим Еркинович", kz: "Туйебаев Ашим Еркинович" }, position: { ru: "Заместитель руководителя по административно-экономической части", kz: "Әкімшілік-экономикалық бөлімі жөніндегі басшының орынбасары" }, department: "management", order: 2 },
-    { id: "abdykhadirov", name: { ru: "Абдыхадиров Данияр Нурланович", kz: "Абдыхадиров Данияр Нұрланұлы" }, position: { ru: "Заведующий отделением по профилю", kz: "Бөлім меңгерушісі" }, department: "management", order: 3 },
-    
     // Отделение споривной медицины и медико-биологического отделения
     { id: "zhiengazina", name: { ru: "Жиенгазина Асия Нуржановна", kz: "Жиенгазина Асия Нуржановна" }, position: { ru: "Заведующая отделом", kz: "Бөлім меңгерушісі" }, department: "sportmed", order: 1 },
     { id: "boltaev", name: { ru: "Болтаев Олжас Талгатович", kz: "Болтаев Олжас Талгатович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 2 },
