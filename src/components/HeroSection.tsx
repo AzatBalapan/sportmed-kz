@@ -85,19 +85,19 @@ export const HeroSection: React.FC = () => {
               <p className="font-sans tracking-wide text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gov-dark-blue mt-4 mb-2 sm:mb-3 text-center">
                 {t('hero.subtitle')}
               </p>
-              {/* Responsive: static on mobile, absolute at bottom on md+ */}
-              <div className="static md:absolute md:left-0 md:right-0 md:bottom-4 flex flex-row items-center justify-center gap-3 md:gap-6 px-2 md:px-4 z-20 w-full mt-2 md:mt-0">
+              {/* Desktop: buttons inside banner */}
+              <div className="hidden md:static md:absolute md:left-0 md:right-0 md:bottom-4 md:flex flex-row items-center justify-center gap-6 md:px-4 z-20 w-full md:mt-0">
                 <Button 
-                  size="sm" 
-                  className="bg-gov-blue hover:bg-gov-dark-blue w-full max-w-[120px] md:max-w-[180px] text-xs md:text-base py-2 md:py-3" 
+                  size="lg" 
+                  className="bg-gov-blue hover:bg-gov-dark-blue w-full max-w-[180px]" 
                   onClick={handleServices}
                 >
                   {t('hero.button')}
                 </Button>
                 <Button
-                  size="sm"
+                  size="lg"
                   variant="outline"
-                  className="border-gov-blue text-gov-blue hover:bg-gov-light-blue w-full max-w-[120px] md:max-w-[180px] text-xs md:text-base py-2 md:py-3"
+                  className="border-gov-blue text-gov-blue hover:bg-gov-light-blue w-full max-w-[180px]"
                   onClick={handleContact}
                 >
                   {t('nav.contacts')}
@@ -118,6 +118,24 @@ export const HeroSection: React.FC = () => {
             />
           </div>
         </div>
+      </div>
+      {/* Mobile: buttons below the entire banner (after both image and video) */}
+      <div className="flex md:hidden flex-row items-center justify-center gap-6 px-4 w-full mt-4">
+        <Button 
+          size="lg" 
+          className="bg-gov-blue hover:bg-gov-dark-blue w-full max-w-[180px]" 
+          onClick={handleServices}
+        >
+          {t('hero.button')}
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-gov-blue text-gov-blue hover:bg-gov-light-blue w-full max-w-[180px]"
+          onClick={handleContact}
+        >
+          {t('nav.contacts')}
+        </Button>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-8 sm:h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </div>
