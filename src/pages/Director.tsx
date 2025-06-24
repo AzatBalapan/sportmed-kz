@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import ScrollToTop from '@/components/ScrollToTop';
 import SocialLinks from '@/components/SocialLinks';
+import DirectorContactForm from '@/components/DirectorContactForm';
 import { GraduationCap, Award, Briefcase, User } from 'lucide-react';
 
 const Director: React.FC = () => {
@@ -84,20 +85,17 @@ const Director: React.FC = () => {
                       {language === 'ru' ? 'Руководитель' : 'Басшы'}
                     </p>
                     
-                    <div className="mb-4">
-                      <div className="flex items-center mb-2">
-                        <Briefcase className="w-4 h-4 mr-2 text-gray-500" />
-                        <span className="font-medium text-gray-700">{language === 'ru' ? 'Отдел' : 'Бөлім'}</span>
-                      </div>
-                      <p className="text-gray-600 text-sm pl-6">{language === 'ru' ? 'Управленческий персонал' : 'Басқару қызметкерлері'}</p>
-                    </div>
-                    
-                    <div className="mb-4">
+                    <div className="mb-6">
                       <div className="flex items-center mb-2">
                         <Award className="w-4 h-4 mr-2 text-gray-500" />
                         <span className="font-medium text-gray-700">{language === 'ru' ? 'Стаж' : 'Тәжірибе'}</span>
                       </div>
                       <p className="text-gray-600 text-sm pl-6">{language === 'ru' ? 'Более 10 лет в области спортивной медицины' : '10 жылдан астам спорт медицинасы саласында'}</p>
+                    </div>
+
+                    {/* Contact Form Button */}
+                    <div className="pt-4 border-t border-gray-200">
+                      <DirectorContactForm className="w-full" />
                     </div>
                   </div>
                 </div>

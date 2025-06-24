@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Instagram, MessageCircle } from 'lucide-react';
 
+// This component is no longer floating. Use only if you want to show social links inline.
 const SocialLinks: React.FC = () => {
   return (
-    <div className="fixed right-4 bottom-4 flex flex-col gap-2 z-50">
+    <div className="flex flex-row gap-2">
       <a 
         href="https://wa.me/+77066063636" 
         target="_blank" 

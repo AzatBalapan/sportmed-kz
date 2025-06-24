@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { AuthProvider } from "@/context/AuthContext";
 import { translations } from "@/lib/translations";
+import { AccessibilityProvider } from '@/context/AccessibilityContext';
+import { useAccessibility } from '@/context/AccessibilityContext';
+import { useEffect } from 'react';
+import FloatingActions from '@/components/FloatingActions';
 
 import Index from "./pages/Index";
 import Login from "./pages/Login";
@@ -26,36 +30,73 @@ import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 
+// Global accessibility effect
+function AccessibilityGlobalEffect() {
+  const { highContrast, fontSize, underlineLinks, disableAnimations } = useAccessibility();
+  useEffect(() => {
+    const body = document.body;
+    const html = document.documentElement;
+    // High contrast
+    if (highContrast) {
+      body.classList.add('access-high-contrast');
+    } else {
+      body.classList.remove('access-high-contrast');
+    }
+    // Font size (set CSS variable on html)
+    html.style.setProperty('--access-font-size', `${fontSize * 100}%`);
+    // Underline links
+    if (underlineLinks) {
+      body.classList.add('access-underline-links');
+    } else {
+      body.classList.remove('access-underline-links');
+    }
+    // Disable animations
+    if (disableAnimations) {
+      body.classList.add('access-disable-animations');
+    } else {
+      body.classList.remove('access-disable-animations');
+    }
+    return () => {
+      html.style.setProperty('--access-font-size', '100%');
+    };
+  }, [highContrast, fontSize, underlineLinks, disableAnimations]);
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <LanguageProvider translations={translations}>
         <AuthProvider>
-          <Toaster />
-          <Sonner />
-          {/* Replace BrowserRouter with HashRouter for GitHub Pages compatibility */}
-          <HashRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Registration />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/about" element={<AboutFull />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/team/:doctorId" element={<Team />} />
-              <Route path="/compliance" element={<Compliance />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/news/presidential-reserve" element={<NewsArticle />} />
-              <Route path="/news/berik-asylov" element={<BerikAsylov />} />
-              <Route path="/presidential-address" element={<PresidentialAddress />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/director" element={<Director />} />
-              <Route path="/legal-acts" element={<LegalActs />} />
-              <Route path="/profile" element={<Profile />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </HashRouter>
+          <AccessibilityProvider>
+            <AccessibilityGlobalEffect />
+            <FloatingActions />
+            <Toaster />
+            <Sonner />
+            {/* Replace BrowserRouter with HashRouter for GitHub Pages compatibility */}
+            <HashRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Registration />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/about" element={<AboutFull />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/team/:doctorId" element={<Team />} />
+                <Route path="/compliance" element={<Compliance />} />
+                <Route path="/news" element={<News />} />
+                <Route path="/news/presidential-reserve" element={<NewsArticle />} />
+                <Route path="/news/berik-asylov" element={<BerikAsylov />} />
+                <Route path="/presidential-address" element={<PresidentialAddress />} />
+                <Route path="/contacts" element={<Contacts />} />
+                <Route path="/director" element={<Director />} />
+                <Route path="/legal-acts" element={<LegalActs />} />
+                <Route path="/profile" element={<Profile />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </HashRouter>
+          </AccessibilityProvider>
         </AuthProvider>
       </LanguageProvider>
     </TooltipProvider>

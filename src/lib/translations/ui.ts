@@ -128,5 +128,82 @@ export const uiTranslations = {
     ru: 'Скачать',
     kz: 'Жүктеп алу',
     en: 'Download'
+  },
+
+  // Director Contact Form
+  'director.contact.button': {
+    ru: 'Написать директору',
+    kz: 'Директорға жазу',
+    en: 'Write to Director'
+  },
+  'director.contact.title': {
+    ru: 'Обращение к директору',
+    kz: 'Директорға хабарлама',
+    en: 'Message to Director'
+  },
+  'director.contact.subtitle': {
+    ru: 'Отправьте ваше обращение напрямую директору центра',
+    kz: 'Орталық директорына тікелей хабарламаңызды жіберіңіз',
+    en: 'Send your message directly to the center director'
+  },
+  'director.contact.name': {
+    ru: 'Ваше имя',
+    kz: 'Сіздің атыңыз',
+    en: 'Your Name'
+  },
+  'director.contact.email': {
+    ru: 'Ваш email',
+    kz: 'Сіздің email',
+    en: 'Your Email'
+  },
+  'director.contact.phone': {
+    ru: 'Ваш телефон',
+    kz: 'Сіздің телефоныңыз',
+    en: 'Your Phone'
+  },
+  'director.contact.subject': {
+    ru: 'Тема обращения',
+    kz: 'Хабарлама тақырыбы',
+    en: 'Message Subject'
+  },
+  'director.contact.message': {
+    ru: 'Текст обращения',
+    kz: 'Хабарлама мәтіні',
+    en: 'Message Text'
+  },
+  'director.contact.message.placeholder': {
+    ru: 'Опишите ваше обращение...',
+    kz: 'Хабарламаңызды сипаттаңыз...',
+    en: 'Describe your message...'
+  },
+  'director.contact.send': {
+    ru: 'Отправить обращение',
+    kz: 'Хабарлама жіберу',
+    en: 'Send Message'
+  },
+  'director.contact.sending': {
+    ru: 'Отправка...',
+    kz: 'Жіберілуде...',
+    en: 'Sending...'
+  },
+  'director.contact.success': {
+    ru: 'Обращение отправлено',
+    kz: 'Хабарлама жіберілді',
+    en: 'Message Sent'
+  },
+  'director.contact.success.description': {
+    ru: 'Ваше обращение успешно отправлено директору. Мы свяжемся с вами в ближайшее время.',
+    kz: 'Сіздің хабарламаңыз директорға сәтті жіберілді. Біз жақын арада сізбен байланысамыз.',
+    en: 'Your message has been successfully sent to the director. We will contact you soon.'
+  },
+  'director.contact.error': {
+    ru: 'Ошибка отправки',
+    kz: 'Жіберу қатесі',
+    en: 'Send Error'
+  },
+  'director.contact.error.description': {
+    ru: 'Произошла ошибка при отправке обращения. Пожалуйста, попробуйте еще раз.',
+    kz: 'Хабарлама жіберу кезінде қате орын алды. Қайталап көріңіз.',
+    en: 'An error occurred while sending the message. Please try again.'
   }
 };
