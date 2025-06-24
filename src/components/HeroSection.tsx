@@ -78,7 +78,7 @@ export const HeroSection: React.FC = () => {
               className="absolute inset-0 w-full h-full object-cover object-center z-0"
               draggable={false}
             />
-            <div className="relative z-10 flex flex-col justify-center items-center h-full w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10">
+            <div className="relative z-10 flex flex-col justify-center items-center h-full w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-0">
               <h1 className="font-sans tracking-wide text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gov-dark-blue mb-2 sm:mb-3 leading-tight text-center">
                 {renderHeroTitle()}
               </h1>
@@ -86,18 +86,18 @@ export const HeroSection: React.FC = () => {
                 {t('hero.subtitle')}
               </p>
               {/* Responsive: static on mobile, absolute at bottom on md+ */}
-              <div className="static md:absolute md:left-0 md:right-0 md:bottom-4 flex flex-row items-center justify-center gap-4 md:gap-6 px-4 z-20 w-full mt-4 md:mt-0">
+              <div className="static md:absolute md:left-0 md:right-0 md:bottom-4 flex flex-row items-center justify-center gap-3 md:gap-6 px-2 md:px-4 z-20 w-full mt-2 md:mt-0">
                 <Button 
-                  size="lg" 
-                  className="bg-gov-blue hover:bg-gov-dark-blue w-full max-w-[180px]" 
+                  size="sm" 
+                  className="bg-gov-blue hover:bg-gov-dark-blue w-full max-w-[120px] md:max-w-[180px] text-xs md:text-base py-2 md:py-3" 
                   onClick={handleServices}
                 >
                   {t('hero.button')}
                 </Button>
                 <Button
-                  size="lg"
+                  size="sm"
                   variant="outline"
-                  className="border-gov-blue text-gov-blue hover:bg-gov-light-blue w-full max-w-[180px]"
+                  className="border-gov-blue text-gov-blue hover:bg-gov-light-blue w-full max-w-[120px] md:max-w-[180px] text-xs md:text-base py-2 md:py-3"
                   onClick={handleContact}
                 >
                   {t('nav.contacts')}
