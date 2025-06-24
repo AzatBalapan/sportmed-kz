@@ -35,7 +35,6 @@ const Team: React.FC = () => {
           {!selectedDoctor ? (
             <>
               <h1 className="text-4xl font-serif font-bold text-center mb-3">{t('team.title')}</h1>
-              <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">{t('team.subtitle')}</p>
               <TeamList onSelectDoctor={handleSelectDoctor} />
             </>
           ) : (

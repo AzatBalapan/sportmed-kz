@@ -104,8 +104,58 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     }
   });
 
+  // Find Nigmetova Asemgul Altaevna
+  const nigmetova = staff.find(s => s.id === 'nigmetova');
+  const nigmetovaDoctor = doctors.find(d => d.id === 'nigmetova');
+  const nigmetovaData = nigmetovaDoctor
+    ? { ...nigmetovaDoctor, ...nigmetova, isNewStaff: false }
+    : { ...nigmetova, isNewStaff: true };
+
   return (
     <div className="space-y-16">
+      {/* Special group for Главная медсестра */}
+      {nigmetovaData && (
+        <div className="mb-12">
+          <h2 className="text-2xl font-serif font-bold text-center mb-8">
+            {language === 'ru' ? 'Главная медсестра' : 'Бас мейірбике'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+            <Card key={nigmetovaData.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="relative h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+                {nigmetovaData && 'image' in nigmetovaData && nigmetovaData.image ? (
+                  <img 
+                    src={nigmetovaData.image} 
+                    alt={nigmetovaData.name[language]} 
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <User size={64} className="text-gray-400" />
+                )}
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-lg font-semibold mb-2">{nigmetovaData.name[language]}</h3>
+                <p className="text-gray-600 text-sm mb-4">{nigmetovaData.position[language]}</p>
+                {'experience' in nigmetovaData && nigmetovaData.experience && (
+                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                    <span className="font-medium mr-2">{language === 'ru' ? 'Стаж:' : 'Тәжірибе:'}</span>
+                    <span>{nigmetovaData.experience[language]}</span>
+                  </div>
+                )}
+                {/* Only show More button for doctors with detailed info */}
+                {!nigmetovaData.isNewStaff && (
+                  <Button 
+                    onClick={() => onSelectDoctor(nigmetovaData.id)} 
+                    variant="outline" 
+                    className="w-full"
+                  >
+                    {language === 'ru' ? 'Подробнее' : 'Толығырақ'}
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      )}
       {/* Display each department with its staff */}
       {departments
         .filter(dept => doctorsByDepartment[dept.id] && doctorsByDepartment[dept.id].length > 0)

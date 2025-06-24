@@ -1,4 +1,3 @@
-
 export const formsTranslations = {
   // Services Page
   'services.title': {
@@ -47,11 +46,6 @@ export const formsTranslations = {
     ru: 'Наша команда специалистов',
     kz: 'Біздің мамандар командасы',
     en: 'Our Team of Specialists'
-  },
-  'team.subtitle': {
-    ru: 'Профессионалы с многолетним опытом работы в области спортивной медицины',
-    kz: 'Спорт медицинасы саласында көп жылдық тәжірибесі бар мамандар',
-    en: 'Professionals with many years of experience in sports medicine'
   },
   'team.more': {
     ru: 'Подробнее',
@@ -102,7 +96,7 @@ export const formsTranslations = {
   },
   'register.phone': {
     ru: 'Номер телефона',
-    kz: 'Телефон нөмірі',
+    kz: 'Телефон нөірі',
     en: 'Phone Number'
   },
   'register.password': {
