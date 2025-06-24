@@ -4,6 +4,7 @@ import AccessibilityWidget from './AccessibilityWidget';
 
 const FloatingActions: React.FC = () => {
   const [showScroll, setShowScroll] = useState(false);
+  const isMd = window.innerWidth >= 768; // Assuming md breakpoint is 768px
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -19,10 +20,12 @@ const FloatingActions: React.FC = () => {
 
   return (
     <>
-      {/* Accessibility Widget in the top left */}
-      <div className="fixed left-4 top-4 flex flex-col items-start gap-2 z-[9999]">
-        <AccessibilityWidget />
-      </div>
+      {/* Accessibility button: only show on md+ */}
+      {isMd && (
+        <div className="fixed top-4 left-4 z-50 hidden md:block">
+          <AccessibilityWidget />
+        </div>
+      )}
       {/* Other actions on the right */}
       <div className="fixed right-4 bottom-4 flex flex-col items-end gap-2 z-50">
         {/* Instagram */}
