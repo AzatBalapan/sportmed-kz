@@ -1,10 +1,8 @@
-
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 
 const NotFound = () => {
   const location = useLocation();
@@ -30,7 +28,6 @@ const NotFound = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
     </div>
   );
 };

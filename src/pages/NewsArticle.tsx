@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -7,7 +6,6 @@ import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 import { ArrowLeft } from 'lucide-react';
 
 const NewsArticle: React.FC = () => {
@@ -65,7 +63,6 @@ const NewsArticle: React.FC = () => {
 
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
     </div>
   );
 };

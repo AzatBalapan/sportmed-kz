@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,7 +7,6 @@ import PromoBanner from '@/components/PromoBanner';
 import ContactSection from '@/components/ContactSection';
 import { Toaster } from '@/components/ui/toaster';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 
 const Index: React.FC = () => {
   return (
@@ -22,7 +20,6 @@ const Index: React.FC = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
       <Toaster />
     </div>
   );

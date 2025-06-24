@@ -356,7 +356,6 @@ const Profile: React.FC = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
       <Toaster />
     </div>
   );

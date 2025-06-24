@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Eye } from 'lucide-react';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose, DialogDescription } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import FaqDisplay from '@/components/FaqDisplay';
@@ -311,7 +310,6 @@ const Compliance: React.FC = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
     </>
   );
 };

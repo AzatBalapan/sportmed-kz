@@ -1,11 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 
 const PresidentialAddress: React.FC = () => {
   const { language } = useLanguage();
@@ -81,7 +79,6 @@ const PresidentialAddress: React.FC = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
     </div>
   );
 };

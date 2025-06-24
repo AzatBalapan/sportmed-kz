@@ -6,7 +6,6 @@ import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 
 const News: React.FC = () => {
   const { t, language } = useLanguage();
@@ -109,7 +108,6 @@ const News: React.FC = () => {
 
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
     </div>
   );
 };

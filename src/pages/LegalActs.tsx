@@ -1,11 +1,9 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 import { Table, TableBody, TableRow, TableCell } from "@/components/ui/table";
 import { ExternalLink } from "lucide-react";
 
@@ -58,7 +56,7 @@ const LegalActs: React.FC = () => {
     {
       id: 7,
       titleRu: "Об утверждении правил медицинского обеспечения и оказания медицинской помощи спортсменам и тренерам при проведении спортивных мероприятий, в период восстановительных мероприятий после интенсивных физических нагрузок, заболеваний и травм у спортсменов",
-      titleKz: "Спорт іс-шараларын өткізу кезінде, спортшылардың қарқынды дене жүктемелерінен, ауруларынан және жарақаттарынан кейінгі қалпына келтіру іс-шаралары кезеңінде спортшылар мен жаттықтырушыларды медициналық қамтамасыз ету және оларға медициналық көмек көрсету қағидаларын бекіту туралы",
+      titleKz: "Спорт іс-шараларын өткізу кезінде, спортшылардың қарқынды дене жүктемелерінен, ауруларынан және жарақаттарынан кейінгі қалпына келтіру іс-шаралары кезеңінде спортшылар мен жаттықтырушыларды медициналық қамтамасыз ету және оларға медициналық көмеk көрсету қағидаларын бекіту туралы",
       urlRus: "https://adilet.zan.kz/rus/docs/V2000021943",
       urlKaz: "https://adilet.zan.kz/kaz/docs/V2000021943"
     },
@@ -120,7 +118,6 @@ const LegalActs: React.FC = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
       <Toaster />
     </div>
   );

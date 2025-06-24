@@ -129,7 +129,6 @@ const Director: React.FC = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
       <Toaster />
     </div>
   );

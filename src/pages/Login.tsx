@@ -1,11 +1,9 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import LoginForm from '@/components/LoginForm';
 import { Toaster } from '@/components/ui/toaster';
 import ScrollToTop from '@/components/ScrollToTop';
-import SocialLinks from '@/components/SocialLinks';
 
 const Login: React.FC = () => {
   return (
@@ -18,7 +16,6 @@ const Login: React.FC = () => {
       </main>
       <Footer />
       <ScrollToTop />
-      <SocialLinks />
       <Toaster />
     </div>
   );
