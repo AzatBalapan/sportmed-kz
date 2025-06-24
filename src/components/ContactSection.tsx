@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -48,7 +47,7 @@ export const ContactSection: React.FC = () => {
 Сообщение: ${message}
     `);
     
-    const mailtoLink = `mailto:info@csmed.kz?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:${t('contact.email.value')}?subject=${subject}&body=${body}`;
     
     // Open email client
     window.location.href = mailtoLink;
@@ -108,7 +107,7 @@ export const ContactSection: React.FC = () => {
                       <div className="mr-3 sm:mr-4 text-gov-blue text-lg sm:text-xl">✉️</div>
                       <div>
                         <h4 className="font-medium text-base sm:text-lg">{t('contact.email')}</h4>
-                        <p className="text-sm sm:text-base text-gray-600">info@csmed.kz</p>
+                        <p className="text-sm sm:text-base text-gray-600">{t('contact.email.value')}</p>
                       </div>
                     </div>
                     <div className="flex items-start">

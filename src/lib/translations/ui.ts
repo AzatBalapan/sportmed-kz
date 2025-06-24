@@ -1,4 +1,3 @@
-
 export const uiTranslations = {
   // Promo/Banners
   'promo.title': {
@@ -69,9 +68,9 @@ export const uiTranslations = {
     en: 'Email'
   },
   'contact.email.value': {
-    ru: 'info@csmed.kz',
-    kz: 'info@csmed.kz',
-    en: 'info@csmed.kz'
+    ru: 'smo@csmed.kz',
+    kz: 'smo@csmed.kz',
+    en: 'smo@csmed.kz'
   },
   'contact.hours': {
     ru: 'Часы работы',
@@ -79,9 +78,9 @@ export const uiTranslations = {
     en: 'Working Hours'
   },
   'contact.hours.value': {
-    ru: 'Пн-Пт: 8:30 - 18:00',
-    kz: 'Дс-Жм: 8:30 - 18:00',
-    en: 'Mon-Fri: 8:30 - 18:00'
+    ru: 'Пн-Пт: 8:00 - 18:00',
+    kz: 'Дс-Жм: 8:00 - 18:00',
+    en: 'Mon-Fri: 8:00 - 18:00'
   },
   'contact.message': {
     ru: 'Сообщение',
