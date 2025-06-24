@@ -67,55 +67,44 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <div className="relative bg-gov-light-blue overflow-hidden">
-      <div className="w-full mx-0 px-0 py-0">
-        <div className="flex flex-col md:flex-row h-[260px] md:h-[320px] lg:h-[360px] xl:h-[400px] w-full">
-          {/* Left: Static image with text overlay */}
-          <div className="relative flex-1 md:basis-1/2 md:max-w-[50%] flex items-center justify-center bg-white min-h-[120px]">
-            <img
-              src="/for_banner/left_pic.jpeg"
-              alt="Banner left"
-              className="absolute inset-0 w-full h-full object-cover object-center z-0"
-              draggable={false}
-            />
-            <div className="relative z-10 flex flex-col justify-center items-center h-full w-full px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-0">
-              <h1 className="font-sans tracking-wide text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-gov-dark-blue mb-2 sm:mb-3 leading-tight text-center">
-                {renderHeroTitle()}
-              </h1>
-              <p className="font-sans tracking-wide text-xs sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gov-dark-blue mt-4 mb-2 sm:mb-3 text-center">
-                {t('hero.subtitle')}
-              </p>
-              {/* Desktop: buttons inside banner */}
-              <div className="hidden md:static md:absolute md:left-0 md:right-0 md:bottom-4 md:flex flex-row items-center justify-center gap-6 md:px-4 z-20 w-full md:mt-0">
-                <Button 
-                  size="lg" 
-                  className="bg-gov-blue hover:bg-gov-dark-blue w-full max-w-[180px]" 
-                  onClick={handleServices}
-                >
-                  {t('hero.button')}
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-gov-blue text-gov-blue hover:bg-gov-light-blue w-full max-w-[180px]"
-                  onClick={handleContact}
-                >
-                  {t('nav.contacts')}
-                </Button>
-              </div>
+    <div className="relative bg-gov-light-blue overflow-hidden h-[260px] md:h-[320px] lg:h-[360px] xl:h-[400px]">
+      {/* Full-width background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/for_banner/combined_back.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/lovable-uploads/banner_test.jpg"
+      />
+      {/* Overlay content */}
+      <div className="absolute inset-0 z-10 flex items-center h-full">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col justify-center h-full max-w-xl text-left">
+            <h1 className="font-sans tracking-wide text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-bold text-gov-dark-blue mb-2 sm:mb-3 leading-tight text-left drop-shadow-lg">
+              {renderHeroTitle()}
+            </h1>
+            <p className="font-sans tracking-wide text-[11px] sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-gov-dark-blue mt-4 mb-2 sm:mb-3 text-left drop-shadow-lg">
+              {t('hero.subtitle')}
+            </p>
+            <div className="flex flex-row items-center gap-6 mt-6">
+              <Button 
+                size="lg" 
+                className="bg-gov-blue hover:bg-gov-dark-blue px-6 text-base shadow-lg" 
+                onClick={handleServices}
+              >
+                {t('hero.button')}
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-gov-blue text-gov-blue hover:bg-gov-light-blue px-6 text-base shadow-lg bg-white/90"
+                onClick={handleContact}
+              >
+                {t('nav.contacts')}
+              </Button>
             </div>
-          </div>
-          {/* Right: Video */}
-          <div className="relative flex-1 md:basis-1/2 md:max-w-[50%] min-h-[120px]">
-            <video
-              className="absolute inset-0 w-full h-full object-cover rounded-none md:rounded-r-xl z-0"
-              src="/for_banner/right_vid.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="/lovable-uploads/banner_test.jpg"
-            />
           </div>
         </div>
       </div>
