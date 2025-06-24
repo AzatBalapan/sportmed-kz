@@ -81,7 +81,7 @@ export const HeroSection: React.FC = () => {
       {/* Overlay content */}
       <div className="absolute inset-0 z-10 flex items-center h-full">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col justify-center h-full max-w-xl text-left">
+          <div className="flex flex-col justify-center h-full w-full md:w-2/5 text-left">
             <h1 className="font-sans tracking-wide text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-bold text-gov-dark-blue mb-2 sm:mb-3 leading-tight text-left drop-shadow-lg">
               {renderHeroTitle()}
             </h1>
