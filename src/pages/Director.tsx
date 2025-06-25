@@ -82,8 +82,11 @@ const Director: React.FC = () => {
                     </div>
                     <div className="p-6">
                       <h2 className="text-2xl font-bold mb-2">Нурматов Азамат Басимбекович</h2>
-                      <p className="text-lg text-blue-600 mb-4">
+                      <p className="text-lg text-blue-600 mb-1">
                         {language === 'ru' ? 'Руководитель' : 'Басшы'}
+                      </p>
+                      <p className="text-md text-gray-700 mb-4">
+                        {language === 'ru' ? 'главный спортивный врач' : 'Бас спорт дәрігері'}
                       </p>
                       
                       <div className="mb-6">

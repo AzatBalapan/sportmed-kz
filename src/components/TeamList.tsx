@@ -25,8 +25,8 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
   // Define departments - only medical and other staff, remove management
   const departments: Department[] = [
     { id: 'sportmed', nameRu: 'Отделение спортивной медицины и медико-биологического обеспечения', nameKz: 'Спорттық медицина және медико-биологиялық қамтамасыз ету бөлімі', order: 1 },
-    { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 2 },
-    { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 3 },
+    { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 2 },
+    { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 3 },
     { id: 'other', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 4 },
   ];
 
@@ -56,7 +56,6 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
 
     // Прочие специалисты
     { id: "nurgalieva", name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" }, position: { ru: "Врач УЗИ", kz: "УДЗ дәрігері" }, department: "other", order: 1 },
-    { id: "nigmetova", name: { ru: "Нигметова Асемгуль Алтаевна", kz: "Нигметова Асемгуль Алтаевна" }, position: { ru: "Главная медсестра", kz: "Бас мейірбике" }, department: "other", order: 2 },
     { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "other", order: 3 },
     { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "other", order: 4 },
     { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "other", order: 5 },

@@ -24,6 +24,7 @@ import { khamitov } from './khamitov';
 import { asiya } from './asiya';
 import { anes } from './anes';
 import { kolkhozov } from './kolkhozov';
+import { nigmetova } from './nigmetova';
 
 export const doctors = [
   nurmatov,
@@ -51,6 +52,7 @@ export const doctors = [
   asiya,
   anes,
   kolkhozov,
+  nigmetova,
 ];
 
 export {
@@ -79,4 +81,5 @@ export {
   asiya,
   anes,
   kolkhozov,
+  nigmetova,
 };
