@@ -68,8 +68,8 @@ export const formsTranslations = {
     en: 'Specialization'
   },
   'team.certificates': {
-    ru: 'Сертификаты',
-    kz: 'Сертификаттары',
+    ru: 'Квалификация',
+    kz: 'Біліктілік',
     en: 'Certificates'
   },
   'team.back': {
