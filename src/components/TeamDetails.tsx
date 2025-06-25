@@ -27,7 +27,7 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
 
   // Department translations
   const getDepartmentName = () => {
-    const departmentId = doctor.department;
+    const departmentId = 'department' in doctor ? doctor.department : undefined;
     if (!departmentId) return "";
     
     const departmentMap: {[key: string]: {ru: string, kz: string}} = {
@@ -38,6 +38,10 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
       "sports-medicine": {
         ru: "Отделение спортивной медицины и медико-биологического обеспечения",
         kz: "Спорт медицинасы және медициналық-биологиялық қамтамасыз ету бөлімі"
+      },
+      "rehabilitation": {
+        ru: "Реабилитация",
+        kz: "Реабилитация"
       },
       "specialists": {
         ru: "Отделение специалистов по профилю",
