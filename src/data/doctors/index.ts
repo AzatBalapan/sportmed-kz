@@ -25,7 +25,7 @@ import { asiya } from './asiya';
 import { anes } from './anes';
 import { kolkhozov } from './kolkhozov';
 import { nigmetova } from './nigmetova';
-import { burambaeva } from './urambaeva';
+import { burambaeva } from './burambaeva';
 
 export const doctors = [
   nurmatov,
