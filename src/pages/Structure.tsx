@@ -26,11 +26,11 @@ const Structure: React.FC = () => {
             <CardContent className="p-6">
               <div className="flex flex-col items-center">
                 <div className="w-full max-w-4xl">
-                  <iframe 
-                    src="/structure/оргструктура.pdf"
-                    title="Организационная структура"
-                    className="w-full h-[80vh] rounded-lg shadow-md border-0"
-                    style={{ minHeight: '600px' }}
+                  <img 
+                    src="/structure/оргструктура.svg"
+                    alt="Организационная структура"
+                    className="w-full h-auto rounded-lg shadow-md border-0"
+                    style={{ maxHeight: '80vh' }}
                   />
                 </div>
                 
