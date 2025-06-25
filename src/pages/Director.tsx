@@ -71,31 +71,33 @@ const Director: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Left Column - Photo and Basic Info */}
               <div className="lg:col-span-1">
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                  <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
-                    <img 
-                      src="/team_photoes/Азамат.svg" 
-                      alt="Нурматов Азамат Басимбекович" 
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h2 className="text-2xl font-bold mb-2">Нурматов Азамат Басимбекович</h2>
-                    <p className="text-lg text-blue-600 mb-4">
-                      {language === 'ru' ? 'Руководитель' : 'Басшы'}
-                    </p>
-                    
-                    <div className="mb-6">
-                      <div className="flex items-center mb-2">
-                        <Award className="w-4 h-4 mr-2 text-gray-500" />
-                        <span className="font-medium text-gray-700">{language === 'ru' ? 'Стаж' : 'Тәжірибе'}</span>
-                      </div>
-                      <p className="text-gray-600 text-sm pl-6">{language === 'ru' ? 'Более 10 лет в области спортивной медицины' : '10 жылдан астам спорт медицинасы саласында'}</p>
+                <div className="lg:sticky lg:top-8">
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
+                      <img 
+                        src="/team_photoes/Азамат.svg" 
+                        alt="Нурматов Азамат Басимбекович" 
+                        className="w-full h-full object-cover object-top"
+                      />
                     </div>
+                    <div className="p-6">
+                      <h2 className="text-2xl font-bold mb-2">Нурматов Азамат Басимбекович</h2>
+                      <p className="text-lg text-blue-600 mb-4">
+                        {language === 'ru' ? 'Руководитель' : 'Басшы'}
+                      </p>
+                      
+                      <div className="mb-6">
+                        <div className="flex items-center mb-2">
+                          <Award className="w-4 h-4 mr-2 text-gray-500" />
+                          <span className="font-medium text-gray-700">{language === 'ru' ? 'Стаж' : 'Тәжірибе'}</span>
+                        </div>
+                        <p className="text-gray-600 text-sm pl-6">{language === 'ru' ? 'Более 10 лет в области спортивной медицины' : '10 жылдан астам спорт медицинасы саласында'}</p>
+                      </div>
 
-                    {/* Contact Form Button */}
-                    <div className="pt-4 border-t border-gray-200">
-                      <DirectorContactForm className="w-full" />
+                      {/* Contact Form Button */}
+                      <div className="pt-4 border-t border-gray-200">
+                        <DirectorContactForm className="w-full" />
+                      </div>
                     </div>
                   </div>
                 </div>

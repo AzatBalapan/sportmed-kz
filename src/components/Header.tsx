@@ -98,12 +98,6 @@ export const Header: React.FC = () => {
             >
               {t('nav.home')}
             </Link>
-            <Link 
-              to="/services" 
-              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
-            >
-              {t('nav.services')}
-            </Link>
             
             {/* About dropdown */}
             <DropdownMenu>
@@ -147,6 +141,12 @@ export const Header: React.FC = () => {
               className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
             >
               {t('nav.team')}
+            </Link>
+            <Link 
+              to="/services" 
+              className="text-gray-700 hover:text-gov-blue transition-colors text-sm lg:text-base"
+            >
+              {t('nav.services')}
             </Link>
             <Link 
               to="/news" 
@@ -233,13 +233,6 @@ export const Header: React.FC = () => {
               >
                 {t('nav.home')}
               </Link>
-              <Link 
-                to="/services" 
-                className="text-base py-2 px-3 hover:bg-gray-50 rounded transition-colors"
-                onClick={closeMobileMenu}
-              >
-                {t('nav.services')}
-              </Link>
               
               {/* Mobile About Dropdown */}
               <div className="relative">
@@ -300,6 +293,13 @@ export const Header: React.FC = () => {
                 onClick={closeMobileMenu}
               >
                 {t('nav.team')}
+              </Link>
+              <Link 
+                to="/services" 
+                className="text-base py-2 px-3 hover:bg-gray-50 rounded transition-colors"
+                onClick={closeMobileMenu}
+              >
+                {t('nav.services')}
               </Link>
               <Link 
                 to="/news" 

@@ -70,60 +70,62 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column - Photo and Basic Info */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
-              {doctor.image ? (
-                <img 
-                  src={doctor.image} 
-                  alt={doctor.name[language]} 
-                  className="w-full h-full object-cover object-top"
-                />
-              ) : (
-                <User size={120} className="text-gray-400" />
-              )}
-            </div>
-            <div className="p-6">
-              <h1 className="text-2xl font-bold mb-2">{doctor.name[language]}</h1>
-              <p className="text-lg text-blue-600 mb-4">{doctor.position[language]}</p>
-              
-              {getDepartmentName() && (
-                <div className="mb-4">
-                  <div className="flex items-center mb-2">
-                    <Briefcase className="w-4 h-4 mr-2 text-gray-500" />
-                    <span className="font-medium text-gray-700">{language === 'ru' ? 'Отдел' : 'Бөлім'}</span>
+          <div className="lg:sticky lg:top-8">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="aspect-[3/4] bg-gray-100 flex items-center justify-center overflow-hidden">
+                {doctor.image ? (
+                  <img 
+                    src={doctor.image} 
+                    alt={doctor.name[language]} 
+                    className="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <User size={120} className="text-gray-400" />
+                )}
+              </div>
+              <div className="p-4 lg:p-6">
+                <h1 className="text-xl lg:text-2xl font-bold mb-2">{doctor.name[language]}</h1>
+                <p className="text-base lg:text-lg text-blue-600 mb-4">{doctor.position[language]}</p>
+                
+                {getDepartmentName() && (
+                  <div className="mb-4">
+                    <div className="flex items-center mb-2">
+                      <Briefcase className="w-4 h-4 mr-2 text-gray-500" />
+                      <span className="font-medium text-gray-700 text-sm lg:text-base">{language === 'ru' ? 'Отдел' : 'Бөлім'}</span>
+                    </div>
+                    <p className="text-gray-600 text-xs lg:text-sm pl-6">{getDepartmentName()}</p>
                   </div>
-                  <p className="text-gray-600 text-sm pl-6">{getDepartmentName()}</p>
-                </div>
-              )}
-              
-              {doctor.experience && doctor.experience[language] && (
-                <div className="mb-4">
-                  <div className="flex items-center mb-2">
-                    <Stethoscope className="w-4 h-4 mr-2 text-gray-500" />
-                    <span className="font-medium text-gray-700">{t('team.experience')}</span>
+                )}
+                
+                {doctor.experience && doctor.experience[language] && (
+                  <div className="mb-4">
+                    <div className="flex items-center mb-2">
+                      <Stethoscope className="w-4 h-4 mr-2 text-gray-500" />
+                      <span className="font-medium text-gray-700 text-sm lg:text-base">{t('team.experience')}</span>
+                    </div>
+                    <p className="text-gray-600 text-xs lg:text-sm pl-6">{doctor.experience[language]}</p>
                   </div>
-                  <p className="text-gray-600 text-sm pl-6">{doctor.experience[language]}</p>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
         </div>
         
         {/* Right Column - Detailed Information */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <div className="space-y-8">
+          <div className="bg-white rounded-xl shadow-lg p-4 lg:p-8">
+            <div className="space-y-6 lg:space-y-8">
               {doctor.education && doctor.education[language] && (
                 <div>
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-3 lg:mb-4">
                     <div className="bg-blue-100 p-2 rounded-lg mr-3">
-                      <GraduationCap className="w-5 h-5 text-blue-600" />
+                      <GraduationCap className="w-4 h-4 lg:w-5 lg:h-5 text-blue-600" />
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800">{t('team.education')}</h2>
+                    <h2 className="text-lg lg:text-xl font-semibold text-gray-800">{t('team.education')}</h2>
                   </div>
-                  <div className="ml-12">
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: doctor.education[language].replace(/\n/g, '<br/>') }} />
+                  <div className="ml-0 lg:ml-12">
+                    <div className="bg-gray-50 rounded-lg p-3 lg:p-4">
+                      <div className="text-gray-700 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: doctor.education[language].replace(/\n/g, '<br/>') }} />
                     </div>
                   </div>
                 </div>
@@ -131,15 +133,15 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
               
               {'specialization' in doctor && doctor.specialization && doctor.specialization[language] && (
                 <div>
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-3 lg:mb-4">
                     <div className="bg-green-100 p-2 rounded-lg mr-3">
-                      <Stethoscope className="w-5 h-5 text-green-600" />
+                      <Stethoscope className="w-4 h-4 lg:w-5 lg:h-5 text-green-600" />
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800">{t('team.specialization')}</h2>
+                    <h2 className="text-lg lg:text-xl font-semibold text-gray-800">{t('team.specialization')}</h2>
                   </div>
-                  <div className="ml-12">
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: doctor.specialization[language].replace(/\n/g, '<br/>') }} />
+                  <div className="ml-0 lg:ml-12">
+                    <div className="bg-gray-50 rounded-lg p-3 lg:p-4">
+                      <div className="text-gray-700 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: doctor.specialization[language].replace(/\n/g, '<br/>') }} />
                     </div>
                   </div>
                 </div>
@@ -147,15 +149,15 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
               
               {doctor.certificates && doctor.certificates[language] && (
                 <div>
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-3 lg:mb-4">
                     <div className="bg-orange-100 p-2 rounded-lg mr-3">
-                      <Award className="w-5 h-5 text-orange-600" />
+                      <Award className="w-4 h-4 lg:w-5 lg:h-5 text-orange-600" />
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800">{t('team.certificates')}</h2>
+                    <h2 className="text-lg lg:text-xl font-semibold text-gray-800">{t('team.certificates')}</h2>
                   </div>
-                  <div className="ml-12">
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: doctor.certificates[language].replace(/\n/g, '<br/>') }} />
+                  <div className="ml-0 lg:ml-12">
+                    <div className="bg-gray-50 rounded-lg p-3 lg:p-4">
+                      <div className="text-gray-700 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: doctor.certificates[language].replace(/\n/g, '<br/>') }} />
                     </div>
                   </div>
                 </div>
@@ -163,15 +165,15 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
               {/* Work experience section */}
               {'work' in doctor && doctor.work && doctor.work[language] && (
                 <div>
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-3 lg:mb-4">
                     <div className="bg-gray-200 p-2 rounded-lg mr-3">
-                      <Briefcase className="w-5 h-5 text-gray-700" />
+                      <Briefcase className="w-4 h-4 lg:w-5 lg:h-5 text-gray-700" />
                     </div>
-                    <h2 className="text-xl font-semibold text-gray-800">{language === 'ru' ? 'Опыт работы' : 'Жұмыс тәжірибесі'}</h2>
+                    <h2 className="text-lg lg:text-xl font-semibold text-gray-800">{language === 'ru' ? 'Опыт работы' : 'Жұмыс тәжірибесі'}</h2>
                   </div>
-                  <div className="ml-12">
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <div className="text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: doctor.work[language].replace(/\n/g, '<br/>') }} />
+                  <div className="ml-0 lg:ml-12">
+                    <div className="bg-gray-50 rounded-lg p-3 lg:p-4">
+                      <div className="text-gray-700 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: doctor.work[language].replace(/\n/g, '<br/>') }} />
                     </div>
                   </div>
                 </div>
