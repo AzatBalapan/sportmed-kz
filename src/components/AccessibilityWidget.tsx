@@ -2,7 +2,11 @@ import React, { useRef, useState } from 'react';
 import { useAccessibility } from '@/context/AccessibilityContext';
 import { Volume2, Eye, Type, Underline, Zap, RefreshCcw, ChevronUp, ChevronDown } from 'lucide-react';
 
-const AccessibilityWidget: React.FC = () => {
+interface AccessibilityWidgetProps {
+  isMobile?: boolean;
+}
+
+const AccessibilityWidget: React.FC<AccessibilityWidgetProps> = ({ isMobile = false }) => {
   const {
     highContrast,
     fontSize,
@@ -44,6 +48,95 @@ const AccessibilityWidget: React.FC = () => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') setOpen(false);
   };
+
+  if (isMobile) {
+    return (
+      <div className="bg-gray-50 rounded-lg p-3 space-y-3">
+        <div className="flex items-center justify-between">
+          <span className="text-sm font-medium">Настройки доступности</span>
+          <button
+            aria-label="Reset accessibility settings"
+            className="text-gray-500 hover:text-gov-blue p-1"
+            onClick={reset}
+          >
+            <RefreshCcw size={14} />
+          </button>
+        </div>
+        
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="flex items-center text-sm"><Eye className="w-3 h-3 mr-2" /> Высокий контраст</span>
+            <input
+              type="checkbox"
+              checked={highContrast}
+              onChange={e => setHighContrast(e.target.checked)}
+              aria-checked={highContrast}
+              aria-label="Toggle high contrast mode"
+              className="w-4 h-4"
+            />
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <span className="flex items-center text-sm"><Type className="w-3 h-3 mr-2" /> Размер шрифта</span>
+            <div className="flex items-center space-x-1">
+              <button
+                aria-label="Decrease font size"
+                className="p-1 rounded bg-gray-200 hover:bg-gray-300"
+                onClick={() => setFontSize(Math.max(0.8, fontSize - 0.1))}
+                disabled={fontSize <= 0.8}
+              >
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              <span className="px-1 text-xs">{Math.round(fontSize * 100)}%</span>
+              <button
+                aria-label="Increase font size"
+                className="p-1 rounded bg-gray-200 hover:bg-gray-300"
+                onClick={() => setFontSize(Math.min(2, fontSize + 0.1))}
+                disabled={fontSize >= 2}
+              >
+                <ChevronUp className="w-3 h-3" />
+              </button>
+            </div>
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <span className="flex items-center text-sm"><Underline className="w-3 h-3 mr-2" /> Подчеркивать ссылки</span>
+            <input
+              type="checkbox"
+              checked={underlineLinks}
+              onChange={e => setUnderlineLinks(e.target.checked)}
+              aria-checked={underlineLinks}
+              aria-label="Toggle underline links"
+              className="w-4 h-4"
+            />
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <span className="flex items-center text-sm"><Zap className="w-3 h-3 mr-2" /> Отключить анимации</span>
+            <input
+              type="checkbox"
+              checked={disableAnimations}
+              onChange={e => setDisableAnimations(e.target.checked)}
+              aria-checked={disableAnimations}
+              aria-label="Toggle disable animations"
+              className="w-4 h-4"
+            />
+          </div>
+          
+          <div className="flex items-center justify-between">
+            <span className="flex items-center text-sm"><Volume2 className="w-3 h-3 mr-2" /> Озвучить текст</span>
+            <button
+              aria-label={speaking ? 'Остановить озвучивание' : 'Озвучить выделенный текст или страницу'}
+              className={`px-2 py-1 rounded text-xs ${speaking ? 'bg-red-500 text-white' : 'bg-gov-blue text-white'} hover:bg-gov-dark-blue`}
+              onClick={handleSpeak}
+            >
+              {speaking ? 'Стоп' : 'Озвучить'}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div

@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { useAuth } from '@/context/AuthContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import AccessibilityWidget from './AccessibilityWidget';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, User, LogOut, Key } from 'lucide-react';
 import { 
@@ -328,6 +329,13 @@ export const Header: React.FC = () => {
               >
                 {t('nav.contacts')}
               </Link>
+              
+              {/* Mobile Accessibility Widget */}
+              <div className="mt-4 px-3">
+                <div className="text-sm font-medium text-gray-700 mb-2">Доступность</div>
+                <AccessibilityWidget isMobile={true} />
+              </div>
+              
               <div className="mt-4 px-3">
                 {user ? (
                   <div className="space-y-2">
