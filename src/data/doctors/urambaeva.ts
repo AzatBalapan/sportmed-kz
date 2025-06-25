@@ -1,8 +1,8 @@
-export const urambaeva = {
-  id: 'urambaeva',
+export const burambaeva = {
+  id: 'burambaeva',
   name: {
-    ru: 'Урамбаева Зауре Амангельдиновна',
-    kz: 'Урамбаева Зауре Амангельдиновна',
+    ru: 'Бурамбаева Зауре Амангельдиновна',
+    kz: 'Бурамбаева Зауре Амангельдиновна',
   },
   position: {
     ru: 'Медицинская сестра',
