@@ -22,7 +22,7 @@ const FloatingActions: React.FC = () => {
     <>
       {/* Accessibility button: only show on md+ */}
       {isMd && (
-        <div className="fixed top-4 left-4 z-50 hidden md:block">
+        <div className="fixed top-2 left-4 z-[60] hidden md:block">
           <AccessibilityWidget />
         </div>
       )}
