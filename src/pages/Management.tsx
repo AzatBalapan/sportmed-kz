@@ -28,11 +28,43 @@ const Management: React.FC = () => {
                 {person.experience && (
                   <div className="text-sm text-gray-500 mb-1 text-center">{person.experience[language]}</div>
                 )}
-                {person.education && (
-                  <div className="text-sm text-gray-500 mb-1 text-center whitespace-pre-line">{person.education[language]}</div>
-                )}
-                {person.specialization && (
-                  <div className="text-sm text-gray-500 text-center whitespace-pre-line">{person.specialization[language]}</div>
+                {/* Show full info for all management staff */}
+                {person.id === 'nurmatov' ? (
+                  <>
+                    {person.education && (
+                      <div className="text-sm text-gray-500 mb-2 text-center whitespace-pre-line">
+                        {person.education[language].split('\n').slice(0,10).join('\n')}
+                      </div>
+                    )}
+                    {'specialization' in person && person.specialization && (
+                      <div className="text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.specialization[language]}</div>
+                    )}
+                    {'work' in person && person.work && (
+                      <div className="text-sm text-gray-500 text-center mb-2 whitespace-pre-line">
+                        {person.work[language].split('\n').slice(0,10).join('\n')}
+                      </div>
+                    )}
+                    {person.certificates && (
+                      <div className="text-sm text-gray-500 text-center mb-2 whitespace-pre-line">
+                        {person.certificates[language].split('\n').slice(0,10).join('\n')}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {person.education && (
+                      <div className="text-sm text-gray-500 mb-2 text-center whitespace-pre-line">{person.education[language]}</div>
+                    )}
+                    {'specialization' in person && person.specialization && (
+                      <div className="text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.specialization[language]}</div>
+                    )}
+                    {'work' in person && person.work && (
+                      <div className="text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.work[language]}</div>
+                    )}
+                    {person.certificates && (
+                      <div className="text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.certificates[language]}</div>
+                    )}
+                  </>
                 )}
               </div>
             ))}
