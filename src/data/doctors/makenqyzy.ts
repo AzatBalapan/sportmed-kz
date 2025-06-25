@@ -2,7 +2,7 @@ export const makenqyzy = {
     id: "makenqyzy",
     name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" },
     position: { ru: "Врач-офтальмолог (взрослый и детский)", kz: "Офтальмолог дәрігері (ересек және бала)" },
-    department: "medical-staff",
+    department: "specialists",
     image: "/team_photoes/Акерке.svg",
     experience: {
       ru: "4 года",

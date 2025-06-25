@@ -2,7 +2,7 @@ export const kozhakhmetova = {
     id: "kozhakhmetova",
     name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Қожахметова Жанна Ерболатқызы" },
     position: { ru: "Психолог, специалист по спортивной и социальной психологии", kz: "Психолог, спорт және әлеуметтік психология саласының маманы" },
-    department: "medical-staff",
+    department: "sportmed",
     image: "/team_photoes/Жанна.svg",
     experience: {
       ru: "С 2019 года",

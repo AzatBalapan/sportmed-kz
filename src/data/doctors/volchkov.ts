@@ -2,7 +2,7 @@ export const volchkov = {
     id: "volchkov",
     name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" },
     position: { ru: "Массажист", kz: "Массажист" },
-    department: "rehabilitation",
+    department: "physiotherapy",
     image: null,
     experience: {
       ru: "15 лет",

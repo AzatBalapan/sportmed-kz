@@ -2,7 +2,7 @@ export const fayzolda = {
     id: "fayzolda",
     name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" },
     position: { ru: "Медицинская сестра", kz: "Мейірбике" },
-    department: "rehabilitation",
+    department: "nursing",
     image: "/team_photoes/Марзия.svg",
     experience: {
       ru: "10 лет",

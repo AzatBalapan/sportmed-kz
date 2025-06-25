@@ -2,7 +2,7 @@ export const toygulova = {
     id: "toygulova",
     name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойғұлова Динара Баймұханқызы" },
     position: { ru: "Врач-стоматолог", kz: "Тіс дәрігері" },
-    department: "medical-staff",
+    department: "specialists",
     image: "/team_photoes/Динара.svg",
     experience: {
       ru: "13 лет",

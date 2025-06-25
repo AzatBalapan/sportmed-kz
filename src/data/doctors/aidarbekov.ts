@@ -2,7 +2,7 @@ export const aidarbekov = {
     id: "aidarbekov",
     name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" },
     position: { ru: "Врач спортивной медицины, Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Спорттық медицина дәрігері, Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" },
-    department: "rehabilitation",
+    department: "physiotherapy",
     image: "/team_photoes/Арыс.svg",
     experience: {
       ru: "С 2018 года",

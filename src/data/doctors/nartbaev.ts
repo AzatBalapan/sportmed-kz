@@ -2,7 +2,7 @@ export const nartbaev = {
     id: "nartbaev",
     name: { ru: "Нартбаев Есмурат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханұлы" },
     position: { ru: "Детский и взрослый хирург, травматолог-ортопед высшей категории", kz: "Балалар мен ересектер хирургы, жоғары санатты травматолог-ортопед" },
-    department: "medical-staff",
+    department: "specialists",
     image: "/team_photoes/Есмұрат.svg",
     experience: {
       ru: "45 лет (37 лет хирургический стаж)",

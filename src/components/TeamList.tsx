@@ -25,10 +25,13 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
   // Define departments - only medical and other staff, remove management
   const departments: Department[] = [
     { id: 'sportmed', nameRu: 'Отделение спортивной медицины и медико-биологического обеспечения', nameKz: 'Спорттық медицина және медико-биологиялық қамтамасыз ету бөлімі', order: 1 },
-    { id: 'rehabilitation', nameRu: 'Реабилитация', nameKz: 'Реабилитация', order: 2 },
-    { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 3 },
-    { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 4 },
-    { id: 'other', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 5 },
+    { id: 'specialists', nameRu: 'Отделение специалистов по профилю', nameKz: 'Мамандандырылған дәрігерлер бөлімі', order: 2 },
+    { id: 'diagnostics', nameRu: 'Отделение функциональной диагностики', nameKz: 'Функционалды диагностика бөлімі', order: 3 },
+    { id: 'physiotherapy', nameRu: 'Отделение физиотерапии, лечебной физкультуры и массажа', nameKz: 'Физиотерапия, емдік дене шынықтыру және массаж бөлімі', order: 4 },
+    { id: 'nursing', nameRu: 'Средний медицинский персонал', nameKz: 'Орта медициналық персонал', order: 5 },
+    { id: 'rehabilitation', nameRu: 'Реабилитация', nameKz: 'Реабилитация', order: 6 },
+    { id: 'psychologist', nameRu: 'Спортивный психолог', nameKz: 'Спорттық психолог', order: 7 },
+    { id: 'other', nameRu: 'Прочие специалисты', nameKz: 'Басқа мамандар', order: 8 },
   ];
 
   // Group doctors by department

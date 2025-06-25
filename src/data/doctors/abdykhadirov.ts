@@ -2,7 +2,7 @@ export const abdykhadirov = {
     id: "abdykhadirov",
     name: { ru: "Абдыхадиров Данияр Нурланович", kz: "Абдыхадиров Данияр Нұрланұлы" },
     position: { ru: "Заведующий отделением по профилю", kz: "Бөлім меңгерушісі" },
-    department: "management",
+    department: "specialists",
     image: "/team_photoes/Данияр.svg",
     experience: {
       ru: "11 лет",
