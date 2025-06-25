@@ -28,6 +28,7 @@ import NewsArticle from "./pages/NewsArticle";
 import BerikAsylov from "./pages/BerikAsylov";
 import Profile from "./pages/Profile";
 import Management from '@/pages/Management';
+import Structure from '@/pages/Structure';
 
 const queryClient = new QueryClient();
 
@@ -94,6 +95,7 @@ const App = () => (
                 <Route path="/legal-acts" element={<LegalActs />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/management" element={<Management />} />
+                <Route path="/structure" element={<Structure />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

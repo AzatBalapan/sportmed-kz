@@ -25,6 +25,11 @@ export const navigationTranslations = {
     kz: 'Нормативтік құқықтық актілер',
     en: 'Legal Acts'
   },
+  'nav.structure': {
+    ru: 'Структура',
+    kz: 'Құрылым',
+    en: 'Structure'
+  },
   'nav.services': {
     ru: 'Услуги',
     kz: 'Қызметтер',

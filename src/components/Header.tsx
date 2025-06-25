@@ -133,6 +133,11 @@ export const Header: React.FC = () => {
                     {t('nav.legalActs')}
                   </Link>
                 </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/structure" className="w-full">
+                    {t('nav.structure')}
+                  </Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             
@@ -246,7 +251,7 @@ export const Header: React.FC = () => {
                 </button>
                 
                 <div className={`overflow-hidden transition-all duration-200 ease-in-out ${
-                  aboutDropdownOpen ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'
+                  aboutDropdownOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className="ml-4 space-y-1">
                     <Link 
@@ -276,6 +281,13 @@ export const Header: React.FC = () => {
                       onClick={closeMobileMenu}
                     >
                       {t('nav.legalActs')}
+                    </Link>
+                    <Link 
+                      to="/structure" 
+                      className="block py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors"
+                      onClick={closeMobileMenu}
+                    >
+                      {t('nav.structure')}
                     </Link>
                   </div>
                 </div>
