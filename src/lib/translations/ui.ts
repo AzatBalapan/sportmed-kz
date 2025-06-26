@@ -129,6 +129,16 @@ export const uiTranslations = {
     kz: 'Жүктеп алу',
     en: 'Download'
   },
+  'compliance.view': {
+    ru: 'Просмотреть',
+    kz: 'Қарау',
+    en: 'View'
+  },
+  'compliance.document.description': {
+    ru: 'Ознакомьтесь с содержимым документа или скачайте его по кнопке ниже.',
+    kz: 'Құжаттың мазмұнымен танысыңыз немесе төмендегі батырма арқылы жүктеп алыңыз.',
+    en: 'View the document content or download it using the button below.'
+  },
 
   // Director Contact Form
   'director.contact.button': {
