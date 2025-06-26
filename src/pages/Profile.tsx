@@ -153,10 +153,10 @@ const Profile: React.FC = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow py-12 bg-gray-50">
+        <main className="flex-grow py-8 md:py-12 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center">
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm md:text-base">
                 {language === 'ru' ? 'Пожалуйста, войдите в систему' : 'Жүйеге кіріңіз'}
               </p>
             </div>
@@ -171,14 +171,14 @@ const Profile: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow py-12 bg-gray-50">
+      <main className="flex-grow py-8 md:py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl font-serif font-bold text-center mb-8 text-gov-blue">
+            <h1 className="text-2xl md:text-3xl font-serif font-bold text-center mb-6 md:mb-8 text-gov-blue">
               {language === 'ru' ? 'Мой аккаунт' : 'Менің есептік жазбам'}
             </h1>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
               {/* Profile Information */}
               <Card className="shadow-lg">
                 <CardHeader>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -81,51 +80,51 @@ const AboutFull: React.FC = () => {
   return (
     <>
       <Header />
-      <section className="py-16 bg-gov-light-blue min-h-screen section-padding animate-fade-in">
+      <section className="py-8 md:py-16 bg-gov-light-blue min-h-screen section-padding animate-fade-in">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-serif font-bold text-gov-dark-blue mb-10 text-center">
+          <h1 className="text-2xl md:text-4xl font-serif font-bold text-gov-dark-blue mb-6 md:mb-10 text-center">
             {aboutContent[lang].historyTitle}
           </h1>
           
           {/* History Section */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <p className="text-gray-700 text-lg bg-white/70 p-6 rounded-lg shadow-md leading-relaxed whitespace-pre-line">
+          <div className="max-w-3xl mx-auto mb-8 md:mb-12">
+            <p className="text-gray-700 text-base md:text-lg bg-white/70 p-4 md:p-6 rounded-lg shadow-md leading-relaxed whitespace-pre-line">
               {aboutContent[lang].history}
             </p>
           </div>
           
           {/* Separator */}
-          <div className="max-w-3xl mx-auto my-12 flex items-center">
+          <div className="max-w-3xl mx-auto my-8 md:my-12 flex items-center">
             <hr className="flex-grow border-t border-gray-400" />
-            <span className="px-4 text-2xl text-gray-600">⸻</span>
+            <span className="px-3 md:px-4 text-xl md:text-2xl text-gray-600">⸻</span>
             <hr className="flex-grow border-t border-gray-400" />
           </div>
           
           {/* Goal Section */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <h2 className="text-2xl font-serif font-bold mb-4 text-gov-blue">{aboutContent[lang].goalTitle}</h2>
-            <p className="text-gray-700 text-lg bg-white/70 p-6 rounded-lg shadow-md leading-relaxed whitespace-pre-line">
+          <div className="max-w-3xl mx-auto mb-8 md:mb-12">
+            <h2 className="text-xl md:text-2xl font-serif font-bold mb-3 md:mb-4 text-gov-blue">{aboutContent[lang].goalTitle}</h2>
+            <p className="text-gray-700 text-base md:text-lg bg-white/70 p-4 md:p-6 rounded-lg shadow-md leading-relaxed whitespace-pre-line">
               {aboutContent[lang].goal}
             </p>
           </div>
           
           {/* Separator */}
-          <div className="max-w-3xl mx-auto my-12 flex items-center">
+          <div className="max-w-3xl mx-auto my-8 md:my-12 flex items-center">
             <hr className="flex-grow border-t border-gray-400" />
-            <span className="px-4 text-2xl text-gray-600">⸻</span>
+            <span className="px-3 md:px-4 text-xl md:text-2xl text-gray-600">⸻</span>
             <hr className="flex-grow border-t border-gray-400" />
           </div>
           
           {/* Mission Section */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <h2 className="text-2xl font-serif font-bold mb-4 text-gov-blue">{aboutContent[lang].missionTitle}</h2>
-            <p className="text-gray-700 text-lg bg-white/70 p-6 rounded-lg shadow-md leading-relaxed whitespace-pre-line">
+          <div className="max-w-3xl mx-auto mb-8 md:mb-12">
+            <h2 className="text-xl md:text-2xl font-serif font-bold mb-3 md:mb-4 text-gov-blue">{aboutContent[lang].missionTitle}</h2>
+            <p className="text-gray-700 text-base md:text-lg bg-white/70 p-4 md:p-6 rounded-lg shadow-md leading-relaxed whitespace-pre-line">
               {aboutContent[lang].mission}
             </p>
           </div>
           
-          <div className="max-w-2xl mx-auto mb-12 bg-white/80 p-6 rounded-lg">
-            <ul className="list-disc text-lg pl-4 space-y-2 text-gov-blue">
+          <div className="max-w-2xl mx-auto mb-8 md:mb-12 bg-white/80 p-4 md:p-6 rounded-lg">
+            <ul className="list-disc text-base md:text-lg pl-4 space-y-1 md:space-y-2 text-gov-blue">
               {aboutContent[lang].decorBlock.map((v, i) => (
                 <li key={i}>{v}</li>
               ))}

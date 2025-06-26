@@ -88,25 +88,25 @@ const LegalActs: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-serif font-bold text-center mb-8">
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          <h1 className="text-2xl md:text-4xl font-serif font-bold text-center mb-6 md:mb-8">
             {language === 'ru' ? 'Нормативные правовые акты' : 'Нормативтік құқықтық құжаттар'}
           </h1>
 
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white rounded-lg shadow p-4 md:p-6">
             <Table>
               <TableBody>
                 {legalActs.map((act) => (
                   <TableRow key={act.id} className="hover:bg-gray-100">
-                    <TableCell className="py-4">
+                    <TableCell className="py-3 md:py-4">
                       <a 
                         href={getUrl(act)} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                        className="flex items-center text-blue-600 hover:text-blue-800 hover:underline transition-colors text-sm md:text-base"
                       >
-                        {getTitle(act)}
-                        <ExternalLink className="ml-2 h-4 w-4" />
+                        <span className="flex-1">{getTitle(act)}</span>
+                        <ExternalLink className="ml-2 h-3 w-3 md:h-4 md:w-4 flex-shrink-0" />
                       </a>
                     </TableCell>
                   </TableRow>

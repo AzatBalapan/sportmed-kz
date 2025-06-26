@@ -275,21 +275,21 @@ const Services: React.FC = () => {
   return (
     <>
       <Header />
-      <section className="py-16 bg-gov-light-blue min-h-screen section-padding animate-fade-in">
+      <section className="py-8 md:py-16 bg-gov-light-blue min-h-screen section-padding animate-fade-in">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-serif font-bold text-gov-dark-blue mb-8 text-center">
+          <h1 className="text-2xl md:text-4xl font-serif font-bold text-gov-dark-blue mb-4 md:mb-8 text-center">
             {data.title}
           </h1>
-          <p className="mb-10 text-lg text-gray-700 text-center max-w-2xl mx-auto">{data.subtitle}</p>
+          <p className="mb-6 md:mb-10 text-base md:text-lg text-gray-700 text-center max-w-2xl mx-auto">{data.subtitle}</p>
           
           {/* Department Sections */}
           {data.sections.map((section, sectionIndex) => (
-            <div key={sectionIndex} className="mb-16">
-              <h2 className="text-2xl font-serif font-bold text-gov-blue mb-6 border-b-2 border-gov-blue pb-2">
+            <div key={sectionIndex} className="mb-8 md:mb-16">
+              <h2 className="text-xl md:text-2xl font-serif font-bold text-gov-blue mb-4 md:mb-6 border-b-2 border-gov-blue pb-2">
                 {section.title}
               </h2>
               
-              <div className="space-y-8">
+              <div className="space-y-4 md:space-y-8">
                 <Accordion type="single" collapsible className="w-full">
                   {section.services.map((service, serviceIndex) => {
                     // Detect if the description contains multiple options (lines starting with •, -, or similar)
@@ -305,14 +305,14 @@ const Services: React.FC = () => {
                       return (
                         <Card key={serviceIndex} className="bg-white/90 shadow hover:shadow-md transition-shadow">
                           <AccordionItem value={service.title + sectionIndex}>
-                            <AccordionTrigger className="text-lg font-medium text-gov-dark-blue px-6 py-4">
+                            <AccordionTrigger className="text-base md:text-lg font-medium text-gov-dark-blue px-4 md:px-6 py-3 md:py-4">
                               <div className="flex items-center">
-                                <Check className="text-gov-blue flex-shrink-0 mr-3 w-5 h-5" />
-                                {service.title}
+                                <Check className="text-gov-blue flex-shrink-0 mr-2 md:mr-3 w-4 h-4 md:w-5 md:h-5" />
+                                <span className="text-left">{service.title}</span>
                               </div>
                             </AccordionTrigger>
                             <AccordionContent>
-                              <ul className="list-disc pl-8 text-gray-600">
+                              <ul className="list-disc pl-6 md:pl-8 text-sm md:text-base text-gray-600 space-y-1 md:space-y-2">
                                 {options.map((option, idx) => (
                                   <li key={idx}>{option}</li>
                                 ))}
@@ -324,13 +324,13 @@ const Services: React.FC = () => {
                     } else {
                       return (
                         <Card key={serviceIndex} className="bg-white/90 shadow hover:shadow-md transition-shadow">
-                          <CardContent className="p-6">
+                          <CardContent className="p-4 md:p-6">
                             <div className="flex items-start">
-                              <Check className="text-gov-blue flex-shrink-0 mt-1 mr-3 w-5 h-5" />
+                              <Check className="text-gov-blue flex-shrink-0 mt-1 mr-2 md:mr-3 w-4 h-4 md:w-5 md:h-5" />
                               <div>
-                                <h3 className="text-lg font-medium text-gov-dark-blue">{service.title}</h3>
+                                <h3 className="text-base md:text-lg font-medium text-gov-dark-blue">{service.title}</h3>
                                 {service.description && (
-                                  <div className="mt-2 text-gray-600 whitespace-pre-line">
+                                  <div className="mt-2 text-sm md:text-base text-gray-600 whitespace-pre-line">
                                     {service.description}
                                   </div>
                                 )}
@@ -347,15 +347,15 @@ const Services: React.FC = () => {
           ))}
           
           {/* Contact Information */}
-          <div className="bg-gov-blue p-8 rounded-lg mt-12 shadow-lg max-w-xl mx-auto text-center">
+          <div className="bg-gov-blue p-6 md:p-8 rounded-lg mt-8 md:mt-12 shadow-lg max-w-xl mx-auto text-center">
             <div className="flex flex-col items-center">
-              <div className="flex items-center text-white mb-2">
+              <div className="flex items-center text-white mb-2 text-sm md:text-base">
                 <span className="mr-2">🏥</span>
                 <span className="font-semibold">
                   {data.contactBlock.addressTitle} {data.contactBlock.address}
                 </span>
               </div>
-              <div className="flex items-center text-white">
+              <div className="flex items-center text-white text-sm md:text-base">
                 <span className="mr-2">📞</span>
                 <span>{data.contactBlock.phone}</span>
               </div>

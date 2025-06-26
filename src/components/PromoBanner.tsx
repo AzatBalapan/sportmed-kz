@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
@@ -43,27 +42,27 @@ export const PromoBanner: React.FC = () => {
   ];
   
   return (
-    <section id="services" className="py-16 bg-gov-light-blue">
+    <section id="services" className="py-8 md:py-16 bg-gov-light-blue">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-2xl md:text-3xl font-serif font-bold text-center text-gray-900 mb-8 md:mb-12">
           {t('promo.title')}
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service, index) => (
             <Card key={index} className="bg-white hover:shadow-lg transition-shadow">
-              <CardContent className="pt-6">
-                <div className="mb-4 flex justify-center">{service.icon}</div>
-                <h3 className="text-xl font-medium mb-3 text-center text-gov-dark-blue">{service.title}</h3>
-                <p className="text-gray-600 text-center">{service.description[t('language') as 'ru' | 'kz'] || service.description.ru}</p>
+              <CardContent className="pt-4 md:pt-6 p-4 md:p-6">
+                <div className="mb-3 md:mb-4 flex justify-center">{service.icon}</div>
+                <h3 className="text-lg md:text-xl font-medium mb-2 md:mb-3 text-center text-gov-dark-blue">{service.title}</h3>
+                <p className="text-gray-600 text-center text-sm md:text-base">{service.description[t('language') as 'ru' | 'kz'] || service.description.ru}</p>
               </CardContent>
             </Card>
           ))}
         </div>
         
-        <div className="mt-16 bg-gov-blue rounded-lg overflow-hidden shadow-lg">
-          <div className="p-8 text-center">
-            <h3 className="text-2xl font-medium text-white mb-4">
+        <div className="mt-12 md:mt-16 bg-gov-blue rounded-lg overflow-hidden shadow-lg">
+          <div className="p-6 md:p-8 text-center">
+            <h3 className="text-xl md:text-2xl font-medium text-white mb-3 md:mb-4">
               {t('language') === 'ru' ? 'Видео о нашем центре' : 'Біздің орталық туралы бейне'}
             </h3>
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">

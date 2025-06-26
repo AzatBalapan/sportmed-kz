@@ -62,13 +62,13 @@ const Director: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow bg-gray-50">
-        <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-serif font-bold text-center mb-12">
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          <h1 className="text-2xl md:text-4xl font-serif font-bold text-center mb-8 md:mb-12">
             {language === 'ru' ? 'Руководитель центра' : 'Орталық басшысы'}
           </h1>
 
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
               {/* Left Column - Photo and Basic Info */}
               <div className="lg:col-span-1">
                 <div className="lg:sticky lg:top-8">
@@ -80,21 +80,21 @@ const Director: React.FC = () => {
                         className="w-full h-full object-cover object-top"
                       />
                     </div>
-                    <div className="p-6">
-                      <h2 className="text-2xl font-bold mb-2">Нурматов Азамат Басимбекович</h2>
-                      <p className="text-lg text-blue-600 mb-1">
+                    <div className="p-4 md:p-6">
+                      <h2 className="text-xl md:text-2xl font-bold mb-2">Нурматов Азамат Басимбекович</h2>
+                      <p className="text-base md:text-lg text-blue-600 mb-1">
                         {language === 'ru' ? 'Руководитель' : 'Басшы'}
                       </p>
-                      <p className="text-md text-gray-700 mb-4">
+                      <p className="text-sm md:text-base text-gray-700 mb-4">
                         {language === 'ru' ? 'главный спортивный врач' : 'Бас спорт дәрігері'}
                       </p>
                       
                       <div className="mb-6">
                         <div className="flex items-center mb-2">
                           <Award className="w-4 h-4 mr-2 text-gray-500" />
-                          <span className="font-medium text-gray-700">{language === 'ru' ? 'Стаж' : 'Тәжірибе'}</span>
+                          <span className="font-medium text-gray-700 text-sm md:text-base">{language === 'ru' ? 'Стаж' : 'Тәжірибе'}</span>
                         </div>
-                        <p className="text-gray-600 text-sm pl-6">{language === 'ru' ? 'Более 10 лет в области спортивной медицины' : '10 жылдан астам спорт медицинасы саласында'}</p>
+                        <p className="text-gray-600 text-xs md:text-sm pl-6">{language === 'ru' ? 'Более 10 лет в области спортивной медицины' : '10 жылдан астам спорт медицинасы саласында'}</p>
                       </div>
 
                       {/* Contact Form Button */}
@@ -108,19 +108,19 @@ const Director: React.FC = () => {
               
               {/* Right Column - Biography */}
               <div className="lg:col-span-2">
-                <div className="bg-white rounded-xl shadow-lg p-8">
-                  <div className="flex items-center mb-6">
+                <div className="bg-white rounded-xl shadow-lg p-4 md:p-8">
+                  <div className="flex items-center mb-4 md:mb-6">
                     <div className="bg-blue-100 p-2 rounded-lg mr-3">
-                      <User className="w-5 h-5 text-blue-600" />
+                      <User className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-800">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-800">
                       {language === 'ru' ? 'Биография' : 'Өмірбаян'}
                     </h3>
                   </div>
-                  <div className="ml-12">
-                    <div className="bg-gray-50 rounded-lg p-6">
-                      <div className="prose max-w-none">
-                        <div className="whitespace-pre-line text-gray-700 leading-relaxed">
+                  <div className="ml-0 md:ml-12">
+                    <div className="bg-gray-50 rounded-lg p-4 md:p-6">
+                      <div className="prose prose-sm md:prose-base max-w-none">
+                        <div className="whitespace-pre-line text-gray-700 leading-relaxed text-sm md:text-base">
                           {biographyText[language]}
                         </div>
                       </div>

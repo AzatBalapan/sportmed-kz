@@ -177,133 +177,81 @@ const Compliance: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">{t('compliance.title')}</h1>
-          <p className="text-gray-600">{t('compliance.description')}</p>
+      <main className="container mx-auto px-4 py-6 md:py-8">
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold mb-2">{t('compliance.title')}</h1>
+          <p className="text-gray-600 text-sm md:text-base">{t('compliance.description')}</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
           {documents.map((doc) => (
             <Card key={doc.id} className="transition-all hover:shadow-lg flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-xl">
+              <CardHeader className="p-4 md:p-6">
+                <CardTitle className="text-lg md:text-xl">
                   {language === 'kz' ? doc.title.kz : doc.title.ru}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="flex-grow p-4 md:p-6">
                 {/* Description content removed */}
               </CardContent>
-              <CardFooter className="mt-auto">
+              <CardFooter className="mt-auto p-4 md:p-6">
                 <Button 
-                  className="w-full flex items-center justify-center"
+                  className="w-full flex items-center justify-center text-sm md:text-base py-2 md:py-3"
                   onClick={() => setSelectedDocument(doc)}
                 >
-                  <Eye className="mr-2 h-4 w-4" /> 
-                  {language === 'ru' ? 'Читать' : (language === 'kz' ? 'Оқу' : 'Read')}
+                  <Eye className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                  {t('compliance.view')}
                 </Button>
               </CardFooter>
             </Card>
           ))}
         </div>
-
-        {/* Compliance Officer Section */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">
-            {language === 'ru' ? 'Комплаенс-офицер' : 'Комплаенс-офицер'}
-          </h2>
-          <div className="max-w-2xl mx-auto">
-            <Card className="overflow-hidden">
-              <div className="md:flex">
-                <div className="md:w-1/3">
-                  <img 
-                    src="/lovable-uploads/993e1c45-5ec2-4cd7-8e96-00efe19315bd.png" 
-                    alt="Тажиева Айжан Альпикызы" 
-                    className="w-full h-64 md:h-full object-cover"
-                  />
-                </div>
-                <div className="md:w-2/3 p-6">
-                  <h3 className="text-xl font-semibold mb-4">
-                    {language === 'ru' ? 'Тажиева Айжан Альпикызы' : 'Тажиева Айжан Альпикызы'}
-                  </h3>
-                  
-                  <div className="space-y-3 text-sm">
-                    <div>
-                      <span className="font-medium">
-                        {language === 'ru' ? 'Период занимаемой должности:' : 'Лауазым ұстау кезеңі:'}
-                      </span>
-                      <br />
-                      <span className="text-gray-600">
-                        {language === 'ru' ? 'с января 2025 года' : '2025 жылдың қаңтарынан бастап'}
-                      </span>
-                    </div>
-                    
-                    <div>
-                      <span className="font-medium">
-                        {language === 'ru' ? 'Образование:' : 'Білімі:'}
-                      </span>
-                      <br />
-                      <span className="text-gray-600">
-                        {language === 'ru' 
-                          ? 'Казахский гуманитарно-юридический университет' 
-                          : 'Қазақ гуманитарлық-заң университеті'
-                        }
-                      </span>
-                    </div>
-                    
-                    <div>
-                      <span className="font-medium">
-                        {language === 'ru' ? 'Профессиональный опыт:' : 'Кәсіби тәжірибе:'}
-                      </span>
-                      <br />
-                      <span className="text-gray-600">
-                        {language === 'ru' ? '20 лет' : '20 жыл'}
-                      </span>
-                    </div>
-                    
-                    <div>
-                      <span className="font-medium">
-                        {language === 'ru' ? 'Контактные данные:' : 'Байланыс деректері:'}
-                      </span>
-                      <br />
-                      <span className="text-gray-600">
-                        +7 778 778 88 93
-                        <br />
-                        smo.compliance@mail.ru
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-
-        {/* Document viewer dialog */}
-        <Dialog open={!!selectedDocument} onOpenChange={(open) => {
-          if (!open) setSelectedDocument(null);
-        }}>
-          <DialogContent className="max-w-4xl h-[80vh]">
+        
+        {/* Document Viewer Dialog */}
+        <Dialog open={!!selectedDocument} onOpenChange={() => setSelectedDocument(null)}>
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
             <DialogHeader>
-              <DialogTitle>
-                {selectedDocument && (language === 'kz' ? 
-                  selectedDocument.title.kz : 
-                  selectedDocument.title.ru)}
+              <DialogTitle className="text-lg md:text-xl">
+                {selectedDocument && (language === 'kz' ? selectedDocument.title.kz : selectedDocument.title.ru)}
               </DialogTitle>
-              <DialogClose className="absolute right-4 top-4">
-                <span className="sr-only">Close</span>
-              </DialogClose>
+              <DialogDescription className="text-sm md:text-base">
+                {t('compliance.document.description')}
+              </DialogDescription>
             </DialogHeader>
-            <div className="flex-1 overflow-auto h-full p-6 mt-4">
+            
+            <div className="mt-4">
               {isLoading ? (
-                <div className="flex justify-center items-center h-full">
-                  <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+                <div className="flex justify-center items-center py-8">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gov-blue"></div>
+                </div>
+              ) : selectedDocument?.type === 'faq' ? (
+                <div className="space-y-4">
+                  <FaqDisplay faqItems={filteredFaqItems.map(item => ({
+                    id: item.id,
+                    question: item.question,
+                    answer: item.answer
+                  }))} />
                 </div>
               ) : (
-                <div className="prose max-w-none">
+                <div className="prose prose-sm md:prose-base max-w-none">
                   {formatText(documentContent)}
                 </div>
               )}
+            </div>
+            
+            <div className="flex justify-between items-center mt-6">
+              <Button
+                variant="outline"
+                onClick={() => window.open(selectedDocument?.path, '_blank')}
+                className="text-sm md:text-base"
+              >
+                {t('compliance.download')}
+              </Button>
+              <DialogClose asChild>
+                <Button className="text-sm md:text-base">
+                  {t('compliance.close')}
+                </Button>
+              </DialogClose>
             </div>
           </DialogContent>
         </Dialog>

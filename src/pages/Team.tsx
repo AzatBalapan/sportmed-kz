@@ -31,10 +31,10 @@ const Team: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 py-8 md:py-12">
           {!selectedDoctor ? (
             <>
-              <h1 className="text-4xl font-serif font-bold text-center mb-3">{t('team.title')}</h1>
+              <h1 className="text-2xl md:text-4xl font-serif font-bold text-center mb-3">{t('team.title')}</h1>
               <TeamList onSelectDoctor={handleSelectDoctor} />
             </>
           ) : (

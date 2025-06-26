@@ -34,45 +34,45 @@ const BerikAsylov: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
       
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-6 md:py-8">
         <div className="max-w-4xl mx-auto">
           <Button 
             onClick={handleGoBack}
             variant="outline"
-            className="mb-6 border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white"
+            className="mb-4 md:mb-6 border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white text-sm md:text-base"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
+            <ArrowLeft className="mr-2 h-3 w-3 md:h-4 md:w-4" />
             {language === 'ru' ? 'Назад' :
              language === 'kz' ? 'Артқа' :
              'Back'}
           </Button>
 
           <Card className="shadow-lg">
-            <CardContent className="p-8">
-              <div className="mb-6">
+            <CardContent className="p-4 md:p-8">
+              <div className="mb-4 md:mb-6">
                 <img 
                   src="/news/berik-asylov.jpeg" 
                   alt={language === 'ru' ? 'Берик АСЫЛОВ' :
                        language === 'kz' ? 'Берік АСЫЛОВ' :
                        'Berik ASYLOV'}
-                  className="w-full h-64 object-cover object-top rounded-lg mb-6"
+                  className="w-full h-48 md:h-64 object-cover object-top rounded-lg mb-4 md:mb-6"
                 />
               </div>
 
-              <h1 className="text-3xl font-serif font-bold text-gov-blue mb-6">
+              <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
                 {language === 'ru' ? 'Берик АСЫЛОВ: Правовая ответственность – опора справедливости' :
                  language === 'kz' ? 'Берік АСЫЛОВ: Құқықтық жауапкершілік – әділеттіліктің тірегі' :
                  'Berik ASYLOV: Legal responsibility is the foundation of justice'}
               </h1>
               
-              <div className="prose prose-lg max-w-none">
-                <div className="whitespace-pre-line text-gray-700 leading-relaxed">
+              <div className="prose prose-sm md:prose-lg max-w-none">
+                <div className="whitespace-pre-line text-gray-700 leading-relaxed text-sm md:text-base">
                   {articleText}
                 </div>
               </div>
               
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <p className="text-sm text-gray-500">
+              <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
+                <p className="text-xs md:text-sm text-gray-500">
                   {language === 'ru' ? 'Дата публикации: 14 июня 2025 г.' :
                    language === 'kz' ? 'Жариялау күні: 14 маусым 2025 ж.' :
                    'Publication date: June 14, 2025'}
