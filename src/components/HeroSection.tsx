@@ -119,7 +119,7 @@ export const HeroSection: React.FC = () => {
         <div className="relative h-[200px] overflow-hidden">
           <video
             className="absolute inset-0 w-full h-full object-cover object-left z-0"
-            src="/for_banner/combined_back.mp4"
+            src="/for_banner/right_vid.mp4"
             autoPlay
             loop
             muted
