@@ -50,15 +50,14 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "kozhakhmetova", name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "sportmed", order: 4 },
 
     // Мамандандырылған дәрігерлер бөлімі
-    { id: "abdykhadirov", name: { ru: "Абдыхадиров Данияр Нурланович", kz: "Абдыхадиров Данияр Нұрланұлы" }, position: { ru: "Заведующий отделением по профилю", kz: "Бөлім меңгерушісі" }, department: "specialists", order: 1 },
-    { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" }, position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты оториноларинголог дәрігері" }, department: "specialists", order: 2 },
-    { id: "khamitov", name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимұлы" }, position: { ru: "Врач-невролог", kz: "Невролог дәрігері" }, department: "specialists", order: 3 },
-    { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "specialists", order: 4 },
-    { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "specialists", order: 5 },
-    { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 6 },
-    { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "specialists", order: 7 },
-    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "specialists", order: 8 },
-    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "specialists", order: 9 },
+    { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" }, position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты оториноларинголог дәрігері" }, department: "specialists", order: 1 },
+    { id: "khamitov", name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимұлы" }, position: { ru: "Врач-невролог", kz: "Невролог дәрігері" }, department: "specialists", order: 2 },
+    { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "specialists", order: 3 },
+    { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "specialists", order: 4 },
+    { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 5 },
+    { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "specialists", order: 6 },
+    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "specialists", order: 7 },
+    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "specialists", order: 8 },
 
     // Реабилитация
     { id: "aidarbekov", name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" }, department: "rehabilitation", order: 1 },
