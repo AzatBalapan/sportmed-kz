@@ -46,21 +46,23 @@ const Management: React.FC = () => {
           {/* Other management staff in two columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {managementStaff.map((person) => (
-              <div key={person.id} className="bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-center">
-                <img src={person.image} alt={person.name[language]} className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-3 md:mb-4" />
-                <h2 className="text-lg md:text-xl font-semibold text-gov-blue mb-1 text-center">{person.name[language]}</h2>
-                <div className="text-gray-600 text-center mb-2 text-sm md:text-base">{person.position[language]}</div>
+              <div key={person.id} className="bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-start">
+                <div className="w-full flex justify-center mb-3 md:mb-4">
+                  <img src={person.image} alt={person.name[language]} className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full" />
+                </div>
+                <h2 className="text-lg md:text-xl font-semibold text-gov-blue mb-1">{person.name[language]}</h2>
+                <div className="text-gray-600 mb-2 text-sm md:text-base">{person.position[language]}</div>
                 {person.education && (
-                  <div className="text-xs md:text-sm text-gray-500 mb-2 text-center whitespace-pre-line">{person.education[language]}</div>
+                  <div className="text-xs md:text-sm text-gray-500 mb-2 whitespace-pre-line">{person.education[language]}</div>
                 )}
                 {'specialization' in person && person.specialization && (
-                  <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.specialization[language]}</div>
+                  <div className="text-xs md:text-sm text-gray-500 mb-2 whitespace-pre-line">{person.specialization[language]}</div>
                 )}
                 {'work' in person && person.work && (
-                  <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.work[language]}</div>
+                  <div className="text-xs md:text-sm text-gray-500 mb-2 whitespace-pre-line">{person.work[language]}</div>
                 )}
                 {person.certificates && (
-                  <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.certificates[language]}</div>
+                  <div className="text-xs md:text-sm text-gray-500 mb-2 whitespace-pre-line">{person.certificates[language]}</div>
                 )}
               </div>
             ))}
