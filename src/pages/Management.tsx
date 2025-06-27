@@ -37,16 +37,8 @@ const Management: React.FC = () => {
                 <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.education[language]}</div>
               </div>
               <div className="mb-2">
-                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Специализация:' : 'Мамандануы:'}</span>
-                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.specialization[language]}</div>
-              </div>
-              <div className="mb-2">
                 <span className="font-semibold text-gray-700">{language === 'ru' ? 'Опыт работы и достижения:' : 'Жұмыс тәжірибесі мен жетістіктері:'}</span>
                 <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.certificates[language]}</div>
-              </div>
-              <div className="mb-2">
-                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Биография:' : 'Өмірбаян:'}</span>
-                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{biographyText[language]}</div>
               </div>
             </div>
           </div>
