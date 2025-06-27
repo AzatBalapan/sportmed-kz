@@ -11,6 +11,7 @@ const News: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [secondNewsText, setSecondNewsText] = useState<string>('');
+  const [thirdNewsText, setThirdNewsText] = useState<string>('');
 
   useEffect(() => {
     // Fetch the second news text based on language
@@ -22,6 +23,17 @@ const News: React.FC = () => {
       })
       .catch(error => {
         console.error('Error fetching second news text:', error);
+      });
+
+    // Fetch the third news text based on language
+    const thirdFileName = language === 'ru' ? '3/3_rus.txt' : '3/3_kaz.txt';
+    fetch(`/news/${thirdFileName}`)
+      .then(response => response.text())
+      .then(text => {
+        setThirdNewsText(text);
+      })
+      .catch(error => {
+        console.error('Error fetching third news text:', error);
       });
   }, [language]);
 
@@ -109,6 +121,44 @@ const News: React.FC = () => {
                   {/* Read More Button */}
                   <Button 
                     onClick={() => navigate('/news/berik-asylov')}
+                    variant="outline"
+                    className="w-full sm:w-auto border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-xs sm:text-sm md:text-base py-2 md:py-3 px-4 md:px-6"
+                  >
+                    {t('news.learnMore')}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Third News Article - Fencing Championship */}
+              <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+                {/* Banner Image */}
+                <div className="w-full h-32 sm:h-40 md:h-48 lg:h-64 overflow-hidden">
+                  <img 
+                    src="/news/3/photoes/1.jpeg"
+                    alt={language === 'ru' ? 'Чемпионат Казахстана по фехтованию' :
+                         language === 'kz' ? 'Қазақстан чемпионаты семсерлесу' :
+                         'Kazakhstan Fencing Championship'}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                
+                <CardContent className="p-3 sm:p-4 md:p-6 lg:p-8">
+                  <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-serif font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 leading-tight">
+                    {language === 'ru' ? 'В Астане проходит чемпионат Казахстана по фехтованию' :
+                     language === 'kz' ? 'Астанада семсерлесуден Қазақстан чемпионаты өтіп жатыр' :
+                     'Kazakhstan Fencing Championship taking place in Astana'}
+                  </h2>
+                  
+                  {/* Preview text */}
+                  <div className="text-gray-700 leading-relaxed mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base">
+                    <p className="line-clamp-3 sm:line-clamp-4">
+                      {thirdNewsText.substring(0, 120)}...
+                    </p>
+                  </div>
+
+                  {/* Read More Button */}
+                  <Button 
+                    onClick={() => navigate('/news/fencing-championship')}
                     variant="outline"
                     className="w-full sm:w-auto border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-xs sm:text-sm md:text-base py-2 md:py-3 px-4 md:px-6"
                   >
