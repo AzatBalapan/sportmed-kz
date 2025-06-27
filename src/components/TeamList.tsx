@@ -57,6 +57,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 5 },
     { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "specialists", order: 6 },
     { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "specialists", order: 7 },
+    { id: "zhaparova", name: { ru: "Жапарова Айжан Мухтаровна", kz: "Жапарова Айжан Мұхтарқызы" }, position: { ru: "Врач-кардиолог", kz: "Кардиолог дәрігері" }, department: "specialists", order: 8 },
     { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "diagnostics", order: 8 },
 
     // Реабилитация
