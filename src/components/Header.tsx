@@ -109,13 +109,13 @@ export const Header: React.FC = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start">
                 <DropdownMenuItem>
-                  <Link to="/director" className="w-full">
-                    {t('nav.director')}
+                  <Link to="/management" className="w-full">
+                    {t('nav.management')}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <Link to="/management" className="w-full">
-                    {t('nav.management')}
+                  <Link to="/structure" className="w-full">
+                    {t('nav.structure')}
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
@@ -126,11 +126,6 @@ export const Header: React.FC = () => {
                 <DropdownMenuItem>
                   <Link to="/legal-acts" className="w-full">
                     {t('nav.legalActs')}
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link to="/structure" className="w-full">
-                    {t('nav.structure')}
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -249,18 +244,18 @@ export const Header: React.FC = () => {
                 }`}>
                   <div className="ml-4 space-y-1">
                     <Link 
-                      to="/director" 
-                      className="block py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors"
-                      onClick={closeMobileMenu}
-                    >
-                      {t('nav.director')}
-                    </Link>
-                    <Link 
                       to="/management" 
                       className="block py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors"
                       onClick={closeMobileMenu}
                     >
                       {t('nav.management')}
+                    </Link>
+                    <Link 
+                      to="/structure" 
+                      className="block py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors"
+                      onClick={closeMobileMenu}
+                    >
+                      {t('nav.structure')}
                     </Link>
                     <Link 
                       to="/about" 
@@ -275,13 +270,6 @@ export const Header: React.FC = () => {
                       onClick={closeMobileMenu}
                     >
                       {t('nav.legalActs')}
-                    </Link>
-                    <Link 
-                      to="/structure" 
-                      className="block py-1.5 px-3 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors"
-                      onClick={closeMobileMenu}
-                    >
-                      {t('nav.structure')}
                     </Link>
                   </div>
                 </div>

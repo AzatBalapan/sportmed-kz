@@ -57,7 +57,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 5 },
     { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "specialists", order: 6 },
     { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "specialists", order: 7 },
-    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "specialists", order: 8 },
+    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "diagnostics", order: 8 },
 
     // Реабилитация
     { id: "aidarbekov", name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" }, department: "rehabilitation", order: 1 },
@@ -68,7 +68,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "tynyshtykova", name: { ru: "Тыныштықова Ляззат Елубаевна", kz: "Тыныштықова Ляззат Елубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 1 },
     { id: "anes", name: { ru: "Анес Назерке Мендуллаевна", kz: "Анес Назерке Мендуллаевна" }, position: { ru: "Медицинская сестра / Сестринское дело", kz: "Медбике / Сестрин ісі" }, department: "nursing", order: 2 },
     { id: "kolkhozov", name: { ru: "Колхозов Айдар Оразбекович", kz: "Колхозов Айдар Оразбекович" }, position: { ru: "Фельдшер выездной бригады скорой медицинской помощи", kz: "Жедел жәрдем бригадасының фельдшері" }, department: "nursing", order: 3 },
-    { id: "burambaeva", name: { ru: "Бурамбаева Зауре Амангельдиновна", kz: "Бурамбаева Зауре Амангельдиновна" }, position: { ru: "Медицинская сестра", kz: "Медициналық мейірбике" }, department: "nursing", order: 4 },
+    { id: "burambaeva", name: { ru: "Бурамбаева Зауре Амангельдиновна", kz: "Бурамбаева Зауре Амангельдиновна" }, position: { ru: "Медицинская сестра", kz: "Медициналық мейірбике" }, department: "diagnostics", order: 9 },
     { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 5 },
     { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 6 },
 

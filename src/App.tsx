@@ -21,7 +21,6 @@ import Team from "./pages/Team";
 import Compliance from "./pages/Compliance";
 import PresidentialAddress from "./pages/PresidentialAddress";
 import Contacts from "./pages/Contacts";
-import Director from "./pages/Director";
 import LegalActs from "./pages/LegalActs";
 import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
@@ -93,7 +92,6 @@ const App = () => (
                 <Route path="/news/fencing-championship" element={<FencingChampionship />} />
                 <Route path="/presidential-address" element={<PresidentialAddress />} />
                 <Route path="/contacts" element={<Contacts />} />
-                <Route path="/director" element={<Director />} />
                 <Route path="/legal-acts" element={<LegalActs />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/management" element={<Management />} />

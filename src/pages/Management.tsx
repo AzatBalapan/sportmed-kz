@@ -7,7 +7,12 @@ import { nurmatov } from '@/data/doctors/nurmatov';
 import { tuyebayev } from '@/data/doctors/tuyebayev';
 import { abdykhadirov } from '@/data/doctors/abdykhadirov';
 
-const managementStaff = [nurmatov, tuyebayev, abdykhadirov];
+const managementStaff = [tuyebayev, abdykhadirov];
+
+const biographyText = {
+  ru: `Биография\nНурматов Азамат Басимбекович родился 20 февраля 1989 года в городе Сарыагаш Южно-Казахстанской области Республики Казахстан, национальность — казах.\nВ 2006 году окончил среднюю школу №9 Қ.А. Яссауи.\nВ 2012 году закончил Медицинский университет Астана (МУА), где была присуждена академическая степень бакалавра медицины по специальности «Общая медицина».\nВ 2012–2013 годах прошёл интернатуру в МУА по специальности «Врач общей практики».\nРаботал младшим научным сотрудником кафедры патофизиологии Медицинского университета Астана, фельдшером в операционном отделении НИИ травматологии и ортопедии, а также в бригаде мобильной скорой медицинской помощи Городской станции скорой медицинской помощи в Астане.\nС 2014 по 2018 год работал в Федерации греко-римской, вольной и женской борьбы в должности координатора научной группы медицинского комплекса Национального спортивного комитета РК по греко-римской, вольной и женской борьбе.\nВ 2015–2016 годах работал преподавателем спортивной медицины на кафедре «Профилактическая работа и питание» Медицинского университета Астана.\nВ 2016 году прошёл курс переподготовки по специальности «Спортивная медицина» и курс повышения квалификации по циклу «Профессиональное медицинское обслуживание спортсменов» по специальности «Спортивная медицина».\nВ 2016 году работал спортивным врачом на XXXI летних Олимпийских играх в Рио-де-Жанейро.\nВ 2017–2019 годах обучался в резидентуре Казахского медицинского университета повышения квалификации и получил образование по специальности «Спортивная медицина».\nВ 2017–2019 годах работал консультантом по спортивной медицине в спортивной школе Уалиева Т.А.\nВ 2018–2020 годах работал координатором по обеспечению команд комплексными научными группами в Национальном олимпийском комитете Республики Казахстан.\nВ 2019 году прошёл курс спортивной медицины, организованный Международной федерацией борьбы (UWW) в Будапеште (Венгрия).\nВ 2020–2022 годах работал спортивным врачом волейбольной команды клуба «Атырау», Национальной сборной команды Республики Казахстан по греко-римской борьбе.\nВ 2020 году занимал должность главного медицинского врача штаба скорой помощи делегации Республики Казахстан на XXXII летних Олимпийских играх в Токио.\nВ 2020 году занимал должность главного медицинского врача XXIII зимних юношеских Олимпийских игр в Лозанне.\nВ 2021 году работал главным медицинским врачом на Международном чемпионате Азии по борьбе.\nВ 2021 году занимал должность главного медицинского врача Азиатского отборочного турнира по борьбе.\nВ 2022 году занимал должность главного медицинского врача штаба скорой помощи делегации Республики Казахстан на XXIV зимних Олимпийских играх в Пекине.\nС 2022 года по настоящее время является членом Комиссии по спортивной медицине Международной федерации борьбы (UWW).\nС июля 2022 года по май 2024 года работал руководителем РГП на ПХВ «Национальный центр спортивной медицины и реабилитации» Комитета по делам спорта и физической культуры Министерства туризма и спорта РК.`,
+  kz: `Өмірбаян\nНұрматов Азамат Басимбекұлы 1989 жылы 20 ақпанда Қазақстан Республикасы Оңтүстік Қазақstan облысы Сарыағаш қаласында дүниеге келген, ұлты — қазақ.\n2006 жылы Қ.А. Ясауи атындағы №9 орта мектебін бітірген.\n2012 жылы Астана медициналық университетін (АМУ) бітірген, онда «Жалпы медицина» мамандығы бойынша медицина бакалаврының академиялық дәрежесі берілген.\n2012–2013 жылдары АМУ-да «Жалпы тәжірибе дәрігері» мамандығы бойынша интернатурада дайындалған.\nАстана медициналық университетінің патофизиология кафедрасының кіші ғылыми қызметкері, Травматология және ортопедия ҒЗИ операциялық бөлімінің фельдшері, сондай-ақ Астанадағы Қалалық жедел медициналық көмек станциясының мобильді жедел медициналық көмек бригадасында жұмыс істеген.\n2014 жылдан 2018 жылға дейін грек-рим, еркін және әйелдер күресі федерациясында ҚР Ұлттық спорт комитетінің грек-рим, еркін және әйелдер күресі бойынша медициналық кешенінің ғылыми тобының координаторы қызметінде жұмыс істеген.\n2015–2016 жылдары Астана медициналық университетінің «Профилактикалық жұмыс және тамақтану» кафедрасында спорт медицинасының оқытушысы болып жұмыс істеген.\n2016 жылы «Спорт медицинасы» мамандығы бойынша қайта дайындау курсын және «Спортшыларға кәсіби медициналық қызмет көрсету» циклі бойынша біліктілікті арттыру курсын өткен.\n2016 жылы Рио-де-Жанейродағы XXXI жазғы Олимпиада ойындарында спорт дәрігері болып жұмыс істеген.\n2017–2019 жылдары Қазақ медициналық біліктілікті арттыру университетінің резидентурасында оқып, «Спорт медицинасы» мамандығы бойынша білім алған.\n2017–2019 жылдары Уәлиев Т.А. спорт мектебінде спорт медицинасы бойынша консультант болып жұмыс істеген.\n2018–2020 жылдары Қазақстан Республикасының Ұлттық олимпиада комитетінде командаларды кешенді ғылыми топтармен қамтамасыз ету бойынша координатор болып жұмыс істеген.\n2019 жылы Будапештте (Венгрия) Халықаралық күрес федерациясы (UWW) ұйымдастырған спорт медицинасы курсын өткен.\n2020–2022 жылдары «Атырау» клубының волейбол командасының, Қазақстан Республикасының грек-рим күресі бойынша ұлттық құрама командасының спорт дәрігері болып жұмыс істеген.\n2020 жылы Токиодағы XXXII жазғы Олимпиада ойындарында Қазақстан Республикасы делегациясының жедел көмек штабының бас медициналық дәрігері қызметін атқарған.\n2020 жылы Лозаннадағы XXIII қысқы жасөспірімдер Олимпиада ойындарының бас медициналық дәрігері қызметін атқарған.\n2021 жылы Азияның халықаралық күрес чемпионатының бас медициналық дәрігері болып жұмыс істеген.\n2021 жылы күрес бойынша азиялық іріктеу турнирінің бас медициналық дәрігері қызметін атқарған.\n2022 жылы Пекиндегі XXIV қысқы Олимпиада ойындарында Қазақстан Республикасы делегациясының жедел көмек штабының бас медициналық дәрігері қызметін атқарған.\n2022 жылдан бүгінгі күнге дейін Халықаралық күрес федерациясының (UWW) спорт медицинасы комиссиясының мүшесі болып табылады.\n2022 жылдың шілде айынан 2024 жылдың мамыр айына дейін ҚР Туризм және спорт министрлігі Спорт және дене шынықтыру істері комитетінің ШЖҚ РМК «Ұлттық спорт медицинасы және оңалту орталығы» басшысы болып жұмыс істеген.`
+};
 
 const Management: React.FC = () => {
   const { language } = useLanguage();
@@ -19,52 +24,51 @@ const Management: React.FC = () => {
           <h1 className="text-2xl md:text-3xl font-bold text-gov-blue mb-6 md:mb-8 text-center">
             {pagesTranslations['management.title'][language]}
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+          {/* Director full-width card */}
+          <div className="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-10 flex flex-col md:flex-row items-center md:items-start">
+            <img src={nurmatov.image} alt={nurmatov.name[language]} className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full mb-4 md:mb-0 md:mr-8" />
+            <div className="flex-1">
+              <h2 className="text-xl md:text-2xl font-bold text-gov-blue mb-1">{nurmatov.name[language]}</h2>
+              <div className="text-gray-600 mb-2 text-base md:text-lg">{nurmatov.position[language]}</div>
+              <div className="text-gray-500 mb-2 text-sm md:text-base">{nurmatov.experience[language]}</div>
+              <div className="mb-2">
+                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Образование:' : 'Білімі:'}</span>
+                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.education[language]}</div>
+              </div>
+              <div className="mb-2">
+                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Специализация:' : 'Мамандануы:'}</span>
+                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.specialization[language]}</div>
+              </div>
+              <div className="mb-2">
+                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Опыт работы и достижения:' : 'Жұмыс тәжірибесі мен жетістіктері:'}</span>
+                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.certificates[language]}</div>
+              </div>
+              <div className="mb-2">
+                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Биография:' : 'Өмірбаян:'}</span>
+                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{biographyText[language]}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Other management staff in two columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {managementStaff.map((person) => (
               <div key={person.id} className="bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-center">
                 <img src={person.image} alt={person.name[language]} className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full mb-3 md:mb-4" />
                 <h2 className="text-lg md:text-xl font-semibold text-gov-blue mb-1 text-center">{person.name[language]}</h2>
                 <div className="text-gray-600 text-center mb-2 text-sm md:text-base">{person.position[language]}</div>
-                {person.experience && (
-                  <div className="text-xs md:text-sm text-gray-500 mb-1 text-center">{person.experience[language]}</div>
+                {person.education && (
+                  <div className="text-xs md:text-sm text-gray-500 mb-2 text-center whitespace-pre-line">{person.education[language]}</div>
                 )}
-                {/* Show full info for all management staff */}
-                {person.id === 'nurmatov' ? (
-                  <>
-                    {person.education && (
-                      <div className="text-xs md:text-sm text-gray-500 mb-2 text-center whitespace-pre-line">
-                        {person.education[language].split('\n').slice(0,10).join('\n')}
-                      </div>
-                    )}
-                    {'specialization' in person && person.specialization && (
-                      <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.specialization[language]}</div>
-                    )}
-                    {'work' in person && person.work && (
-                      <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">
-                        {person.work[language].split('\n').slice(0,10).join('\n')}
-                      </div>
-                    )}
-                    {person.certificates && (
-                      <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">
-                        {person.certificates[language].split('\n').slice(0,10).join('\n')}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    {person.education && (
-                      <div className="text-xs md:text-sm text-gray-500 mb-2 text-center whitespace-pre-line">{person.education[language]}</div>
-                    )}
-                    {'specialization' in person && person.specialization && (
-                      <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.specialization[language]}</div>
-                    )}
-                    {'work' in person && person.work && (
-                      <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.work[language]}</div>
-                    )}
-                    {person.certificates && (
-                      <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.certificates[language]}</div>
-                    )}
-                  </>
+                {'specialization' in person && person.specialization && (
+                  <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.specialization[language]}</div>
+                )}
+                {'work' in person && person.work && (
+                  <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.work[language]}</div>
+                )}
+                {person.certificates && (
+                  <div className="text-xs md:text-sm text-gray-500 text-center mb-2 whitespace-pre-line">{person.certificates[language]}</div>
                 )}
               </div>
             ))}
