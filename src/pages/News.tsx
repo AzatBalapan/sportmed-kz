@@ -35,73 +35,88 @@ const News: React.FC = () => {
       
       <main className="flex-grow">
         {/* Main News Section */}
-        <section className="min-h-screen flex flex-col md:flex-row">
-          {/* Full Size Banner - Left Side */}
-          <div className="w-full md:w-1/2 h-48 md:h-screen sticky top-0 flex-shrink-0">
-            <img 
-              src="/lovable-uploads/2bce0ced-5737-4203-bbe6-6b54ee8ddef2.png"
-              alt="News Banner"
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* News Content - Right Side */}
-          <div className="w-full md:w-1/2 h-full flex flex-col p-4 md:p-8 bg-white overflow-y-auto">
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6 lg:mb-8">
+        <section className="min-h-screen p-4 md:p-8 bg-white">
+          <div className="container mx-auto max-w-4xl">
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-serif font-bold text-gov-blue mb-6 md:mb-8 lg:mb-12 text-center">
               {t('news.title')}
             </h1>
 
-            {/* First News Article */}
-            <Card className="shadow-lg border-0 mb-4 md:mb-6 lg:mb-8">
-              <CardContent className="p-4 md:p-6 lg:p-8">
-                <h2 className="text-base md:text-lg lg:text-xl font-serif font-bold text-gray-800 mb-2 md:mb-3 lg:mb-4">
-                  {t('news.presidential.title')}
-                </h2>
-                
-                {/* Preview text */}
-                <div className="text-gray-700 leading-relaxed mb-3 md:mb-4 lg:mb-6 text-sm md:text-base">
-                  <p className="line-clamp-3">
-                    {t('news.presidential.content').substring(0, 200)}...
-                  </p>
+            {/* News Articles in Rows */}
+            <div className="space-y-6 md:space-y-8">
+              {/* First News Article */}
+              <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+                {/* Banner Image */}
+                <div className="w-full h-48 md:h-64 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/2bce0ced-5737-4203-bbe6-6b54ee8ddef2.png"
+                    alt={language === 'ru' ? 'Президентский молодежный кадровый резерв' :
+                         language === 'kz' ? 'Президенттік жастар кадр резерві' :
+                         'Presidential Youth Personnel Reserve'}
+                    className="w-full h-full object-cover object-center"
+                  />
                 </div>
-
-                {/* Learn More Button */}
-                <Button 
-                  onClick={handleLearnMore}
-                  variant="outline"
-                  className="w-full border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-sm md:text-base py-2 md:py-3"
-                >
-                  {t('news.learnMore')}
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Second News Article */}
-            <Card className="shadow-lg border-0">
-              <CardContent className="p-4 md:p-6 lg:p-8">
-                <h2 className="text-base md:text-lg lg:text-xl font-serif font-bold text-gray-800 mb-2 md:mb-3 lg:mb-4">
-                  {language === 'ru' ? 'Берик АСЫЛОВ: Правовая ответственность – опора справедливости' :
-                   language === 'kz' ? 'Берік АСЫЛОВ: Құқықтық жауапкершілік – әділеттіліктің тірегі' :
-                   'Berik ASYLOV: Legal responsibility is the foundation of justice'}
-                </h2>
                 
-                {/* Preview text */}
-                <div className="text-gray-700 leading-relaxed mb-3 md:mb-4 lg:mb-6 text-sm md:text-base">
-                  <p className="line-clamp-3">
-                    {secondNewsText.substring(0, 200)}...
-                  </p>
-                </div>
+                <CardContent className="p-4 md:p-6 lg:p-8">
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-serif font-bold text-gray-800 mb-3 md:mb-4">
+                    {t('news.presidential.title')}
+                  </h2>
+                  
+                  {/* Preview text */}
+                  <div className="text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
+                    <p>
+                      {t('news.presidential.content').substring(0, 150)}...
+                    </p>
+                  </div>
 
-                {/* Learn More Button */}
-                <Button 
-                  onClick={() => navigate('/news/berik-asylov')}
-                  variant="outline"
-                  className="w-full border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-sm md:text-base py-2 md:py-3"
-                >
-                  {t('news.learnMore')}
-                </Button>
-              </CardContent>
-            </Card>
+                  {/* Read More Button */}
+                  <Button 
+                    onClick={handleLearnMore}
+                    variant="outline"
+                    className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-sm md:text-base py-2 md:py-3"
+                  >
+                    {t('news.learnMore')}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Second News Article */}
+              <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden">
+                {/* Banner Image */}
+                <div className="w-full h-48 md:h-64 overflow-hidden">
+                  <img 
+                    src="/news/berik-asylov.jpeg"
+                    alt={language === 'ru' ? 'Берик АСЫЛОВ' :
+                         language === 'kz' ? 'Берік АСЫЛОВ' :
+                         'Berik ASYLOV'}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                
+                <CardContent className="p-4 md:p-6 lg:p-8">
+                  <h2 className="text-lg md:text-xl lg:text-2xl font-serif font-bold text-gray-800 mb-3 md:mb-4">
+                    {language === 'ru' ? 'Берик АСЫЛОВ: Правовая ответственность – опора справедливости' :
+                     language === 'kz' ? 'Берік АСЫЛОВ: Құқықтық жауапкершілік – әділеттіліктің тірегі' :
+                     'Berik ASYLOV: Legal responsibility is the foundation of justice'}
+                  </h2>
+                  
+                  {/* Preview text */}
+                  <div className="text-gray-700 leading-relaxed mb-4 md:mb-6 text-sm md:text-base">
+                    <p>
+                      {secondNewsText.substring(0, 150)}...
+                    </p>
+                  </div>
+
+                  {/* Read More Button */}
+                  <Button 
+                    onClick={() => navigate('/news/berik-asylov')}
+                    variant="outline"
+                    className="border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-sm md:text-base py-2 md:py-3"
+                  >
+                    {t('news.learnMore')}
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
       </main>
