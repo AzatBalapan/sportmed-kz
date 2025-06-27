@@ -11,7 +11,7 @@ export const AboutSection: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <img
-              src="/lovable-uploads/banner_test.jpg?auto=format&fit=crop&q=80&w=2070"
+              src="/home page static/static_home_image.jpeg?auto=format&fit=crop&q=80&w=2070"
               alt="Sport Medical Center"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
               style={{ maxHeight: '500px' }}

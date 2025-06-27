@@ -78,7 +78,7 @@ export const HeroSection: React.FC = () => {
           loop
           muted
           playsInline
-          poster="/lovable-uploads/banner_test.jpg"
+          poster="/home page static/static_home_image.jpeg"
         />
         {/* Overlay content */}
         <div className="absolute inset-0 z-10 flex items-center h-full">
@@ -124,7 +124,7 @@ export const HeroSection: React.FC = () => {
             loop
             muted
             playsInline
-            poster="/lovable-uploads/banner_test.jpg"
+            poster="/home page static/static_home_image.jpeg"
           />
           <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white to-transparent pointer-events-none" />
         </div>
