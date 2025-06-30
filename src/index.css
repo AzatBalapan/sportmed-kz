@@ -152,6 +152,10 @@ body.access-high-contrast select {
   color: #fff !important;
   border-color: #fff !important;
 }
+body.access-high-contrast .dropdown-solid-bg {
+  background: #111 !important;
+  color: #fff !important;
+}
 
 /* Accessibility: Underline Links */
 body.access-underline-links a {
