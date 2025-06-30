@@ -24,22 +24,11 @@ export const makenqyzy = {
 Спорттық офтальмология
 Рефракциялық хирургия`
     },
-    certificates: {
-      ru: `Опыт работы:
-2020–2024 — Врач-офтальмолог, клиники Sana Vita и Аланда
+        work: {
+    ru: `2020–2024 — Врач-офтальмолог, клиники Sana Vita и Аланда
 2022–наст. время — Врач-офтальмолог, Спорттивный медицинский центр
-2024–наст. время — Врач-офтальмолог, Otbasy clinic (взрослый и детский прием)
-
-Научная и практическая деятельность:
-Автор научного доклада: «Спорттық белсенділік пен жетістіктерге әсер ететін көз жарақаттары»
-
-Автор и соавтор научных публикаций:
-- COMPARATIVE EVALUATION OF PAIN SYNDROME OF OPERATED PATIENTS WITH INGUINAL HERNIAS — Science & Healthcare, 2016
-- Computed Tomography Dacryocystography in the Diagnosis of Chronic Epiphora — (JAMA Ophthalmology, рецензируется)
-- Exploring clinical, pathogenetic and diagnostic dimensions of nasolacrimal drainage system pathologies — Science & Healthcare, 2024
-- Тезис: «Роль мультидетекторной КТ-инстилляционной дакриоцистографии в диагностике обструкций слезоотводящей системы» — Астана медициналық журнал`,
-      kz: `Жұмыс тәжірибесі:
-2020–2024 — Офтальмолог дәрігері, Sana Vita және Аланда клиникалары
+2024–наст. время — Врач-офтальмолог, Otbasy clinic (взрослый и детский прием)`,
+    kz: `2020–2024 — Офтальмолог дәрігері, Sana Vita және Аланда клиникалары
 2022–қазіргі уақыт — Офтальмолог дәрігері, Спорттық медициналық орталық
 2024–қазіргі уақыт — Офтальмолог дәрігері, Otbasy clinic (ересек және бала қабылдауы)
 
@@ -50,6 +39,17 @@ export const makenqyzy = {
 - COMPARATIVE EVALUATION OF PAIN SYNDROME OF OPERATED PATIENTS WITH INGUINAL HERNIAS — Science & Healthcare, 2016
 - Computed Tomography Dacryocystography in the Diagnosis of Chronic Epiphora — (JAMA Ophthalmology, рецензируется)
 - Exploring clinical, pathogenetic and diagnostic dimensions of nasolacrimal drainage system pathologies — Science & Healthcare, 2024
-- Тезис: «Роль мультидетекторной КТ-инстилляционной дакриоцистографии в диагностике обструкций слезоотводящей системы» — Астана медициналық журнал`
-    }
+- Тезис: «Роль мультидетекторной КТ-инстилляционной дакриоцистографии в диагностике обструкций слезоотводящей системы» — Астана медициналық журнал`,
+  },
+certificates: {
+    ru: `Научная и практическая деятельность:
+Автор научного доклада: «Спорттық белсенділік пен жетістіктерге әсер ететін көз жарақаттары»
+
+Автор и соавтор научных публикаций:
+- COMPARATIVE EVALUATION OF PAIN SYNDROME OF OPERATED PATIENTS WITH INGUINAL HERNIAS — Science & Healthcare, 2016
+- Computed Tomography Dacryocystography in the Diagnosis of Chronic Epiphora — (JAMA Ophthalmology, рецензируется)
+- Exploring clinical, pathogenetic and diagnostic dimensions of nasolacrimal drainage system pathologies — Science & Healthcare, 2024
+- Тезис: «Роль мультидетекторной КТ-инстилляционной дакриоцистографии в диагностике обструкций слезоотводящей системы» — Астана медициналық журнал`,
+    kz: '',
+  }
   };
