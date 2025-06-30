@@ -26,6 +26,7 @@ import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import BerikAsylov from "./pages/BerikAsylov";
 import FencingChampionship from "./pages/FencingChampionship";
+import NewsArticle4 from "./pages/NewsArticle4";
 import Profile from "./pages/Profile";
 import Management from '@/pages/Management';
 import Structure from '@/pages/Structure';
@@ -90,6 +91,7 @@ const App = () => (
                 <Route path="/news/presidential-reserve" element={<NewsArticle />} />
                 <Route path="/news/berik-asylov" element={<BerikAsylov />} />
                 <Route path="/news/fencing-championship" element={<FencingChampionship />} />
+                <Route path="/news/sports-school-opening" element={<NewsArticle4 />} />
                 <Route path="/presidential-address" element={<PresidentialAddress />} />
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/legal-acts" element={<LegalActs />} />
