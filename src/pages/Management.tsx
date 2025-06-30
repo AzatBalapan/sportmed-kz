@@ -38,7 +38,7 @@ const Management: React.FC = () => {
               </div>
               <div className="mb-2">
                 <span className="font-semibold text-gray-700">{language === 'ru' ? 'Опыт работы и достижения:' : 'Жұмыс тәжірибесі мен жетістіктері:'}</span>
-                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.certificates[language]}</div>
+                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.work[language]}</div>
               </div>
             </div>
           </div>
