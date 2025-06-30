@@ -5,24 +5,24 @@ export const nigmetova = {
     kz: 'Нигметова Асемгуль Алтаевна',
   },
   position: {
-    ru: 'Главная медсестра',
-    kz: 'Бас мейірбике',
+    ru: 'Главная медицинская сестра',
+    kz: 'Бас медициналық кіндік',
   },
   image: '/team_photoes/Асемгуль.svg', // Update if actual image is different
   experience: {
-    ru: '', // Add experience in Russian
-    kz: '', // Add experience in Kazakh
+    ru: '10 лет',
+    kz: '10 жыл',
   },
   education: {
-    ru: '', // Add education in Russian
-    kz: '', // Add education in Kazakh
+    ru: 'Высшее образование. Специальность: Бакалавр сестринского дела. Учебное заведение: АО «Медицинский университет Астана», г. Астана. Годы обучения: 2007–2011',
+    kz: 'Жоғары білім. Мамандық: Кіндік ісінің бакалавры. Оқу орны: АО «Астана медициналық университеті», Астана қаласы. Оқу жылдары: 2007–2011',
   },
   certificates: {
     ru: '', // Add certificates in Russian
     kz: '', // Add certificates in Kazakh
   },
   work: {
-    ru: '', // Add work experience in Russian
-    kz: '', // Add work experience in Kazakh
+    ru: 'С 2011 года — участковая медсестра в ГКП на ПХВ «Демеу». В настоящее время — главная медсестра в ГККП «Спортивный медицинский центр», г. Астана',
+    kz: '2011 жылдан бастап — ГКП на ПХВ «Демеу» учаскелік кіндігі. Қазіргі уақытта — ГККП «Спорттық медициналық орталық», Астана қаласының бас кіндігі',
   },
 }; 
