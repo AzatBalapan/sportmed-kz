@@ -100,16 +100,6 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
                     <p className="text-gray-600 text-xs lg:text-sm pl-6">{getDepartmentName()}</p>
                   </div>
                 )}
-                
-                {doctor.experience && doctor.experience[language] && (
-                  <div className="mb-4">
-                    <div className="flex items-center mb-2">
-                      <Stethoscope className="w-4 h-4 mr-2 text-gray-500" />
-                      <span className="font-medium text-gray-700 text-sm lg:text-base">{t('team.experience')}</span>
-                    </div>
-                    <p className="text-gray-600 text-xs lg:text-sm pl-6">{doctor.experience[language]}</p>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -134,39 +124,7 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
                   </div>
                 </div>
               )}
-              
-              {'specialization' in doctor && doctor.specialization && doctor.specialization[language] && (
-                <div>
-                  <div className="flex items-center mb-3 lg:mb-4">
-                    <div className="bg-green-100 p-2 rounded-lg mr-3">
-                      <Stethoscope className="w-4 h-4 lg:w-5 lg:h-5 text-green-600" />
-                    </div>
-                    <h2 className="text-lg lg:text-xl font-semibold text-gray-800">{t('team.specialization')}</h2>
-                  </div>
-                  <div className="ml-0 lg:ml-12">
-                    <div className="bg-gray-50 rounded-lg p-3 lg:p-4">
-                      <div className="text-gray-700 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: doctor.specialization[language].replace(/\n/g, '<br/>') }} />
-                    </div>
-                  </div>
-                </div>
-              )}
-              
-              {doctor.certificates && doctor.certificates[language] && (
-                <div>
-                  <div className="flex items-center mb-3 lg:mb-4">
-                    <div className="bg-orange-100 p-2 rounded-lg mr-3">
-                      <Award className="w-4 h-4 lg:w-5 lg:h-5 text-orange-600" />
-                    </div>
-                    <h2 className="text-lg lg:text-xl font-semibold text-gray-800">{t('team.certificates')}</h2>
-                  </div>
-                  <div className="ml-0 lg:ml-12">
-                    <div className="bg-gray-50 rounded-lg p-3 lg:p-4">
-                      <div className="text-gray-700 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: doctor.certificates[language].replace(/\n/g, '<br/>') }} />
-                    </div>
-                  </div>
-                </div>
-              )}
-              {/* Work experience section */}
+              {/* Only show education and work experience, hide specialization and certificates */}
               {'work' in doctor && doctor.work && doctor.work[language] && (
                 <div>
                   <div className="flex items-center mb-3 lg:mb-4">
