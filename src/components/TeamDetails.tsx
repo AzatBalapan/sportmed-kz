@@ -124,7 +124,22 @@ const TeamDetails: React.FC<TeamDetailsProps> = ({ doctorId, onBack }) => {
                   </div>
                 </div>
               )}
-              {/* Only show education and work experience, hide specialization and certificates */}
+              {/* Only show education and work experience, hide specialization and certificates for all except kozhakhmetova */}
+              {doctor.id === 'kozhakhmetova' && doctor.certificates && doctor.certificates[language] && (
+                <div>
+                  <div className="flex items-center mb-3 lg:mb-4">
+                    <div className="bg-orange-100 p-2 rounded-lg mr-3">
+                      <Award className="w-4 h-4 lg:w-5 lg:h-5 text-orange-600" />
+                    </div>
+                    <h2 className="text-lg lg:text-xl font-semibold text-gray-800">{t('team.certificates')}</h2>
+                  </div>
+                  <div className="ml-0 lg:ml-12">
+                    <div className="bg-gray-50 rounded-lg p-3 lg:p-4">
+                      <div className="text-gray-700 leading-relaxed text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: doctor.certificates[language].replace(/\n/g, '<br/>') }} />
+                    </div>
+                  </div>
+                </div>
+              )}
               {'work' in doctor && doctor.work && doctor.work[language] && (
                 <div>
                   <div className="flex items-center mb-3 lg:mb-4">
