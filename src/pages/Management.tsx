@@ -27,7 +27,7 @@ const Management: React.FC = () => {
 
           {/* Director full-width card */}
           <div className="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-10 flex flex-col md:flex-row items-center md:items-start">
-            <img src={nurmatov.image} alt={nurmatov.name[language]} className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full mb-4 md:mb-0 md:mr-8" />
+            <img src={nurmatov.image} alt={nurmatov.name[language]} className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full mb-4 md:mb-0 md:mr-8" />
             <div className="flex-1">
               <h2 className="text-xl md:text-2xl font-bold text-gov-blue mb-1">{nurmatov.name[language]}</h2>
               <div className="text-gray-600 mb-2 text-base md:text-lg">{nurmatov.position[language]}</div>
@@ -48,7 +48,7 @@ const Management: React.FC = () => {
             {managementStaff.map((person) => (
               <div key={person.id} className="bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-start">
                 <div className="w-full flex justify-center mb-3 md:mb-4">
-                  <img src={person.image} alt={person.name[language]} className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full" />
+                  <img src={person.image} alt={person.name[language]} className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full" />
                 </div>
                 <h2 className="text-lg md:text-xl font-semibold text-gov-blue mb-1">{person.name[language]}</h2>
                 <div className="text-gray-600 mb-2 text-sm md:text-base">{person.position[language]}</div>
