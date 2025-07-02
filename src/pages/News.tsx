@@ -13,6 +13,7 @@ const News: React.FC = () => {
   const [secondNewsText, setSecondNewsText] = useState<string>('');
   const [thirdNewsText, setThirdNewsText] = useState<string>('');
   const [fourthNewsText, setFourthNewsText] = useState<string>('');
+  const [fifthNewsText, setFifthNewsText] = useState<string>("");
 
   useEffect(() => {
     // Fetch the second news text based on language
@@ -46,6 +47,17 @@ const News: React.FC = () => {
       })
       .catch(error => {
         console.error('Error fetching fourth news text:', error);
+      });
+
+    // Fetch the fifth news text based on language
+    const fifthFileName = language === 'ru' ? '5/5_rus.txt' : '5/5_kaz.txt';
+    fetch(`/news/${fifthFileName}`)
+      .then(response => response.text())
+      .then(text => {
+        setFifthNewsText(text);
+      })
+      .catch(error => {
+        console.error('Error fetching fifth news text:', error);
       });
   }, [language]);
 
@@ -209,6 +221,41 @@ const News: React.FC = () => {
                   {/* Read More Button */}
                   <Button 
                     onClick={() => navigate('/news/sports-school-opening')}
+                    variant="outline"
+                    className="w-full border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-xs sm:text-sm md:text-base py-2 md:py-3 px-4 md:px-6 mt-auto"
+                  >
+                    {t('news.learnMore')}
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Fifth News Article - World Boxing Cup */}
+              <Card className="shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden flex flex-col h-full">
+                {/* Banner Image */}
+                <div className="w-full h-32 sm:h-40 md:h-48 lg:h-56 overflow-hidden flex-shrink-0">
+                  <img 
+                    src="/news/5/photoes/1.jpeg"
+                    alt={language === 'ru' ? 'World Boxing Cup: Astana 2025' :
+                         language === 'kz' ? 'World Boxing Cup: Astana 2025' :
+                         'World Boxing Cup: Astana 2025'}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <CardContent className="p-3 sm:p-4 md:p-6 flex flex-col flex-grow">
+                  <h2 className="text-sm sm:text-base md:text-lg lg:text-xl font-serif font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4 leading-tight">
+                    {language === 'ru' ? 'World Boxing Cup: Astana 2025 — Кубок мира по боксу в столице Казахстана' :
+                     language === 'kz' ? 'World Boxing Cup: Astana 2025 — Қазақстан астанасында бокстан Әлем кубогы' :
+                     'World Boxing Cup: Astana 2025 — Boxing World Cup in Kazakhstan\'s capital'}
+                  </h2>
+                  {/* Preview text */}
+                  <div className="text-gray-700 leading-relaxed mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base flex-grow">
+                    <p className="line-clamp-3 sm:line-clamp-4">
+                      {fifthNewsText.substring(0, 100)}...
+                    </p>
+                  </div>
+                  {/* Read More Button */}
+                  <Button 
+                    onClick={() => navigate('/news/world-boxing-cup')}
                     variant="outline"
                     className="w-full border-gov-blue text-gov-blue hover:bg-gov-blue hover:text-white transition-colors text-xs sm:text-sm md:text-base py-2 md:py-3 px-4 md:px-6 mt-auto"
                   >
