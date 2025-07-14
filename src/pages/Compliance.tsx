@@ -146,6 +146,20 @@ const Compliance: React.FC = () => {
         kz: '/lovable-uploads/anticor_txt/info_kaz.txt'
       },
       type: 'text'
+    },
+    {
+      id: 7,
+      title: {
+        ru: 'Анонс о проведении внутреннего анализа коррупционных рисков',
+        kz: 'Сыбайлас жемқорлық тәуекелдеріне ішкі талдау жүргізу туралы хабарландыру'
+      },
+      fileName: 'internal_analysis_announcement.docx',
+      path: '/lovable-uploads/internal_analysis_announcement.docx',
+      textFilePath: {
+        ru: '/lovable-uploads/anticor_txt/internal_analysis_rus.txt',
+        kz: '/lovable-uploads/anticor_txt/internal_analysis_kaz.txt'
+      },
+      type: 'text'
     }
   ];
 
@@ -239,14 +253,7 @@ const Compliance: React.FC = () => {
               )}
             </div>
             
-            <div className="flex justify-between items-center mt-6">
-              <Button
-                variant="outline"
-                onClick={() => window.open(selectedDocument?.path, '_blank')}
-                className="text-sm md:text-base"
-              >
-                {t('compliance.download')}
-              </Button>
+            <div className="flex justify-end items-center mt-6">
               <DialogClose asChild>
                 <Button className="text-sm md:text-base">
                   {t('compliance.close')}

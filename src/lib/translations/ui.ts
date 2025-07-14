@@ -139,6 +139,11 @@ export const uiTranslations = {
     kz: 'Құжаттың мазмұнымен танысыңыз немесе төмендегі батырма арқылы жүктеп алыңыз.',
     en: 'View the document content or download it using the button below.'
   },
+  'compliance.close': {
+    ru: 'Закрыть',
+    kz: 'Жабу',
+    en: 'Close'
+  },
 
   // Director Contact Form
   'director.contact.button': {
