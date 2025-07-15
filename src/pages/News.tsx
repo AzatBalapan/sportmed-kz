@@ -20,6 +20,14 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
       {
+        id: 'youth-prize-daryn-7',
+        image: '/news/7/photoes/1.jpeg',
+        alt: language === 'ru' ? 'Государственная молодежная премия «Дарын»' : language === 'kz' ? '«Дарын» мемлекеттік жастар сыйлығы' : 'Daryn Youth State Prize',
+        title: language === 'ru' ? 'СТАРТОВАЛ КОНКУРС НА ГОСУДАРСТВЕННУЮ МОЛОДЕЖНУЮ ПРЕМИЮ «ДАРЫН»' : language === 'kz' ? '«ДАРЫН» МЕМЛЕКЕТТІК ЖАСТАР СЫЙЛЫҒЫНА БАЙҚАУ ЖАРИЯЛАНДЫ' : 'Daryn Youth State Prize Competition Announced',
+        textPath: `/news/7/${language === 'ru' ? '7_rus.txt' : '7_kaz.txt'}`,
+        onClick: () => navigate('/news/youth-prize-daryn-7'),
+      },
+      {
         id: 'presidential',
         image: '/lovable-uploads/2bce0ced-5737-4203-bbe6-6b54ee8ddef2.png',
         alt: language === 'ru' ? 'Президентский молодежный кадровый резерв' : language === 'kz' ? 'Президенттік жастар кадр резерві' : 'Presidential Youth Personnel Reserve',
@@ -101,7 +109,7 @@ const News: React.FC = () => {
             </h1>
             {/* News Articles in Three Columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-              {newsList.slice().reverse().map((item) => (
+              {newsList.map((item) => (
                 <Card key={item.id} className="shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden flex flex-col h-full">
                   <div className="w-full h-32 sm:h-40 md:h-48 lg:h-56 overflow-hidden flex-shrink-0">
                     <img 
@@ -115,9 +123,7 @@ const News: React.FC = () => {
                       {item.title}
                     </h2>
                     <div className="text-gray-700 leading-relaxed mb-3 sm:mb-4 md:mb-6 text-xs sm:text-sm md:text-base flex-grow">
-                      <p className="line-clamp-3 sm:line-clamp-4">
-                        {item.preview?.substring(0, 100)}...
-                      </p>
+                      <PreviewWithLinks text={item.preview?.substring(0, 100) + '...'} />
                     </div>
                     <Button 
                       onClick={item.onClick}
@@ -140,3 +146,21 @@ const News: React.FC = () => {
 };
 
 export default News;
+
+function PreviewWithLinks({ text }: { text: string }) {
+  if (!text) return null;
+  // Regex to match URLs
+  const urlRegex = /(https?:\/\/[\w\-._~:/?#[\]@!$&'()*+,;=%]+|www\.[\w\-._~:/?#[\]@!$&'()*+,;=%]+)/gi;
+  const parts = text.split(urlRegex);
+  return (
+    <span className="line-clamp-3 sm:line-clamp-4">
+      {parts.map((part, i) => {
+        if (urlRegex.test(part)) {
+          const href = part.startsWith('http') ? part : `https://${part}`;
+          return <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline break-all">{part}</a>;
+        }
+        return <React.Fragment key={i}>{part}</React.Fragment>;
+      })}
+    </span>
+  );
+}
