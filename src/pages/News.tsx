@@ -20,6 +20,14 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
       {
+        id: 'state-policy-sport-8',
+        image: '/news/8/photoes/1.jpeg',
+        alt: language === 'ru' ? 'РЕАЛИЗАЦИЯ ГОСПОЛИТИКИ В СПОРТЕ' : language === 'kz' ? 'СПОРТ САЛАСЫНДАҒЫ МЕМЛЕКЕТТІК САЯСАТТЫ ІСКЕ АСЫРУ' : 'State Policy in Sports',
+        title: language === 'ru' ? 'РЕАЛИЗАЦИЯ ГОСПОЛИТИКИ В СПОРТЕ - КАЗАХСТАН УКРЕПЛЯЕТ ПОЗИЦИИ В МЕЖДУНАРОДНОМ СПОРТИВНОМ СООБЩЕСТВЕ' : language === 'kz' ? 'СПОРТ САЛАСЫНДАҒЫ МЕМЛЕКЕТТІК САЯСАТТЫ ІСКЕ АСЫРУ – ҚАЗАҚСТАН ХАЛЫҚАРАЛЫҚ СПОРТ ҚАУЫМДАСТЫҒЫНДАҒЫ ҰСТАНЫМЫН НЫҒАЙТУДА' : 'Kazakhstan Strengthens Its Position in the International Sports Community',
+        textPath: `/news/8/${language === 'ru' ? '8_rus.txt' : '8_kaz.txt'}`,
+        onClick: () => navigate('/news/state-policy-sport-8'),
+      },
+      {
         id: 'youth-prize-daryn-7',
         image: '/news/7/photoes/1.jpeg',
         alt: language === 'ru' ? 'Государственная молодежная премия «Дарын»' : language === 'kz' ? '«Дарын» мемлекеттік жастар сыйлығы' : 'Daryn Youth State Prize',
