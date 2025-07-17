@@ -20,15 +20,18 @@ export const ContactSection: React.FC = () => {
 
   // Load FAQ content
   useEffect(() => {
-    fetch('/lovable-uploads/anticor_txt/questions.txt')
+    const faqFile = language === 'ru'
+      ? '/lovable-uploads/anticor_txt/questions.txt'
+      : '/lovable-uploads/anticor_txt/questions_kaz.txt';
+    fetch(faqFile)
       .then(response => response.text())
       .then(text => {
-        setFaqItems(parseFaqFromText(text));
+        setFaqItems(parseFaqFromText(text, language === 'kz' ? 'kz' : 'ru'));
       })
       .catch(error => {
         console.error('Error loading FAQ:', error);
       });
-  }, []);
+  }, [language]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
