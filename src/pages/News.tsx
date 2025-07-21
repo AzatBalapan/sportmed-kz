@@ -20,37 +20,12 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
       {
-        id: 'state-policy-sport-8',
-        image: '/news/8/photoes/1.jpeg',
-        alt: language === 'ru' ? 'РЕАЛИЗАЦИЯ ГОСПОЛИТИКИ В СПОРТЕ' : language === 'kz' ? 'СПОРТ САЛАСЫНДАҒЫ МЕМЛЕКЕТТІК САЯСАТТЫ ІСКЕ АСЫРУ' : 'State Policy in Sports',
-        title: language === 'ru' ? 'РЕАЛИЗАЦИЯ ГОСПОЛИТИКИ В СПОРТЕ - КАЗАХСТАН УКРЕПЛЯЕТ ПОЗИЦИИ В МЕЖДУНАРОДНОМ СПОРТИВНОМ СООБЩЕСТВЕ' : language === 'kz' ? 'СПОРТ САЛАСЫНДАҒЫ МЕМЛЕКЕТТІК САЯСАТТЫ ІСКЕ АСЫРУ – ҚАЗАҚСТАН ХАЛЫҚАРАЛЫҚ СПОРТ ҚАУЫМДАСТЫҒЫНДАҒЫ ҰСТАНЫМЫН НЫҒАЙТУДА' : 'Kazakhstan Strengthens Its Position in the International Sports Community',
-        textPath: `/news/8/${language === 'ru' ? '8_rus.txt' : '8_kaz.txt'}`,
-        onClick: () => navigate('/news/state-policy-sport-8'),
-      },
-      {
         id: 'youth-prize-daryn-7',
         image: '/news/7/photoes/1.jpeg',
         alt: language === 'ru' ? 'Государственная молодежная премия «Дарын»' : language === 'kz' ? '«Дарын» мемлекеттік жастар сыйлығы' : 'Daryn Youth State Prize',
         title: language === 'ru' ? 'СТАРТОВАЛ КОНКУРС НА ГОСУДАРСТВЕННУЮ МОЛОДЕЖНУЮ ПРЕМИЮ «ДАРЫН»' : language === 'kz' ? '«ДАРЫН» МЕМЛЕКЕТТІК ЖАСТАР СЫЙЛЫҒЫНА БАЙҚАУ ЖАРИЯЛАНДЫ' : 'Daryn Youth State Prize Competition Announced',
         textPath: `/news/7/${language === 'ru' ? '7_rus.txt' : '7_kaz.txt'}`,
         onClick: () => navigate('/news/youth-prize-daryn-7'),
-      },
-      {
-        id: 'presidential',
-        image: '/lovable-uploads/2bce0ced-5737-4203-bbe6-6b54ee8ddef2.png',
-        alt: language === 'ru' ? 'Президентский молодежный кадровый резерв' : language === 'kz' ? 'Президенттік жастар кадр резерві' : 'Presidential Youth Personnel Reserve',
-        title: t('news.presidential.title'),
-        preview: t('news.presidential.content'),
-        onClick: () => navigate('/news/presidential-reserve'),
-        isStatic: true,
-      },
-      {
-        id: 'berik-asylov',
-        image: '/news/berik-asylov.jpeg',
-        alt: language === 'ru' ? 'Берик АСЫЛОВ' : language === 'kz' ? 'Берік АСЫЛОВ' : 'Berik ASYLOV',
-        title: language === 'ru' ? 'Берик АСЫЛОВ: Правовая ответственность – опора справедливости' : language === 'kz' ? 'Берік АСЫЛОВ: Құқықтық жауапкершілік – әділеттіліктің тірегі' : 'Berik ASYLOV: Legal responsibility is the foundation of justice',
-        textPath: `/news/${language === 'ru' ? '2_rus.txt' : '2.txt'}`,
-        onClick: () => navigate('/news/berik-asylov'),
       },
       {
         id: 'fencing-championship',
@@ -83,6 +58,23 @@ const News: React.FC = () => {
         title: language === 'ru' ? 'World Boxing Cup – Astana 2025: уверенная победа Казахстана и вклад спортивной медицины' : 'World Boxing Cup – Astana 2025: Қазақстанның сенімді жеңісі және спорттық медицинаның үлесі',
         textPath: `/news/6/${language === 'ru' ? '6_rus.txt' : '6_kaz.txt'}`,
         onClick: () => navigate('/news/world-boxing-cup-6'),
+      },
+      {
+        id: 'presidential',
+        image: '/lovable-uploads/2bce0ced-5737-4203-bbe6-6b54ee8ddef2.png',
+        alt: language === 'ru' ? 'Президентский молодежный кадровый резерв' : language === 'kz' ? 'Президенттік жастар кадр резерві' : 'Presidential Youth Personnel Reserve',
+        title: t('news.presidential.title'),
+        preview: t('news.presidential.content'),
+        onClick: () => navigate('/news/presidential-reserve'),
+        isStatic: true,
+      },
+      {
+        id: 'berik-asylov',
+        image: '/news/berik-asylov.jpeg',
+        alt: language === 'ru' ? 'Берик АСЫЛОВ' : language === 'kz' ? 'Берік АСЫЛОВ' : 'Berik ASYLOV',
+        title: language === 'ru' ? 'Берик АСЫЛОВ: Правовая ответственность – опора справедливости' : language === 'kz' ? 'Берік АСЫЛОВ: Құқықтық жауапкершілік – әділеттіліктің тірегі' : 'Berik ASYLOV: Legal responsibility is the foundation of justice',
+        textPath: `/news/${language === 'ru' ? '2_rus.txt' : '2.txt'}`,
+        onClick: () => navigate('/news/berik-asylov'),
       },
     ];
 
