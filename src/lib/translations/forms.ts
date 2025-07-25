@@ -96,7 +96,7 @@ export const formsTranslations = {
   },
   'register.phone': {
     ru: 'Номер телефона',
-    kz: 'Телефон нөірі',
+    kz: 'Телефон нөмірі',
     en: 'Phone Number'
   },
   'register.password': {

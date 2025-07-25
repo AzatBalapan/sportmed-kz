@@ -74,7 +74,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 6 },
 
     // Функционалды диагностика бөлімі
-    { id: "nurgalieva", name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" }, position: { ru: "Врач УЗИ", kz: "УДЗ дәрігері" }, department: "diagnostics", order: 1 },
+    { id: "nurgalieva", name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" }, position: { ru: "Врач УЗИ", kz: "УЗИ дәрігері" }, department: "diagnostics", order: 1 },
 
     // Прочие специалисты
   ];

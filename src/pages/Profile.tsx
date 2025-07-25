@@ -61,7 +61,7 @@ const Profile: React.FC = () => {
         title: language === 'ru' ? 'Ошибка' : 'Қате',
         description: language === 'ru' 
           ? 'Не удалось обновить профиль' 
-          : 'Профильді жаңарту мүмкін емес',
+          : 'Профильді жаңартуға мүмкіндік жоқ',
         variant: 'destructive',
       });
     } finally {
@@ -77,7 +77,7 @@ const Profile: React.FC = () => {
         title: language === 'ru' ? 'Ошибка' : 'Қате',
         description: language === 'ru' 
           ? 'Новые пароли не совпадают' 
-          : 'Жаңа құпия сөздер сәйкес келмейді',
+          : 'Жаңа құпия сөздер сәйкес емес',
         variant: 'destructive',
       });
       return;
@@ -88,7 +88,7 @@ const Profile: React.FC = () => {
         title: language === 'ru' ? 'Ошибка' : 'Қате',
         description: language === 'ru' 
           ? 'Пароль должен содержать минимум 8 символов' 
-          : 'Құпия сөз кемінде 8 таңбадан тұруы керек',
+          : 'Құпия сөз кемінде 8 таңбадан тұруы тиіс',
         variant: 'destructive',
       });
       return;
@@ -127,16 +127,16 @@ const Profile: React.FC = () => {
       
       let errorMessage = language === 'ru' 
         ? 'Не удалось изменить пароль' 
-        : 'Құпия сөзді өзгерту мүмкін емес';
+        : 'Құпия сөзді өзгертуге мүмкіндік жоқ';
 
       if (error.code === 'auth/wrong-password') {
         errorMessage = language === 'ru' 
           ? 'Неверный текущий пароль' 
-          : 'Қате қазіргі құпия сөз';
+          : 'Қазіргі құпия сөз қате';
       } else if (error.code === 'auth/weak-password') {
         errorMessage = language === 'ru' 
           ? 'Новый пароль слишком слабый' 
-          : 'Жаңа құпия сөз тым әлсіз';
+          : 'Жаңа құпия сөз өте әлсіз';
       }
 
       toast({
@@ -184,7 +184,7 @@ const Profile: React.FC = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <User className="w-5 h-5 mr-2" />
-                    {language === 'ru' ? 'Информация профиля' : 'Профиль ақпараты'}
+                    {language === 'ru' ? 'Информация профиля' : 'Профиль туралы ақпарат'}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
