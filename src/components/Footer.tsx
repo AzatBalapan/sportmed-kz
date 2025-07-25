@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
           <p className="text-sm text-gray-400 mb-4 md:mb-0">
             {language === 'ru'
               ? '© 2021 Спортивный Медицинский Центр Астана. Все права защищены.'
-              : '© 2021 Астана Спорт Медициналық Oрталығы. Барлық құқықтар қорғалған.'}
+              : '© 2021 Астана Спорт Медициналық Орталығы. Барлық құқықтар қорғалған.'}
           </p>
           <div className="flex space-x-4">
             <Link to="/privacy" className="text-sm text-gray-400 hover:text-white">

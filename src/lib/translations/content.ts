@@ -9,7 +9,7 @@ export const contentTranslations = {
   // Hero Section
   'hero.title': {
     ru: 'ГККП "СПОРТИВНЫЙ МЕДИЦИНСКИЙ ЦЕНТР ГОРОДА АСТАНЫ" АКИМАТА ГОРОДА АСТАНЫ',
-    kz: 'АСТАНА ҚАЛАСЫ ӘКІМДІГІНІҢ "АСТАНА ҚАЛАСЫНЫҢ СПОРТТЫҚ МЕДИЦИНА ОРТАЛЫҒЫ" МКҚК',
+    kz: 'Астана қаласы әкімдігінің "Астана қаласының Спорттық медицина орталығы" МКҚК',
     en: 'GKSP "SPORTS MEDICAL CENTER OF ASTANA CITY" AKIMAT OF ASTANA CITY'
   },
   'hero.subtitle': {
@@ -19,7 +19,7 @@ export const contentTranslations = {
   },
   'hero.button': {
     ru: 'Наши услуги',
-    kz: 'Біздің қызметтер',
+    kz: 'Біздің қызметтеріміз',
     en: 'Our Services'
   },
 

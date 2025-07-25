@@ -2,7 +2,7 @@ export const navigationTranslations = {
   // Header
   'nav.home': {
     ru: 'Главная',
-    kz: 'Басты',
+    kz: 'Басты бет',
     en: 'Home'
   },
   'nav.about': {
