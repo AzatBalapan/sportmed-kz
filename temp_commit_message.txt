@@ -1,3 +1,3 @@
-feat: Improve Kazakh translations in Footer.tsx
+feat: Improve Kazakh translations on home page
 
-Updated Kazakh translations in the footer component for improved professionalism and natural language flow.
+Updated Kazakh translations in HeroSection, AboutSection, PromoBanner, and ContactSection components for improved professionalism and natural language flow.
