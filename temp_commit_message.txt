@@ -1,3 +1,3 @@
-feat: Improve Kazakh translations in doctor data files
+feat: Further improve Kazakh translations in doctor data files
 
-Refactored Kazakh translations in doctor data files for improved professionalism and natural language flow.
+Continued refactoring Kazakh translations in doctor data files for improved professionalism and natural language flow.
