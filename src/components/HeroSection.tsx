@@ -39,16 +39,14 @@ export const HeroSection: React.FC = () => {
       return (
         <>
           <span className="font-normal">ГККП</span>{' '}
-          <span className="font-bold">"СПОРТИВНЫЙ МЕДИЦИНСКИЙ ЦЕНТР ГОРОДА АСТАНЫ"</span>{' '}
-          <span className="font-normal">АКИМАТА ГОРОДА АСТАНЫ</span>
+          <span className="font-bold">"СПОРТИВНЫЙ МЕДИЦИНСКИЙ ЦЕНТР ГОРОДА АСТАНЫ"</span>
         </>
       );
     } else if (title.includes('МКҚК')) {
       // Kazakh
       return (
         <>
-          <span className="font-normal">АСТАНА ҚАЛАСЫ ӘКІМДІГІНІҢ</span>{' '}
-          <span className="font-bold">"АСТАНА ҚАЛАСЫНЫҢ СПОРТТЫҚ МЕДИЦИНА ОРТАЛЫҒЫ"</span>{' '}
+          <span className="font-bold">"СПОРТТЫҚ МЕДИЦИНА ОРТАЛЫҒЫ"</span>{' '}
           <span className="font-normal">МКҚК</span>
         </>
       );
