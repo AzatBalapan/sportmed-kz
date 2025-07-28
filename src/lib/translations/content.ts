@@ -9,7 +9,7 @@ export const contentTranslations = {
   // Hero Section
   'hero.title': {
     ru: 'ГККП "СПОРТИВНЫЙ МЕДИЦИНСКИЙ ЦЕНТР ГОРОДА АСТАНЫ" АКИМАТА ГОРОДА АСТАНЫ',
-    kz: 'АСТАНА ҚАЛАСЫ ӘКІМДІГІНІҢ "АСТАНА ҚАЛАСЫНЫҢ СПОРТТЫҚ МЕДИЦИНА ОРТАЛЫҒЫ" МКҚК',
+    kz: 'АСТАНА ҚАЛАСЫ ӘКІМДІГІНІҢ "СПОРТТЫҚ МЕДИЦИНА ОРТАЛЫҒЫ" МКҚК',
     en: 'GKSP "SPORTS MEDICAL CENTER OF ASTANA CITY" AKIMAT OF ASTANA CITY'
   },
   'hero.subtitle': {
@@ -31,7 +31,7 @@ export const contentTranslations = {
   },
   'about.description': {
     ru: 'Спортивный медицинский центр Астаны — ведущее учреждение в области спортивной медицины. Наша миссия — обеспечивать высококачественную медицинскую поддержку для спортсменов всех уровней, используя новейшие технологии и методики лечения.',
-    kz: 'Астана спорт медицина орталығы 2005 жылы кәсіпқой және әуесқой спортшылардың денсаулығын қорғау мақсатында құрылды. Орталық жылдар бойы диагностика, алдын алу және оңалту саласында көшбасшы болды.',
+    kz: 'Астана спорттық медицина орталығы 2005 жылы кәсіпқой және әуесқой спортшылардың денсаулығын қорғау мақсатында құрылды. Орталық жылдар бойы диагностика, алдын алу және оңалту саласында көшбасшы болып келеді.',
     en: 'Astana Sports Medical Center is a leading institution in the field of sports medicine. Our mission is to provide high-quality medical support for athletes at all levels, using the latest technologies and treatment methods.'
   },
   'about.more': {

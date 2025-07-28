@@ -165,7 +165,7 @@ export const ContactSection: React.FC = () => {
                         className="w-full bg-gov-blue hover:bg-gov-dark-blue"
                         disabled={isSubmitting}
                       >
-                        {isSubmitting ? 'Отправка...' : t('login.button')}
+                        {isSubmitting ? 'Жіберуде...' : t('login.button')}
                       </Button>
                     </form>
                   </CardContent>
@@ -186,7 +186,7 @@ export const ContactSection: React.FC = () => {
                   answer: item.answer
                 }))} />
               ) : (
-                <p className="text-sm sm:text-base">{language === 'ru' ? 'FAQ недоступно на текущем языке.' : 'Ағымдағы тілде FAQ қол жетімді емес.'}</p>
+                <p className="text-sm sm:text-base">{language === 'ru' ? 'FAQ недоступно на текущем языке.' : 'Ағымдағы тілде FAQ қолжетімсіз.'}</p>
               )}
             </div>
           </TabsContent>
