@@ -1,7 +1,7 @@
 export const kokymbaeva = {
     id: "kokymbaeva",
     name: { ru: "Кокумбаева Айгерим Бейбитжанкызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" },
-    position: { ru: "Медсестра, 2 категория", kz: "Мейірбике, 2 санат" },
+    position: { ru: "Медсестра, 2 категория", kz: "Мейіргер, 2-санат" },
     department: "nursing",
     image: null,
     experience: {

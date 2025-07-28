@@ -1,7 +1,7 @@
 export const nugmetollanova = {
     id: "nugmetollanova",
     name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" },
-    position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" },
+    position: { ru: "Врач-эндокринолог", kz: "Дәрігер-эндокринолог" },
     department: "specialists",
     image: "/team_photoes/Сания.svg",
     experience: {
@@ -10,7 +10,7 @@ export const nugmetollanova = {
     },
     education: {
       ru: "Медицинский университет г. Семей",
-      kz: "Семей қаласының медициналық университеті"
+      kz: "Семей қаласының медицина университеті"
     },
     specialization: {
       ru: `• Диагностика и лечение заболеваний щитовидной железы

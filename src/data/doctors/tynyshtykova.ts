@@ -1,7 +1,7 @@
 export const tynyshtykova = {
     id: "tynyshtykova",
     name: { ru: "Тыныштыкова Ляззат Елубаевна", kz: "Тыныштықова Ләззат Елубайқызы" },
-    position: { ru: "Медицинская сестра общей практики", kz: "Жалпы тәжірибе мейірбикесі" },
+    position: { ru: "Медицинская сестра общей практики", kz: "Жалпы практика мейіргері" },
     department: "medical-staff",
     image: "/team_photoes/Ляззат.svg",
     experience: {

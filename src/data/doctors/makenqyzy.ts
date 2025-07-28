@@ -1,7 +1,7 @@
 export const makenqyzy = {
     id: "makenqyzy",
     name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" },
-    position: { ru: "Врач-офтальмолог (взрослый и детский)", kz: "Офтальмолог дәрігері (ересек және бала)" },
+    position: { ru: "Врач-офтальмолог (взрослый и детский)", kz: "Ересектер мен балалар офтальмолог дәрігері" },
     department: "specialists",
     image: "/team_photoes/Акерке.svg",
     experience: {

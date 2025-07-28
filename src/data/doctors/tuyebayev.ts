@@ -1,7 +1,7 @@
 export const tuyebayev = {
     id: "tuyebayev",
     name: { ru: "Туйебаев Ашим Еркинович", kz: "Түйебаев Әшім Еркінұлы" },
-    position: { ru: "Заместитель руководителя", kz: "Басшы орынбасары" },
+    position: { ru: "Заместитель руководителя", kz: "Басшының орынбасары" },
     department: "management",
     image: "/team_photoes/Ашимович.svg",
     education: {

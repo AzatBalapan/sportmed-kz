@@ -6,7 +6,7 @@ export const nigmetova = {
   },
   position: {
     ru: 'Главная медицинская сестра',
-    kz: 'Бас медициналық мейірбике',
+    kz: 'Бас мейіргер',
   },
   image: '/team_photoes/Асемгуль.svg', // Update if actual image is different
   experience: {

@@ -6,7 +6,7 @@ export const zhaparova = {
   },
   position: {
     ru: 'Врач-кардиолог',
-    kz: 'Кардиолог дәрігері',
+    kz: 'Дәрігер-кардиолог',
   },
   department: 'specialists',
   image: '/team_photoes/Айжан.svg',
