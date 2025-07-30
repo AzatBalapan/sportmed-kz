@@ -87,7 +87,33 @@ const News: React.FC = () => {
     ];
 
     // Fetch all dynamic news texts
-    Promise.all(      newsConfig.map(async (item) => {        let currentTitle = item.title; // Start with the title defined in newsConfig        let currentPreview = item.preview;        let currentAlt = item.alt;        if (item.textPath) {          try {            const text = await fetchText(item.textPath);            const lines = text.split('\n');            // If title is NOT explicitly defined in newsConfig, use the first line of the text file            if (!currentTitle) {              currentTitle = lines[0];            }            // If alt is NOT explicitly defined, use the currentTitle            if (!currentAlt) {              currentAlt = currentTitle;            }            currentPreview = lines.slice(1).join('\n'); // Rest of the text is preview          } catch {            currentPreview = ''; // Fallback for preview if fetching fails          }        }        return { ...item, title: currentTitle, preview: currentPreview, alt: currentAlt };      })    ).then(setNewsList);
+    Promise.all(
+      newsConfig.map(async (item) => {
+        let currentTitle = item.title; // Start with the title defined in newsConfig
+        let currentPreview = item.preview;
+        let currentAlt = item.alt;
+        
+        if (item.textPath) {
+          try {
+            const text = await fetchText(item.textPath);
+            const lines = text.split('\n');
+            // If title is NOT explicitly defined in newsConfig, use the first line of the text file
+            if (!currentTitle) {
+              currentTitle = lines[0];
+            }
+            // If alt is NOT explicitly defined, use the currentTitle
+            if (!currentAlt) {
+              currentAlt = currentTitle;
+            }
+            currentPreview = lines.slice(1).join('\n'); // Rest of the text is preview
+          } catch {
+            currentPreview = ''; // Fallback for preview if fetching fails
+          }
+        }
+        
+        return { ...item, title: currentTitle, preview: currentPreview, alt: currentAlt };
+      })
+    ).then(setNewsList);
   }, [language, navigate, t]);
 
   return (
