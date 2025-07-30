@@ -59,7 +59,17 @@ const NewsArticle9: React.FC = () => {
 
           <Card className="shadow-lg">
             <CardContent className="p-4 md:p-8">
-              <div className="mb-4 md:mb-6">
+              <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
+                {article.title}
+              </h1>
+              
+              <div className="prose prose-sm md:prose-lg max-w-none">
+                <div className="whitespace-pre-line text-gray-700 leading-relaxed text-sm md:text-base">
+                  {article.content}
+                </div>
+              </div>
+
+              <div className="my-6 md:my-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {article.images.map((imageSrc, index) => (
                     <img 
@@ -72,16 +82,6 @@ const NewsArticle9: React.FC = () => {
                       }}
                     />
                   ))}
-                </div>
-              </div>
-
-              <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
-                {article.title}
-              </h1>
-              
-              <div className="prose prose-sm md:prose-lg max-w-none">
-                <div className="whitespace-pre-line text-gray-700 leading-relaxed text-sm md:text-base">
-                  {article.content}
                 </div>
               </div>
               
