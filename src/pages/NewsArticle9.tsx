@@ -11,7 +11,7 @@ import { ArrowLeft } from 'lucide-react';
 const NewsArticle9: React.FC = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
-  const [article, setArticle] = useState({ title: '', content: '', image: '' });
+  const [article, setArticle] = useState({ title: '', content: '', images: [] as string[] });
 
   useEffect(() => {
     const fetchArticle = async () => {
@@ -22,10 +22,14 @@ const NewsArticle9: React.FC = () => {
         const lines = text.split('\n');
         const title = lines[0];
         const content = lines.slice(1).join('\n');
+        
+        // Generate array of image paths (1.jpg through 9.jpg)
+        const images = Array.from({ length: 9 }, (_, i) => `/news/9/${lang}/photos/${i + 1}.jpg`);
+        
         setArticle({
           title: title,
           content: content,
-          image: `/news/9/${lang}/photos/1.jpg`
+          images: images
         });
       } catch (error) {
         console.error("Failed to fetch article:", error);
@@ -56,11 +60,19 @@ const NewsArticle9: React.FC = () => {
           <Card className="shadow-lg">
             <CardContent className="p-4 md:p-8">
               <div className="mb-4 md:mb-6">
-                <img 
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full h-auto object-cover rounded-lg mb-4 md:mb-6"
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {article.images.map((imageSrc, index) => (
+                    <img 
+                      key={index}
+                      src={imageSrc}
+                      alt={`${article.title} - Photo ${index + 1}`}
+                      className="w-full h-auto object-cover rounded-lg"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
 
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
