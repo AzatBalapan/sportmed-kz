@@ -20,6 +20,14 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
       {
+        id: 'new-article-9',
+        image: language === 'ru' ? '/news/9/rus/photos/1.jpg' : '/news/9/kaz/photos/1.jpg',
+        alt: '', // Will be populated from textPath
+        title: '', // Will be populated from textPath
+        textPath: `/news/9/${language === 'ru' ? 'rus' : 'kaz'}/9_${language === 'ru' ? 'rus' : 'kaz'}.txt`,
+        onClick: () => navigate('/news/new-article-9'),
+      },
+      {
         id: 'youth-prize-daryn-7',
         image: '/news/7/photoes/1.jpeg',
         alt: language === 'ru' ? 'Государственная молодежная премия «Дарын»' : language === 'kz' ? '«Дарын» мемлекеттік жастар сыйлығы' : 'Daryn Youth State Prize',
@@ -79,22 +87,7 @@ const News: React.FC = () => {
     ];
 
     // Fetch all dynamic news texts
-    Promise.all(
-      newsConfig.map(async (item) => {
-        if (item.isStatic) {
-          return { ...item, preview: item.preview };
-        } else if (item.textPath) {
-          try {
-            const text = await fetchText(item.textPath);
-            return { ...item, preview: text };
-          } catch {
-            return { ...item, preview: '' };
-          }
-        } else {
-          return item;
-        }
-      })
-    ).then(setNewsList);
+    Promise.all(      newsConfig.map(async (item) => {        let currentTitle = item.title; // Start with the title defined in newsConfig        let currentPreview = item.preview;        let currentAlt = item.alt;        if (item.textPath) {          try {            const text = await fetchText(item.textPath);            const lines = text.split('\n');            // If title is NOT explicitly defined in newsConfig, use the first line of the text file            if (!currentTitle) {              currentTitle = lines[0];            }            // If alt is NOT explicitly defined, use the currentTitle            if (!currentAlt) {              currentAlt = currentTitle;            }            currentPreview = lines.slice(1).join('\n'); // Rest of the text is preview          } catch {            currentPreview = ''; // Fallback for preview if fetching fails          }        }        return { ...item, title: currentTitle, preview: currentPreview, alt: currentAlt };      })    ).then(setNewsList);
   }, [language, navigate, t]);
 
   return (
@@ -108,7 +101,7 @@ const News: React.FC = () => {
               {t('news.title')}
             </h1>
             {/* News Articles in Three Columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 items-stretch">
               {newsList.map((item) => (
                 <Card key={item.id} className="shadow-lg border-0 hover:shadow-xl transition-shadow overflow-hidden flex flex-col h-full">
                   <div className="w-full h-32 sm:h-40 md:h-48 lg:h-56 overflow-hidden flex-shrink-0">
