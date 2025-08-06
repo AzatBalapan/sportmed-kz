@@ -129,7 +129,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
             <Card key={nigmetovaData.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-              <div className="relative h-48 bg-white flex items-center justify-center overflow-hidden">
+              <div className="relative h-48 flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#eaeaf0' }}>
                 {nigmetovaData && 'image' in nigmetovaData && nigmetovaData.image ? (
                   <img 
                     src={nigmetovaData.image} 
@@ -178,7 +178,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
                 .sort((a, b) => (a.order || 999) - (b.order || 999))
                 .map((doctor) => (
                 <Card key={doctor.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  <div className="relative h-48 bg-white flex items-center justify-center overflow-hidden">
+                  <div className="relative h-48 flex items-center justify-center overflow-hidden" style={{ backgroundColor: '#eaeaf0' }}>
                     {doctor.image ? (
                       <img 
                         src={doctor.image} 
