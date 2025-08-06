@@ -3,7 +3,7 @@ export const nurgalieva = {
     name: { ru: "Нургалиева Зере Тилеубековна", kz: "Нұрғалиева Зере Тілеубекқызы" },
     position: { ru: "Врач УЗИ", kz: "Ультрадыбыстық зерттеу дәрігері" },
     department: "diagnostics",
-    image: "/team_photoes/Зере.svg",
+    image: "/team_photoes/new/Зере Тілеубекқызы.svg",
     experience: {
       ru: "7 лет",
       kz: "7 жыл"

@@ -6,7 +6,7 @@ export const zhiengazina = {
       kz: "Спорттық медицина және медициналық-биологиялық қамтамасыз ету бөлімінің меңгерушісі"
     },
     department: "medical-staff",
-    image: "/team_photoes/Асия.svg",
+    image: "/team_photoes/new/Жиенгазина Асия Нуржанқызы.svg",
     experience: {
       ru: "7 лет 9 месяцев",
       kz: "7 жыл 9 ай"

@@ -8,7 +8,7 @@ export const nigmetova = {
     ru: 'Главная медицинская сестра',
     kz: 'Бас мейіргер',
   },
-  image: '/team_photoes/Асемгуль.svg', // Update if actual image is different
+  image: "/team_photoes/new/Нигметова Асемгуль Алтаевна.svg" // Update if actual image is different
   experience: {
     ru: '10 лет',
     kz: '10 жыл',

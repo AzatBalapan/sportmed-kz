@@ -6,7 +6,7 @@ export const nartbaev = {
       kz: "Хирург (балалар, ересектер), травматолог-ортопед (балалар, ересектер) – жоғары санатты"
     },
     department: "specialists",
-    image: "/team_photoes/Есмұрат.svg",
+    image: "/team_photoes/new/Есмұрат Кажымуханұлы.svg",
     experience: {
       ru: "45 лет (37 лет хирургический стаж)",
       kz: "45 жыл (37 жыл хирургиялық тәжірибе)"

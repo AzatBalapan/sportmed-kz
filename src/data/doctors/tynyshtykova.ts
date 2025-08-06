@@ -3,7 +3,7 @@ export const tynyshtykova = {
     name: { ru: "Тыныштыкова Ляззат Елубаевна", kz: "Тыныштықова Ләззат Елубайқызы" },
     position: { ru: "Медицинская сестра общей практики", kz: "Жалпы практика мейіргері" },
     department: "medical-staff",
-    image: "/team_photoes/Ляззат.svg",
+    image: "/team_photoes/new/Ләззат Елубайқызы.svg",
     experience: {
       ru: "8 лет 1 месяц",
       kz: "8 жыл 1 ай"

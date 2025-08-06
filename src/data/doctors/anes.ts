@@ -9,7 +9,7 @@ export const anes = {
     kz: "Мейіргер / Мейіргер ісі"
   },
   department: "medical-staff",
-  image: "/team_photoes/placeholder.svg", // Placeholder, update if photo is added
+  image: "/team_photoes/new/Назерке Мендуллаевна.svg", // Placeholder, update if photo is added
   experience: {
     ru: "С 2013 года",
     kz: "2013 жылдан бастап"

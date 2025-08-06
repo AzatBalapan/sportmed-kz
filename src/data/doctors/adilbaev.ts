@@ -3,7 +3,7 @@ export const adilbaev = {
     name: { ru: "Адильбаев Бауыржан Клышбекович", kz: "Әділбаев Бауыржан Қлышбекұлы" },
     position: { ru: "Врач спортивной медицины, детский онколог, детский хирург", kz: "Спорттық медицина дәрігері, балалар онкологы, балалар хирургі" },
     department: "medical-staff",
-    image: "/team_photoes/Бауыржан.svg",
+    image: "/team_photoes/new/Бауыржан Қлышбекұлы.svg",
     experience: {
       ru: "21 год",
       kz: "21 жыл"

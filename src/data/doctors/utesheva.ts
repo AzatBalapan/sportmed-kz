@@ -3,7 +3,7 @@ export const utesheva = {
     name: { ru: "Утешева Сауле Шакеновна", kz: "Үтешева Сауле Шәкенқызы" },
     position: { ru: "Врач акушер-гинеколог высшей категории", kz: "Жоғары санатты дәрігер-акушер-гинеколог" },
     department: "specialists",
-    image: "/team_photoes/Сауле.svg",
+    image: "/team_photoes/new/Сауле Шәкенқызы.svg",
     experience: {
       ru: "30 лет",
       kz: "30 жыл"

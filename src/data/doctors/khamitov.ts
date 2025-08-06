@@ -3,7 +3,7 @@ export const khamitov = {
     name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимұлы" },
     position: { ru: "Врач-невролог", kz: "Дәрігер-невролог" },
     department: "specialists",
-    image: "/team_photoes/Ержан.svg",
+    image: "/team_photoes/new/Ержан Рахимұлы.svg",
     experience: {
       ru: "5 лет",
       kz: "5 жыл"

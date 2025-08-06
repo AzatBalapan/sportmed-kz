@@ -3,7 +3,7 @@ export const kairatbek = {
     name: { ru: "Кайратбек Айгерим", kz: "Қайратбек Айгерім" },
     position: { ru: "Врач физической медицины и реабилитации", kz: "Физикалық медицина және оңалту дәрігері" },
     department: "physiotherapy",
-    image: "/team_photoes/Айгерим.svg",
+    image: "/team_photoes/new/Қайратбек Айгерім.svg",
     experience: {
       ru: "5 лет",
       kz: "5 жыл"

@@ -3,7 +3,7 @@ export const boltaev = {
     name: { ru: "Болтаев Олжас", kz: "Болтаев Олжас" },
     position: { ru: "Врач спортивной медицины", kz: "Спорттық медицина дәрігері" },
     department: "medical-staff",
-    image: "/team_photoes/Олжас.svg",
+    image: "/team_photoes/new/Болтаев Олжас.svg",
     experience: {
       ru: "8 лет 9 месяцев",
       kz: "8 жыл 9 ай"

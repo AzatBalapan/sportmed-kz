@@ -3,7 +3,7 @@ export const volchkov = {
     name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" },
     position: { ru: "Массажист", kz: "Массажист" },
     department: "physiotherapy",
-    image: null,
+    image: "/team_photoes/new/Сергей Александрович.svg",
     experience: {
       ru: "15 лет",
       kz: "15 жыл"

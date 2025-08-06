@@ -3,7 +3,7 @@ export const fayzolda = {
     name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" },
     position: { ru: "Медицинская сестра", kz: "Мейіргер" },
     department: "nursing",
-    image: "/team_photoes/Марзия.svg",
+    image: "/team_photoes/new/Файзолда Марзия.svg",
     experience: {
       ru: "10 лет",
       kz: "10 жыл"

@@ -8,7 +8,7 @@ export const burambaeva = {
     ru: 'Медицинская сестра',
     kz: 'Мейіргер',
   },
-  image: '/team_photoes/Зауре.svg',
+  image: '/team_photoes/new/Зауре Амангельдиновна.svg',
   experience: {
     ru: '28 лет',
     kz: '28 жыл',
