@@ -16,11 +16,9 @@ import { boltaev } from './boltaev';
 import { tynyshtykova } from './tynyshtykova';
 import { kokymbaeva } from './kokymbaeva';
 import { fayzolda } from './fayzolda';
-import { volchkov } from './volchkov';
 import { nartbaev } from './nartbaev';
 import { utesheva } from './utesheva';
 import { makenqyzy } from './makenqyzy';
-import { khamitov } from './khamitov';
 import { asiya } from './asiya';
 import { anes } from './anes';
 import { kolkhozov } from './kolkhozov';
@@ -46,11 +44,9 @@ export const doctors = [
   tynyshtykova,
   kokymbaeva,
   fayzolda,
-  volchkov,
   nartbaev,
   utesheva,
   makenqyzy,
-  khamitov,
   asiya,
   anes,
   kolkhozov,
@@ -77,11 +73,9 @@ export {
   tynyshtykova,
   kokymbaeva,
   fayzolda,
-  volchkov,
   nartbaev,
   utesheva,
   makenqyzy,
-  khamitov,
   asiya,
   anes,
   kolkhozov,

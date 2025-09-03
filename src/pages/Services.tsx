@@ -341,13 +341,13 @@ const Services: React.FC = () => {
           <div className="bg-gov-blue p-6 md:p-8 rounded-lg mt-8 md:mt-12 shadow-lg max-w-xl mx-auto text-center">
             <div className="flex flex-col items-center">
               <div className="flex items-center text-white mb-2 text-sm md:text-base">
-                <span className="mr-2">🏥</span>
+                <span className="mr-2">•</span>
                 <span className="font-semibold">
                   {data.contactBlock.addressTitle} {data.contactBlock.address}
                 </span>
               </div>
               <div className="flex items-center text-white text-sm md:text-base">
-                <span className="mr-2">📞</span>
+                <span className="mr-2">•</span>
                 <span>{data.contactBlock.phone}</span>
               </div>
             </div>

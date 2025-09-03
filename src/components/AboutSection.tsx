@@ -28,9 +28,9 @@ export const AboutSection: React.FC = () => {
             </p>
             <ul className="space-y-4">
               {[
-                { icon: '🏆', title: t('promo.professional') },
-                { icon: '🔬', title: t('promo.modern') },
-                { icon: '🧠', title: t('promo.individual') },
+                { icon: '✓', title: t('promo.professional') },
+                { icon: '✓', title: t('promo.modern') },
+                { icon: '✓', title: t('promo.individual') },
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <span className="text-2xl mr-4">{item.icon}</span>
