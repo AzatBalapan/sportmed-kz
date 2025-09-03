@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
     <header 
       ref={headerRef}
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -219,7 +219,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <nav className="fixed inset-0 bg-white/95 backdrop-blur-sm z-50 flex flex-col items-center justify-start pt-24 px-6 space-y-6 transition-all duration-300 md:hidden">
+        <nav className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-start pt-24 px-6 space-y-6 transition-all duration-300 md:hidden">
           <div className="container mx-auto px-4 py-4">
             {/* Language Switcher for Mobile - removed from here */}
             {/* Scrollable navigation links only */}
