@@ -51,7 +51,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
 
     // Мамандандырылған дәрігерлер бөлімі
     { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" }, position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты оториноларинголог дәрігері" }, department: "specialists", order: 1 },
-    { id: "khamitov", name: { ru: "Хамитов Ержан Рахимович", kz: "Хамитов Ержан Рахимұлы" }, position: { ru: "Врач-невролог", kz: "Невролог дәрігері" }, department: "specialists", order: 2 },
+    
     { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "specialists", order: 3 },
     { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "specialists", order: 4 },
     { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 5 },
@@ -62,7 +62,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
 
     // Реабилитация
     { id: "aidarbekov", name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" }, department: "rehabilitation", order: 1 },
-    { id: "volchkov", name: { ru: "Волчков Сергей Александрович", kz: "Волчков Сергей Александрович" }, position: { ru: "Массажист", kz: "Массажист" }, department: "rehabilitation", order: 2 },
+    
     { id: "kairatbek", name: { ru: "Кайратбек Айгерим", kz: "Қайратбек Айгерім" }, position: { ru: "Врач физической медицины и реабилитации", kz: "Физикалық медицина және реабилитация дәрігері" }, department: "rehabilitation", order: 3 },
 
     // Средний медицинский персонал
