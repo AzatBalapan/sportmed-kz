@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
     <header 
       ref={headerRef}
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-white/80 backdrop-blur-sm'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
