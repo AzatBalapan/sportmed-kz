@@ -8,8 +8,8 @@ export const zhiengazina = {
     department: "medical-staff",
     image: "/team_photoes/new/Жиенгазина Асия Нуржанқызы.svg",
     experience: {
-      ru: "7 лет 9 месяцев",
-      kz: "7 жыл 9 ай"
+      ru: "8 лет",
+      kz: "8 лет"
     },
     education: {
       ru: `2017–2019 — Казахский медицинский университет непрерывного образования, специальность «Врач спортивной медицины»
