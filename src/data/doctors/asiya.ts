@@ -5,8 +5,8 @@ export const asiya = {
     department: "neurology",
     image: "/team_photoes/Асия.svg",
     experience: {
-      ru: "5 лет",
-      kz: "5 жыл"
+      ru: "8 лет",
+      kz: "8 жыл"
     },
     education: {
       ru: `2019 - Казахский национальный медицинский университет имени С.Д. Асфендиярова, специальность "Общая медицина"
