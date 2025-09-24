@@ -9,7 +9,7 @@ export const kolkhozov = {
     kz: "Фельдшер"
   },
   department: "medical-staff",
-  image: "/team_photoes/placeholder.svg", // Placeholder, update if photo is added
+  image: "/team_photoes/Айдар Оразбекович.svg", // 
   experience: {
     ru: "С 2007 года",
     kz: "2007 жылдан бастап"
