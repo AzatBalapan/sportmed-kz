@@ -64,7 +64,8 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "aidarbekov", name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" }, department: "rehabilitation", order: 1 },
     
     { id: "kairatbek", name: { ru: "Кайратбек Айгерим", kz: "Қайратбек Айгерім" }, position: { ru: "Врач физической медицины и реабилитации", kz: "Физикалық медицина және реабилитация дәрігері" }, department: "rehabilitation", order: 3 },
-
+    { id: "askergazy", name: { ru: "Аскергазы Бек Нурбекович", kz: "Әскерғазы Бек Нұрбекұлы" }, position: { ru: "Врач-реабилитолог", kz: "Реабилитолог дәрігер" }, department: "rehabilitation", order: 2 },
+    
     // Средний медицинский персонал
     { id: "tynyshtykova", name: { ru: "Тыныштықова Ляззат Елубаевна", kz: "Тыныштықова Ляззат Елубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 1 },
     { id: "anes", name: { ru: "Анес Назерке Мендуллаевна", kz: "Анес Назерке Мендуллаевна" }, position: { ru: "Медицинская сестра / Сестринское дело", kz: "Медбике / Сестрин ісі" }, department: "nursing", order: 2 },
