@@ -19,18 +19,6 @@ const News: React.FC = () => {
 
     // News data config (newest first)
     const newsConfig = [
-{
-  id: 'new-article-10',
-  image: '/news/10/photoes/1.jpeg',
-  alt: language === 'ru'
-    ? 'Айдос Султангали — чемпион мира'
-    : 'Айдос Сұлтанғали — әлем чемпионы!',
-  title: language === 'ru'
-    ? 'Айдос Султангали — чемпион мира'
-    : 'Айдос Сұлтанғали — әлем чемпионы!',
-  textpath: /news/10/10_${language === 'ru' ? 'rus' : 'kaz'}.txt,
-  onClick: () => navigate('/news/new-article-10'),
-},
       {
         id: 'new-article-9',
         image: language === 'ru' ? '/news/9/rus/photos/1.jpg' : '/news/9/kaz/photos/1.jpg',
