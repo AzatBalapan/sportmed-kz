@@ -35,7 +35,7 @@ import NewsArticle6 from "./pages/NewsArticle6";
 import NewsArticle7 from "./pages/NewsArticle7";
 import NewsArticle8 from './pages/NewsArticle8';
 import NewsArticle9 from './pages/NewsArticle9';
-import NewsArticle9 from './pages/NewsArticle10';
+import NewsArticle10 from './pages/NewsArticle10';
 
 const queryClient = new QueryClient();
 
@@ -101,7 +101,7 @@ const App = () => (
                 <Route path="/news/world-boxing-cup" element={<NewsArticle5 />} />
                 <Route path="/news/world-boxing-cup-6" element={<NewsArticle6 />} />
             <Route path="/news/new-article-9" element={<NewsArticle9 />} />
-                 <Route path="/news/new-article-10" element={<NewsArticle10 />} />
+                 <Route path="/news/10" element={<NewsArticle10 />} />
                 <Route path="/news/youth-prize-daryn-7" element={<NewsArticle7 />} />
                 <Route path="/news/state-policy-sport-8" element={<NewsArticle8 />} />
                 <Route path="/presidential-address" element={<PresidentialAddress />} />
