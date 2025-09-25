@@ -35,6 +35,7 @@ import NewsArticle6 from "./pages/NewsArticle6";
 import NewsArticle7 from "./pages/NewsArticle7";
 import NewsArticle8 from './pages/NewsArticle8';
 import NewsArticle9 from './pages/NewsArticle9';
+import NewsArticle10 from './pages/NewsArticle10';
 
 const queryClient = new QueryClient();
 
