@@ -15,7 +15,7 @@ type Article = {
 };
 
 const NewsArticle10: React.FC = () => {
-  const { language } = useLanguage();           // 'ru' или 'kaz'
+  const { language } = useLanguage();    
   const navigate = useNavigate();
   const [article, setArticle] = useState<Article>({ title: '', content: '', images: [] });
 
