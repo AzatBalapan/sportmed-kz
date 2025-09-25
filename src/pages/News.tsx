@@ -23,9 +23,9 @@ const News: React.FC = () => {
         id: 'news-article-10',
         image: '/news/10/photoes/1.jpeg',
         alt: language === 'ru' ? 'Айдос Султангали с золотой медалью на чемпионате мира' : language === 'kz' ? 'Айдос Сұлтанғали әлем чемпионатында алтын медальмен' : 'Aidos Sultangali won the gold medal at the championship',
-        title: language === 'ru' ? 'Айдос Султангали – чемпион мира!' : language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы!' : 'Aydos Sultangali is the champion of the world!',
+        title: language === 'ru' ? 'Айдос Султангали – чемпион мира!' : language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы!' : 'Aidos Sultangali is the champion of the world!',
         textPath: `/news/10/${language === 'ru' ? '10/10_rus.txt' : '10/10_kaz.txt'}`,
-        onClick: () => navigate('/news/new-article-10'),
+        onClick: () => navigate('/news/10'),
       },
       {
         id: 'new-article-9',
