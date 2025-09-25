@@ -31,7 +31,7 @@ const NewsArticle7: React.FC = () => {
   };
 
   // List of all images for the collage
-  const photoList = [1].map(num => `/news/10/photoes/${num}.jpeg`);
+  const photoList = [1].map(num => `/news/10/photoes/${num}2.jpeg`);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
@@ -53,7 +53,7 @@ const NewsArticle7: React.FC = () => {
             <CardContent className="p-4 md:p-8">
               <div className="mb-4 md:mb-6">
                 <img 
-                  src="/news/7/photoes/1.jpeg" 
+                  src="/news/10/photoes/1.jpeg" 
                   alt={language === 'ru' ? 'Айдос Султангали - чемпион мира!' :
                        language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы!' :
                        'Aidos Sultangali is the champion of the world!'}
