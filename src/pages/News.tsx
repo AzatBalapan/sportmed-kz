@@ -24,9 +24,9 @@ const News: React.FC = () => {
         image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
         alt: '', // Will be populated from textPath
         title: '', // Will be populated from textPath
-        textPath: `/news/10/${language === 'ru' ? 'rus' : 'kaz'}/10_${language === 'ru' ? 'rus' : 'kaz'}.txt`,
+        textPath:`/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,
         onClick: () => navigate('/news/new-article-10'),
-      }
+      },
       {
         id: 'new-article-9',
         image: language === 'ru' ? '/news/9/rus/photos/1.jpg' : '/news/9/kaz/photos/1.jpg',
