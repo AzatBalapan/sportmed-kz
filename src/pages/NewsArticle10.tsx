@@ -23,14 +23,14 @@ const NewsArticle10: React.FC = () => {
     const fetchArticle = async () => {
       try {
         const lang = language === 'ru' ? 'rus' : 'kaz';
-        const res = await fetch(/news/10/10_${lang}.txt);
+        const res = await fetch('/news/10/10_${lang}.txt');
         const text = await res.text();
         const lines = text.split('\n');
 
         const title = (lines[0] || '').trim();
         const content = lines.slice(1).join('\n').trim();
         const count = 2;
-        const images = Array.from({ length: count }, (_, i) => /news/10/photoes/${i + 1}.jpeg);
+        const images = Array.from({ length: count }, (_, i) => '/news/10/photoes/${i + 1}.jpeg');
 
         setArticle({ title, content, images });
       } catch (e) {
