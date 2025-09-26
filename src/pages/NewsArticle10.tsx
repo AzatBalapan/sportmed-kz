@@ -85,9 +85,11 @@ const NewsArticle10: React.FC = () => {
                 </div>
               </div>
               
-              <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
+                          <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
                 <p className="text-xs md:text-sm text-gray-500">
-                  {t('news.publishDate')}
+                  {language === 'ru' ? 'Дата публикации: 24 сентября 2025 г.' :
+                   language === 'kz' ? 'Жариялау күні: 24 қыркүйек 2025 ж.' :
+                   'Publication date: September 24, 2025'}
                 </p>
               </div>
             </CardContent>
