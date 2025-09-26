@@ -19,14 +19,22 @@ const News: React.FC = () => {
 
     // News data config (newest first)
     const newsConfig = [
-      {
+     {
         id: 'new-article-10',
-        image: '/news/10/photoes/1.jpeg',
-        textPath: `/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,
-        alt: {language === 'ru' ? 'Борец Айдос Султангали' : language === 'kz' ? 'Балуан Айдос Сұлтанғали' : 'Wrestler Aidos Sultangali',}
-        title: 'language === 'ru' ? 'Айдос Султангали - чемпион мира!' : language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы' : 'Aidos Sultangali is the world champion!',
-        textPath: `/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,
-        onClick: () => navigate('/news/new-article-10'),
+        image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg', 
+        alt: { language === 'ru' ? 'Борец Айдос Султангали' : 'Балуан Айдос Сұлтанғали' }, 
+        title: { 
+        language === 'ru' ? 'Айдос Султангали – чемпион мира!' : 'Айдос Сұлтанғали – әлем чемпионы!',
+      },
+        text: {
+        language === 'ru' 
+        ? '24 сентября 2025 г. — Айдос Султангали завоевал золотую медаль...' 
+        : '24 қыркүйек 2025 ж. — Айдос Сұлтанғали алтын медаль жеңіп алды...',
+      },
+        textPath: { 
+        language === 'ru' ? 'rus' : 'kaz',
+      },
+        onClick: () => navigate('/news/new-article-10'), 
       },
       {
         id: 'new-article-9',
