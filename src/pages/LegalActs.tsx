@@ -73,6 +73,13 @@ const LegalActs: React.FC = () => {
       titleKz: "Мемлекеттік мүлік туралы",
       urlRus: "https://adilet.zan.kz/rus/docs/Z1100000413",
       urlKaz: "https://adilet.zan.kz/kaz/docs/Z1100000413"
+    },
+    {
+      id: 10,
+      titleRu: "Об утверждении спортивной этики Республики Казахстан",
+      titleKz: "Қазақстан Республикасының спорттық әдебін бекіту туралы",
+      urlRus: "https://adilet.zan.kz/rus/docs/V2000020083",
+      urlKaz: "https://adilet.zan.kz/kaz/docs/V2000020083"
     }
   ];
 
