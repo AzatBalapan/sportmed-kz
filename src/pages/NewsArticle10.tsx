@@ -23,7 +23,7 @@ const NewsArticle10: React.FC = () => {
         const title = lines[0];
         const content = lines.slice(1).join('\n');
         
-        // Generate array of image paths (1.jpg through 9.jpg)
+        // Generate array of image paths (1.jpeg through 1.jpeg)
         const images = Array.from({ length: 1 }, (_, i) => `/news/10/${lang}/photoes/${i + 1}.jpeg`);
         
         setArticle({
