@@ -22,14 +22,15 @@ const News: React.FC = () => {
       {
         id: 'new-article-10',
         image: '/news/10/photoes/1.jpeg',
-        alt: '', // Will be populated from textPath
+        alt: ' language === 'ru' ? 'Борец Айдос Султангали' : language === 'kz' ? 'Балуан Айдос Сұлтанғали' : 'Wrestler Aidos Sultangali',', // Will be populated from textPath
         title: 'language === 'ru' ? 'Айдос Султангали - чемпион мира!' : language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы' : 'Aidos Sultangali is the world champion!',
         textPath: `/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,', // Will be populated from textPath
         text: {
         language === 'ru' 
          ? '24 сентября 2025 г. — Айдос Султангали завоевал золотую медаль...' 
-         : '24 қыркүйек 2025 ж. — Айдос Сұлтанғали алтын медаль жеңіп алды...',
-},
+          language === 'kaz'
+         ? '24 қыркүйек 2025 ж. — Айдос Сұлтанғали алтын медаль жеңіп алды...',
+      },
         onClick: () => navigate('/news/new-article-10'),
       },
       {
