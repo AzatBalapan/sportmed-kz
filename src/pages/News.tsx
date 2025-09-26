@@ -22,7 +22,8 @@ const News: React.FC = () => {
       {
         id: 'new-article-10',
         image: '/news/10/photoes/1.jpeg',
-        alt: ' language === 'ru' ? 'Борец Айдос Султангали' : language === 'kz' ? 'Балуан Айдос Сұлтанғали' : 'Wrestler Aidos Sultangali',
+        textPath: `/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,
+        alt: {language === 'ru' ? 'Борец Айдос Султангали' : language === 'kz' ? 'Балуан Айдос Сұлтанғали' : 'Wrestler Aidos Sultangali',}
         title: 'language === 'ru' ? 'Айдос Султангали - чемпион мира!' : language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы' : 'Aidos Sultangali is the world champion!',
         textPath: `/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,
         onClick: () => navigate('/news/new-article-10'),
