@@ -21,10 +21,15 @@ const News: React.FC = () => {
     const newsConfig = [
       {
         id: 'new-article-10',
-        image: language === 'ru' ? '/news/10/rus/photoes/1.jpg' : '/news/10/kaz/photoes/1.jpg',
+        image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
         alt: '', // Will be populated from textPath
-        title: '', // Will be populated from textPath
-        textPath: `/news/10/${language === 'ru' ? 'rus' : 'kaz'}/10_${language === 'ru' ? 'rus' : 'kaz'}.txt`,
+        title: 'language === 'ru' ? 'Айдос Султангали - чемпион мира!' : language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы' : 'Aidos Sultangali is the world champion!',
+        textPath: `/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,', // Will be populated from textPath
+        text: {
+        language === 'ru' 
+         ? '24 сентября 2025 г. — Борец сборной Казахстана Айдос Султангали завоевал золотую медаль...' 
+         : '24 қыркүйек 2025 ж. — Қазақстан құрамасының балуаны Айдос Сұлтанғали алтын медаль жеңіп алды...',
+},
         onClick: () => navigate('/news/new-article-10'),
       },
       {
