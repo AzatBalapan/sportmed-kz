@@ -21,7 +21,7 @@ const News: React.FC = () => {
     const newsConfig = [
       {
         id: 'new-article-10',
-        image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
+        image: '/news/10/photoes/1.jpeg',
         alt: '', // Will be populated from textPath
         title: 'language === 'ru' ? 'Айдос Султангали - чемпион мира!' : language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы' : 'Aidos Sultangali is the world champion!',
         textPath: `/news/10/${language === 'ru' ? '10_rus.txt' : '10_kaz.txt'}`,', // Will be populated from textPath
