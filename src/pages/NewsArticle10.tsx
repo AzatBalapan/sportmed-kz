@@ -17,14 +17,14 @@ const NewsArticle10: React.FC = () => {
     const fetchArticle = async () => {
       const lang = language === 'ru' ? 'rus' : 'kaz';
       try {
-        const response = await fetch(`/news/10/${lang}/10_${lang}.txt`);
+        const response = await fetch(`/news/10/10_${lang}.txt`);
         const text = await response.text();
         const lines = text.split('\n');
         const title = lines[0];
         const content = lines.slice(1).join('\n');
         
         // Generate array of image paths (1.jpg through 9.jpg)
-        const images = Array.from({ length: 2 }, (_, i) => `/news/10/${lang}/photos/${i + 1}.jpeg`);
+        const images = Array.from({ length: 1 }, (_, i) => `/news/10/${lang}/photoes/${i + 1}.jpeg`);
         
         setArticle({
           title: title,
