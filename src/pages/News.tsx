@@ -20,6 +20,14 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
       {
+        id: 'berik-asylov',
+        image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
+        alt: '', // Will be populated from textPath
+        title: '', // Will be populated from textPath
+        textPath: language === 'ru' ? '/news/10/10_rus.txt' : '/news/10/10_kaz.txt',
+        onClick: () => navigate('/news/berik-asylov'),
+      },
+      {
         id: 'new-article-10',
         image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
         alt: '', // Will be populated from textPath
@@ -84,14 +92,7 @@ const News: React.FC = () => {
         onClick: () => navigate('/news/presidential-reserve'),
         isStatic: true,
       },
-      {
-        id: 'berik-asylov',
-        image: '/news/berik-asylov.jpeg',
-        alt: language === 'ru' ? 'Берик АСЫЛОВ' : language === 'kz' ? 'Берік АСЫЛОВ' : 'Berik ASYLOV',
-        title: language === 'ru' ? 'Берик АСЫЛОВ: Правовая ответственность – опора справедливости' : language === 'kz' ? 'Берік АСЫЛОВ: Құқықтық жауапкершілік – әділеттіліктің тірегі' : 'Berik ASYLOV: Legal responsibility is the foundation of justice',
-        textPath: `/news/${language === 'ru' ? '2_rus.txt' : '2.txt'}`,
-        onClick: () => navigate('/news/berik-asylov'),
-      },
+      
       
     ];
 
