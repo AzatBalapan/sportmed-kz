@@ -28,6 +28,14 @@ const News: React.FC = () => {
         onClick: () => navigate('/news/new-article-9'),
       },
       {
+        id: 'new-article-9',
+        image: language === 'ru' ? '/news/9/rus/photos/1.jpg' : '/news/9/kaz/photos/1.jpg',
+        alt: '', // Will be populated from textPath
+        title: '', // Will be populated from textPath
+        textPath: `/news/9/${language === 'ru' ? 'rus' : 'kaz'}/9_${language === 'ru' ? 'rus' : 'kaz'}.txt`,
+        onClick: () => navigate('/news/new-article-9'),
+      },
+      {
         id: 'youth-prize-daryn-7',
         image: '/news/7/photoes/1.jpeg',
         alt: language === 'ru' ? 'Государственная молодежная премия «Дарын»' : language === 'kz' ? '«Дарын» мемлекеттік жастар сыйлығы' : 'Daryn Youth State Prize',
