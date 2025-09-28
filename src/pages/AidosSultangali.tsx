@@ -15,7 +15,7 @@ const BerikAsylov: React.FC = () => {
 
   useEffect(() => {
     // Fetch the article text based on language
-    const fileName = language === 'ru' ? '10_rus.txt' : '10_kaz.txt';
+    const fileName = language === 'ru' ? '2_rus.txt' : '2.txt';
     fetch(`/news/${fileName}`)
       .then(response => response.text())
       .then(text => {
@@ -51,18 +51,18 @@ const BerikAsylov: React.FC = () => {
             <CardContent className="p-4 md:p-8">
               <div className="mb-4 md:mb-6">
                 <img 
-                  src="/news/10/photoes/1.jpeg" 
-                  alt={language === 'ru' ? 'Айдос Султангали' :
-                       language === 'kz' ? 'Айдос Сұлтанғали' :
-                       'Aidos Sultangali'}
+                  src="/news/berik-asylov.jpeg" 
+                  alt={language === 'ru' ? 'Берик АСЫЛОВ' :
+                       language === 'kz' ? 'Берік АСЫЛОВ' :
+                       'Berik ASYLOV'}
                   className="w-full h-48 md:h-64 object-cover object-top rounded-lg mb-4 md:mb-6"
                 />
               </div>
 
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
-                {language === 'ru' ? 'Айдос Султангали - чемпион мира!' :
-                 language === 'kz' ? 'Айдос Сұлтанғали - әлем чемпионы!' :
-                 'Aidos Sultangali is the champion of the world!'}
+                {language === 'ru' ? 'Берик АСЫЛОВ: Правовая ответственность – опора справедливости' :
+                 language === 'kz' ? 'Берік АСЫЛОВ: Құқықтық жауапкершілік – әділеттіліктің тірегі' :
+                 'Berik ASYLOV: Legal responsibility is the foundation of justice'}
               </h1>
               
               <div className="prose prose-sm md:prose-lg max-w-none">
@@ -73,9 +73,9 @@ const BerikAsylov: React.FC = () => {
               
               <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
                 <p className="text-xs md:text-sm text-gray-500">
-                  {language === 'ru' ? 'Дата публикации: 24 сентября 2025 г.' :
-                   language === 'kz' ? 'Жариялау күні: 24 қыркүйек 2025 ж.' :
-                   'Publication date: September 24, 2025'}
+                  {language === 'ru' ? 'Дата публикации: 14 июня 2025 г.' :
+                   language === 'kz' ? 'Жариялау күні: 14 маусым 2025 ж.' :
+                   'Publication date: June 14, 2025'}
                 </p>
               </div>
             </CardContent>
