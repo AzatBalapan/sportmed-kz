@@ -54,7 +54,7 @@ const BerikAsylov: React.FC = () => {
                   src="/news/10/photoes/1.jpeg" 
                   alt={language === 'ru' ? 'Айдос Султангали' :
                        language === 'kz' ? 'Айдос Сұлтанғали' :
-                       'Berik ASYLOV'}
+                       'Aidos Sultangali'}
                   className="w-full h-48 md:h-64 object-cover object-top rounded-lg mb-4 md:mb-6"
                 />
               </div>
