@@ -25,7 +25,6 @@ import LegalActs from "./pages/LegalActs";
 import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import BerikAsylov from "./pages/BerikAsylov";
-import AidosSultangali from "./pages/AidosSultangali";
 import FencingChampionship from "./pages/FencingChampionship";
 import NewsArticle4 from "./pages/NewsArticle4";
 import NewsArticle5 from "./pages/NewsArticle5";
@@ -36,7 +35,6 @@ import NewsArticle6 from "./pages/NewsArticle6";
 import NewsArticle7 from "./pages/NewsArticle7";
 import NewsArticle8 from './pages/NewsArticle8';
 import NewsArticle9 from './pages/NewsArticle9';
-import NewsArticle10 from "./pages/NewsArticle10";
 
 const queryClient = new QueryClient();
 
@@ -97,13 +95,11 @@ const App = () => (
                 <Route path="/news" element={<News />} />
                 <Route path="/news/presidential-reserve" element={<NewsArticle />} />
                 <Route path="/news/berik-asylov" element={<BerikAsylov />} />
-                <Route path="/news/aidos-sultangali" element={<AidosSultangali />} />
                 <Route path="/news/fencing-championship" element={<FencingChampionship />} />
                 <Route path="/news/sports-school-opening" element={<NewsArticle4 />} />
                 <Route path="/news/world-boxing-cup" element={<NewsArticle5 />} />
                 <Route path="/news/world-boxing-cup-6" element={<NewsArticle6 />} />
                 <Route path="/news/new-article-9" element={<NewsArticle9 />} />
-                <Route path="/news/new-article-10" element={<NewsArticle10 />} />
                 <Route path="/news/youth-prize-daryn-7" element={<NewsArticle7 />} />
                 <Route path="/news/state-policy-sport-8" element={<NewsArticle8 />} />
                 <Route path="/presidential-address" element={<PresidentialAddress />} />
