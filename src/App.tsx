@@ -25,6 +25,7 @@ import LegalActs from "./pages/LegalActs";
 import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import BerikAsylov from "./pages/BerikAsylov";
+import AidosSultangali from "./pages/AidosSultangali";
 import FencingChampionship from "./pages/FencingChampionship";
 import NewsArticle4 from "./pages/NewsArticle4";
 import NewsArticle5 from "./pages/NewsArticle5";
@@ -96,6 +97,7 @@ const App = () => (
                 <Route path="/news" element={<News />} />
                 <Route path="/news/presidential-reserve" element={<NewsArticle />} />
                 <Route path="/news/berik-asylov" element={<BerikAsylov />} />
+                <Route path="/news/AidosSultangali" element={<AidosSultangali />} />
                 <Route path="/news/fencing-championship" element={<FencingChampionship />} />
                 <Route path="/news/sports-school-opening" element={<NewsArticle4 />} />
                 <Route path="/news/world-boxing-cup" element={<NewsArticle5 />} />
