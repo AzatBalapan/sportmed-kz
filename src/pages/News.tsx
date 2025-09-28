@@ -28,14 +28,6 @@ const News: React.FC = () => {
         onClick: () => navigate('/news/berik-asylov'),
       },
       {
-        id: 'new-article-10',
-        image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
-        alt: '', // Will be populated from textPath
-        title: '', // Will be populated from textPath
-        textPath: language === 'ru' ? '/news/10/10_rus.txt' : '/news/10/10_kaz.txt',
-        onClick: () => navigate('/news/new-article-10'),
-      },
-      {
         id: 'new-article-9',
         image: language === 'ru' ? '/news/9/rus/photos/1.jpg' : '/news/9/kaz/photos/1.jpg',
         alt: '', // Will be populated from textPath
