@@ -54,8 +54,8 @@ const News: React.FC = () => {
       {
         id: 'sports-school-opening',
         image: '/news/4/photoes/1.jpg',
-        alt: language === 'ru' ? 'Открытие детско-юношеской спортивной школы' : language === 'kz' ? 'Балалар мен жасөспірімдер спорт мектебінің ашылуы' : 'Youth Sports School Opening',
-        title: language === 'ru' ? 'Генеральный Прокурор открыл здание детско-юношеской спортивной школы в селе Зеренда Акмолинской области' : language === 'kz' ? 'Бас Прокурор Ақмола облысы Зеренді ауылында балалар мен жасөспірімдер спорт мектебінің ғимаратын ашты' : 'General Prosecutor opened Youth Sports School building in Zeren village of Akmola region',
+        alt: language === 'ru' ? 'Врачи Центра спортивной медицины обеспечили полное медицинское сопровождение международного турнира Open President's Cup по настольному теннису в Астане.' : language === 'kz' ? 'Спорттық медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President's Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' : 'Doctors from the Center for Sports Medicine provided full medical support for the Open President's Cup International Table Tennis Tournament in Astana.',
+        title: language === 'ru' ? 'Врачи Центра спортивной медицины обеспечили полное медицинское сопровождение международного турнира Open President's Cup по настольному теннису в Астане.' : language === 'kz' ? 'Спорттық медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President's Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' : 'Doctors from the Center for Sports Medicine provided full medical support for the Open President's Cup International Table Tennis Tournament in Astana.',
         textPath: `/news/${language === 'ru' ? '4/4_rus.txt' : '4/4_kaz.txt'}`,
         onClick: () => navigate('/news/sports-school-opening'),
       },
