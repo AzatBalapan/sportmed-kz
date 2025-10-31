@@ -54,7 +54,7 @@ const NewsArticle4: React.FC = () => {
                   src="/news/4/photoes/1.jpg" 
                   alt={language === 'ru' ? 'Врачи Центра спортивной медицины обеспечили полное медицинское сопровождение международного турнира Open President's Cup по настольному теннису в Астане.' :
                        language === 'kz' ? 'Спорттық медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President's Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' :
-                       'Opening of Youth Sports School'}
+                       'Doctors from the Center for Sports Medicine provided full medical support for the Open President's Cup International Table Tennis Tournament in Astana.'}
                   className="w-full h-48 md:h-64 object-cover object-center rounded-lg mb-4 md:mb-6"
                 />
               </div>
@@ -62,7 +62,7 @@ const NewsArticle4: React.FC = () => {
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
                 {language === 'ru' ? 'Врачи Центра спортивной медицины обеспечили полное медицинское сопровождение международного турнира Open President's Cup по настольному теннису в Астане.' :
                  language === 'kz' ? 'Спорттық медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President's Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' :
-                 'General Prosecutor opened Youth Sports School building in Zeren village of Akmola region'}
+                 'Doctors from the Center for Sports Medicine provided full medical support for the Open President's Cup International Table Tennis Tournament in Astana.'}
               </h1>
               
               <div className="prose prose-sm md:prose-lg max-w-none">
