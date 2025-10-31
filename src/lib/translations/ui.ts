@@ -78,9 +78,9 @@ export const uiTranslations = {
     en: 'Working Hours'
   },
   'contact.hours.value': {
-    ru: 'Пн-Пт: 8:00 - 18:00',
-    kz: 'Дс-Жм: 8:00 - 18:00',
-    en: 'Mon-Fri: 8:00 - 18:00'
+    ru: 'Пн-Пт: 8:00 - 17:00',
+    kz: 'Дс-Жм: 8:00 - 17:00',
+    en: 'Mon-Fri: 8:00 - 17:00'
   },
   'contact.message': {
     ru: 'Сообщение',
