@@ -21,6 +21,14 @@ const SocialLinks: React.FC = () => {
       >
         <Instagram size={20} />
       </a>
+     <a
+        href="www.tiktok.com/@sportmedortalyq.astana"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-black hover:bg-gray-800 text-white p-3 rounded-full shadow-lg transition-all duration-300 mt-2"
+        aria-label="TikTok"
+     >
+        <TikTok size={20} />
     </div>
   );
 };
