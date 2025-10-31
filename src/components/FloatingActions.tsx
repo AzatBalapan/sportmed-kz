@@ -37,8 +37,8 @@ const FloatingActions: React.FC = () => {
           aria-label="Instagram"
         >
           <Instagram size={20} />
-        </a>
-        /* / TikTok */
+                  </a>
+        {/* TikTok */}
         <a
           href="www.tiktok.com/@sportmedortalyq.astana"
           target="_blank"
