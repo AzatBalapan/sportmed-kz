@@ -20,6 +20,14 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
       {
+        id: 'new-article-11',
+        image: '/news/11/photos/1.jpg',
+        alt: language === 'ru' ? 'Training of specialists in emergency medical care programs.' : 'Training of specialists in emergency medical care programs.',
+        title: language === 'ru' ? 'Обучение врачей детско-юношеских спортивных школ по неотложной помощи' : 'Жедел медициналық көмек бағдарламалары бойынша мамандарды оқыту.',
+        textPath: `/news/11/${language === 'ru' ? '11_rus.txt' : '11_kaz.txt'}`,
+        onClick: () => navigate('/news/new-article-11'),
+      },
+      {
         id: 'berik-asylov',
         image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
         alt: '', // Will be populated from textPath
