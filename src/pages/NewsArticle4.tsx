@@ -53,7 +53,7 @@ const NewsArticle4: React.FC = () => {
                 <img 
                   src="/news/4/photoes/1.jpg" 
                   alt={language === 'ru' ? 'Врачи Центра спортивной медицины обеспечили полное медицинское сопровождение международного турнира Open President's Cup по настольному теннису в Астане.' :
-                       language === 'kz' ? 'Спорттық медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President's Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' :
+                       language === 'kz' ? 'Спорттық  медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President's Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' :
                        'Doctors from the Center for Sports Medicine provided full medical support for the Open President's Cup International Table Tennis Tournament in Astana.'}
                   className="w-full h-48 md:h-64 object-cover object-center rounded-lg mb-4 md:mb-6"
                 />
