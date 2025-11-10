@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Management doctor file names (without .ts)
-const management = ['nurmatov', 'tuyebayev', 'abdykhadirov'];
+const management = ['nurmatov', 'abdykhadirov'];
 
 const doctorsDir = path.join(__dirname, 'src', 'data', 'doctors');
 
