@@ -52,17 +52,17 @@ const NewsArticle4: React.FC = () => {
               <div className="mb-4 md:mb-6">
                 <img 
                   src="/news/4/photoes/1.jpg" 
-                  alt={language === 'ru' ? 'Врачи Центра спортивной медицины обеспечили полное медицинское сопровождение международного турнира Open President Cup по настольному теннису в Астане.' :
-                       language === 'kz' ? 'Спорттық  медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' :
-                       'Doctors from the Center for Sports Medicine provided full medical support for the Open President Cup International Table Tennis Tournament in Astana.'}
+                  alt={language === 'ru' ? 'Открытие детско-юношеской спортивной школы' :
+                       language === 'kz' ? 'Балалар мен жасөспірімдер спорт мектебінің ашылуы' :
+                       'Opening of Youth Sports School'}
                   className="w-full h-48 md:h-64 object-cover object-center rounded-lg mb-4 md:mb-6"
                 />
               </div>
 
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
-                {language === 'ru' ? 'Врачи Центра спортивной медицины обеспечили полное медицинское сопровождение международного турнира Open President Cup по настольному теннису в Астане.' :
-                 language === 'kz' ? 'Спорттық медицина орталығының дәрігерлері Астанадағы үстел теннисінен Open President Cup халықаралық турнирінің толық медициналық сүйемелдеуін қамтамасыз етті.' :
-                 'Doctors from the Center for Sports Medicine provided full medical support for the Open President Cup International Table Tennis Tournament in Astana.'}
+                {language === 'ru' ? 'Генеральный Прокурор открыл здание детско-юношеской спортивной школы в селе Зеренда Акмолинской области' :
+                 language === 'kz' ? 'Бас Прокурор Ақмола облысы Зеренді ауылында балалар мен жасөспірімдер спорт мектебінің ғимаратын ашты' :
+                 'General Prosecutor opened Youth Sports School building in Zeren village of Akmola region'}
               </h1>
               
               <div className="prose prose-sm md:prose-lg max-w-none">
@@ -73,9 +73,10 @@ const NewsArticle4: React.FC = () => {
 
               {/* Photo Collage */}
               <div className="mt-6 md:mt-8">
+                
                 <h2 className="text-lg md:text-xl font-serif font-bold text-gray-800 mb-4 md:mb-6">
-                  {language === 'ru' ? 'Фотографии с турнира' :
-                   language === 'kz' ? 'Турнирден фотосуреттер' :
+                  {language === 'ru' ? 'Фотографии с открытия школы' :
+                   language === 'kz' ? 'Мектеп ашылуынан фотосуреттер' :
                    'School Opening Photos'}
                 </h2>
                 
