@@ -54,17 +54,17 @@ const NewsArticle7: React.FC = () => {
               <div className="mb-4 md:mb-6">
                 <img 
                   src="/news/7/photoes/1.jpeg" 
-                  alt={language === 'ru' ? 'Государственная молодежная премия «Дарын»' :
-                       language === 'kz' ? '«Дарын» мемлекеттік жастар сыйлығы' :
-                       'Daryn Youth State Prize'}
+                  alt={language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' :
+                       language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанадаы' :
+                       'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud'}
                   className="w-full h-48 md:h-64 object-cover object-center rounded-lg mb-4 md:mb-6"
                 />
               </div>
 
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
-                {language === 'ru' ? 'СТАРТОВАЛ КОНКУРС НА ГОСУДАРСТВЕННУЮ МОЛОДЕЖНУЮ ПРЕМИЮ «ДАРЫН»' :
-                 language === 'kz' ? '«ДАРЫН» МЕМЛЕКЕТТІК ЖАСТАР СЫЙЛЫҒЫНА БАЙҚАУ ЖАРИЯЛАНДЫ' :
-                 'Daryn Youth State Prize Competition Announced'}
+                {language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' :
+                 language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанада' :
+                 'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud'}
               </h1>
               
               <div className="prose prose-sm md:prose-lg max-w-none">
