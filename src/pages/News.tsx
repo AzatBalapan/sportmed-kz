@@ -20,6 +20,14 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
       {
+        id: 'youth-prize-daryn-7',
+        image: '/news/7/photoes/1.jpeg',
+        alt: language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' : language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанада' : 'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud',
+        title: language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' : language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанада' : 'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud',
+        textPath: `/news/7/${language === 'ru' ? '7_rus.txt' : '7_kaz.txt'}`,
+        onClick: () => navigate('/news/youth-prize-daryn-7'),
+      },
+      {
         id: 'new-article-11',
         image: '/news/11/photos/1.jpg',
         alt: language === 'ru' ? 'Training of specialists in emergency medical care programs.' : 'Training of specialists in emergency medical care programs.',
@@ -42,14 +50,6 @@ const News: React.FC = () => {
         title: '', // Will be populated from textPath
         textPath: `/news/9/${language === 'ru' ? 'rus' : 'kaz'}/9_${language === 'ru' ? 'rus' : 'kaz'}.txt`,
         onClick: () => navigate('/news/new-article-9'),
-      },
-      {
-        id: 'youth-prize-daryn-7',
-        image: '/news/7/photoes/1.jpeg',
-        alt: language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' : language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанада' : 'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud',
-        title: language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' : language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанада' : 'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud',
-        textPath: `/news/7/${language === 'ru' ? '7_rus.txt' : '7_kaz.txt'}`,
-        onClick: () => navigate('/news/youth-prize-daryn-7'),
       },
       {
         id: 'fencing-championship',
