@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
@@ -112,4 +111,4 @@ const NewsArticle6: React.FC = () => {
   );
 };
 
-export default NewsArticle6; 
+export default NewsArticle11; 
