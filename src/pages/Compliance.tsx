@@ -67,7 +67,7 @@ interface Document {
     }, [documentContent, selectedDocument, language]); 
 
     // ... (Остальная часть компонента, включая функцию return и разметку)
-};
+    };
       // Fetch the text content from the file
       fetch(filePath)
         .then(response => response.text())
@@ -86,11 +86,10 @@ interface Document {
           setDocumentContent('Error loading document content');
           setIsLoading(false);
         });
-    }
-  }, [selectedDocument, language]);
+    }, [selectedDocument, language]);
 
-  const documents: Document[] = [
-    {
+    const documents: Document[] = [
+     {
       id: 1,
       title: {
         ru: 'Антикоррупционная политика',
