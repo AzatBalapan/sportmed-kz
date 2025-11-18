@@ -26,21 +26,48 @@ interface Document {
   type?: 'text' | 'faq';
 }
 
-const Compliance: React.FC = () => {
-  const { t, language } = useLanguage();
-  const [selectedDocument, setSelectedDocument] = useState<Document | null>(null);
-  const [documentContent, setDocumentContent] = useState<string>('');
-  const [faqItems, setFaqItems] = useState<FaqItem[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+    const Compliance: React.FC = () => {
+    const { t, language } = useLanguage();
+    
+    // 💡 КОНСОЛИДИРОВАННЫЕ ПЕРЕМЕННЫЕ СОСТОЯНИЯ (State Variables)
+    //    (Пожалуйста, убедитесь, что все ваши импорты useState/useEffect присутствуют)
+    const [selectedDocument, setSelectedDocument] = useState<Document | null>(null);
+    const [documentContent, setDocumentContent] = useState<string>('');
+    const [faqItems, setFaqItems] = useState(parseFaqFromText(faqItem) || []);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    
+    // НОВАЯ ПЕРЕМЕННАЯ ДЛЯ УПРАВЛЕНИЯ МОДАЛОМ АНОНСА (ВАША НОВАЯ ССЫЛКА):
+    const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false); 
 
-  useEffect(() => {
-    if (selectedDocument && selectedDocument.textFilePath) {
-      setIsLoading(true);
-      // Get the appropriate file path based on the selected language
-      const filePath = language === 'kz' 
-        ? selectedDocument.textFilePath.kz 
-        : selectedDocument.textFilePath.ru;
-      
+    // 💡 МОДИФИЦИРОВАННЫЙ useEffect (С ПРОВЕРКОЙ URL)
+    useEffect(() => {
+        // ---- 1. ЛОГИКА АВТОМАТИЧЕСКОГО ОТКРЫТИЯ МОДАЛА ПРИ ПРЯМОЙ ССЫЛКЕ ----
+        const hash = window.location.hash;
+        
+        // Проверяем, что URL оканчивается на #anons или #announcement
+        if (hash.endsWith('#anons') || hash.endsWith('#announcement')) {
+            setIsAnnouncementOpen(true); 
+        }
+
+        // ---- 2. СУЩЕСТВУЮЩАЯ ЛОГИКА ЗАГРУЗКИ ДОКУМЕНТОВ ----
+        // (Оставлена, как было в вашем коде, с небольшой поправкой для безопасности)
+        if (documentContent && selectedDocument?.textFilePath) { 
+            setIsLoading(true);
+
+            // Get the appropriate file path based on the selected language
+            const filePath = language === 'kz' 
+                ? selectedDocument.textFilePath.kz
+                : selectedDocument.textFilePath.ru;
+
+            // ... Остальная часть вашей логики загрузки данных
+            // (например, вызов fetch/axios для получения содержимого файла)
+        }
+        
+    // В зависимости нужно включить все стейты, которые используются внутри хука
+    }, [documentContent, selectedDocument, language]); 
+
+    // ... (Остальная часть компонента, включая функцию return и разметку)
+};
       // Fetch the text content from the file
       fetch(filePath)
         .then(response => response.text())
@@ -220,7 +247,54 @@ const Compliance: React.FC = () => {
             </Card>
           ))}
         </div>
+        // Строка 250: /* Document Viewer Dialog */
+{/* Document Viewer Dialog (СУЩЕСТВУЮЩИЙ МОДАЛ ДЛЯ selectedDocument) */}
+<Dialog open={!!selectedDocument} onOpenChange={() => setSelectedDocument(null)}>
+    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+            <DialogTitle className="text-lg md:text-xl">
+                {selectedDocument && (language === 'kz' ? selectedDocument.title.kz : selectedDocument.title.ru)}
+            </DialogTitle>
+        </DialogHeader>
+        {/* ... Остальное содержимое Document Viewer Dialog ... */}
+    </DialogContent>
+</Dialog>
+
+
+{/* 👉 ВСТАВЬТЕ ЭТОТ БЛОК КОДА СЮДА (НОВЫЙ МОДАЛ ДЛЯ АНОНСА) */}
+<Dialog 
+    open={isAnnouncementOpen}
+    
+    // Функция закрытия модала
+    onOpenChange={() => {
+        setIsAnnouncementOpen(false);
+        // Очистка хеша в URL при закрытии модала
+        const baseHash = '#/compliance';
+        if (window.location.hash.endsWith('#anons') || window.location.hash.endsWith('#announcement')) {
+            window.history.replaceState(null, null, window.location.pathname + window.location.search + baseHash);
+        }
+    }}
+>
+    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+            <DialogTitle className="text-lg md:text-xl font-bold">
+                Анонс о проведении внутреннего анализа коррупционных рисков
+            </DialogTitle>
+        </DialogHeader>
         
+        {/* 💡 СЮДА ДОБАВЬТЕ ТЕКСТ АНОНСА ИЗ ПЕРВОГО СКРИНШОТА */}
+        <div className="py-4 space-y-3 text-gray-700">
+            <p className="font-semibold">АНОНС</p>
+            <p>о проведении внутреннего анализа коррупционных рисков в деятельности ГККП «Спортивный медицинский центр Астаны».</p>
+            <p>2 июня 2025 года планируется начать проведение внутреннего анализа коррупционных рисков в ГККП «Спортивный медицинский центр города Астаны» по следующим направлениям:</p>
+            <ol className="list-decimal list-inside pl-4 space-y-1">
+                <li>Выявление коррупционных рисков в нормативных правовых актах Предприятия;</li>
+                <li>Выявление коррупционных рисков в организационно-управленческой деятельности.</li>
+            </ol>
+            <p className="pt-2">Свои предложения по наличию и устранению коррупционных рисков в ГККП «Спортивный медицинский центр города Астаны» можно направить на электронную почту: <a href="mailto:smo@csmed.kz" className="text-blue-600 hover:underline">smo@csmed.kz</a>, либо по адресу: г. Астана, ул. Конаева 10, кабинет 302, Администрация, комплаенс-офицер Тажиева Айжан.</p>
+        </div>
+    </DialogContent>
+    </Dialog>
         {/* Document Viewer Dialog */}
         <Dialog open={!!selectedDocument} onOpenChange={() => setSelectedDocument(null)}>
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
