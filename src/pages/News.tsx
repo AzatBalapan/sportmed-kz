@@ -46,8 +46,8 @@ const News: React.FC = () => {
       {
         id: 'youth-prize-daryn-7',
         image: '/news/7/photoes/1.jpeg',
-        alt: language === 'ru' ? 'Государственная молодежная премия «Дарын»' : language === 'kz' ? '«Дарын» мемлекеттік жастар сыйлығы' : 'Daryn Youth State Prize',
-        title: language === 'ru' ? 'СТАРТОВАЛ КОНКУРС НА ГОСУДАРСТВЕННУЮ МОЛОДЕЖНУЮ ПРЕМИЮ «ДАРЫН»' : language === 'kz' ? '«ДАРЫН» МЕМЛЕКЕТТІК ЖАСТАР СЫЙЛЫҒЫНА БАЙҚАУ ЖАРИЯЛАНДЫ' : 'Daryn Youth State Prize Competition Announced',
+        alt: language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' : language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанада' : 'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud',
+        title: language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' : language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанада' : 'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud',
         textPath: `/news/7/${language === 'ru' ? '7_rus.txt' : '7_kaz.txt'}`,
         onClick: () => navigate('/news/youth-prize-daryn-7'),
       },
