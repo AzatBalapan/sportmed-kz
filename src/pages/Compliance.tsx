@@ -23,8 +23,12 @@ interface Document {
     ru: string;
     kz: string;
   };
-  type?: 'text' | 'faq' | 'pdf';
+  type?: 'text' | 'faq' | 'pdf' | 'multi-pdf';
   pdfPath?: string;
+  pdfFiles?: {
+    ru: string;
+    kz: string;
+  };
 }
 
 const Compliance: React.FC = () => {
@@ -165,24 +169,16 @@ const Compliance: React.FC = () => {
     {
       id: 8,
       title: {
-        ru: 'Антикоррупция',
-        kz: 'Антикоррупция'
+        ru: 'Протокол публичного обсуждения результатов внутреннего анализа коррупционных рисков',
+        kz: 'Сыбайлас жемқорлық тәуекелдерін ішкі талдау нәтижелерін қоғамдық талқылау хаттамасы'
       },
       fileName: '001.pdf',
       path: '/lovable-uploads/001.pdf',
-      pdfPath: '/lovable-uploads/001.pdf',
-      type: 'pdf'
-    },
-    {
-      id: 9,
-      title: {
-        ru: 'Антикоррупция',
-        kz: 'Антикоррупция'
-      },
-      fileName: '002.pdf',
-      path: '/lovable-uploads/002.pdf',
-      pdfPath: '/lovable-uploads/002.pdf',
-      type: 'pdf'
+      type: 'multi-pdf',
+      pdfFiles: {
+        ru: '/lovable-uploads/001.pdf',
+        kz: '/lovable-uploads/002.pdf'
+      }
     }
   ];
 
@@ -261,6 +257,31 @@ const Compliance: React.FC = () => {
                 <div className="flex justify-center items-center py-8">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gov-blue"></div>
                 </div>
+              ) : selectedDocument?.type === 'multi-pdf' ? (
+                <Tabs defaultValue="ru" className="w-full">
+                  <TabsList className="grid w-full grid-cols-2">
+                    <TabsTrigger value="ru">Русский</TabsTrigger>
+                    <TabsTrigger value="kz">Қазақша</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="ru">
+                    <div className="w-full h-[600px]">
+                      <iframe
+                        src={selectedDocument.pdfFiles?.ru}
+                        className="w-full h-full border-0 rounded-lg"
+                        title="PDF Viewer (RU)"
+                      />
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="kz">
+                    <div className="w-full h-[600px]">
+                      <iframe
+                        src={selectedDocument.pdfFiles?.kz}
+                        className="w-full h-full border-0 rounded-lg"
+                        title="PDF Viewer (KZ)"
+                      />
+                    </div>
+                  </TabsContent>
+                </Tabs>
               ) : selectedDocument?.type === 'pdf' ? (
                 <div className="w-full h-[600px]">
                   <iframe
@@ -299,5 +320,4 @@ const Compliance: React.FC = () => {
     </>
   );
 };
-
 export default Compliance;
