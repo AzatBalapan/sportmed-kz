@@ -23,7 +23,8 @@ interface Document {
     ru: string;
     kz: string;
   };
-  type?: 'text' | 'faq';
+  type?: 'text' | 'faq' | 'pdf';
+  pdfPath?: string;
 }
 
 const Compliance: React.FC = () => {
@@ -148,7 +149,7 @@ const Compliance: React.FC = () => {
       type: 'text'
     },
     {
-      id: 7,
+      id: 9,
       title: {
         ru: 'Анонс о проведении внутреннего анализа коррупционных рисков',
         kz: 'Сыбайлас жемқорлық тәуекелдеріне ішкі талдау жүргізу туралы хабарландыру'
@@ -160,6 +161,28 @@ const Compliance: React.FC = () => {
         kz: '/lovable-uploads/anticor_txt/internal_analysis_kaz.txt'
       },
       type: 'text'
+    },
+    {
+      id: 8,
+      title: {
+        ru: 'Антикоррупция',
+        kz: 'Антикоррупция'
+      },
+      fileName: '001.pdf',
+      path: '/lovable-uploads/001.pdf',
+      pdfPath: '/lovable-uploads/001.pdf',
+      type: 'pdf'
+    },
+    {
+      id: 9,
+      title: {
+        ru: 'Антикоррупция',
+        kz: 'Антикоррупция'
+      },
+      fileName: '002.pdf',
+      path: '/lovable-uploads/002.pdf',
+      pdfPath: '/lovable-uploads/002.pdf',
+      type: 'pdf'
     }
   ];
 
@@ -237,6 +260,14 @@ const Compliance: React.FC = () => {
               {isLoading ? (
                 <div className="flex justify-center items-center py-8">
                   <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gov-blue"></div>
+                </div>
+              ) : selectedDocument?.type === 'pdf' ? (
+                <div className="w-full h-[600px]">
+                  <iframe
+                    src={selectedDocument.pdfPath}
+                    className="w-full h-full border-0 rounded-lg"
+                    title="PDF Viewer"
+                  />
                 </div>
               ) : selectedDocument?.type === 'faq' ? (
                 <div className="space-y-4">
