@@ -71,6 +71,20 @@ const Compliance: React.FC = () => {
     {
       id: 1,
       title: {
+        ru: 'Протокол публичного обсуждения результатов внутреннего анализа коррупционных рисков',
+        kz: 'Сыбайлас жемқорлық тәуекелдерін ішкі талдау нәтижелерін қоғамдық талқылау хаттамасы'
+      },
+      fileName: '001.pdf',
+      path: '/lovable-uploads/001.pdf',
+      type: 'multi-pdf',
+      pdfFiles: {
+        ru: '/lovable-uploads/001.pdf',
+        kz: '/lovable-uploads/002.pdf'
+      }
+    },
+    {
+      id: 2,
+      title: {
         ru: 'Антикоррупционная политика',
         kz: 'Сыбайлас жемқорлыққа қарсы саясат'
       },
@@ -83,7 +97,7 @@ const Compliance: React.FC = () => {
       type: 'text'
     },
     {
-      id: 2,
+      id: 3,
       title: {
         ru: 'Кодекс этики',
         kz: 'Этика кодексі'
@@ -97,7 +111,7 @@ const Compliance: React.FC = () => {
       type: 'text'
     },
     {
-      id: 3,
+      id: 4,
       title: {
         ru: 'Политика по урегулированию конфликта интересов',
         kz: 'Мүдделер қақтығысын реттеу саясаты'
@@ -111,7 +125,7 @@ const Compliance: React.FC = () => {
       type: 'text'
     },
     {
-      id: 4,
+      id: 5,
       title: {
         ru: 'Антикоррупционный стандарт',
         kz: 'Сыбайлас жемқорлыққа қарсы стандарт'
@@ -125,7 +139,7 @@ const Compliance: React.FC = () => {
       type: 'text'
     },
     {
-      id: 5,
+      id: 6,
       title: {
         ru: 'Инструкция по противодействию коррупции',
         kz: 'Сыбайлас жемқорлыққа қарсы іс-қимыл жөніндегі нұсқаулық'
@@ -139,7 +153,7 @@ const Compliance: React.FC = () => {
       type: 'text'
     },
     {
-      id: 6,
+      id: 7,
       title: {
         ru: 'Положение о порядке информирования работников',
         kz: 'Жұмыскерлерді хабардар ету тәртібі туралы ереже'
@@ -320,4 +334,5 @@ const Compliance: React.FC = () => {
     </>
   );
 };
+
 export default Compliance;
