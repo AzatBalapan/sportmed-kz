@@ -167,7 +167,7 @@ const Compliance: React.FC = () => {
       type: 'text'
     },
     {
-      id: 9,
+      id: 8,
       title: {
         ru: 'Анонс о проведении внутреннего анализа коррупционных рисков',
         kz: 'Сыбайлас жемқорлық тәуекелдеріне ішкі талдау жүргізу туралы хабарландыру'
@@ -180,20 +180,6 @@ const Compliance: React.FC = () => {
       },
       type: 'text'
     },
-    {
-      id: 8,
-      title: {
-        ru: 'Протокол публичного обсуждения результатов внутреннего анализа коррупционных рисков',
-        kz: 'Сыбайлас жемқорлық тәуекелдерін ішкі талдау нәтижелерін қоғамдық талқылау хаттамасы'
-      },
-      fileName: '001.pdf',
-      path: '/lovable-uploads/001.pdf',
-      type: 'multi-pdf',
-      pdfFiles: {
-        ru: '/lovable-uploads/001.pdf',
-        kz: '/lovable-uploads/002.pdf'
-      }
-    }
   ];
 
   const formatText = (text: string) => {
