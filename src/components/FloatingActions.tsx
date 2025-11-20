@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Instagram, MessageCircle, ArrowUp } from 'lucide-react';
 import AccessibilityWidget from './AccessibilityWidget';
 
-// TikTok SVG Icon Component
 const TikTokIcon = ({ size = 20 }: { size?: number }) => (
   <svg 
     width={size} 
@@ -53,7 +52,7 @@ const FloatingActions: React.FC = () => {
         </a>
         {/* TikTok */}
         <a
-          href="https://www.tiktok.com/@sportmedastana"
+          href="https://www.tiktok.com/@sportmedortalyq.astana"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-black hover:bg-gray-800 text-white p-3 rounded-full shadow-lg transition-all duration-300"
