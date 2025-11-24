@@ -54,17 +54,17 @@ const NewsArticle11: React.FC = () => {
               <div className="mb-4 md:mb-6">
                 <img 
                   src="/news/11/photos/1.jpg" 
-                  alt={language === 'ru' ? '' :
-                       language === 'kz' ? '' :
-                       ''}
+                  alt={language === 'ru' ? 'Обучение специалистов' :
+                       language === 'kz' ? 'Мамандарды оқыту' :
+                       'Training of specialists'}
                   className="w-full h-48 md:h-64 object-cover object-center rounded-lg mb-4 md:mb-6"
                 />
               </div>
 
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
-                {language === 'ru' ? 'Обучение специалистов по программам неотложной медицинской помощи.' :
-                 language === 'kz' ? 'Жедел медициналық көмек бағдарламалары бойынша мамандарды оқыту.' :
-                 'Training of specialists in emergency medical care programs.'}
+                {language === 'ru' ? 'Обучение специалистов по программам неотложной медицинской помощи' :
+                 language === 'kz' ? 'Жедел медициналық көмек бағдарламалары бойынша мамандарды оқыту' :
+                 'Training of specialists in emergency medical care programs'}
               </h1>
               
               <div className="prose prose-sm md:prose-lg max-w-none">
@@ -78,15 +78,15 @@ const NewsArticle11: React.FC = () => {
                 <h2 className="text-lg md:text-xl font-serif font-bold text-gray-800 mb-4 md:mb-6">
                   {language === 'ru' ? 'Фотографии с обучения' :
                    language === 'kz' ? 'Оқудан фотосуреттер' :
-                   'Tournament Photos'}
+                   'Training Photos'}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                   {photoList.map((src, idx) => (
                     <div key={src} className="aspect-square overflow-hidden rounded-lg">
                       <img 
                         src={src}
-                        alt={language === 'ru' ? `Фото ${idx+1} - Курс` :
-                             language === 'kz' ? `Фото ${idx+1} - Курс` :
+                        alt={language === 'ru' ? `Фото ${idx+1} - Обучение` :
+                             language === 'kz' ? `Фото ${idx+1} - Оқыту` :
                              `Photo ${idx+1} - Training`}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
@@ -111,4 +111,4 @@ const NewsArticle11: React.FC = () => {
   );
 };
 
-export default NewsArticle11; 
+export default NewsArticle11;
