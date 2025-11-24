@@ -51,7 +51,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
 
     // Мамандандырылған дәрігерлер бөлімі
     { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" }, position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты оториноларинголог дәрігері" }, department: "specialists", order: 1 },
-    { id: "dosmuratov", name: { ru: "Досмуратов Маханбет Манасович", kz: "Досмурат Маханбет Манасұлы" }, position: { ru: "Врач-оториноларинголог, хирург", kz: "Дәрігер-оториноларинголог, хирург" }, department: "specialists", order: 2 },
+    { id: "dosmuratov", name: { ru: "Досмуратов Маханбет Манасович", kz: "Досмурат Маханбет Манасұлы" }, position: { ru: "Заведующий отделением профильных специалистов, врач-оториноларинголог, хирург", kz: "Мамандандырылған дәрігерлер бөлімінің меңгерушісі, дәрігер-оториноларинголог, хирург" }, department: "specialists", order: 2 },
     { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "specialists", order: 3 },
     { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "specialists", order: 4 },
     { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 5 },
