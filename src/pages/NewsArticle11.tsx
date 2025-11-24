@@ -30,8 +30,7 @@ const NewsArticle11: React.FC = () => {
     navigate('/news');
   };
 
-  // List of all images for the collage
-  const photoList = [1, 2, 3, 4, 5].map(num => `/news/11/photos/${num}.jpg`);
+  const photoList = [1, 2, 3].map(num => `/news/11/photos/${num}.jpg`);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
