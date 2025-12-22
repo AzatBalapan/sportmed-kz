@@ -22,7 +22,7 @@ const NewsArticle12: React.FC = () => {
         setArticleText(text);
       })
       .catch(error => {
-        console.error('Error fetching news article 11 text:', error);
+        console.error('Error fetching news article 12 text:', error);
       });
   }, [language]);
 
@@ -53,7 +53,7 @@ const NewsArticle12: React.FC = () => {
             <CardContent className="p-4 md:p-8">
               <div className="mb-4 md:mb-6">
                 <img 
-                  src="/news/11/photos/1.jpg" 
+                  src="/news/12/photos/1.зтп" 
                   alt={language === 'ru' ? 'Турнир' :
                        language === 'kz' ? 'Турнир' :
                        'Training of specialists'}
