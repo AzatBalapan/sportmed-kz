@@ -53,7 +53,7 @@ const NewsArticle7: React.FC = () => {
             <CardContent className="p-4 md:p-8">
               <div className="mb-4 md:mb-6">
                 <img 
-                  src="/news/7/photoes/1.jpeg" 
+                  src="/news/7/photoes/1.jpg" 
                   alt={language === 'ru' ? 'Анти Call-Центр в Астане: Новый Рубеж Защиты Граждан от Интернет-Мошенников' :
                        language === 'kz' ? 'Интернет-Алаяқтарға Қарсы Күрес Және Азаматтарды Қорғаудың Жаңа Шебі Астанадаы' :
                        'Anti Call-Center in Astana: A New Frontier in Protecting Citizens from Online Fraud'}
