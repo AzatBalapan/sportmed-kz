@@ -19,6 +19,14 @@ const News: React.FC = () => {
 
     // News data config (newest first)
     const newsConfig = [
+       {
+        id: 'new-article-12',
+        image: '/news/12/photos/1.png',
+        alt: language === 'ru' ? 'The 2025 Kazakhstan Volleyball Cup has concluded in Astana.' : 'The 2025 Kazakhstan Volleyball Cup has concluded in Astana.',
+        title: language === 'ru' ? 'В Астане завершился Кубок Казахстана по волейболу сезона 2025 года' : 'Астанада 2025 маусымындағы волейболдан Қазақстан Кубогы аяқталды',
+        textPath: `/news/12/${language === 'ru' ? '12_rus.txt' : '12_kaz.txt'}`,
+        onClick: () => navigate('/news/new-article-12'),
+      },
       {
         id: 'youth-prize-daryn-7',
         image: '/news/7/photoes/1.jpeg',
