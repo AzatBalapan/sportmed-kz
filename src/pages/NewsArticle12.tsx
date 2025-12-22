@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import ScrollToTop from '@/components/ScrollToTop';
 import { ArrowLeft } from 'lucide-react';
 
-const NewsArticle11: React.FC = () => {
+const NewsArticle12: React.FC = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [articleText, setArticleText] = useState<string>('');
