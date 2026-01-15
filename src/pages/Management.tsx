@@ -23,25 +23,7 @@ const Management: React.FC = () => {
             {pagesTranslations['management.title'][language]}
           </h1>
 
-          {/* Director full-width card */}
-          <div className="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-10 flex flex-col md:flex-row items-center md:items-start">
-            <img src={nurmatov.image} alt={nurmatov.name[language]} className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full mb-4 md:mb-0 md:mr-8" />
-            <div className="flex-1">
-              <h2 className="text-xl md:text-2xl font-bold text-gov-blue mb-1">{nurmatov.name[language]}</h2>
-              <div className="text-gray-600 mb-2 text-base md:text-lg">{nurmatov.position[language]}</div>
-              <div className="text-gray-500 mb-2 text-sm md:text-base">{nurmatov.experience[language]}</div>
-              <div className="mb-2">
-                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Образование:' : 'Білімі:'}</span>
-                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.education[language]}</div>
-              </div>
-              <div className="mb-2">
-                <span className="font-semibold text-gray-700">{language === 'ru' ? 'Опыт работы и достижения:' : 'Жұмыс тәжірибесі мен жетістіктері:'}</span>
-                <div className="text-xs md:text-sm text-gray-500 whitespace-pre-line">{nurmatov.work[language]}</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Other management staff in two columns */}
+          {/* Management staff in two columns */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {managementStaff.map((person) => (
               <div key={person.id} className="bg-white rounded-xl shadow-lg p-4 md:p-6 flex flex-col items-start">
@@ -71,5 +53,4 @@ const Management: React.FC = () => {
     </div>
   );
 };
-
-export default Management; 
+export default Management;
