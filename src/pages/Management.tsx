@@ -4,8 +4,9 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import { pagesTranslations } from '@/lib/translations/pages';
 import { abdykhadirov } from '@/data/doctors/abdykhadirov';
+import { tazhiyeva } from '@/data/doctors/tazhiyeva';
 
-const managementStaff = [abdykhadirov];
+const managementStaff = [abdykhadirov, tazhiyeva];
 
 const biographyText = {
   ru: ``,
@@ -43,6 +44,16 @@ const Management: React.FC = () => {
                 )}
                 {person.certificates && (
                   <div className="text-xs md:text-sm text-gray-500 mb-2 whitespace-pre-line">{person.certificates[language]}</div>
+                )}
+                {person.phone && (
+                  <div className="text-xs md:text-sm text-gray-500 mb-1">
+                    <strong>Телефон / Телефон:</strong> {person.phone}
+                  </div>
+                )}
+                {person.email && (
+                  <div className="text-xs md:text-sm text-gray-500">
+                    <strong>Email:</strong> {person.email}
+                  </div>
                 )}
               </div>
             ))}
