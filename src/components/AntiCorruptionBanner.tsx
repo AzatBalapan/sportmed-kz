@@ -5,8 +5,8 @@ const AntiCorruptionBanner: React.FC = () => {
   const { language } = useLanguage();
   
   const bannerImage = language === 'ru' 
-    ? '/anticorruption-banner-ru.png' 
-    : '/anticorruption-banner-kz.png';
+    ? '/anticorruption-banner-ru.PNG' 
+    : '/anticorruption-banner-kz.PNG';
   
   return (
     <div className="w-full py-8 bg-gray-50">
