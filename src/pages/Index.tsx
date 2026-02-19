@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import AntiCorruptionBanner from '@/components/AntiCorruptionBanner';
 import PromoBanner from '@/components/PromoBanner';
 import ContactSection from '@/components/ContactSection';
 import { Toaster } from '@/components/ui/toaster';
@@ -15,6 +16,7 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         <HeroSection />
         <AboutSection />
+        <AntiCorruptionBanner />
         <PromoBanner />
         <ContactSection />
       </main>
