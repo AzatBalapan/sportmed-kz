@@ -20,6 +20,14 @@ const News: React.FC = () => {
     // News data config (newest first)
     const newsConfig = [
        {
+        id: 'fencing-championship',
+        image: '/news/3/photoes/1.jpeg',
+        alt: language === 'ru' ? 'Конкурс на должность руководителя ГККП «Спортивный медицинский центр города Астаны» (ул. Куйши Дина, 36а).' : language === 'kz' ? 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс.' : 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс.',
+        title: language === 'ru' ? 'Конкурс на должность руководителя ГККП «Спортивный медицинский центр города Астаны» (ул. Куйши Дина, 36а).' : language === 'kz' ? 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс.' : 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс.',
+        textPath: `/news/${language === 'ru' ? '3/3_rus.txt' : '3/3_kaz.txt'}`,
+        onClick: () => navigate('/news/fencing-championship'),
+       },
+       {
         id: 'new-article-12',
         image: '/news/12/photos/1.png',
         alt: language === 'ru' ? 'The 2025 Kazakhstan Volleyball Cup has concluded in Astana.' : 'The 2025 Kazakhstan Volleyball Cup has concluded in Astana.',
@@ -58,14 +66,6 @@ const News: React.FC = () => {
         title: '', // Will be populated from textPath
         textPath: `/news/9/${language === 'ru' ? 'rus' : 'kaz'}/9_${language === 'ru' ? 'rus' : 'kaz'}.txt`,
         onClick: () => navigate('/news/new-article-9'),
-      },
-      {
-        id: 'fencing-championship',
-        image: '/news/3/photoes/1.jpeg',
-        alt: language === 'ru' ? 'Чемпионат Казахстана по фехтованию' : language === 'kz' ? 'Қазақстан чемпионаты семсерлесу' : 'Kazakhstan Fencing Championship',
-        title: language === 'ru' ? 'В Астане проходит чемпионат Казахстана по фехтованию' : language === 'kz' ? 'Астанада семсерлесуден Қазақстан чемпионаты өтіп жатыр' : 'Kazakhstan Fencing Championship taking place in Astana',
-        textPath: `/news/${language === 'ru' ? '3/3_rus.txt' : '3/3_kaz.txt'}`,
-        onClick: () => navigate('/news/fencing-championship'),
       },
       {
         id: 'sports-school-opening',
