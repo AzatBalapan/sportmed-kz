@@ -52,17 +52,17 @@ const FencingChampionship: React.FC = () => {
               <div className="mb-4 md:mb-6">
                 <img 
                   src="/news/3/photoes/1.jpeg" 
-                  alt={language === 'ru' ? 'Чемпионат Казахстана по фехтованию' :
-                       language === 'kz' ? 'Қазақстан чемпионаты семсерлесу' :
-                       'Kazakhstan Fencing Championship'}
+                  alt={language === 'ru' ? 'Конкурс на должность руководителя ГККП «Спортивный медицинский центр города Астаны» (ул. Куйши Дина, 36а).' :
+                       language === 'kz' ? 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс.' :
+                       'Competition for the position of Director of the Municipal State Enterprise “Sports Medical Center of Astana” (36a Kuyshi Dina St.).'}
                   className="w-full h-48 md:h-64 object-cover object-center rounded-lg mb-4 md:mb-6"
                 />
               </div>
 
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
-                {language === 'ru' ? 'В Астане проходит чемпионат Казахстана по фехтованию' :
-                 language === 'kz' ? 'Астанада семсерлесуден Қазақстан чемпионаты өтіп жатыр' :
-                 'Kazakhstan Fencing Championship taking place in Astana'}
+                {language === 'ru' ? 'Конкурс на должность руководителя ГККП «Спортивный медицинский центр города Астаны» (ул. Куйши Дина, 36а).' :
+                 language === 'kz' ? 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс. :
+                 'Competition for the position of Director of the Municipal State Enterprise “Sports Medical Center of Astana” (36a Kuyshi Dina St.).'}
               </h1>
               
               <div className="prose prose-sm md:prose-lg max-w-none">
@@ -74,45 +74,45 @@ const FencingChampionship: React.FC = () => {
               {/* Photo Collage */}
               <div className="mt-6 md:mt-8">
                 <h2 className="text-lg md:text-xl font-serif font-bold text-gray-800 mb-4 md:mb-6">
-                  {language === 'ru' ? 'Фотографии с чемпионата' :
-                   language === 'kz' ? 'Чемпионаттан фотосуреттер' :
-                   'Championship Photos'}
+                  {language === 'ru' ? 'Фотографии' :
+                   language === 'kz' ? 'Фотосуреттер' :
+                   'Photos'}
                 </h2>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
                   <div className="aspect-square overflow-hidden rounded-lg">
                     <img 
                       src="/news/3/photoes/1.jpeg"
-                      alt={language === 'ru' ? 'Фото 1 - Чемпионат по фехтованию' :
-                           language === 'kz' ? 'Фото 1 - Семсерлесу чемпионаты' :
-                           'Photo 1 - Fencing Championship'}
+                      alt={language === 'ru' ? 'Фото 1 ' :
+                           language === 'kz' ? 'Фото 1 ' :
+                           'Photo 1'}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="aspect-square overflow-hidden rounded-lg">
                     <img 
                       src="/news/3/photoes/2.jpeg"
-                      alt={language === 'ru' ? 'Фото 2 - Чемпионат по фехтованию' :
-                           language === 'kz' ? 'Фото 2 - Семсерлесу чемпионаты' :
-                           'Photo 2 - Fencing Championship'}
+                      alt={language === 'ru' ? 'Фото 2' :
+                           language === 'kz' ? 'Фото 2' :
+                           'Photo 2'}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="aspect-square overflow-hidden rounded-lg">
                     <img 
                       src="/news/3/photoes/3.jpeg"
-                      alt={language === 'ru' ? 'Фото 3 - Чемпионат по фехтованию' :
-                           language === 'kz' ? 'Фото 3 - Семсерлесу чемпионаты' :
-                           'Photo 3 - Fencing Championship'}
+                      alt={language === 'ru' ? 'Фото 3' :
+                           language === 'kz' ? 'Фото 3' :
+                           'Photo 3'}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="aspect-square overflow-hidden rounded-lg">
                     <img 
                       src="/news/3/photoes/4.jpeg"
-                      alt={language === 'ru' ? 'Фото 4 - Чемпионат по фехтованию' :
-                           language === 'kz' ? 'Фото 4 - Семсерлесу чемпионаты' :
-                           'Photo 4 - Fencing Championship'}
+                      alt={language === 'ru' ? 'Фото 4' :
+                           language === 'kz' ? 'Фото 4 ' :
+                           'Photo 4 '}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
@@ -121,9 +121,9 @@ const FencingChampionship: React.FC = () => {
               
               <div className="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
                 <p className="text-xs md:text-sm text-gray-500">
-                  {language === 'ru' ? 'Дата публикации: 26 июня 2025 г.' :
-                   language === 'kz' ? 'Жариялау күні: 26 маусым 2025 ж.' :
-                   'Publication date: June 26, 2025'}
+                  {language === 'ru' ? 'Дата публикации: 19 февраля 2026 г.' :
+                   language === 'kz' ? 'Жариялау күні: 19 февраля 2026 ж.' :
+                   'Publication date: February 19, 2026'}
                 </p>
               </div>
             </CardContent>
