@@ -61,7 +61,7 @@ const FencingChampionship: React.FC = () => {
 
               <h1 className="text-xl md:text-3xl font-serif font-bold text-gov-blue mb-4 md:mb-6">
                 {language === 'ru' ? 'Конкурс на должность руководителя ГККП «Спортивный медицинский центр города Астаны» (ул. Куйши Дина, 36а).' :
-                 language === 'kz' ? 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс. :
+                 language === 'kz' ? 'Астана қаласы әкімдігінің «Спорттық медициналық орталығы» МКҚК (Күйші Дина көшесі, 36) басшысы бос лауазымына конкурс.' :
                  'Competition for the position of Director of the Municipal State Enterprise “Sports Medical Center of Astana” (36a Kuyshi Dina St.).'}
               </h1>
               
