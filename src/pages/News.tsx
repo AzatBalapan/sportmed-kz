@@ -19,6 +19,22 @@ const News: React.FC = () => {
 
     // News data config (newest first)
     const newsConfig = [
+      // ── NEW: Article 13 — Protocol #1 & Interview Schedule ──
+       {
+        id: 'new-article-13',
+        image: '/news/3/photoes/1.jpeg',
+        alt: language === 'ru'
+          ? 'Протокол №1 заседания конкурсной комиссии и график собеседования'
+          : 'Конкурстық комиссия отырысының №1 хаттамасы және әңгімелесу кестесі',
+        title: language === 'ru'
+          ? 'Протокол №1 заседания конкурсной комиссии и график собеседования'
+          : 'Конкурстық комиссия отырысының №1 хаттамасы және әңгімелесу кестесі',
+        preview: language === 'ru'
+          ? '04 марта 2026 года состоялось заседание конкурсной комиссии по отбору кандидатов на занятие вакантной должности руководителя ГККП «Спортивный медицинский центр города Астаны».'
+          : '2026 жылғы 04 наурызда «Астана қаласының Спорттық медициналық орталығы» МККҚ басшысы бос лауазымына үміткерлерді іріктеу жөніндегі конкурстық комиссияның отырысы өтті.',
+        onClick: () => navigate('/news/new-article-13'),
+        isStatic: true,
+       },
        {
         id: 'fencing-championship',
         image: '/news/3/photoes/1.jpeg',
@@ -54,16 +70,16 @@ const News: React.FC = () => {
       {
         id: 'berik-asylov',
         image: language === 'ru' ? '/news/10/photoes/1.jpeg' : '/news/10/photoes/1.jpeg',
-        alt: '', // Will be populated from textPath
-        title: '', // Will be populated from textPath
+        alt: '',
+        title: '',
         textPath: language === 'ru' ? '/news/10/10_rus.txt' : '/news/10/10_kaz.txt',
         onClick: () => navigate('/news/berik-asylov'),
       },
       {
         id: 'new-article-9',
         image: language === 'ru' ? '/news/9/rus/photos/1.jpg' : '/news/9/kaz/photos/1.jpg',
-        alt: '', // Will be populated from textPath
-        title: '', // Will be populated from textPath
+        alt: '',
+        title: '',
         textPath: `/news/9/${language === 'ru' ? 'rus' : 'kaz'}/9_${language === 'ru' ? 'rus' : 'kaz'}.txt`,
         onClick: () => navigate('/news/new-article-9'),
       },
@@ -100,14 +116,12 @@ const News: React.FC = () => {
         onClick: () => navigate('/news/presidential-reserve'),
         isStatic: true,
       },
-      
-      
     ];
 
     // Fetch all dynamic news texts
     Promise.all(
       newsConfig.map(async (item) => {
-        let currentTitle = item.title; // Start with the title defined in newsConfig
+        let currentTitle = item.title;
         let currentPreview = item.preview;
         let currentAlt = item.alt;
         
@@ -115,17 +129,15 @@ const News: React.FC = () => {
           try {
             const text = await fetchText(item.textPath);
             const lines = text.split('\n');
-            // If title is NOT explicitly defined in newsConfig, use the first line of the text file
             if (!currentTitle) {
               currentTitle = lines[0];
             }
-            // If alt is NOT explicitly defined, use the currentTitle
             if (!currentAlt) {
               currentAlt = currentTitle;
             }
-            currentPreview = lines.slice(1).join('\n'); // Rest of the text is preview
+            currentPreview = lines.slice(1).join('\n');
           } catch {
-            currentPreview = ''; // Fallback for preview if fetching fails
+            currentPreview = '';
           }
         }
         
@@ -186,7 +198,6 @@ export default News;
 
 function PreviewWithLinks({ text }: { text: string }) {
   if (!text) return null;
-  // Regex to match URLs
   const urlRegex = /(https?:\/\/[\w\-._~:/?#[\]@!$&'()*+,;=%]+|www\.[\w\-._~:/?#[\]@!$&'()*+,;=%]+)/gi;
   const parts = text.split(urlRegex);
   return (
