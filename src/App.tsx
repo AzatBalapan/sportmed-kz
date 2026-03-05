@@ -37,6 +37,7 @@ import NewsArticle8 from './pages/NewsArticle8';
 import NewsArticle9 from './pages/NewsArticle9';
 import NewsArticle11 from './pages/NewsArticle11';
 import NewsArticle12 from './pages/NewsArticle12';
+import NewsArticle13 from './pages/NewsArticle13';
 
 const queryClient = new QueryClient();
 
@@ -46,21 +47,17 @@ function AccessibilityGlobalEffect() {
   useEffect(() => {
     const body = document.body;
     const html = document.documentElement;
-    // High contrast
     if (highContrast) {
       body.classList.add('access-high-contrast');
     } else {
       body.classList.remove('access-high-contrast');
     }
-    // Font size (set CSS variable on html)
     html.style.setProperty('--access-font-size', `${fontSize * 100}%`);
-    // Underline links
     if (underlineLinks) {
       body.classList.add('access-underline-links');
     } else {
       body.classList.remove('access-underline-links');
     }
-    // Disable animations
     if (disableAnimations) {
       body.classList.add('access-disable-animations');
     } else {
@@ -83,7 +80,6 @@ const App = () => (
             <FloatingActions />
             <Toaster />
             <Sonner />
-            {/* Replace BrowserRouter with HashRouter for GitHub Pages compatibility */}
             <HashRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
@@ -104,6 +100,7 @@ const App = () => (
                 <Route path="/news/new-article-9" element={<NewsArticle9 />} />
                 <Route path="/news/new-article-11" element={<NewsArticle11 />} />
                 <Route path="/news/new-article-12" element={<NewsArticle12 />} />
+                <Route path="/news/new-article-13" element={<NewsArticle13 />} />
                 <Route path="/news/youth-prize-daryn-7" element={<NewsArticle7 />} />
                 <Route path="/news/state-policy-sport-8" element={<NewsArticle8 />} />
                 <Route path="/presidential-address" element={<PresidentialAddress />} />
