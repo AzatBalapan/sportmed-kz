@@ -39,11 +39,11 @@ const NewsArticle13: React.FC = () => {
   const pdfFiles = language === 'ru'
     ? [
         { label: 'Протокол №1', path: '/news/13/Протокол.pdf' },
-        { label: 'График собеседования', path: '/news/13/Сухбатрусс.pdf' },
+        { label: 'График собеседования', path: '/news/13/suhbatrus.pdf' },
       ]
     : [
         { label: 'Хаттама №1', path: '/news/13/Хаттама.pdf' },
-        { label: 'Әңгімелесу кестесі', path: '/news/13/Сухбатказ.pdf' },
+        { label: 'Әңгімелесу кестесі', path: '/news/13/subhatkaz.pdf' },
       ];
 
   const docsTitle = language === 'ru' ? 'Документы' : 'Құжаттар';
