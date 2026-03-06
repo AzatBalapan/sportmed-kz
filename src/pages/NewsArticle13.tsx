@@ -36,15 +36,14 @@ const NewsArticle13: React.FC = () => {
 
 Әңгімелесу 2026 жылғы 10 наурызда сағат 10:00-де онлайн форматта (Zoom платформасы) өтеді.`;
 
-  const base = 'https://csmed.kz';
   const pdfFiles = language === 'ru'
     ? [
-        { label: 'Протокол №1', path: `${base}/news/13/%D0%9F%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB.pdf` },
-        { label: 'График собеседования', path: `${base}/news/13/%D0%A1%D1%83%D1%85%D0%B1%D0%B0%D1%82_%D1%80%D1%83%D1%81%D1%81.pdf` },
+        { label: 'Протокол №1', path: '/news/13/Протокол.pdf' },
+        { label: 'График собеседования', path: '/news/13/Сухбат_русс.pdf' },
       ]
     : [
-        { label: 'Хаттама №1', path: `${base}/news/13/%D0%A5%D0%B0%D1%82%D1%82%D0%B0%D0%BC%D0%B0.pdf` },
-        { label: 'Әңгімелесу кестесі', path: `${base}/news/13/%D0%A1%D1%83%D1%85%D0%B1%D0%B0%D1%82_%D0%BA%D0%B0%D0%B7.pdf` },
+        { label: 'Хаттама №1', path: '/news/13/Хаттама.pdf' },
+        { label: 'Әңгімелесу кестесі', path: '/news/13/Сухбат_каз.pdf' },
       ];
 
   const docsTitle = language === 'ru' ? 'Документы' : 'Құжаттар';
