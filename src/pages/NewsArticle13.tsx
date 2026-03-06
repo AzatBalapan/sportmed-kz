@@ -43,7 +43,7 @@ const NewsArticle13: React.FC = () => {
       ]
     : [
         { label: 'Хаттама №1', path: '/news/13/Хаттама.pdf' },
-        { label: 'Әңгімелесу кестесі', path: '/news/13/subhatkaz.pdf' },
+        { label: 'Әңгімелесу кестесі', path: '/news/13/suhbatkaz.pdf' },
       ];
 
   const docsTitle = language === 'ru' ? 'Документы' : 'Құжаттар';
