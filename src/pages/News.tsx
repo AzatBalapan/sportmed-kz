@@ -19,8 +19,24 @@ const News: React.FC = () => {
 
     // News data config (newest first)
     const newsConfig = [
+      // ── NEW: Article 14 — Voting Protocols ──
+      {
+        id: 'new-article-14',
+        image: '/news/3/photoes/1.jpeg',
+        alt: language === 'ru'
+          ? 'Протоколы голосования конкурсной комиссии'
+          : 'Конкурстық комиссияның дауыс беру хаттамалары',
+        title: language === 'ru'
+          ? 'Протоколы голосования конкурсной комиссии'
+          : 'Конкурстық комиссияның дауыс беру хаттамалары',
+        preview: language === 'ru'
+          ? '10 марта 2026 года конкурсная комиссия провела голосование по кандидатам на должность руководителя ГККП «Спортивный медицинский центр города Астаны».'
+          : '2026 жылғы 10 наурызда конкурстық комиссия «Астана қаласының Спорттық медициналық орталығы» МККҚ басшысы бос лауазымына үміткерлер бойынша дауыс берді.',
+        onClick: () => navigate('/news/new-article-14'),
+        isStatic: true,
+      },
       // ── NEW: Article 13 — Protocol #1 & Interview Schedule ──
-       {
+      {
         id: 'new-article-13',
         image: '/news/3/photoes/1.jpeg',
         alt: language === 'ru'
@@ -34,7 +50,7 @@ const News: React.FC = () => {
           : '2026 жылғы 04 наурызда «Астана қаласының Спорттық медициналық орталығы» МККҚ басшысы бос лауазымына үміткерлерді іріктеу жөніндегі конкурстық комиссияның отырысы өтті.',
         onClick: () => navigate('/news/new-article-13'),
         isStatic: true,
-       },
+      },
        {
         id: 'fencing-championship',
         image: '/news/3/photoes/1.jpeg',
