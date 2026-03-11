@@ -38,34 +38,20 @@ import NewsArticle9 from './pages/NewsArticle9';
 import NewsArticle11 from './pages/NewsArticle11';
 import NewsArticle12 from './pages/NewsArticle12';
 import NewsArticle13 from './pages/NewsArticle13';
+import NewsArticle14 from './pages/NewsArticle14';
 
 const queryClient = new QueryClient();
 
-// Global accessibility effect
 function AccessibilityGlobalEffect() {
   const { highContrast, fontSize, underlineLinks, disableAnimations } = useAccessibility();
   useEffect(() => {
     const body = document.body;
     const html = document.documentElement;
-    if (highContrast) {
-      body.classList.add('access-high-contrast');
-    } else {
-      body.classList.remove('access-high-contrast');
-    }
+    if (highContrast) { body.classList.add('access-high-contrast'); } else { body.classList.remove('access-high-contrast'); }
     html.style.setProperty('--access-font-size', `${fontSize * 100}%`);
-    if (underlineLinks) {
-      body.classList.add('access-underline-links');
-    } else {
-      body.classList.remove('access-underline-links');
-    }
-    if (disableAnimations) {
-      body.classList.add('access-disable-animations');
-    } else {
-      body.classList.remove('access-disable-animations');
-    }
-    return () => {
-      html.style.setProperty('--access-font-size', '100%');
-    };
+    if (underlineLinks) { body.classList.add('access-underline-links'); } else { body.classList.remove('access-underline-links'); }
+    if (disableAnimations) { body.classList.add('access-disable-animations'); } else { body.classList.remove('access-disable-animations'); }
+    return () => { html.style.setProperty('--access-font-size', '100%'); };
   }, [highContrast, fontSize, underlineLinks, disableAnimations]);
   return null;
 }
@@ -101,6 +87,7 @@ const App = () => (
                 <Route path="/news/new-article-11" element={<NewsArticle11 />} />
                 <Route path="/news/new-article-12" element={<NewsArticle12 />} />
                 <Route path="/news/new-article-13" element={<NewsArticle13 />} />
+                <Route path="/news/new-article-14" element={<NewsArticle14 />} />
                 <Route path="/news/youth-prize-daryn-7" element={<NewsArticle7 />} />
                 <Route path="/news/state-policy-sport-8" element={<NewsArticle8 />} />
                 <Route path="/presidential-address" element={<PresidentialAddress />} />
@@ -109,7 +96,6 @@ const App = () => (
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/management" element={<Management />} />
                 <Route path="/structure" element={<Structure />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </HashRouter>
