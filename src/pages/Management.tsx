@@ -7,8 +7,7 @@ import { abdykhadirov } from '@/data/doctors/abdykhadirov';
 import { tazhiyeva } from '@/data/doctors/tazhiyeva';
 import { dosmuratov } from '@/data/doctors/dosmuratov';
 
-// Иерархия: abdykhadirov (руководитель) → tazhiyeva (комплаенс) → dosmuratov
-const managementStaff = [abdykhadirov, tazhiyeva, dosmuratov];
+const managementStaff = [dosmuratov, tazhiyeva, abdykhadirov];
 
 const Management: React.FC = () => {
   const { language } = useLanguage();
