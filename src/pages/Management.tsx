@@ -5,13 +5,10 @@ import { useLanguage } from '@/context/LanguageContext';
 import { pagesTranslations } from '@/lib/translations/pages';
 import { abdykhadirov } from '@/data/doctors/abdykhadirov';
 import { tazhiyeva } from '@/data/doctors/tazhiyeva';
+import { dosmuratov } from '@/data/doctors/dosmuratov';
 
-const managementStaff = [abdykhadirov, tazhiyeva];
-
-const biographyText = {
-  ru: ``,
-  kz: ``
-};
+// Иерархия: abdykhadirov (руководитель) → tazhiyeva (комплаенс) → dosmuratov
+const managementStaff = [abdykhadirov, tazhiyeva, dosmuratov];
 
 const Management: React.FC = () => {
   const { language } = useLanguage();
