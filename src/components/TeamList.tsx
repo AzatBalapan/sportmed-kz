@@ -47,17 +47,17 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "zhiengazina", name: { ru: "Жиенгазина Асия Нуржановна", kz: "Жиенгазина Асия Нуржановна" }, position: { ru: "Заведующая отделом", kz: "Бөлім меңгерушісі" }, department: "sportmed", order: 1 },
     { id: "boltaev", name: { ru: "Болтаев Олжас Талгатович", kz: "Болтаев Олжас Талгатович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 2 },
     { id: "adilbaev", name: { ru: "Адильбаев Бауыржан Клышбекович", kz: "Адильбаев Бауыржан Клышбекович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 3 },
-    { id: "kozhakhmetova", name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "sportmed", order: 4 },
+    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "specialists", order: 4 },
+    { id: "kozhakhmetova", name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "sportmed", order: 5 },
 
-    // Мамандандырылған дәрігерлер бөлімі (dosmuratov удалён)
+    // Мамандандырылған дәрігерлер бөлімі
     { id: "akhmetova", name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" }, position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты оториноларинголог дәрігері" }, department: "specialists", order: 1 },
     { id: "toygulova", name: { ru: "Тойгулова Динара Баймухановна", kz: "Тойгулова Динара Баймухановна" }, position: { ru: "Стоматолог", kz: "Стоматолог" }, department: "specialists", order: 2 },
     { id: "makenqyzy", name: { ru: "Макенқызы Ақерке", kz: "Макенқызы Ақерке" }, position: { ru: "Офтальмолог", kz: "Офтальмолог" }, department: "specialists", order: 3 },
     { id: "utesheva", name: { ru: "Утешева Сауле Шакеновна", kz: "Утешева Сауле Шакеновна" }, position: { ru: "Гинеколог", kz: "Гинеколог" }, department: "specialists", order: 4 },
     { id: "nartbaev", name: { ru: "Нартбаев Есмұрат Кажымуханович", kz: "Нартбаев Есмұрат Кажымуханович" }, position: { ru: "Хирург – травматолог", kz: "Хирург – травматолог" }, department: "specialists", order: 5 },
-    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "specialists", order: 6 },
-    { id: "zhaparova", name: { ru: "Жапарова Айжан Мухтаровна", kz: "Жапарова Айжан Мұхтарқызы" }, position: { ru: "Врач-кардиолог", kz: "Кардиолог дәрігері" }, department: "specialists", order: 7 },
-    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "diagnostics", order: 8 },
+    { id: "zhaparova", name: { ru: "Жапарова Айжан Мухтаровна", kz: "Жапарова Айжан Мұхтарқызы" }, position: { ru: "Врач-кардиолог", kz: "Кардиолог дәрігері" }, department: "specialists", order: 6 },
+    { id: "erbolatova", name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гульжаухар Мирамбековна" }, position: { ru: "Кардиолог", kz: "Кардиолог" }, department: "diagnostics", order: 7 },
 
     // Реабилитация
     { id: "aidarbekov", name: { ru: "Айдарбеков Арыс Айдарбекович", kz: "Айдарбеков Арыс Айдарбекұлы" }, position: { ru: "Врач-реабилитолог, мануальный терапевт, специалист по кинезотерапии", kz: "Реабилитолог дәрігер, мануалды терапевт, кинезотерапия саласының маманы" }, department: "rehabilitation", order: 1 },
