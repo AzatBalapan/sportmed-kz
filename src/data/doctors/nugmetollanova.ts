@@ -2,7 +2,7 @@ export const nugmetollanova = {
     id: "nugmetollanova",
     name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" },
     position: { ru: "Врач-эндокринолог", kz: "Дәрігер-эндокринолог" },
-    department: "specialists",
+    department: "medical-staff",
     image: "/team_photoes/new/Сәния Миржанқызы.svg",
     experience: {
       ru: "6 лет",
