@@ -47,7 +47,7 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "zhiengazina", name: { ru: "Жиенгазина Асия Нуржановна", kz: "Жиенгазина Асия Нуржановна" }, position: { ru: "Заведующая отделом", kz: "Бөлім меңгерушісі" }, department: "sportmed", order: 1 },
     { id: "boltaev", name: { ru: "Болтаев Олжас Талгатович", kz: "Болтаев Олжас Талгатович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 2 },
     { id: "adilbaev", name: { ru: "Адильбаев Бауыржан Клышбекович", kz: "Адильбаев Бауыржан Клышбекович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 3 },
-    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "specialists", order: 4 },
+    { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "sportmed", order: 4 },
     { id: "kozhakhmetova", name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "sportmed", order: 5 },
 
     // Мамандандырылған дәрігерлер бөлімі
