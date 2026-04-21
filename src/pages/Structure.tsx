@@ -27,7 +27,7 @@ const Structure: React.FC = () => {
               <div className="flex flex-col items-center">
                 <div className="w-full max-w-4xl">
                   <img 
-                    src="/structure/оргструктура.pdf"
+                    src="/structure/оргструктура.png"
                     alt="Организационная структура"
                     className="w-full h-auto rounded-lg shadow-md border-0"
                     style={{ maxHeight: '70vh' }}
