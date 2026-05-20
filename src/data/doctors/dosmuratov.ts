@@ -6,7 +6,7 @@ export const dosmuratov = {
       kz: "ГККП «Астана қаласының Спорттық медициналық орталығы» басшысы" 
     },
     department: "management",
-    image: "/team_photoes/new/dosmuratov.PNG",
+    image: "/team_photoes/new/dosmuratov.jpeg",
     experience: {
       ru: "С 2013 года",
       kz: "2013 жылдан бері"
