@@ -268,7 +268,7 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Мекенжайы:",
-      address: "Астана қаласы, Күйші Дина көшесі, 36А",
+      address: "Астана қаласы, Ұлы Дала көшесі, 35А",
       phone: "+7 (706) 606-3636"
     }
   }
