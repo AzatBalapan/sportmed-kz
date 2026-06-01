@@ -19,6 +19,22 @@ const News: React.FC = () => {
 
     // News data config (newest first)
     const newsConfig = [
+      // ── NEW: Article 15 — Relocation to new address ──
+       {
+         id: 'new-article-15',
+         image: '/news/15/photo_main.jpg',
+         alt: language === 'ru'
+           ? 'Спортивный медицинский центр переехал на новый адрес'
+           : 'Спорттық медициналық орталық жаңа мекенжайға көшті',
+         title: language === 'ru'
+           ? 'Спортивный медицинский центр переехал на новый адрес'
+           : 'Спорттық медициналық орталық жаңа мекенжайға көшті',
+         preview: language === 'ru'
+           ? 'Сообщаем, что Спортивный медицинский центр города Астаны переехал на новый адрес: проспект Улы Дала, 35А.'
+           : 'Астана қаласының Спорттық медициналық орталығының жаңа мекенжайға көшкенін хабарлаймыз: Ұлы Дала даңғылы, 35А.',
+         onClick: () => navigate('/news/new-article-15'),
+         isStatic: true,
+       },
       // ── NEW: Article 14 — Voting Protocols ──
       {
         id: 'new-article-14',
