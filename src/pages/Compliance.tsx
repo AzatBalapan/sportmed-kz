@@ -69,6 +69,17 @@ const Compliance: React.FC = () => {
 
   const documents: Document[] = [
     {
+      id: 9,
+      title: {
+         ru: 'Приказ о проведении внутреннего анализа коррупционных рисков',
+         kz: 'Ішкі сыбайлас жемқорлық тәуекелін талдау жүргізу туралы бұйрық'
+    },
+      fileName: 'prikaz_15_05_26.pdf',
+      path: '/lovable-uploads/prikaz_15_05_26.pdf',
+      type: 'pdf',
+      pdfPath: '/lovable-uploads/prikaz_15_05_26.pdf',
+    },
+    {
       id: 1,
       title: {
         ru: 'Протокол публичного обсуждения результатов внутреннего анализа коррупционных рисков',
