@@ -48,9 +48,9 @@ export const uiTranslations = {
     en: 'Address'
   },
   'contact.address.value': {
-    ru: 'г. Астана, ул. Куйши Дина, 36А',
-    kz: 'Астана қ., Күйші Дина к-сі, 36А',
-    en: 'Astana, Kuishi Dina street, 36A'
+    ru: 'г. Астана, ул. Улы Дала, 35А',
+    kz: 'Астана қ., Ұлы Дала к-сі, 35А',
+    en: 'Astana, Uly Dala street, 35A'
   },
   'contact.phone': {
     ru: 'Телефон',
