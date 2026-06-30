@@ -68,7 +68,18 @@ const Compliance: React.FC = () => {
   }, [selectedDocument, language]);
 
   const documents: Document[] = [
-     {
+    {
+     id: 11,
+     title: {
+        ru: 'Анонс публичного обсуждения результатов внутреннего анализа коррупционных рисков (2026)',
+        kz: 'Ішкі сыбайлас жемқорлық тәуекелдерін талдау нәтижелерін жария талқылау туралы хабарландыру (2026)'
+      },
+      fileName: 'anons_publichnogo_2026.pdf',
+      path: '/lovable-uploads/anons_publichnogo_2026.pdf',
+      type: 'pdf',
+      pdfPath: '/lovable-uploads/anons_publichnogo_2026.pdf',
+    },
+    {
       id: 10,
       title: {
          ru: 'Анонсирование о начале проведения внутреннего анализа коррупционных рисков (2026)',
