@@ -9,7 +9,7 @@ export const gulzhaina = {
     kz: 'Невропатолог дәрігер',
   },
   department: 'specialists',
-  image: '/team_photoes/new/gulzhaina.png',
+  image: '/team_photoes/new/gulzhaina.jpeg',
   experience: {
     ru: 'Более 20 лет',
     kz: '20 жылдан астам',
