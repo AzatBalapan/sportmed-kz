@@ -23,6 +23,7 @@ import { nigmetova } from './nigmetova';
 import { burambaeva } from './burambaeva';
 import { zhaparova } from './zhaparova';
 import { dosmuratov } from './dosmuratov';
+import { gulzhaina } from './gulzhaina';
 
 export const doctors = [
   abdykhadirov,
@@ -49,6 +50,7 @@ export const doctors = [
   burambaeva,
   zhaparova,
   dosmuratov,
+  gulzhaina
 ];
 
 export {
@@ -76,4 +78,5 @@ export {
   burambaeva,
   zhaparova,
   dosmuratov,
+  gulzhaina
 };
