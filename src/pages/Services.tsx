@@ -138,7 +138,7 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Адрес:",
-      address: "Куйши Дина 36А, Астана",
+      address: "Астана, Улы Дала, 35А",
       phone: "+7 (706) 606-3636"
     }
   },
