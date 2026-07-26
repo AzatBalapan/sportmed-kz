@@ -9,7 +9,6 @@ import { erbolatova } from './erbolatova';
 import { kairatbek } from './kairatbek';
 import { adilbaev } from './adilbaev';
 import { kozhakhmetova } from './kozhakhmetova';
-import { aidarbekov } from './aidarbekov';
 import { boltaev } from './boltaev';
 import { tynyshtykova } from './tynyshtykova';
 import { kokymbaeva } from './kokymbaeva';
@@ -36,7 +35,6 @@ export const doctors = [
   kairatbek,
   adilbaev,
   kozhakhmetova,
-  aidarbekov,
   boltaev,
   tynyshtykova,
   kokymbaeva,
@@ -64,7 +62,6 @@ export {
   kairatbek,
   adilbaev,
   kozhakhmetova,
-  aidarbekov,
   boltaev,
   tynyshtykova,
   kokymbaeva,
