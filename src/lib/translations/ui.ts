@@ -48,8 +48,8 @@ export const uiTranslations = {
     en: 'Address'
   },
   'contact.address.value': {
-    ru: 'г. Астана, ул. Улы Дала, 35А',
-    kz: 'Астана қ., Ұлы Дала к-сі, 35А',
+    ru: 'г.Астана, р-н Нура, пр. Улы Дала, дом, 35, н.п. 14',
+    kz: 'Астана қ, р-н Нұра, пр. Ұлы Дала, дом, 35, н.п. 14',
     en: 'Astana, Uly Dala street, 35A'
   },
   'contact.phone': {
