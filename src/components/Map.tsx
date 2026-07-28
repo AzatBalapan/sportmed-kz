@@ -13,7 +13,7 @@ const Map: React.FC = () => {
       ></iframe>
       <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-80 p-1 sm:p-2 text-xs sm:text-sm">
         <strong>ГККП "Спортивный медицинский центр города Астаны"</strong><br/>
-        просп. Улы Дала, 35А, Астана
+        г.Астана, р-н Нұра, пр. Ұлы Дала, дом, 35, н.п. 14
       </div>
     </div>
   );
