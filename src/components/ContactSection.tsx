@@ -10,7 +10,7 @@ import Map from './Map';
 import FaqDisplay from './FaqDisplay';
 import { parseFaqFromText, FaqItem } from '@/utils/faqParser';
 
-const address = 'Улы Дала 35А, Астана';
+const address = 'г.Астана, р-н Нура, пр. Улы Дала, дом, 35, н.п. 14';
 
 export const ContactSection: React.FC = () => {
   const { t, language } = useLanguage();
