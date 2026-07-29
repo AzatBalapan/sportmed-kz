@@ -30,9 +30,21 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+let app: ReturnType<typeof initializeApp>;
+let auth: ReturnType<typeof getAuth>;
+let db: ReturnType<typeof getFirestore>;
+
+try {
+  app = initializeApp(firebaseConfig);
+  auth = getAuth(app);
+  db = getFirestore(app);
+} catch (error) {
+  console.error('Firebase initialization failed — check VITE_FIREBASE_* secrets:', error);
+  // @ts-expect-error — fallback stubs so the rest of the site can still render
+  auth = { onAuthStateChanged: () => () => {}, currentUser: null };
+  // @ts-expect-error
+  db = {};
+}
 
 // Enable offline persistence
 if (typeof window !== 'undefined') {
