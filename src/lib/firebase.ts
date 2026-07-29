@@ -33,11 +33,13 @@ const firebaseConfig = {
 let app: ReturnType<typeof initializeApp>;
 let auth: ReturnType<typeof getAuth>;
 let db: ReturnType<typeof getFirestore>;
+let firebaseInitialized = false;
 
 try {
   app = initializeApp(firebaseConfig);
   auth = getAuth(app);
   db = getFirestore(app);
+  firebaseInitialized = true;
 } catch (error) {
   console.error('Firebase initialization failed — check VITE_FIREBASE_* secrets:', error);
   // @ts-expect-error — fallback stubs so the rest of the site can still render
@@ -47,7 +49,7 @@ try {
 }
 
 // Enable offline persistence
-if (typeof window !== 'undefined') {
+if (firebaseInitialized && typeof window !== 'undefined') {
   enableIndexedDbPersistence(db).catch((err) => {
     if (err.code === 'failed-precondition') {
       console.warn('Multiple tabs open, persistence can only be enabled in one tab at a time.');
@@ -196,4 +198,4 @@ export const checkEmailExists = async (email: string): Promise<boolean> => {
   }
 };
 
-export { auth, db }; 
+export { auth, db };
