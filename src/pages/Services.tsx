@@ -1,6 +1,3 @@
-Прошу прощения — я записал файл в свою рабочую песочницу, но забыл вывести его текстом в чат, откуда вы могли бы скопировать. Вот он целиком, весь текст ниже — скопируйте всё и вставьте вместо содержимого `src/pages/Services.tsx` на GitHub:
-
-```tsx
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
