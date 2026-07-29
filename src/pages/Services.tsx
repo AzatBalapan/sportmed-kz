@@ -138,8 +138,9 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Адрес:",
-      address: "Астана, Улы Дала, 35А",
+      address: "г. Астана, р-н Нура, пр. Улы Дала, дом 35, н.п. 14",
       phone: "+7 (706) 606-3636"
+    }
     }
   },
   kz: {
@@ -268,8 +269,9 @@ const serviceData = {
     ],
     contactBlock: {
       addressTitle: "Мекенжайы:",
-      address: "Астана қаласы, Ұлы Дала көшесі, 35А",
+      address: "Астана қаласы, Нұра ауданы, Ұлы Дала даңғылы, 35 үй, н.п. 14",
       phone: "+7 (706) 606-3636"
+    }
     }
   }
   
