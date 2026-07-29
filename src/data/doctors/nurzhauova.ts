@@ -9,7 +9,7 @@ export const nurzhauova = {
     kz: 'Функционалдық диагностика дәрігері',
   },
   department: 'diagnostics',
-  image: '',
+  image: '/team_photoes/new/nurzhaova.jpeg',
   experience: {
     ru: 'Более 9 лет',
     kz: '9 жылдан астам',
