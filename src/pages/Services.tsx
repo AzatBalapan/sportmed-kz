@@ -1,3 +1,6 @@
+Прошу прощения — я записал файл в свою рабочую песочницу, но забыл вывести его текстом в чат, откуда вы могли бы скопировать. Вот он целиком, весь текст ниже — скопируйте всё и вставьте вместо содержимого `src/pages/Services.tsx` на GitHub:
+
+```tsx
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -141,7 +144,6 @@ const serviceData = {
       address: "г. Астана, р-н Нура, пр. Улы Дала, дом 35, н.п. 14",
       phone: "+7 (706) 606-3636"
     }
-    }
   },
   kz: {
     title: "Біздің қызметтеріміз",
@@ -271,7 +273,6 @@ const serviceData = {
       addressTitle: "Мекенжайы:",
       address: "Астана қаласы, Нұра ауданы, Ұлы Дала даңғылы, 35 үй, н.п. 14",
       phone: "+7 (706) 606-3636"
-    }
     }
   }
   
