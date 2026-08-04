@@ -69,6 +69,39 @@ const Compliance: React.FC = () => {
 
   const documents: Document[] = [
     {
+      id: 14,
+      title: {
+        ru: 'Аналитическая справка по результатам внутреннего анализа коррупционных рисков (2026)',
+        kz: 'Сыбайлас жемқорлық тәуекелдеріне ішкі талдау жүргізу нәтижелері бойынша аналитикалық анықтама (2026)'
+      },
+      fileName: 'analysis.pdf',
+      path: '/lovable-uploads/analysis.pdf',
+      type: 'pdf',
+      pdfPath: '/lovable-uploads/analysis.pdf',
+    },
+    {
+      id: 13,
+      title: {
+        ru: 'Протокол публичного обсуждения результатов внутреннего анализа коррупционных рисков (2026)',
+        kz: 'Сыбайлас жемқорлық тәуекелдерін ішкі талдау нәтижелерін қоғамдық талқылау хаттамасы (2026)'
+      },
+      fileName: 'protocol.pdf',
+      path: '/lovable-uploads/protocol.pdf',
+      type: 'pdf',
+      pdfPath: '/lovable-uploads/protocol.pdf',
+    },
+    {
+      id: 12,
+      title: {
+        ru: 'План мероприятий по устранению коррупционных рисков (2026)',
+        kz: 'Сыбайлас жемқорлық тәуекелдерін жою жөніндегі іс-шаралар жоспары (2026)'
+      },
+      fileName: 'plan.pdf',
+      path: '/lovable-uploads/plan.pdf',
+      type: 'pdf',
+      pdfPath: '/lovable-uploads/plan.pdf',
+    },
+    {
      id: 11,
      title: {
         ru: 'Анонс публичного обсуждения результатов внутреннего анализа коррупционных рисков (2026)',
