@@ -40,6 +40,7 @@ import NewsArticle12 from './pages/NewsArticle12';
 import NewsArticle13 from './pages/NewsArticle13';
 import NewsArticle14 from './pages/NewsArticle14';
 import NewsArticle15 from './pages/NewsArticle15';
+import NewsArticle16 from './pages/NewsArticle16';
 
 const queryClient = new QueryClient();
 
@@ -90,6 +91,7 @@ const App = () => (
                 <Route path="/news/new-article-13" element={<NewsArticle13 />} />
                 <Route path="/news/new-article-14" element={<NewsArticle14 />} />
                 <Route path="/news/new-article-15" element={<NewsArticle15 />} />
+                <Route path="/news/day-of-abai" element={<NewsArticle16 />} />
                 <Route path="/news/youth-prize-daryn-7" element={<NewsArticle7 />} />
                 <Route path="/news/state-policy-sport-8" element={<NewsArticle8 />} />
                 <Route path="/presidential-address" element={<PresidentialAddress />} />
