@@ -14,12 +14,23 @@ const News: React.FC = () => {
   const [newsList, setNewsList] = useState<any[]>([]);
 
   useEffect(() => {
-    // Helper to fetch text
     const fetchText = (path: string) => fetch(path).then(r => r.text());
 
     // News data config (newest first)
     const newsConfig = [
-      // ── NEW: Article 15 — Relocation to new address ──
+      {
+        id: 'day-of-abai',
+        image: '/news/16/abai.jpeg',
+        alt: language === 'ru' ? 'День Абая' : 'Абай күні',
+        title: language === 'ru'
+          ? '10 августа – День Абая'
+          : '10 тамыз – Абай күні',
+        preview: language === 'ru'
+          ? 'Абай Кунанбаев – великий мыслитель, поэт, просветитель, один из основоположников национальной литературы, чьё наследие остаётся духовным ориентиром и сегодня.'
+          : 'Абай Құнанбайұлы – қазақ халқының рухани әлемін биіктеткен ұлы ойшыл, ақын, ағартушы, оның мұрасы бүгінгі күнге де рухани бағдар бола алады.',
+        onClick: () => navigate('/news/day-of-abai'),
+        isStatic: true,
+      },
        {
          id: 'new-article-15',
          image: '/news/15/photo_main.jpg',
