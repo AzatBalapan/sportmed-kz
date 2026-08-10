@@ -3,7 +3,7 @@ export const akhmetova = {
     name: { ru: "Ахметова Гульнара Умурзаковна", kz: "Ахметова Гүлнара Умурзақызы" },
     position: { ru: "Врач-оториноларинголог высшей категории", kz: "Жоғары санатты дәрігер-оториноларинголог" },
     department: "specialists",
-    image: "/team_photoes/akhmetova.png",
+    image: "/team_photoes/new/akhmetova.png",
     experience: {
       ru: "35 лет",
       kz: "35 жыл"
