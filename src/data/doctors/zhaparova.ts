@@ -9,7 +9,7 @@ export const zhaparova = {
     kz: 'Дәрігер-кардиолог',
   },
   department: 'specialists',
-  image: '/team_photoes/aizhan.png',
+  image: '/team_photoes/new/aizhan.png',
   experience: {
     ru: 'Более 20 лет',
     kz: '20 жылдан астам',
