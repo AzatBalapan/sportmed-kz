@@ -69,9 +69,9 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "anes", name: { ru: "Анес Назерке Мендуллаевна", kz: "Анес Назерке Мендуллаевна" }, position: { ru: "Медицинская сестра / Сестринское дело", kz: "Медбике / Сестрин ісі" }, department: "nursing", order: 2 },
     { id: "kolkhozov", name: { ru: "Колхозов Айдар Оразбекович", kz: "Колхозов Айдар Оразбекович" }, position: { ru: "Фельдшер выездной бригады скорой медицинской помощи", kz: "Жедел жәрдем бригадасының фельдшері" }, department: "nursing", order: 3 },
     { id: "burambaeva", name: { ru: "Бурамбаева Зауре Амангельдиновна", kz: "Бурамбаева Зауре Амангельдиновна" }, position: { ru: "Медицинская сестра", kz: "Медициналық мейірбике" }, department: "diagnostics", order: 9 },
-    { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 5 },
-    { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 6 },
-
+    { id: "fayzolda", name: { ru: "Файзолда Марзия", kz: "Файзолда Марзия" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "specialists", order: 8 },
+    { id: "kokymbaeva", name: { ru: "Қоқымбаева Айгерім Бейбітжанқызы", kz: "Қоқымбаева Айгерім Бейбітжанқызы" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "specialists", order: 9 },
+   
     // Функционалды диагностика бөлімі
     { id: "nurgalieva", name: { ru: "Нұрғалиева Зере Тілеубекқызы", kz: "Нұрғалиева Зере Тілеубекқызы" }, position: { ru: "Врач УЗИ", kz: "УЗИ дәрігері" }, department: "diagnostics", order: 1 },
   ];
