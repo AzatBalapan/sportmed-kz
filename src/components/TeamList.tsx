@@ -44,9 +44,10 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
   // Define staff with proper hierarchy - only non-management staff
   const staff = [
     // Отделение спортивной медицины и медико-биологического отделения
-    { id: "zhiengazina", name: { ru: "Жиенгазина Асия Нуржановна", kz: "Жиенгазина Асия Нуржановна" }, position: { ru: "Заведующая отделом", kz: "Бөлім меңгерушісі" }, department: "sportmed", order: 1 },
+    { id: "tynyshtykova", name: { ru: "Тыныштықова Ляззат Елубаевна", kz: "Тыныштықова Ляззат Елубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "sportmed", order: 6 },
+    { id: "anes", name: { ru: "Анес Назерке Мендуллаевна", kz: "Анес Назерке Мендуллаевна" }, position: { ru: "Медицинская сестра / Сестринское дело", kz: "Медбике / Сестрин ісі" }, department: "sportmed", order: 7 },
+    { id: "kolkhozov", name: { ru: "Колхозов Айдар Оразбекович", kz: "Колхозов Айдар Оразбекович" }, position: { ru: "Фельдшер выездной бригады скорой медицинской помощи", kz: "Жедел жәрдем бригадасының фельдшері" }, department: "sportmed", order: 8 },
     { id: "boltaev", name: { ru: "Болтаев Олжас Талгатович", kz: "Болтаев Олжас Талгатович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 2 },
-    { id: "adilbaev", name: { ru: "Адильбаев Бауыржан Клышбекович", kz: "Адильбаев Бауыржан Клышбекович" }, position: { ru: "Врач спортивной медицины", kz: "Спорт медицинасы дәрігері" }, department: "sportmed", order: 3 },
     { id: "nugmetollanova", name: { ru: "Нығметолланова Сәния Миржанқызы", kz: "Нығметолланова Сәния Миржанқызы" }, position: { ru: "Врач-эндокринолог", kz: "Эндокринолог дәрігері" }, department: "sportmed", order: 4 },
     { id: "kozhakhmetova", name: { ru: "Кожахметова Жанна Ербулатовна", kz: "Кожахметова Жанна Ербулатовна" }, position: { ru: "Спортивный психолог", kz: "Спорт психологы" }, department: "sportmed", order: 5 },
 
@@ -62,7 +63,6 @@ const TeamList: React.FC<TeamListProps> = ({ onSelectDoctor }) => {
     { id: "nurzhauova", name: { ru: "Нуржауова Нурлыкыз Кадирбеккызы", kz: "Нұржауова Нұрлыкыз Қадірбекқызы" }, position: { ru: "Врач функциональной диагностики", kz: "Функционалдық диагностика дәрігері" }, department: "diagnostics", order: 8 },
     
     // Реабилитация
-    { id: "kairatbek", name: { ru: "Кайратбек Айгерим", kz: "Қайратбек Айгерім" }, position: { ru: "Врач физической медицины и реабилитации", kz: "Физикалық медицина және реабилитация дәрігері" }, department: "rehabilitation", order: 3 },
     
     // Средний медицинский персонал
     { id: "tynyshtykova", name: { ru: "Тыныштықова Ляззат Елубаевна", kz: "Тыныштықова Ляззат Елубаевна" }, position: { ru: "Медицинская сестра", kz: "Мейірбике" }, department: "nursing", order: 1 },
