@@ -25,14 +25,11 @@ import { nurzhauova } from './nurzhauova';
 
 export const doctors = [
   abdykhadirov,
-  zhiengazina,
   nurgalieva,
   nugmetollanova,
   toygulova,
   akhmetova,
   erbolatova,
-  kairatbek,
-  adilbaev,
   kozhakhmetova,
   boltaev,
   tynyshtykova,
@@ -54,14 +51,11 @@ export const doctors = [
 
 export {
   abdykhadirov,
-  zhiengazina,
   nurgalieva,
   nugmetollanova,
   toygulova,
   akhmetova,
   erbolatova,
-  kairatbek,
-  adilbaev,
   kozhakhmetova,
   boltaev,
   tynyshtykova,
