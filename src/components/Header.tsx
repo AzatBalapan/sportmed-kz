@@ -4,6 +4,8 @@ import { useLanguage } from '@/context/LanguageContext';
 import { useAuth } from '@/context/AuthContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import AccessibilityWidget from './AccessibilityWidget';
+import MourningBanner from './MourningBanner';
+import { isNationalMourningDayActive } from '@/lib/mourningDay';
 import { Button } from '@/components/ui/button';
 import { Menu, X, ChevronDown, User, LogOut, Key } from 'lucide-react';
 import { 
@@ -20,6 +22,7 @@ export const Header: React.FC = () => {
   const location = useLocation();
   const headerRef = useRef<HTMLElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const mourning = isNationalMourningDayActive();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
 
@@ -77,9 +80,12 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header 
+    <>
+    <MourningBanner />
+    <header
       ref={headerRef}
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      style={{ top: 'var(--mourning-banner-height, 0px)' }}
+      className={`sticky z-50 w-full transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-md' : 'bg-transparent'
       }`}
     >
@@ -87,7 +93,13 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 z-50" onClick={closeMobileMenu}>
-            <img src="/lovable-uploads/icon_for_web.png" width="28" height="28" className="sm:w-8 sm:h-8" alt="Logo" />
+            <img
+              src="/lovable-uploads/icon_for_web.png"
+              width="28"
+              height="28"
+              className={`sm:w-8 sm:h-8 ${mourning ? 'mourning-grayscale-filter' : ''}`}
+              alt="Logo"
+            />
           </Link>
 
           {/* Mobile: LanguageSwitcher and Hamburger grouped right */}
@@ -361,6 +373,7 @@ export const Header: React.FC = () => {
         </nav>
       )}
     </header>
+    </>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Instagram, MessageCircle, ArrowUp } from 'lucide-react';
 import AccessibilityWidget from './AccessibilityWidget';
+import { isNationalMourningDayActive } from '@/lib/mourningDay';
 
 const TikTokIcon = ({ size = 20 }: { size?: number }) => (
   <svg 
@@ -17,6 +18,7 @@ const TikTokIcon = ({ size = 20 }: { size?: number }) => (
 const FloatingActions: React.FC = () => {
   const [showScroll, setShowScroll] = useState(false);
   const isMd = window.innerWidth >= 768;
+  const mourning = isNationalMourningDayActive();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -34,32 +36,43 @@ const FloatingActions: React.FC = () => {
     <>
       {/* Accessibility button: only show on md+ */}
       {isMd && (
-        <div className="fixed top-2 left-4 z-[60] hidden md:block">
+        <div
+          className="fixed left-4 z-[60] hidden md:block"
+          style={{ top: 'calc(var(--mourning-banner-height, 0px) + 0.5rem)' }}
+        >
           <AccessibilityWidget />
         </div>
       )}
       {/* Other actions on the right */}
-      <div className="fixed right-4 bottom-4 flex flex-col items-end gap-2 z-50">
-        {/* Instagram */}
-        <a
-          href="https://www.instagram.com/sportmedortalyq/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300"
-          aria-label="Instagram"
-        >
-          <Instagram size={20} />
-        </a>
-        {/* TikTok */}
-        <a
-          href="https://www.tiktok.com/@sportmedortalyq.astana"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-black hover:bg-gray-800 text-white p-3 rounded-full shadow-lg transition-all duration-300"
-          aria-label="TikTok"
-        >
-          <TikTokIcon size={20} />
-        </a>
+      <div className={`fixed right-4 bottom-4 flex flex-col items-end gap-2 z-50 ${mourning ? 'mourning-grayscale-filter' : ''}`}>
+        {/* Instagram / TikTok are promotional/social links, hidden on the
+            National Day of Mourning per the recommendation to remove
+            entertainment and interactive elements for the day. WhatsApp
+            stays, as a genuine contact channel, but is desaturated along
+            with the rest of this cluster (no photos in here, so it's safe
+            to grayscale directly). */}
+        {!mourning && (
+          <>
+            <a
+              href="https://www.instagram.com/sportmedortalyq/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.tiktok.com/@sportmedortalyq.astana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-black hover:bg-gray-800 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+              aria-label="TikTok"
+            >
+              <TikTokIcon size={20} />
+            </a>
+          </>
+        )}
         {/* WhatsApp */}
         <a
           href="https://wa.me/+77066063636"

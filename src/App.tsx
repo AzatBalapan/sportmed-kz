@@ -10,6 +10,7 @@ import { AccessibilityProvider } from '@/context/AccessibilityContext';
 import { useAccessibility } from '@/context/AccessibilityContext';
 import { useEffect } from 'react';
 import FloatingActions from '@/components/FloatingActions';
+import { isNationalMourningDayActive } from '@/lib/mourningDay';
 
 import Index from "./pages/Index";
 import Login from "./pages/Login";
@@ -44,6 +45,15 @@ import NewsArticle16 from './pages/NewsArticle16';
 
 const queryClient = new QueryClient();
 
+function MourningModeGlobalEffect() {
+  useEffect(() => {
+    const active = isNationalMourningDayActive();
+    document.documentElement.classList.toggle('mourning-grayscale', active);
+    return () => document.documentElement.classList.remove('mourning-grayscale');
+  }, []);
+  return null;
+}
+
 function AccessibilityGlobalEffect() {
   const { highContrast, fontSize, underlineLinks, disableAnimations } = useAccessibility();
   useEffect(() => {
@@ -64,6 +74,7 @@ const App = () => (
       <LanguageProvider translations={translations}>
         <AuthProvider>
           <AccessibilityProvider>
+            <MourningModeGlobalEffect />
             <AccessibilityGlobalEffect />
             <FloatingActions />
             <Toaster />
