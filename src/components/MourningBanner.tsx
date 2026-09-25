@@ -6,12 +6,18 @@ import { isNationalMourningDayActive, MOURNING_BANNER_TEXT, MOURNING_BANNER_LINK
  * Full-width black/white banner shown site-wide on the National Day of
  * Mourning, per the Ministry's recommendations for how media and government
  * web resources should present themselves that day: black background, white
- * text, fixed to the top of the page (not scrolled away), clickable through
+ * text, pinned to the top of the page (not scrolled away), clickable through
  * to coverage of the event.
  *
- * Also publishes its own rendered height as `--mourning-banner-height` on
- * <html>, so the sticky Header can offset itself below it without hardcoding
- * a pixel value (the text wraps differently by language and screen width).
+ * Uses `position: fixed` rather than `sticky` — fixed is unconditional
+ * (never scrolls, regardless of any ancestor's overflow/stacking quirks
+ * elsewhere on 43 different page layouts), which is what "не
+ * прокручиваться при просмотре страницы" in the recommendation actually
+ * calls for. Because a fixed element is taken out of the document flow, it
+ * publishes its own rendered height as `--mourning-banner-height` on
+ * <html>; `body` and the sticky Header both use that variable to reserve
+ * the right amount of space below it (the text wraps differently by
+ * language and screen width, so this can't be a hardcoded pixel value).
  */
 const MourningBanner: React.FC = () => {
   const { language } = useLanguage();
@@ -48,12 +54,12 @@ const MourningBanner: React.FC = () => {
   const text = MOURNING_BANNER_TEXT[language] ?? MOURNING_BANNER_TEXT.ru;
 
   return (
-    <div ref={ref} className="sticky top-0 z-[100] w-full bg-black">
+    <div ref={ref} className="fixed top-0 inset-x-0 z-[100] w-full bg-black">
       <a
         href={MOURNING_BANNER_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="block w-full px-4 py-2 text-center text-xs sm:text-sm font-medium text-white underline-offset-2 hover:underline"
+        className="block w-full px-4 py-3 text-center text-sm sm:text-base font-semibold text-white underline-offset-2 hover:underline"
       >
         {text}
       </a>
