@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -66,11 +67,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for our governmental sports medical center
-				'gov-blue': '#2055B5',
-				'gov-light-blue': '#E9F0FC',
-				'gov-dark-blue': '#103778',
-				'gov-accent': '#4285F4',
+				// Custom colors for our governmental sports medical center.
+				// Defined via CSS variables (see src/index.css) rather than flat
+				// hex so they can be swapped to grayscale for mourning-day styling.
+				'gov-blue': 'hsl(var(--gov-blue))',
+				'gov-light-blue': 'hsl(var(--gov-light-blue))',
+				'gov-dark-blue': 'hsl(var(--gov-dark-blue))',
+				'gov-accent': 'hsl(var(--gov-accent))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
