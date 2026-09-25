@@ -2,9 +2,11 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Award, Microscope, Brain, Handshake } from 'lucide-react';
+import { isNationalMourningDayActive } from '@/lib/mourningDay';
 
 export const PromoBanner: React.FC = () => {
   const { t } = useLanguage();
+  const mourning = isNationalMourningDayActive();
   
   const services = [
     { 
@@ -60,25 +62,30 @@ export const PromoBanner: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-12 md:mt-16 bg-gov-blue rounded-lg overflow-hidden shadow-lg">
-          <div className="p-6 md:p-8 text-center">
-            <h3 className="text-xl md:text-2xl font-medium text-white mb-3 md:mb-4">
-              {t('language') === 'ru' ? 'Видео о нашем центре' : 'Біздің орталық туралы бейне'}
-            </h3>
-            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-              <div className="w-full h-0 pt-[56.25%] bg-gray-800 relative">
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/BSDf-6yM_P4"
-                  title="Sportmed Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+        {/* Promotional video is hidden on the National Day of Mourning, per
+            the recommendation to remove entertainment/interactive elements
+            site-wide for the day. */}
+        {!mourning && (
+          <div className="mt-12 md:mt-16 bg-gov-blue rounded-lg overflow-hidden shadow-lg">
+            <div className="p-6 md:p-8 text-center">
+              <h3 className="text-xl md:text-2xl font-medium text-white mb-3 md:mb-4">
+                {t('language') === 'ru' ? 'Видео о нашем центре' : 'Біздің орталық туралы бейне'}
+              </h3>
+              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                <div className="w-full h-0 pt-[56.25%] bg-gray-800 relative">
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/BSDf-6yM_P4"
+                    title="Sportmed Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
