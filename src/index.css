@@ -2,6 +2,7 @@
 
   :root {
   --access-font-size: 100%;
+  --mourning-banner-height: 0px;
 
     --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
@@ -32,6 +33,57 @@
     --ring: 215 90% 40%;
 
     --radius: 0.5rem;
+
+    /* Brand colors for the governmental sports medical center (see
+       tailwind.config.ts: gov-blue / gov-light-blue / gov-dark-blue /
+       gov-accent). Kept as HSL custom properties, rather than baked into
+       Tailwind's config as flat hex values, so the whole palette can be
+       swapped to grayscale in one place for mourning-day styling below,
+       without touching photos anywhere on the site. */
+    --gov-blue: 219 70% 42%;
+    --gov-light-blue: 218 76% 95%;
+    --gov-dark-blue: 217 76% 27%;
+    --gov-accent: 217 89% 61%;
+  }
+
+  /* National Day of Mourning (Sept 25, 2026): site-wide black-and-white
+     color scheme, per the Ministry's recommendations. This only repaints
+     design tokens (buttons, links, backgrounds, borders) — it never touches
+     <img>/<video> elements, so photos keep their natural color as required.
+     Applied to <html> by App.tsx for the duration of the mourning period. */
+  :root.mourning-grayscale {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 15%;
+
+    --destructive: 0 0% 25%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 20%;
+
+    --gov-blue: 219 0% 42%;
+    --gov-light-blue: 218 0% 93%;
+    --gov-dark-blue: 217 0% 20%;
+    --gov-accent: 217 0% 55%;
   }
 
 html {
@@ -127,6 +179,13 @@ html {
   .min-h-screen {
     min-height: -webkit-fill-available;
   }
+}
+
+/* Small, self-contained (no photos inside) UI clusters that still use raw
+   Tailwind colors (not the CSS variables above) can be desaturated directly
+   for mourning-day styling without any risk to photo content. */
+.mourning-grayscale-filter {
+  filter: grayscale(1);
 }
 
 /* Accessibility: High Contrast Mode */
