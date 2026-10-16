@@ -50,7 +50,7 @@ export const doctors = [
   zhaparova,
   dosmuratov,
   gulzhaina,
-  nurzhauova
+  nurzhauova,
   abaeva,
   zhanuzakova,
   sovetov,
