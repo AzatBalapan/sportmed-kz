@@ -9,6 +9,7 @@ export const saitgaraev = {
     kz: 'Физиотерапия, емдік дене шынықтыру және массаж бөлімінің дәрігер-реабилитологы',
   },
   department: 'physiotherapy',
+  image: '/team_photoes/new/saitgaraev.png',
   education: {
     ru: `2019 — Медицинский университет города Астана`,
     kz: `2019 — Астана қаласының медицина университеті`,
