@@ -9,6 +9,7 @@ export const sovetov = {
     kz: 'Физиотерапия, емдік дене шынықтыру және массаж бөлімінің дәрігер-реабилитологы',
   },
   department: 'physiotherapy',
+  image: '/team_photoes/new/sovetov.png',
   experience: {
     ru: 'Резидентура: 01.09.2024–24.07.2026',
     kz: 'Резидентура: 01.09.2024–24.07.2026',
