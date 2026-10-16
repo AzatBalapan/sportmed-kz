@@ -9,6 +9,7 @@ export const abaeva = {
     kz: 'Спорт медицинасы дәрігері (резидентура)',
   },
   department: 'sportmed',
+  image: '/team_photoes/new/abaeva.png',
   experience: {
     ru: 'Резидентура: 2023–2026',
     kz: 'Резидентура: 2023–2026',
