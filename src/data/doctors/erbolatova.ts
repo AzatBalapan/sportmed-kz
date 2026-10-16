@@ -1,8 +1,8 @@
 export const erbolatova = {
     id: "erbolatova",
     name: { ru: "Ерболатова Гульжаухар Мирамбековна", kz: "Ерболатова Гүлжаухар Мирамбекқызы" },
-    position: { ru: "врач ЭКГ", kz: "ЭКГ дәрігері" },
-    department: "specialists",
+    position: { ru: "Спортивный врач", kz: "Спорт дәрігері" },
+    department: "sportmed",
     image: "/team_photoes/Гульжаухар.svg",
     experience: {
       ru: "4 года",
