@@ -22,6 +22,10 @@ import { zhaparova } from './zhaparova';
 import { dosmuratov } from './dosmuratov';
 import { gulzhaina } from './gulzhaina';
 import { nurzhauova } from './nurzhauova';
+import { abaeva } from './abaeva';
+import { zhanuzakova } from './zhanuzakova';
+import { sovetov } from './sovetov';
+import { saitgaraev } from './saitgaraev';
 
 export const doctors = [
   abdykhadirov,
@@ -47,6 +51,10 @@ export const doctors = [
   dosmuratov,
   gulzhaina,
   nurzhauova
+  abaeva,
+  zhanuzakova,
+  sovetov,
+  saitgaraev
 ];
 
 export {
@@ -70,6 +78,11 @@ export {
   nigmetova,
   burambaeva,
   zhaparova,
+  nurzhauova,
+  abaeva,
+  zhanuzakova,
+  sovetov,
+  saitgaraev
   dosmuratov,
   gulzhaina,
   nurzhauova
