@@ -78,12 +78,11 @@ export {
   nigmetova,
   burambaeva,
   zhaparova,
+  dosmuratov,
+  gulzhaina,
   nurzhauova,
   abaeva,
   zhanuzakova,
   sovetov,
   saitgaraev
-  dosmuratov,
-  gulzhaina,
-  nurzhauova
 };
